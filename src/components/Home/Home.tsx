@@ -10,8 +10,14 @@ import OurGallery from "./components/OurGallery";
 import ReviewSession from "./components/ReviewSession";
 import RoomSession from "./components/RoomSession";
 import VideoBackground from "./components/VideoBackground";
+import { usePageMetadata } from '../../hooks/usePageMetadata';
 
 const Home = () => {
+  usePageMetadata({
+    title: "Wayanad homestays: Best homestays in Wayanad for families & couples",
+    description: "Wayanad homestays offer the perfect getaway for families and couples with cozy, comfortable accommodations. Explore the best homestays in Wayanad for a memorable stay."
+  });
+
   return (
     <div>
       <VideoBackground />
