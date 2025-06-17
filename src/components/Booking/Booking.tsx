@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { TextField } from "../Contact/ContactPage";
-import bookingImage from "../../../public/aboutHero.jpg";
 import { Header } from "../Home/components/Header";
+import bookingImage from "../../../public/aboutHero.jpg";
 
 const Booking = () => {
   const [formData, setFormData] = useState({
