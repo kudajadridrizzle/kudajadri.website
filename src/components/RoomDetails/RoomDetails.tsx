@@ -6,11 +6,10 @@ import MorningSession from "./components/MorningSession";
 import { RoomPriceSession } from "./components/RoomPriceSession";
 import { usePageMetadata } from '../../hooks/usePageMetadata';
 import { useParams } from 'react-router-dom';
-import { roomDataMap, roomData } from './constants';
+import { roomDataMap } from './constants';
 
 const RoomDetails = () => {
   const { id } = useParams();
-  const roomContent = roomData[id || "classic-rooms"];
   const roomImages = roomDataMap[id || "classic-rooms"];
 
   // Define meta content based on room type
@@ -23,7 +22,7 @@ const RoomDetails = () => {
           keywords: "classic rooms wayanad, budget homestay wayanad, affordable accommodation wayanad, kudajadri homestay, wayanad homestay",
           ogTitle: "Classic Rooms - Kudajadri Homestay",
           ogDescription: "Affordable luxury with scenic views in Wayanad. Starting at ₹3,500 per night.",
-          ogImage: roomImages.imageOne
+          ogImage: roomImages?.imageOne || ''
         };
       case 'deluxe-heritage-rooms':
         return {
@@ -32,7 +31,7 @@ const RoomDetails = () => {
           keywords: "heritage rooms wayanad, luxury homestay wayanad, traditional accommodation wayanad, kudajadri homestay, wayanad heritage stay",
           ogTitle: "Deluxe Heritage Rooms - Kudajadri Homestay",
           ogDescription: "Experience heritage luxury with modern comforts in Wayanad.",
-          ogImage: roomImages.imageOne
+          ogImage: roomImages?.imageOne || ''
         };
       case 'deluxe-rooms':
         return {
@@ -41,7 +40,7 @@ const RoomDetails = () => {
           keywords: "deluxe rooms wayanad, premium homestay wayanad, luxury accommodation wayanad, kudajadri homestay, wayanad luxury stay",
           ogTitle: "Deluxe Rooms - Kudajadri Homestay",
           ogDescription: "Premium comfort with breathtaking views in Wayanad.",
-          ogImage: roomImages.imageOne
+          ogImage: roomImages?.imageOne || ''
         };
       default:
         return {
@@ -50,7 +49,7 @@ const RoomDetails = () => {
           keywords: "wayanad homestay, kudajadri homestay, accommodation wayanad, homestay rooms wayanad",
           ogTitle: "Rooms - Kudajadri Homestay",
           ogDescription: "Experience comfort and luxury in Wayanad's natural beauty.",
-          ogImage: roomImages.imageOne
+          ogImage: roomImages?.imageOne || ''
         };
     }
   };
