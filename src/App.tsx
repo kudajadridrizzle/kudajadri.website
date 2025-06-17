@@ -5,8 +5,8 @@ import Booking from "./components/Booking/Booking";
 import RoomDetails from "./components/RoomDetails/RoomDetails";
 import { ContactPage } from "./components/Contact/ContactPage";
 import { Gallrey } from "./components/gallery/Gallrey";
-import ScrollToTop from "./components/Home/components/ScrollTop";
 import CurtainTransition from "./curtain-scroll";
+import ScrollToTop from "./components/Home/components/ScrollTop";
 
 const App = () => {
   return (
