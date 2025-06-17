@@ -202,7 +202,7 @@ export const deluxeHeritageRooms = {
     "Washine machine",
     "Dedicated workspace"
   ],
-  pricePerNight: 3500,
+  pricePerNight: 4000,
   priceNote: "Rates are twin share basis.",
   checkIn: "12:00 PM",
   checkOut: "10:00 AM",
@@ -235,7 +235,7 @@ export const deluxeRooms = {
     "Washine machine",
     "Dedicated workspace"
   ],
-  pricePerNight: 3500,
+  pricePerNight: 4000,
   priceNote: "Rates are twin share basis.",
   checkIn: "12:00 PM",
   checkOut: "10:00 AM",
