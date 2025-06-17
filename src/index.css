@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary-color: rgba(41, 38, 38, 1);
+  --color-secondary: rgba(128, 128, 128, 1);
+  --fonts-primary-font: Staylistam;
+  --fonts-secondary-font: Ivy Mode;
+  --fonts-tertiary-font: "Albert Sans", serif;
+}
+
+@font-face {
+  font-family: 'Staylista';
+  src: url('/src/assets/font/staylista.ttf') 
+
+ 
+}
+@font-face {
+  font-family: 'Ivy';
+  src: url('/src/assets/font/ivy.ttf') 
+
+}
+
+body{
+  /* max-width:1600px */
+}
