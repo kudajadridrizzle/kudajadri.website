@@ -6,40 +6,56 @@ import MorningSession from "./components/MorningSession";
 import { RoomPriceSession } from "./components/RoomPriceSession";
 import { usePageMetadata } from '../../hooks/usePageMetadata';
 import { useParams } from 'react-router-dom';
-import { roomDataMap } from './constants';
+import { roomData, classicRooms, deluxeRooms, deluxeHeritageRooms } from './constants';
 
 const RoomDetails = () => {
   const { id } = useParams();
-  const roomImages = roomDataMap[id || "classic-rooms"];
+  const roomImages = roomData[id || "classic-rooms"];
+  
+  // Get room content based on id
+  const getRoomContent = () => {
+    switch(id) {
+      case 'classic-rooms':
+        return classicRooms;
+      case 'deluxe-heritage-rooms':
+        return deluxeHeritageRooms;
+      case 'deluxe-rooms':
+        return deluxeRooms;
+      default:
+        return classicRooms;
+    }
+  };
+
+  const roomContent = getRoomContent();
 
   // Define meta content based on room type
   const getMetaContent = () => {
     switch(id) {
       case 'classic-rooms':
         return {
-          title: "Classic Rooms - Kudajadri Homestay Wayanad",
-          description: "Experience affordable luxury in our Classic Rooms at Kudajadri Homestay. Enjoy scenic views, modern amenities, and authentic Wayanad hospitality starting at ₹3,500 per night.",
+          title: `${roomContent.roomType} - Kudajadri Homestay Wayanad`,
+          description: `${roomContent.description} Book your stay at Kudajadri Homestay in Wayanad.`,
           keywords: "classic rooms wayanad, budget homestay wayanad, affordable accommodation wayanad, kudajadri homestay, wayanad homestay",
-          ogTitle: "Classic Rooms - Kudajadri Homestay",
-          ogDescription: "Affordable luxury with scenic views in Wayanad. Starting at ₹3,500 per night.",
+          ogTitle: `${roomContent.roomType} - Kudajadri Homestay`,
+          ogDescription: `Affordable luxury with scenic views in Wayanad. Starting at ₹${roomContent.pricePerNight} per night.`,
           ogImage: roomImages?.imageOne || ''
         };
       case 'deluxe-heritage-rooms':
         return {
-          title: "Deluxe Heritage Rooms - Kudajadri Homestay Wayanad",
-          description: "Immerse yourself in heritage luxury at our Deluxe Heritage Rooms. Featuring traditional architecture, modern comforts, and stunning views of Wayanad's landscape.",
+          title: `${roomContent.roomType} - Kudajadri Homestay Wayanad`,
+          description: `${roomContent.description} Book your stay at Kudajadri Homestay in Wayanad.`,
           keywords: "heritage rooms wayanad, luxury homestay wayanad, traditional accommodation wayanad, kudajadri homestay, wayanad heritage stay",
-          ogTitle: "Deluxe Heritage Rooms - Kudajadri Homestay",
-          ogDescription: "Experience heritage luxury with modern comforts in Wayanad.",
+          ogTitle: `${roomContent.roomType} - Kudajadri Homestay`,
+          ogDescription: `Experience heritage luxury with modern comforts in Wayanad. Starting at ₹${roomContent.pricePerNight} per night.`,
           ogImage: roomImages?.imageOne || ''
         };
       case 'deluxe-rooms':
         return {
-          title: "Deluxe Rooms - Kudajadri Homestay Wayanad",
-          description: "Indulge in premium comfort in our Deluxe Rooms. Enjoy spacious accommodations, premium amenities, and breathtaking views of Wayanad's natural beauty.",
+          title: `${roomContent.roomType} - Kudajadri Homestay Wayanad`,
+          description: `${roomContent.description} Book your stay at Kudajadri Homestay in Wayanad.`,
           keywords: "deluxe rooms wayanad, premium homestay wayanad, luxury accommodation wayanad, kudajadri homestay, wayanad luxury stay",
-          ogTitle: "Deluxe Rooms - Kudajadri Homestay",
-          ogDescription: "Premium comfort with breathtaking views in Wayanad.",
+          ogTitle: `${roomContent.roomType} - Kudajadri Homestay`,
+          ogDescription: `Premium comfort with breathtaking views in Wayanad. Starting at ₹${roomContent.pricePerNight} per night.`,
           ogImage: roomImages?.imageOne || ''
         };
       default:
