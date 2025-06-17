@@ -1,5 +1,5 @@
 import Footer from "../Home/components/Footer";
-import {Header} from "../Home/components/Header";
+import { Header } from "../Home/components/Header";
 import AnotherRoomSession from "./components/AnotherRoomSession";
 import Hero from "./components/Hero";
 import MorningSession from "./components/MorningSession";
@@ -11,25 +11,22 @@ import { roomData, classicRooms, deluxeRooms, deluxeHeritageRooms } from './cons
 const RoomDetails = () => {
   const { id } = useParams();
   const roomImages = roomData[id || "classic-rooms"];
-  
-  // Get room content based on id
-  const getRoomContent = () => {
-    switch(id) {
-      case 'classic-rooms':
-        return classicRooms;
-      case 'deluxe-heritage-rooms':
-        return deluxeHeritageRooms;
-      case 'deluxe-rooms':
-        return deluxeRooms;
-      default:
-        return classicRooms;
-    }
-  };
-
-  const roomContent = getRoomContent();
 
   // Define meta content based on room type
   const getMetaContent = () => {
+    const roomContent = (() => {
+      switch(id) {
+        case 'classic-rooms':
+          return classicRooms;
+        case 'deluxe-heritage-rooms':
+          return deluxeHeritageRooms;
+        case 'deluxe-rooms':
+          return deluxeRooms;
+        default:
+          return classicRooms;
+      }
+    })();
+
     switch(id) {
       case 'classic-rooms':
         return {
@@ -76,11 +73,11 @@ const RoomDetails = () => {
   return (
     <div>
       <Header type="black" />
-      <Hero/>
-      <RoomPriceSession/>
-      <MorningSession/>
-      <AnotherRoomSession/>
-      <Footer/>
+      <Hero />
+      <RoomPriceSession />
+      <MorningSession />
+      <AnotherRoomSession />
+      <Footer />
     </div>
   );
 };
