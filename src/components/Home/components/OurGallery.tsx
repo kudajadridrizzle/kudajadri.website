@@ -38,6 +38,12 @@ const OurGallery = () => {
   const [currentImages, setCurrentImages] = useState(galleryImages[1]);
   const {heading,content} = parseMarkdown(Gallery)
 
+  const [expanded, setExpanded] = useState(false)
+  const maxChars = 400
+
+  const isLong = content.length > maxChars
+  const preview = isLong ? content.slice(0, maxChars) + "..." : content
+
   useEffect(() => {
     setCurrentImages(galleryImages[navItem]);
   }, [navItem]);
@@ -49,7 +55,17 @@ const OurGallery = () => {
           {heading}
         </h1>
         <p className="flex-1 text-secondary sm:text-xl font-albertSans">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+          {expanded || !isLong ? content : preview}
+         </ReactMarkdown>
+         {isLong && (
+            <button
+               onClick={() => setExpanded(!expanded)}
+               className="mt-2 block text-sm text-primary hover:underline focus:outline-none"
+            >
+             {expanded ? "Read less" : "Read more"}
+            </button>
+        )}
         </p>
       </div>
 
