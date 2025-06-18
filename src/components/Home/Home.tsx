@@ -11,6 +11,7 @@ import ReviewSession from "./components/ReviewSession";
 import RoomSession from "./components/RoomSession";
 import VideoBackground from "./components/VideoBackground";
 import { usePageMetadata } from '../../hooks/usePageMetadata';
+import Faq from "./components/Faq";
 
 const Home = () => {
   usePageMetadata({
@@ -31,6 +32,7 @@ const Home = () => {
       <ReviewSession />
       <LocationImage />
       <Direction />
+      <Faq/>
       <Footer />
     </div>
   );
