@@ -147,7 +147,7 @@ export const roomData: RoomData = {
     },
     anotherRoomTwo: {
       titlestr: "ESSENTIAL",
-      roomType: "Deluxe Rooms",
+      roomType: "Premium Rooms",
       discription:
         "An economic escape in a lush atmosphere. This is affordable luxury with no compromises.",
       image: duluxeRoomsImage1,

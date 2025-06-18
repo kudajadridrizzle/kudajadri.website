@@ -43,6 +43,9 @@ const Footer = () => {
               >
                 Kudajadri Drizzle Homestay, Kayakkandy House, MR School Road,
                 Kaniyambetta, Wayanad, Kerala - 673122, India.
+
+                <a href={`tel:${whatsappNumber}`}>{whatsappNumber}</a>
+                <a href={`mailto:${email}`}>{email}</a>
               </a>
             <div>
               <span className="block text-secondary leading-8 sm:text-xl font-albertSans">
@@ -62,13 +65,36 @@ const Footer = () => {
               Quick Links
             </span>
             <div className="text-secondary font-albertSans sm:text-xl  flex flex-col gap-2">
-              <Link to='/'>Home</Link>
-              <Link to='/about'>About Us</Link>
+              <Link to='/'>Wayanad Homestays</Link>
+              <Link to='/about'>Kalpetta Homestays</Link>
               {/* <Link to=''>Room & Tariff</Link>
               <Link to=''>Facilities & Activities</Link> */}
               <Link to='/gallery'>Gallery</Link>
-              <Link to='/contact'>Contact Us</Link>
-              <Link to='/booking'>Booking</Link>
+              <Link to='/contact'>Online Reservation</Link>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-6">
+            <span className="text-[#fff] font-albertSans text-base uppercase block">
+              Room & Tariff
+            </span>
+            <div className="text-secondary font-albertSans sm:text-xl  flex flex-col gap-2">
+              <Link to='/'>Classic Rooms</Link>
+              <Link to='/about'>Deluxe Rooms</Link>
+              <Link to='/gallery'>Deluxe Heritage Rooms</Link>
+              <Link to='/contact'>Premium Rooms</Link>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-6">
+            <span className="text-[#fff] font-albertSans text-base uppercase block">
+              Important Links
+            </span>
+            <div className="text-secondary font-albertSans sm:text-xl  flex flex-col gap-2">
+              <Link to='/'>Placeholder Text</Link>
+              <Link to='/about'>Placeholder Text</Link>
+              <Link to='/gallery'>Placeholder Text</Link>
+              <Link to='/contact'>Placeholder Text</Link>
             </div>
           </div>
         </div>
@@ -78,3 +104,7 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
+
+

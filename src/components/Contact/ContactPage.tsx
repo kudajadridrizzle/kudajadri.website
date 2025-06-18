@@ -5,6 +5,7 @@ import twitterLogo from "../../assets/contactTwitterLogo.svg";
 import Footer from "../Home/components/Footer";
 import { Header } from "../Home/components/Header";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER
 
@@ -36,6 +37,10 @@ export const ContactPage = () => {
 
   return (
     <div className="sm:mt-[90px] mobile:mt-[52px]">
+      <Helmet>
+        <title>Online Booking & Reservation of Wayanad Homestays – Easy & Secure</title>
+        <meta name="description" content="Online booking and reservation of Wayanad homestays with instant confirmation. Find cozy and scenic stays perfect for families and couples." />
+      </Helmet>
       {/* Header */}
       <Header type="black" />
 
@@ -77,6 +82,20 @@ export const ContactPage = () => {
                   Kudajadri Drizzle Homestay, Kayakkandy House, MR School Road,
                   Kaniyambetta, Wayanad, Kerala - 673122, India.
                 </a>
+                <div className="flex flex-col gap-2 mt-4">
+                  <a
+                    href={`tel:${whatsappNumber}`}
+                    className="text-secondary sm:text-xl font-albertSans hover:underline"
+                  >
+                    {whatsappNumber}
+                  </a>
+                  <a
+                    href={`mailto:${email}`}
+                    className="text-secondary sm:text-xl font-albertSans hover:underline"
+                  >
+                    {email}
+                  </a>
+                </div>
               </div>
 
               <div className="flex flex-col gap-2.5">

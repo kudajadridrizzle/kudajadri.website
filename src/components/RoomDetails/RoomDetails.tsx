@@ -19,10 +19,10 @@ const RoomDetails = () => {
     const roomImage = roomData[id || 'classic-rooms']?.imageOne || defaultImage;
 
     return {
-      title: `${roomContent.roomType} - Kudajadri Homestay Wayanad`,
-      description: `${roomContent.description} Book your stay at Kudajadri Homestay in Wayanad.`,
+      title: `${roomContent.roomType} -  Homestay Wayanad`,
+      description: `${roomContent.description} Book your stay at  Homestay in Wayanad.`,
       keywords: `${roomContent.roomType.toLowerCase()} wayanad, homestay wayanad, accommodation wayanad, kudajadri homestay`,
-      ogTitle: `${roomContent.roomType} - Kudajadri Homestay`,
+      ogTitle: `${roomContent.roomType} -  Homestay`,
       ogDescription: `Experience luxury with scenic views in Wayanad. Starting at ₹${roomContent.pricePerNight} per night.`,
       ogImage: roomImage
     };
