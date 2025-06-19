@@ -7,6 +7,7 @@ import { ContactPage } from "./components/Contact/ContactPage";
 import { Gallrey } from "./components/gallery/Gallrey";
 import CurtainTransition from "./curtain-scroll";
 import ScrollToTop from "./components/Home/components/ScrollTop";
+import Rooms from "./components/Rooms/Rooms";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/booking" element={<Booking />} /> {/* This slides up */}
+        <Route path="/rooms" element={<Rooms />} />
         <Route path="/rooms/:id" element={<RoomDetails />} />
         <Route path="/gallery" element={<Gallrey />} />
         </Routes>

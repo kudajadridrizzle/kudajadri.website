@@ -14,7 +14,7 @@ interface HeaderProps {
 export const Header = ({ type = "white" }: HeaderProps) => {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
-  const isHome = location.pathname === "/" || location.pathname === "/about";
+  const isHome = location.pathname === "/" || location.pathname === "/about" || location.pathname === "/rooms";
   const headerColor = scrolled ? "black" : type;
 
 
@@ -79,13 +79,13 @@ export const Header = ({ type = "white" }: HeaderProps) => {
         >
           Contact Us
         </NavLink>
-        {/* <NavLink
-          to="/contact"
+        <NavLink
+          to="/rooms"
           className={`px-4 py-2 ${headerColor === "white" ? "text-[#FFF]" : "text-primary"
             } font-albertSans`}
         >
-          Tour packages
-        </NavLink> */}
+          Rooms
+        </NavLink>
       </div>
       <PhoneHeader headerColor={headerColor} />
     </div>
