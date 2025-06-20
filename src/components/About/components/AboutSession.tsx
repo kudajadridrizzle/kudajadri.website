@@ -62,7 +62,7 @@ const AboutSession = () => {
           {legacyHeading}
         </h1>
         <div className="flex flex-col gap-8 flex-1">
-          <p className="text-secondary sm:text-xl font-albertSans">
+          <div className="text-secondary sm:text-xl font-albertSans">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>
             {expandedOne || !isLongOne ? legacyContent : previewOne}
            </ReactMarkdown>
@@ -74,7 +74,7 @@ const AboutSession = () => {
                {expandedOne ? "Read less" : "Read more"}
               </button>
          )}
-          </p>
+          </div>
           <div className="h-[415px]">
             <img
               src={aboutLegacyImage}
@@ -88,7 +88,7 @@ const AboutSession = () => {
         <h1 className="text-[#000] sm:text-[44px] text-[32px] font-ivy font-normal flex-1">
           {idealForAllHeading}
         </h1>
-        <p className="text-secondary text-xl font-albertSans flex-1">
+        <div className="text-secondary text-xl font-albertSans flex-1">
       <ReactMarkdown remarkPlugins={[remarkGfm]}>
         {expandedTwo || !isLongTwo ? idealForAllContent : previewTwo}
        </ReactMarkdown>
@@ -100,7 +100,7 @@ const AboutSession = () => {
            {expandedTwo ? "Read less" : "Read more"}
           </button>
         )}
-        </p>
+        </div>
       </div>
     </div>
   );
