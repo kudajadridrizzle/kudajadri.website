@@ -7,7 +7,6 @@ import { Header } from "../Home/components/Header";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 
-const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER
 
 export const ContactPage = () => {
   const [form, setForm] = useState({
@@ -15,7 +14,9 @@ export const ContactPage = () => {
     email: "",
     message: "",
   });
-  const email = import.meta.env.VITE_KUDAJADRI_MAIL;
+  const email = 'kudajadri@ymail.com';
+  const whatsappNumber = '+91 9946 354 511';
+
   const handleChange = (field: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm(prev => ({ ...prev, [field]: e.target.value }));
   };
@@ -59,7 +60,7 @@ export const ContactPage = () => {
         </div>
 
         {/* Address Section */}
-        <div className="flex gap-10 justify-center sm:pt-24 pt-7">
+        <div className="flex gap-10 justify-center sm:py-24 sm:px-[12%] large:px-[18%] pt-7">
           <div className="flex flex-col sm:flex-row gap-10">
             <div className="flex flex-col gap-8 flex-1">
               <div className="flex flex-col gap-2.5">
@@ -82,20 +83,6 @@ export const ContactPage = () => {
                   Kudajadri Drizzle Homestay, Kayakkandy House, MR School Road,
                   Kaniyambetta, Wayanad, Kerala - 673122, India.
                 </a>
-                <div className="flex flex-col gap-2 mt-4">
-                  <a
-                    href={`tel:${whatsappNumber}`}
-                    className="text-secondary sm:text-xl font-albertSans hover:underline"
-                  >
-                    {whatsappNumber}
-                  </a>
-                  <a
-                    href={`mailto:${email}`}
-                    className="text-secondary sm:text-xl font-albertSans hover:underline"
-                  >
-                    {email}
-                  </a>
-                </div>
               </div>
 
               <div className="flex flex-col gap-2.5">
@@ -171,9 +158,7 @@ export const ContactPage = () => {
           </div>
         </div>
       </div>
-      <div className="pt-14 sm:hidden">
         <Footer />
-      </div>
     </div>
   );
 };

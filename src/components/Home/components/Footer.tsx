@@ -5,8 +5,8 @@ import twitterLogo from "../../../assets/twitter.svg";
 import threadLogo from "../../../assets/Thread.svg";
 import { Link, useNavigate } from "react-router-dom";
 
-const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER
-const email = import.meta.env.VITE_KUDAJADRI_MAIL;
+const whatsappNumber = '+91 9946 354 511'
+const email = 'kudajadri@ymail.com';
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ const Footer = () => {
           <img src={threadLogo} alt="threadLogo" className="size-8" />
           <img src={youtubeLogo} alt="youtubeLogo" className="size-8" />
         </div>
-        <div className="flex flex-col sm:flex-row sm:gap-[133px] mobile:gap-11 mobile:py-10 mobile:px-4 sm:p-0">
+        <div className="flex flex-col sm:flex-row sm:gap-[30px] justify-between mobile:gap-11 mobile:py-10 mobile:px-4 sm:p-0">
           <div className="flex flex-col sm:gap-9 mobile:gap-6">
             <span className="text-[#fff] font-albertSans text-base uppercase block">
               CONTACT
@@ -43,9 +43,6 @@ const Footer = () => {
               >
                 Kudajadri Drizzle Homestay, Kayakkandy House, MR School Road,
                 Kaniyambetta, Wayanad, Kerala - 673122, India.
-
-                <a href={`tel:${whatsappNumber}`}>{whatsappNumber}</a>
-                <a href={`mailto:${email}`}>{email}</a>
               </a>
             <div>
               <span className="block text-secondary leading-8 sm:text-xl font-albertSans">

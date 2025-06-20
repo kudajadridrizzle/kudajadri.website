@@ -33,15 +33,8 @@ export const Header = ({ type = "white" }: HeaderProps) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isHome]);
   return (
-    <div className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-md" : "bg-transparent"}`}>
+    <div className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-sm" : "bg-transparent"}`}>
       <div className="sm:py-6 flex gap-24 justify-center items-end mobile:hidden sm:flex">
-        {/* <NavLink
-          to="/about"
-          className={`px-4 py-2 ${headerColor === "white" ? "text-[#FFF]" : "text-primary"
-            } font-albertSans`}
-        >
-          Rooms
-        </NavLink> */}
         <NavLink
           to="/about"
           className={`px-4 py-2 ${headerColor === "white" ? "text-[#FFF]" : "text-primary"
@@ -73,18 +66,18 @@ export const Header = ({ type = "white" }: HeaderProps) => {
           Gallery
         </NavLink>
         <NavLink
+          to="/rooms"
+          className={`px-4 py-2 ${headerColor === "white" ? "text-[#FFF]" : "text-primary"
+            } font-albertSans`}
+          >
+          Rooms
+        </NavLink>
+        <NavLink
           to="/contact"
           className={`px-4 py-2 ${headerColor === "white" ? "text-[#FFF]" : "text-primary"
             } font-albertSans`}
         >
           Contact Us
-        </NavLink>
-        <NavLink
-          to="/rooms"
-          className={`px-4 py-2 ${headerColor === "white" ? "text-[#FFF]" : "text-primary"
-            } font-albertSans`}
-        >
-          Rooms
         </NavLink>
       </div>
       <PhoneHeader headerColor={headerColor} />
@@ -103,7 +96,7 @@ const PhoneHeader = ({ headerColor }: { headerColor?: "white" | "black" }) => {
     setSidebarOpen((prevState) => !prevState);
   };
   const openWhatsApp = () => {
-    const phoneNumber = import.meta.env.VITE_WHATSAPP_NUMBER; // Replace with the phone number you want to message
+    const phoneNumber = '+91 9946 354 511'; // Replace with the phone number you want to message
     const message = "Hello, I would like to inquire about your resort services."
     const whatsappUrl = `whatsapp://send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
 
@@ -193,6 +186,11 @@ const PhoneHeader = ({ headerColor }: { headerColor?: "white" | "black" }) => {
                 <li className="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded-lg transition-all duration-200">
                   <Link to="/gallery" className="text-lg font-medium" onClick={toggleSidebar}> {/* Close sidebar on link click */}
                     Gallery
+                  </Link>
+                </li>
+                <li className="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded-lg transition-all duration-200">
+                  <Link to="/rooms" className="text-lg font-medium" onClick={toggleSidebar}> {/* Close sidebar on link click */}
+                    Rooms
                   </Link>
                 </li>
                 <li className="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded-lg transition-all duration-200">
