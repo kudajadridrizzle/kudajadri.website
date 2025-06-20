@@ -54,7 +54,7 @@ const OurGallery = () => {
         <h1 className="flex-1 text-primary font-ivy sm:text-[44px] mobile:text-[32px]">
           {heading}
         </h1>
-        <p className="flex-1 text-secondary sm:text-xl font-albertSans">
+        <div className="flex-1 text-secondary sm:text-xl font-albertSans">
         <ReactMarkdown remarkPlugins={[remarkGfm]}>
           {expanded || !isLong ? content : preview}
          </ReactMarkdown>
@@ -66,7 +66,7 @@ const OurGallery = () => {
              {expanded ? "Read less" : "Read more"}
             </button>
         )}
-        </p>
+        </div>
       </div>
 
       <div className="flex justify-center sm:flex mobile:hidden">

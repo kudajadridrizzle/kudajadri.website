@@ -18,7 +18,7 @@ const RoomSession = () => {
         <h1 className="flex-1 sm:text-[44px] text-[32px] font-ivy">
           {heading}
         </h1>
-        <p className="sm:w-[466px] sm:text-xl font-albertSans text-secondary">
+        <div className="sm:w-[466px] sm:text-xl font-albertSans text-secondary">
        <ReactMarkdown remarkPlugins={[remarkGfm]}>
          {expanded || !isLong ? content : preview}
         </ReactMarkdown>
@@ -30,7 +30,7 @@ const RoomSession = () => {
             {expanded ? "Read less" : "Read more"}
            </button>
       )}
-        </p>
+        </div>
       </div>
     </div>
   );

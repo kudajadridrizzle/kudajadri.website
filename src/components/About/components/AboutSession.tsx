@@ -35,7 +35,7 @@ const AboutSession = () => {
           <span className="block sm:w-1/2 text-[#000] font-ivy sm:text-[44px] text-[32px]">
             {heading}
           </span>
-          <p className="sm:w-1/2 text-secondary font-albertSans sm:text-xl">
+          <div className="sm:w-1/2 text-secondary font-albertSans sm:text-xl">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>
             {expanded || !isLong ? content : preview}
            </ReactMarkdown>
@@ -47,7 +47,7 @@ const AboutSession = () => {
                {expanded ? "Read less" : "Read more"}
               </button>
           )}
-          </p>
+          </div>
         </div>
         <div className="h-[450px]">
           <img
