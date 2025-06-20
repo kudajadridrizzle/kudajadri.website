@@ -12,7 +12,7 @@ export const IndividualRooms = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center px-4 py-16 sm:px-[12%] sm:py-32 gap-6 large:px-[18%]">
+    <div className="flex flex-col justify-center px-4 py-16 sm:px-[12%] sm:py-32 gap-16 large:px-[18%]">
       <IndividualRoomSession
         subTitle="ESSENTIAL"
         title="Deluxe Rooms"

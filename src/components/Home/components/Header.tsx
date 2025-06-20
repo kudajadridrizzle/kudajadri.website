@@ -42,6 +42,13 @@ export const Header = ({ type = "white" }: HeaderProps) => {
         >
           About Us
         </NavLink>
+        <NavLink
+          to="/faq"
+          className={`px-4 py-2 ${headerColor === "white" ? "text-[#FFF]" : "text-primary"
+            } font-albertSans`}
+        >
+          FAQs
+        </NavLink>
         <a
           href="#a"
           className={`px-4 py-2 ${headerColor === "white" ? "text-[#FFF]" : "text-primary"
