@@ -57,16 +57,28 @@ const Footer = () => {
               </span>
             </div>
           </div>
+
           <div className="flex flex-col gap-6">
             <span className="text-[#fff] font-albertSans text-base uppercase block">
               Quick Links
             </span>
             <div className="text-secondary font-albertSans sm:text-xl  flex flex-col gap-2">
+              <Link to='/about'>About Us</Link>
+              <Link to='/rooms'>Rooms</Link>
+              <Link to='/gallery'>Gallery</Link>
+              <Link to='/contact'>Contact Us</Link>
+              <Link to='/faq'>FAQs</Link>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-6">
+            <span className="text-[#fff] font-albertSans text-base uppercase block">
+              Important Links
+            </span>
+            <div className="text-secondary font-albertSans sm:text-xl  flex flex-col gap-2">
               <Link to='/'>Wayanad Homestays</Link>
               <Link to='/about'>Kalpetta Homestays</Link>
-              {/* <Link to=''>Room & Tariff</Link>
-              <Link to=''>Facilities & Activities</Link> */}
-              <Link to='/gallery'>Gallery</Link>
+              <Link to='/rooms'>Wayanad Cottages</Link>
               <Link to='/contact'>Online Reservation</Link>
             </div>
           </div>
@@ -83,17 +95,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-6">
-            <span className="text-[#fff] font-albertSans text-base uppercase block">
-              Important Links
-            </span>
-            <div className="text-secondary font-albertSans sm:text-xl  flex flex-col gap-2">
-              <Link to='/'>Placeholder Text</Link>
-              <Link to='/about'>Placeholder Text</Link>
-              <Link to='/gallery'>Placeholder Text</Link>
-              <Link to='/contact'>Placeholder Text</Link>
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>

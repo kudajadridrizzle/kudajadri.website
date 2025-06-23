@@ -35,6 +35,13 @@ export const Header = ({ type = "white" }: HeaderProps) => {
   return (
     <div className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-sm" : "bg-transparent"}`}>
       <div className="sm:py-6 flex gap-24 justify-center items-end mobile:hidden sm:flex">
+      <NavLink
+          to="/"
+          className={`px-4 py-2 ${headerColor === "white" ? "text-[#FFF]" : "text-primary"
+            } font-albertSans`}
+        >
+          Tour Packages
+        </NavLink>
         <NavLink
           to="/about"
           className={`px-4 py-2 ${headerColor === "white" ? "text-[#FFF]" : "text-primary"
@@ -42,20 +49,20 @@ export const Header = ({ type = "white" }: HeaderProps) => {
         >
           About Us
         </NavLink>
-        <NavLink
+        {/* <NavLink
           to="/faq"
           className={`px-4 py-2 ${headerColor === "white" ? "text-[#FFF]" : "text-primary"
             } font-albertSans`}
         >
           FAQs
-        </NavLink>
-        <a
+        </NavLink> */}
+        {/* <a
           href="#a"
           className={`px-4 py-2 ${headerColor === "white" ? "text-[#FFF]" : "text-primary"
             } font-albertSans`}
         >
           Facilities
-        </a>
+        </a> */}
         <NavLink to="/">
           <div>
             {headerColor === "white" ? (
@@ -77,7 +84,7 @@ export const Header = ({ type = "white" }: HeaderProps) => {
           className={`px-4 py-2 ${headerColor === "white" ? "text-[#FFF]" : "text-primary"
             } font-albertSans`}
           >
-          Rooms
+          Accomodations
         </NavLink>
         <NavLink
           to="/contact"
