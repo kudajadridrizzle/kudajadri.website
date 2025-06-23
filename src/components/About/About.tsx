@@ -4,6 +4,8 @@ import AboutSession from "./components/AboutSession";
 import Hero from "./components/Hero";
 import RecognitionSession from "./components/RecognitionSession";
 import { usePageMetadata } from '../../hooks/usePageMetadata';
+import Faq  from "../Home/components/Faq";
+
 
 const About = () => {
   usePageMetadata({
@@ -18,6 +20,7 @@ const About = () => {
       <AboutSession/>
       <ReviewSession />
       <RecognitionSession/>
+      <Faq/>
       <Footer/>
     </div>
   );
