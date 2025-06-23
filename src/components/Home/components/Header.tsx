@@ -14,7 +14,7 @@ interface HeaderProps {
 export const Header = ({ type = "white" }: HeaderProps) => {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
-  const isHome = location.pathname === "/" || location.pathname === "/about" || location.pathname === "/rooms";
+  const isHome = location.pathname === "/" || location.pathname === "/about" || location.pathname === "/rooms" ||location.pathname === "/tour-packages";
   const headerColor = scrolled ? "black" : type;
 
 
@@ -34,9 +34,9 @@ export const Header = ({ type = "white" }: HeaderProps) => {
   }, [isHome]);
   return (
     <div className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-sm" : "bg-transparent"}`}>
-      <div className="sm:py-6 flex gap-24 justify-center items-end mobile:hidden sm:flex">
+      <div className="flex items-end justify-center gap-24 sm:py-6 mobile:hidden sm:flex">
       <NavLink
-          to="/"
+          to="/tour-packages"
           className={`px-4 py-2 ${headerColor === "white" ? "text-[#FFF]" : "text-primary"
             } font-albertSans`}
         >
@@ -163,10 +163,10 @@ const PhoneHeader = ({ headerColor }: { headerColor?: "white" | "black" }) => {
 
       {/* Sidebar */}
       {isSidebarOpen && (
-        <div className="fixed inset-0 flex z-50">
+        <div className="fixed inset-0 z-50 flex">
           {/* Overlay Effect */}
           <div
-            className="fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300"
+            className="fixed inset-0 transition-opacity duration-300 bg-black bg-opacity-50"
             onClick={toggleSidebar}
           ></div>
 
@@ -180,34 +180,39 @@ const PhoneHeader = ({ headerColor }: { headerColor?: "white" | "black" }) => {
             <div className="flex justify-end">
               <button
                 onClick={toggleSidebar}
-                className="text-black text-lg font-semibold focus:outline-none" // Add outline none for better accessibility
+                className="text-lg font-semibold text-black focus:outline-none" // Add outline none for better accessibility
               >
                 Close
               </button>
             </div>
             <div className="text-black">
-              <ul className="space-y-4 mt-6">
-                <li className="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded-lg transition-all duration-200">
+              <ul className="mt-6 space-y-4">
+                  <li className="flex items-center p-2 space-x-2 transition-all duration-200 rounded-lg hover:bg-gray-100">
+                  <Link to="/tour-packages" className="text-lg font-medium" onClick={toggleSidebar}> {/* Close sidebar on link click */}
+                    Tour Packages
+                  </Link>
+                </li>
+                <li className="flex items-center p-2 space-x-2 transition-all duration-200 rounded-lg hover:bg-gray-100">
                   <Link to="/" className="text-lg font-medium" onClick={toggleSidebar}> {/* Close sidebar on link click */}
                     Home
                   </Link>
                 </li>
-                <li className="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded-lg transition-all duration-200">
+                <li className="flex items-center p-2 space-x-2 transition-all duration-200 rounded-lg hover:bg-gray-100">
                   <Link to="/about" className="text-lg font-medium" onClick={toggleSidebar}> {/* Close sidebar on link click */}
                     About Us
                   </Link>
                 </li>
-                <li className="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded-lg transition-all duration-200">
+                <li className="flex items-center p-2 space-x-2 transition-all duration-200 rounded-lg hover:bg-gray-100">
                   <Link to="/gallery" className="text-lg font-medium" onClick={toggleSidebar}> {/* Close sidebar on link click */}
                     Gallery
                   </Link>
                 </li>
-                <li className="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded-lg transition-all duration-200">
+                <li className="flex items-center p-2 space-x-2 transition-all duration-200 rounded-lg hover:bg-gray-100">
                   <Link to="/rooms" className="text-lg font-medium" onClick={toggleSidebar}> {/* Close sidebar on link click */}
                     Rooms
                   </Link>
                 </li>
-                <li className="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded-lg transition-all duration-200">
+                <li className="flex items-center p-2 space-x-2 transition-all duration-200 rounded-lg hover:bg-gray-100">
                   <Link to="/contact" className="text-lg font-medium" onClick={toggleSidebar}> {/* Close sidebar on link click */}
                     Contact Us
                   </Link>

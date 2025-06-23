@@ -9,6 +9,7 @@ import CurtainTransition from "./curtain-scroll";
 import ScrollToTop from "./components/Home/components/ScrollTop";
 import Rooms from "./components/Rooms/Rooms";
 import { FaqPage } from "./components/FAQ/Faq";
+import { TourPackages } from "./components/TourPackages/TourPackages";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/rooms/:id" element={<RoomDetails />} />
         <Route path="/gallery" element={<Gallrey />} />
         <Route path="/faq" element={<FaqPage />} />
+        <Route path="/tour-packages" element={<TourPackages />} />
         </Routes>
     </Router>
   );
