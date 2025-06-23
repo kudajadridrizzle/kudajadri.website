@@ -4,6 +4,8 @@ import { HeroSession } from "./components/HeroSession"
 import { ImageSession } from "./components/ImageSession"
 import { ResponsiveImageSession } from "./components/ResponsiveImageSession"
 import { usePageMetadata } from '../../hooks/usePageMetadata';
+import Faq  from "../Home/components/Faq";
+
 
 export const Gallrey = () => {
   usePageMetadata({
@@ -22,6 +24,7 @@ export const Gallrey = () => {
             <ResponsiveImageSession/>
         </div>
         </div>
+        <Faq/>
         <Footer/>
       
     </div>
