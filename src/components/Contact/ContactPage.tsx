@@ -46,10 +46,10 @@ export const ContactPage = () => {
       <Header type="black" />
 
       {/* Main Content */}
-      <div className="mobile:pt-[52px] sm:pt-[50px] sm:min-w-[1174px] flex flex-col items-center px-4 sm:px-0">
+      <div className="mobile:pt-[52px] mobile:pb-[24px] sm:pt-[50px] sm:min-w-[1174px] flex flex-col items-center px-4 sm:px-0">
         {/* Title Section */}
         <div className="flex flex-col sm:gap-[90px] gap-7">
-          <div className="flex flex-col gap-6 items-center">
+          <div className="flex flex-col items-center gap-6">
             <span className="text-[#000] font-albertSans tracking-[1.6px] text-base">
               Contact Us
             </span>
@@ -60,9 +60,9 @@ export const ContactPage = () => {
         </div>
 
         {/* Address Section */}
-        <div className="flex gap-10 justify-center sm:py-24 sm:px-[12%] large:px-[18%] pt-7">
-          <div className="flex flex-col sm:flex-row gap-10">
-            <div className="flex flex-col gap-8 flex-1">
+        <div className="flex gap-10 justify-center sm:py-24 sm:px-[12%]  large:px-[18%] pt-7">
+          <div className="flex flex-col gap-10 sm:flex-row">
+            <div className="flex flex-col flex-1 gap-8">
               <div className="flex flex-col gap-2.5">
                 <span className="text-[#000] font-albertSans tracking-[1.6px] uppercase mobile:text-sm sm:text-base">
                   ADDRESS
@@ -91,7 +91,7 @@ export const ContactPage = () => {
                 </span>
                 <a
                   href={`mailto:${email}`}
-                  className="text-secondary text-xl font-albertSans hover:underline"
+                  className="text-xl text-secondary font-albertSans hover:underline"
                 >
                   {email}
                 </a>
@@ -101,7 +101,7 @@ export const ContactPage = () => {
                 <span className="text-[#000] text-base font-albertSans tracking-[1.6px] uppercase">
                   FOLLow
                 </span>
-                <div className="flex gap-6 items-center">
+                <div className="flex items-center gap-6">
                   <a
                     href="https://www.facebook.com/kudajadrihomestay"
                     target="_blank"
