@@ -10,6 +10,7 @@ import ScrollToTop from "./components/Home/components/ScrollTop";
 import Rooms from "./components/Rooms/Rooms";
 import { FaqPage } from "./components/FAQ/Faq";
 import { TourPackages } from "./components/TourPackages/TourPackages";
+import FacilitiesPage from "./components/Facilities/FacilitiesPage";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/gallery" element={<Gallrey />} />
         <Route path="/faq" element={<FaqPage />} />
         <Route path="/tour-packages" element={<TourPackages />} />
+        <Route path="/facilities" element={<FacilitiesPage />} />
         </Routes>
     </Router>
   );

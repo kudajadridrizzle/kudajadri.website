@@ -44,7 +44,7 @@ export const Header = ({ type = "white" }: HeaderProps) => {
           About Us
         </NavLink>
         <NavLink to="/rooms" className={`px-4 py-2 ${headerColor === "white" ? "text-[#FFF]" : "text-primary"} font-albertSans`}>
-          Accommodations
+          Rooms
         </NavLink>
         <NavLink to="/">
           <div>
@@ -107,7 +107,7 @@ const PhoneHeader = ({ headerColor }: { headerColor?: "white" | "black" }) => {
               <ul className="mt-6 space-y-4">
                 <li><Link to="/" className="text-lg font-medium" onClick={toggleSidebar}>Wayanad Homestays</Link></li>
                 <li><Link to="/about" className="text-lg font-medium" onClick={toggleSidebar}>About Us</Link></li>
-                <li><Link to="/rooms" className="text-lg font-medium" onClick={toggleSidebar}>Accommodations</Link></li>
+                <li><Link to="/rooms" className="text-lg font-medium" onClick={toggleSidebar}>Rooms</Link></li>
                 <li><Link to="/gallery" className="text-lg font-medium" onClick={toggleSidebar}>Gallery</Link></li>
                 <li><Link to="/attractions" className="text-lg font-medium" onClick={toggleSidebar}>Wayanad</Link></li>
                 <li><Link to="/contact" className="text-lg font-medium" onClick={toggleSidebar}>Contact Us</Link></li>

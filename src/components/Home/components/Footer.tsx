@@ -70,6 +70,8 @@ const Footer = () => {
               <Link to='/tour-packages'>Tour Packages</Link>
               <Link to='/attractions'>Attractions</Link>
               <Link to='/faq'>FAQs</Link>
+              <Link to='/facilities'>Facilities</Link>
+              
             </div>
           </div>
 
