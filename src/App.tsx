@@ -11,6 +11,7 @@ import Rooms from "./components/Rooms/Rooms";
 import { FaqPage } from "./components/FAQ/Faq";
 import { TourPackages } from "./components/TourPackages/TourPackages";
 import FacilitiesPage from "./components/Facilities/FacilitiesPage";
+import { WayanadPage } from "./components/Wayanad/wayanadPage";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
         <Route path="/faq" element={<FaqPage />} />
         <Route path="/tour-packages" element={<TourPackages />} />
         <Route path="/facilities" element={<FacilitiesPage />} />
+        <Route path="/wayanad" element={<WayanadPage />} />
         </Routes>
     </Router>
   );

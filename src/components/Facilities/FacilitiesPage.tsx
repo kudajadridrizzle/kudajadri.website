@@ -1,4 +1,5 @@
 import Direction from "../Home/components/Direction"
+import Faq from "../Home/components/Faq"
 import Footer from "../Home/components/Footer"
 import FacilitiesSession from "./components/FacilitiesSession"
 import Hero from "./components/Hero"
@@ -9,12 +10,13 @@ const FacilitiesPage = () => {
   return (
     <div>
       <Hero/>
-      <div className="flex flex-col mobile:p-4 sm:p-14 items-center gap-16 self-stretch  bg-white sm:flex-row">
+      <div className="flex flex-col items-center self-stretch gap-16 bg-white mobile:p-4 sm:p-14 sm:flex-row">
         <FacilitiesSession/>
         <ImageSession/>
       </div>
       <ListSession/>
       <Direction/>
+      <Faq/>
       <Footer/>
     </div>
   )
