@@ -36,19 +36,11 @@ export const IndividualRooms = () => {
         type="reverse"
         onClick={() => handleClick("/rooms/deluxe-heritage-rooms")}
       />
-      <IndividualRoomSession
-        // subTitle="ESSENTIAL"
-        title="Deluxe Heritage Rooms"
-        discription="An economic escape in a lush atmosphere. This is affordable luxury with no compromises."
-        image={roomTwo}
-        onClick={() => handleClick("/rooms/deluxe-heritage-rooms")}
-      />
         <IndividualRoomSession
         // subTitle="ESSENTIAL"
         title="Premium Rooms"
         discription="An Premium escape in a lush atmosphere. This is affordable luxury with no compromises."
         image={PremiumImg1}
-        type="reverse"
         onClick={() => handleClick("/rooms/premium-rooms")}
       />
     </div>
