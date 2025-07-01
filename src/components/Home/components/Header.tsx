@@ -16,7 +16,12 @@ interface HeaderProps {
 export const Header = ({ type = "white" }: HeaderProps) => {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
-  const isHome = location.pathname === "/" || location.pathname === "/about" || location.pathname === "/rooms" || location.pathname === "/attractions" || location.pathname === "/wayanad";
+  const isHome =
+    location.pathname === "/" ||
+    location.pathname === "/about" ||
+    location.pathname === "/rooms" ||
+    location.pathname === "/attractions" ||
+    location.pathname === "/wayanad";
   const headerColor = scrolled ? "black" : type;
 
   useEffect(() => {
@@ -35,15 +40,34 @@ export const Header = ({ type = "white" }: HeaderProps) => {
   }, [isHome]);
 
   return (
-    <div className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-sm" : "bg-transparent"}`}>
+    <div
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled ? "bg-white shadow-sm" : "bg-transparent"
+      }`}
+    >
       <div className="flex items-end justify-center gap-24 sm:py-6 mobile:hidden sm:flex">
-        <NavLink to="/" className={`px-4 py-2 ${headerColor === "white" ? "text-[#FFF]" : "text-primary"} font-albertSans`}>
+        <NavLink
+          to="/"
+          className={`px-4 py-2 ${
+            headerColor === "white" ? "text-[#FFF]" : "text-primary"
+          } font-albertSans`}
+        >
           Wayanad Homestays
         </NavLink>
-        <NavLink to="/about" className={`px-4 py-2 ${headerColor === "white" ? "text-[#FFF]" : "text-primary"} font-albertSans`}>
+        <NavLink
+          to="/about"
+          className={`px-4 py-2 ${
+            headerColor === "white" ? "text-[#FFF]" : "text-primary"
+          } font-albertSans`}
+        >
           About Us
         </NavLink>
-        <NavLink to="/rooms" className={`px-4 py-2 ${headerColor === "white" ? "text-[#FFF]" : "text-primary"} font-albertSans`}>
+        <NavLink
+          to="/rooms"
+          className={`px-4 py-2 ${
+            headerColor === "white" ? "text-[#FFF]" : "text-primary"
+          } font-albertSans`}
+        >
           Rooms
         </NavLink>
         <NavLink to="/">
@@ -55,13 +79,28 @@ export const Header = ({ type = "white" }: HeaderProps) => {
             )}
           </div>
         </NavLink>
-        <NavLink to="/gallery" className={`px-4 py-2 ${headerColor === "white" ? "text-[#FFF]" : "text-primary"} font-albertSans`}>
+        <NavLink
+          to="/gallery"
+          className={`px-4 py-2 ${
+            headerColor === "white" ? "text-[#FFF]" : "text-primary"
+          } font-albertSans`}
+        >
           Gallery
         </NavLink>
-        <NavLink to="/wayanad" className={`px-4 py-2 ${headerColor === "white" ? "text-[#FFF]" : "text-primary"} font-albertSans`}>
+        <NavLink
+          to="/wayanad"
+          className={`px-4 py-2 ${
+            headerColor === "white" ? "text-[#FFF]" : "text-primary"
+          } font-albertSans`}
+        >
           Wayanad
         </NavLink>
-        <NavLink to="/contact" className={`px-4 py-2 ${headerColor === "white" ? "text-[#FFF]" : "text-primary"} font-albertSans`}>
+        <NavLink
+          to="/contact"
+          className={`px-4 py-2 ${
+            headerColor === "white" ? "text-[#FFF]" : "text-primary"
+          } font-albertSans`}
+        >
           Contact Us
         </NavLink>
       </div>
@@ -77,40 +116,89 @@ const PhoneHeader = ({ headerColor }: { headerColor?: "white" | "black" }) => {
   const toggleSidebar = () => setSidebarOpen((prevState) => !prevState);
 
   const openWhatsApp = () => {
-    const phoneNumber = '+91 9946 354 511';
-    const message = "Hello, I would like to inquire about your resort services.";
-    const whatsappUrl = `whatsapp://send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
-    window.location.href = whatsappUrl;
+    const phoneNumber = '919946354511';
+    const message = "Hi, I’m checking room availability.";
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
   };
 
   return (
     <div className="flex justify-between p-4 sm:hidden">
       <div>
-        <img src={headerColor === "black" ? MenuBlackIcon : menuIcon} alt="Menu" onClick={toggleSidebar} className="cursor-pointer" />
+        <img
+          src={headerColor === "black" ? MenuBlackIcon : menuIcon}
+          alt="Menu"
+          onClick={toggleSidebar}
+          className="cursor-pointer"
+        />
       </div>
       <div>
-        <img src={headerColor === "black" ? HomeBlackIcon : logoIcon} alt="Home" onClick={() => navigate("/")} className="cursor-pointer" />
+        <img
+          src={headerColor === "black" ? HomeBlackIcon : logoIcon}
+          alt="Home"
+          onClick={() => navigate("/")}
+          className="cursor-pointer"
+        />
       </div>
       <div>
-        <img src={headerColor === "black" ? whatAppBlackIcon : whatAppIcon} alt="WhatsApp" onClick={openWhatsApp} />
+        <img
+          src={headerColor === "black" ? whatAppBlackIcon : whatAppIcon}
+          alt="WhatsApp"
+          onClick={openWhatsApp}
+          className="cursor-pointer"
+        />
       </div>
       {isSidebarOpen && (
         <div className="fixed inset-0 z-50 flex">
-          <div className="fixed inset-0 transition-opacity duration-300 bg-black bg-opacity-50" onClick={toggleSidebar}></div>
-          <div className={`w-64 bg-white p-4 transform transition-all duration-500 ease-in-out shadow-lg ${isSidebarOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}`}>
+          <div
+            className="fixed inset-0 transition-opacity duration-300 bg-black bg-opacity-50"
+            onClick={toggleSidebar}
+          ></div>
+          <div
+            className={`w-64 bg-white p-4 transform transition-all duration-500 ease-in-out shadow-lg ${
+              isSidebarOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
+            }`}
+          >
             <div className="flex justify-end">
-              <button onClick={toggleSidebar} className="text-lg font-semibold text-black focus:outline-none">
+              <button
+                onClick={toggleSidebar}
+                className="text-lg font-semibold text-black focus:outline-none"
+              >
                 Close
               </button>
             </div>
             <div className="text-black">
               <ul className="mt-6 space-y-4">
-                <li><Link to="/" className="text-lg font-medium" onClick={toggleSidebar}>Wayanad Homestays</Link></li>
-                <li><Link to="/about" className="text-lg font-medium" onClick={toggleSidebar}>About Us</Link></li>
-                <li><Link to="/rooms" className="text-lg font-medium" onClick={toggleSidebar}>Rooms</Link></li>
-                <li><Link to="/gallery" className="text-lg font-medium" onClick={toggleSidebar}>Gallery</Link></li>
-                <li><Link to="/wayanad" className="text-lg font-medium" onClick={toggleSidebar}>Wayanad</Link></li>
-                <li><Link to="/contact" className="text-lg font-medium" onClick={toggleSidebar}>Contact Us</Link></li>
+                <li>
+                  <Link to="/" className="text-lg font-medium" onClick={toggleSidebar}>
+                    Wayanad Homestays
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/about" className="text-lg font-medium" onClick={toggleSidebar}>
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/rooms" className="text-lg font-medium" onClick={toggleSidebar}>
+                    Rooms
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/gallery" className="text-lg font-medium" onClick={toggleSidebar}>
+                    Gallery
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/wayanad" className="text-lg font-medium" onClick={toggleSidebar}>
+                    Wayanad
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact" className="text-lg font-medium" onClick={toggleSidebar}>
+                    Contact Us
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
