@@ -11,7 +11,7 @@ export const IndividualRoomSession = ({
   image,
   title,
   discription,
-  subTitle,
+  // subTitle,
   type = "default",
   onClick,
 }: IndivdualRoomsSessionProp) => {
@@ -30,21 +30,21 @@ export const IndividualRoomSession = ({
         />
       </div>
       <div className="sm:p-6 sm:flex-1">
-        <div className="flex flex-col gap-4 h-full justify-center mobile:pt-6 sm:pt-0">
-          <h1 className="font-albertSans sm:text-base mobile:text-sm text-primary">
+        <div className="flex flex-col justify-center h-full gap-4 mobile:pt-6 sm:pt-0">
+          {/* <h1 className="font-albertSans sm:text-base mobile:text-sm text-primary">
             {subTitle}
-          </h1>
+          </h1> */}
           <div className="flex flex-col gap-3">
             <h1 className="text-primary sm:text-[44px] mobile:text-[28px] font-ivy">
               {title}
             </h1>
-            <p className="text-primary opacity-50 font-albertSans">
+            <p className="opacity-50 text-primary font-albertSans">
               {discription}
             </p>
           </div>
           <div>
             <button
-              className="rounded-full px-6 py-3 border border-primary text-base"
+              className="px-6 py-3 text-base border rounded-full border-primary"
               onClick={onClick}
             >
               View Room

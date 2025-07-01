@@ -14,7 +14,11 @@ import {
   classicRoomsImage3,
   classicRoomsImage4,
   classicRoomsImage5,
-
+  premiumRoomsImage22,
+  premiumRoomsImage11,
+  premiumRoomsImage13,
+  premiumRoomsImage14,
+  premiumRoomsImage15,
 } from "./assets";
 
 import sessionImage from "../../assets/imageFour.jpg";
@@ -40,6 +44,7 @@ interface Room {
   sesstion: SessionMorning;
   anotherRoomOne: AnotherRoom;
   anotherRoomTwo: AnotherRoom;
+  anotherRoomThree: AnotherRoom;
 }
 interface RoomData {
   [key: string]: Room;
@@ -94,6 +99,14 @@ export const roomData: RoomData = {
       image: classicRoomsImage1,
       navigate: "/rooms/classic-rooms",
     },
+    anotherRoomThree: {
+      titlestr: "ESSENTIAL",
+      roomType: "Premium Rooms",
+      discription:
+        "An economic escape in a lush atmosphere. This is affordable luxury with no compromises.",
+      image: premiumRoomsImage22,
+      navigate: "/rooms/premium-rooms",
+    },
   },
   "deluxe-heritage-rooms": {
     imageOne: deluxeHeritageRoomsImage1,
@@ -114,7 +127,6 @@ export const roomData: RoomData = {
         "An economic escape in a lush atmosphere. This is affordable luxury with no compromises.",
       image: duluxeRoomsImage1,
       navigate: "/rooms/deluxe-rooms",
-      
     },
     anotherRoomTwo: {
       titlestr: "ESSENTIAL",
@@ -123,6 +135,14 @@ export const roomData: RoomData = {
         "An economic escape in a lush atmosphere. This is affordable luxury with no compromises.",
       image: classicRoomsImage1,
       navigate: "/rooms/classic-rooms",
+    },
+    anotherRoomThree: {
+      titlestr: "ESSENTIAL",
+      roomType: "Premium Rooms",
+      discription:
+        "An economic escape in a lush atmosphere. This is affordable luxury with no compromises.",
+      image: premiumRoomsImage22,
+      navigate: "/rooms/premium-rooms",
     },
   },
   "classic-rooms": {
@@ -147,15 +167,59 @@ export const roomData: RoomData = {
     },
     anotherRoomTwo: {
       titlestr: "ESSENTIAL",
-      roomType: "Premium Rooms",
+      roomType: "Deluxe Rooms",
       discription:
         "An economic escape in a lush atmosphere. This is affordable luxury with no compromises.",
       image: duluxeRoomsImage1,
       navigate: "/rooms/deluxe-rooms",
     },
+    anotherRoomThree: {
+      titlestr: "ESSENTIAL",
+      roomType: "Premium Rooms",
+      discription:
+        "An economic escape in a lush atmosphere. This is affordable luxury with no compromises.",
+      image: premiumRoomsImage22,
+      navigate: "/rooms/premium-rooms",
+    },
+  },
+  "premium-rooms": {
+    imageOne: premiumRoomsImage22,
+    imageTwo: premiumRoomsImage11,
+    imageThree: premiumRoomsImage13,
+    imageFour: premiumRoomsImage14,
+    imageFive: premiumRoomsImage15,
+    sesstion: {
+      titile: "Good Morning, Sunshine.",
+      subTitlestr:
+        "Wake up to the soothing melodies of chirping birds and the warm embrace of sunlight, surrounded by serene greenery and breathtaking views of Wayanad’s natural beauty.",
+      image: sessionImage,
+    },
+    anotherRoomOne: {
+      titlestr: "ESSENTIAL",
+      roomType: "Deluxe Heritage Rooms",
+      discription:
+        "An economic escape in a lush atmosphere. This is affordable luxury with no compromises.",
+      image: deluxeHeritageRoomsImage1,
+      navigate: "/rooms/deluxe-heritage-rooms",
+    },
+    anotherRoomTwo: {
+      titlestr: "ESSENTIAL",
+      roomType: "Deluxe Room",
+      discription:
+        "An economic escape in a lush atmosphere. This is affordable luxury with no compromises.",
+      image: duluxeRoomsImage1,
+      navigate: "/rooms/deluxe-rooms",
+    },
+    anotherRoomThree: {
+      titlestr: "ESSENTIAL",
+      roomType: "Classic Rooms",
+      discription:
+        "An economic escape in a lush atmosphere. This is affordable luxury with no compromises.",
+      image: classicRoomsImage1,
+      navigate: "/rooms/classic-rooms",
+    },
   },
 };
-
 
 // rooms/classicRooms.ts
 export const classicRooms = {
@@ -167,9 +231,9 @@ export const classicRooms = {
     "Free parking on premises",
     "WIFI",
     "Washine machine",
-    "Dedicated workspace"
+    "Dedicated workspace",
   ],
-  pricePerNight: 3500,
+  pricePerNight: 3000,
   priceNote: "Rates are twin share basis.",
   checkIn: "12:00 PM",
   checkOut: "10:00 AM",
@@ -177,17 +241,17 @@ export const classicRooms = {
   cancellationPolicy: [
     "Reservations canceled 30 days prior to the date of arrival: 50% refund",
     "Reservations canceled 15 days or less before arrival: No refund",
-    "For cancellations due to natural or other reasons, the advance payment will be retained for your next visit."
+    "For cancellations due to natural or other reasons, the advance payment will be retained for your next visit.",
   ],
   extraPerson: {
-    note: "For Extra Person: ₹800/-",
+    note: "For Extra Person: ₹1000/-",
     rules: [
       "Children aged 10 years and above: Considered as adults.",
-      "Children aged 5–10 years: Chargeable as per the applicable rates."
-    ]
+      "Children aged 5–10 years: Chargeable as per the applicable rates.",
+    ],
   },
   bookingButtonText: "Book Now",
-  bookingButtonLink: "/booking"
+  bookingButtonLink: "/booking",
 };
 
 // rooms/classicRooms.ts
@@ -200,7 +264,7 @@ export const deluxeHeritageRooms = {
     "Free parking on premises",
     "WIFI",
     "Washine machine",
-    "Dedicated workspace"
+    "Dedicated workspace",
   ],
   pricePerNight: 4000,
   priceNote: "Rates are twin share basis.",
@@ -210,17 +274,17 @@ export const deluxeHeritageRooms = {
   cancellationPolicy: [
     "Reservations canceled 30 days prior to the date of arrival: 50% refund",
     "Reservations canceled 15 days or less before arrival: No refund",
-    "For cancellations due to natural or other reasons, the advance payment will be retained for your next visit."
+    "For cancellations due to natural or other reasons, the advance payment will be retained for your next visit.",
   ],
   extraPerson: {
-    note: "For Extra Person: ₹800/-",
+    note: "For Extra Person: ₹1250/-",
     rules: [
       "Children aged 10 years and above: Considered as adults.",
-      "Children aged 5–10 years: Chargeable as per the applicable rates."
-    ]
+      "Children aged 5–10 years: Chargeable as per the applicable rates.",
+    ],
   },
   bookingButtonText: "Book Now",
-  bookingButtonLink: "/booking"
+  bookingButtonLink: "/booking",
 };
 
 // rooms/classicRooms.ts
@@ -232,8 +296,41 @@ export const deluxeRooms = {
   offers: [
     "Free parking on premises",
     "WIFI",
+    "Washing machine",
+    "Dedicated workspace",
+  ],
+  pricePerNight: 3500,
+  priceNote: "Rates are twin share basis.",
+  checkIn: "12:00 PM",
+  checkOut: "10:00 AM",
+  cancellationPolicyTitle: "Cancellation Policy",
+  cancellationPolicy: [
+    "Reservations canceled 30 days prior to the date of arrival: 50% refund",
+    "Reservations canceled 15 days or less before arrival: No refund",
+    "For cancellations due to natural or other reasons, the advance payment will be retained for your next visit.",
+  ],
+  extraPerson: {
+    note: "For Extra Person: ₹1250/-",
+    rules: [
+      "Children aged 10 years and above: Considered as adults.",
+      "Children aged 5–10 years: Chargeable as per the applicable rates.",
+    ],
+  },
+  bookingButtonText: "Book Now",
+  bookingButtonLink: "/booking",
+};
+
+// rooms/premiumRooms.ts
+export const premiumRooms = {
+  roomType: "Premium Rooms",
+  description:
+    "Premium rooms, which have been carefully chosen for their breathtaking scenic views and a wide range of amenities, are an affordable way to escape to a lush environment.",
+  offersTitle: "What this place offers",
+  offers: [
+    "Free parking on premises",
+    "WIFI",
     "Washine machine",
-    "Dedicated workspace"
+    "Dedicated workspace",
   ],
   pricePerNight: 4000,
   priceNote: "Rates are twin share basis.",
@@ -243,21 +340,22 @@ export const deluxeRooms = {
   cancellationPolicy: [
     "Reservations canceled 30 days prior to the date of arrival: 50% refund",
     "Reservations canceled 15 days or less before arrival: No refund",
-    "For cancellations due to natural or other reasons, the advance payment will be retained for your next visit."
+    "For cancellations due to natural or other reasons, the advance payment will be retained for your next visit.",
   ],
   extraPerson: {
-    note: "For Extra Person: ₹800/-",
+    note: "For Extra Person: ₹1500/-",
     rules: [
       "Children aged 10 years and above: Considered as adults.",
-      "Children aged 5–10 years: Chargeable as per the applicable rates."
-    ]
+      "Children aged 5–10 years: Chargeable as per the applicable rates.",
+    ],
   },
   bookingButtonText: "Book Now",
-  bookingButtonLink: "/booking"
+  bookingButtonLink: "/booking",
 };
 
 export const roomDataMap: Record<string, RoomContent> = {
   "classic-rooms": classicRooms,
   "deluxe-heritage-rooms": deluxeHeritageRooms,
-  "deluxe-rooms": deluxeRooms
+  "deluxe-rooms": deluxeRooms,
+  "premium-rooms": premiumRooms,
 };
