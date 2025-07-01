@@ -109,7 +109,7 @@ const PhoneHeader = ({ headerColor }: { headerColor?: "white" | "black" }) => {
                 <li><Link to="/about" className="text-lg font-medium" onClick={toggleSidebar}>About Us</Link></li>
                 <li><Link to="/rooms" className="text-lg font-medium" onClick={toggleSidebar}>Rooms</Link></li>
                 <li><Link to="/gallery" className="text-lg font-medium" onClick={toggleSidebar}>Gallery</Link></li>
-                <li><Link to="/attractions" className="text-lg font-medium" onClick={toggleSidebar}>Wayanad</Link></li>
+                <li><Link to="/wayanad" className="text-lg font-medium" onClick={toggleSidebar}>Wayanad</Link></li>
                 <li><Link to="/contact" className="text-lg font-medium" onClick={toggleSidebar}>Contact Us</Link></li>
               </ul>
             </div>
