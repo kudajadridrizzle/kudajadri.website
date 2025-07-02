@@ -123,7 +123,9 @@ const PhoneHeader = ({ headerColor }: { headerColor?: "white" | "black" }) => {
   };
 
   return (
-    <div className="flex justify-between p-4 sm:hidden">
+    <div className={`flex justify-between p-4 sm:hidden ${
+              isSidebarOpen ? "bg-[#292626]" : "bg-transparent"
+            }`}>
       <div>
         <img
           src={headerColor === "black" ? MenuBlackIcon : menuIcon}
@@ -149,57 +151,73 @@ const PhoneHeader = ({ headerColor }: { headerColor?: "white" | "black" }) => {
         />
       </div>
       {isSidebarOpen && (
-        <div className="fixed inset-0 z-50 flex">
+        <div className="fixed inset-0 z-50 flex">      
           <div
-            className="fixed inset-0 transition-opacity duration-300 bg-black bg-opacity-50"
-            onClick={toggleSidebar}
-          ></div>
-          <div
-            className={`w-64 bg-white p-4 transform transition-all duration-500 ease-in-out shadow-lg ${
+            className={`w-full mt-[60px] bg-[#292626] p-4 transform transition-all duration-500 ease-in-out shadow-lg flex flex-col gap-[48px] justify-center ${
               isSidebarOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
             }`}
           >
-            <div className="flex justify-end">
-              <button
-                onClick={toggleSidebar}
-                className="text-lg font-semibold text-black focus:outline-none"
-              >
-                Close
-              </button>
-            </div>
             <div className="text-black">
-              <ul className="mt-6 space-y-4">
-                <li>
-                  <Link to="/" className="text-lg font-medium" onClick={toggleSidebar}>
+              <ul className="flex flex-col gap-[12px]">
+                <li className="text-center">
+                  <Link to="/" className="text-[32px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-white" onClick={toggleSidebar}>
                     Wayanad Homestays
                   </Link>
                 </li>
-                <li>
-                  <Link to="/about" className="text-lg font-medium" onClick={toggleSidebar}>
+                <li className="text-center">
+                  <Link to="/about" className="text-[32px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-white" onClick={toggleSidebar}>
                     About Us
                   </Link>
                 </li>
-                <li>
-                  <Link to="/rooms" className="text-lg font-medium" onClick={toggleSidebar}>
+                <li className="text-center">
+                  <Link to="/rooms" className="text-[32px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-white" onClick={toggleSidebar}>
                     Rooms
                   </Link>
                 </li>
-                <li>
-                  <Link to="/gallery" className="text-lg font-medium" onClick={toggleSidebar}>
+                <li className="text-center">
+                  <Link to="/rooms/classic-rooms" className="text-[32px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-[#808080]" onClick={toggleSidebar}>
+                    Classic Rooms
+                  </Link>
+                </li>
+                <li className="text-center">
+                  <Link to="/rooms/deluxe-rooms" className="text-[32px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-[#808080]" onClick={toggleSidebar}>
+                    Deluxe Rooms
+                  </Link>
+                </li>
+                <li className="text-center">
+                  <Link to="/rooms/deluxe-heritage-rooms" className="text-[32px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-[#808080]" onClick={toggleSidebar}>
+                    Deluxe Heritage Rooms
+                  </Link>
+                </li>
+                <li className="text-center">
+                  <Link to="/rooms/premium-rooms" className="text-[32px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-[#808080]" onClick={toggleSidebar}>
+                    Premium Rooms
+                  </Link>
+                </li>
+                <li className="text-center">
+                  <Link to="/gallery" className="text-[32px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-white  " onClick={toggleSidebar}>
                     Gallery
                   </Link>
                 </li>
-                <li>
-                  <Link to="/wayanad" className="text-lg font-medium" onClick={toggleSidebar}>
+                <li className="text-center">
+                  <Link to="/wayanad" className="text-[32px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-white" onClick={toggleSidebar}>
                     Wayanad
                   </Link>
                 </li>
-                <li>
-                  <Link to="/contact" className="text-lg font-medium" onClick={toggleSidebar}>
+                <li className="text-center">
+                  <Link to="/contact" className="text-[32px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-white" onClick={toggleSidebar}>
                     Contact Us
                   </Link>
                 </li>
               </ul>
+            </div>
+            <div className="flex justify-center">
+              <button
+                onClick={toggleSidebar}
+                className="text-lg font-semibold text-black focus:outline-none w-[44px] h-[44px]"
+              >
+                <span className="material-icons text-[44px] text-white">close</span>
+              </button>
             </div>
           </div>
         </div>
