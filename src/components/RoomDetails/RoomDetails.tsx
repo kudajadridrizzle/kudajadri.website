@@ -18,6 +18,28 @@ const RoomDetails = () => {
     const defaultImage = roomData['classic-rooms'].imageOne;
     const roomImage = roomData[id || 'classic-rooms']?.imageOne || defaultImage;
 
+    // Custom meta for specific rooms
+    if (id === 'deluxe-heritage-rooms') {
+      return {
+        title: 'Heritage Homestay in Wayanad: Traditional Stay with Modern Comfort',
+        description: 'Experience a heritage homestay in Wayanad with traditional charm and modern amenities. Enjoy a peaceful stay surrounded by nature and rich culture.',
+        keywords: 'heritage homestay wayanad, traditional stay wayanad, modern comfort, kudajadri homestay',
+        ogTitle: 'Heritage Homestay in Wayanad: Traditional Stay with Modern Comfort',
+        ogDescription: 'Experience a heritage homestay in Wayanad with traditional charm and modern amenities. Enjoy a peaceful stay surrounded by nature and rich culture.',
+        ogImage: roomImage
+      };
+    }
+    if (id === 'deluxe-rooms') {
+      return {
+        title: 'Wayanad Cottages: Private Cottages in Wayanad for Family',
+        description: 'Stay at our Wayanad cottages designed for families. Our private cottages in Wayanad offer comfort, scenic views, and a peaceful holiday experience.',
+        keywords: 'wayanad cottages, private cottages wayanad, family stay wayanad, kudajadri homestay',
+        ogTitle: 'Wayanad Cottages: Private Cottages in Wayanad for Family',
+        ogDescription: 'Stay at our Wayanad cottages designed for families. Our private cottages in Wayanad offer comfort, scenic views, and a peaceful holiday experience.',
+        ogImage: roomImage
+      };
+    }
+
     return {
       title: `${roomContent.roomType} -  Homestay Wayanad`,
       description: `${roomContent.description} Book your stay at  Homestay in Wayanad.`,
