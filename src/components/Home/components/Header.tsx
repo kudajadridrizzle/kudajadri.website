@@ -175,22 +175,22 @@ const PhoneHeader = ({ headerColor }: { headerColor?: "white" | "black" }) => {
                   </Link>
                 </li>
                 <li className="text-center">
-                  <Link to="/rooms/classic-rooms" className="text-[32px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-[#808080]" onClick={toggleSidebar}>
+                  <Link to="/rooms/classic-rooms" className="text-[24px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-[#808080]" onClick={toggleSidebar}>
                     Classic Rooms
                   </Link>
                 </li>
                 <li className="text-center">
-                  <Link to="/rooms/deluxe-rooms" className="text-[32px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-[#808080]" onClick={toggleSidebar}>
+                  <Link to="/rooms/deluxe-rooms" className="text-[24px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-[#808080]" onClick={toggleSidebar}>
                     Deluxe Rooms
                   </Link>
                 </li>
                 <li className="text-center">
-                  <Link to="/rooms/deluxe-heritage-rooms" className="text-[32px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-[#808080]" onClick={toggleSidebar}>
+                  <Link to="/rooms/deluxe-heritage-rooms" className="text-[24px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-[#808080]" onClick={toggleSidebar}>
                     Deluxe Heritage Rooms
                   </Link>
                 </li>
                 <li className="text-center">
-                  <Link to="/rooms/premium-rooms" className="text-[32px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-[#808080]" onClick={toggleSidebar}>
+                  <Link to="/rooms/premium-rooms" className="text-[24px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-[#808080]" onClick={toggleSidebar}>
                     Premium Rooms
                   </Link>
                 </li>
