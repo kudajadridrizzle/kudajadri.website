@@ -17,9 +17,9 @@ const AnotherRoomSession = () => {
             {id && <img src={roomData[id]?.anotherRoomOne?.image} alt="" className="mobile:w-full" />}
           </div>
           <div className="flex flex-col gap-4">
-            <span className="text-[#000] text-lg font-albertSans">
+            {/* <span className="text-[#000] text-lg font-albertSans">
               {id && roomData[id]?.anotherRoomOne?.titlestr}
-            </span>
+            </span> */}
             <div className="flex flex-col gap-3">
               <span className="sm:text-4xl mobile:text-[28px] font-light text-primary font-ivy">
                 {id && roomData[id]?.anotherRoomOne.roomType}
@@ -44,9 +44,9 @@ const AnotherRoomSession = () => {
             <img src={id && roomData[id]?.anotherRoomTwo.image} alt="" className="mobile:w-full" />
           </div>
           <div className="flex flex-col gap-3">
-            <span className="text-[#000] text-lg font-albertSans">
+            {/* <span className="text-[#000] text-lg font-albertSans">
               {id && roomData[id]?.anotherRoomTwo.titlestr}
-            </span>
+            </span> */}
             <span className="sm:text-4xl mobile:text-[28px] font-light text-primary font-ivy">
               {id && roomData[id]?.anotherRoomTwo.roomType}
             </span>
@@ -69,9 +69,9 @@ const AnotherRoomSession = () => {
             <img src={id && roomData[id]?.anotherRoomThree.image} alt="" className="mobile:w-full" />
           </div>
           <div className="flex flex-col gap-3">
-            <span className="text-[#000] text-lg font-albertSans">
+            {/* <span className="text-[#000] text-lg font-albertSans">
               {id && roomData[id]?.anotherRoomThree.titlestr}
-            </span>
+            </span> */}
             <span className="sm:text-4xl mobile:text-[28px] font-light text-primary font-ivy">
               {id && roomData[id]?.anotherRoomThree.roomType}
             </span>
