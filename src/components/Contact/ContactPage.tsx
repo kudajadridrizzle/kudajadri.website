@@ -30,17 +30,44 @@ export const ContactPage = () => {
     }
 
     const encodedMessage = encodeURIComponent(
-      `Hello! I'd like to get in touch with you.\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`);
+      `Hello! I'd like to get in touch with you.\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`
+    );
 
-    const url = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+    const phone = whatsappNumber.replace(/[^0-9]/g, '');
+    const url = `https://wa.me/${phone}?text=${encodedMessage}`;
     window.open(url, "_blank");
   };
 
   return (
     <div className="sm:mt-[90px] mobile:mt-[52px]">
       <Helmet>
+        {/* Browser Tab Title */}
         <title>Online Booking & Reservation of Wayanad Homestays – Easy & Secure</title>
+        
+        {/* SEO Meta Tags */}
         <meta name="description" content="Online booking and reservation of Wayanad homestays with instant confirmation. Find cozy and scenic stays perfect for families and couples." />
+        <meta name="keywords" content="contact kudajadri homestay, wayanad homestay contact, kudajadri booking, wayanad accommodation contact" />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Kudajadri Homestay" />
+        
+        {/* Open Graph Meta Tags for Facebook/WhatsApp */}
+        <meta property="og:title" content="Online Booking & Reservation of Wayanad Homestays – Easy & Secure" />
+        <meta property="og:description" content="Online booking and reservation of Wayanad homestays with instant confirmation. Find cozy and scenic stays perfect for families and couples." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={window.location.href} />
+        <meta property="og:site_name" content="Kudajadri Homestay" />
+        <meta property="og:locale" content="en_US" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Online Booking & Reservation of Wayanad Homestays – Easy & Secure" />
+        <meta name="twitter:description" content="Online booking and reservation of Wayanad homestays with instant confirmation. Find cozy and scenic stays perfect for families and couples." />
+        <meta name="twitter:site" content="@kudajadrihomestay" />
+        
+        {/* Additional Meta Tags */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="canonical" href={window.location.href} />
       </Helmet>
       {/* Header */}
       <Header type="black" />
@@ -144,11 +171,10 @@ export const ContactPage = () => {
               </span>
               <span className="font-ivy text-[44px] text-[#000]">Write</span>
               <div className="flex flex-col gap-3.5">
-                <TextField label="Name" value={form.name} onChange={handleChange("name")} />
-                <TextField label="Email" value={form.email} onChange={handleChange("email")} />
-                <TextField label="Message" value={form.message} onChange={handleChange("message")} />
+                <TextField label="Name" value={form.name} onChange={handleChange("name")} placeholder="Your Name" />
+                <TextField label="Email" value={form.email} onChange={handleChange("email")} placeholder="Your Email" />
+                <TextField label="Message" value={form.message} onChange={handleChange("message")} placeholder="Your Message" />
                 <div>
-
                   <button className="px-6 py-3 rounded-full bg-primary text-[#fff] font-albertSans font-medium" onClick={handleSubmit}>
                     Submit
                   </button>
@@ -158,7 +184,7 @@ export const ContactPage = () => {
           </div>
         </div>
       </div>
-        <Footer />
+      <Footer />
     </div>
   );
 };

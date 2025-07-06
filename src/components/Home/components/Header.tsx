@@ -123,12 +123,10 @@ const PhoneHeader = ({ headerColor }: { headerColor?: "white" | "black" }) => {
   };
 
   return (
-    <div className={`flex justify-between p-4 sm:hidden ${
-              isSidebarOpen ? "bg-[#292626]" : "bg-transparent"
-            }`}>
+    <div className={`flex justify-between p-4 sm:hidden ${isSidebarOpen ? "bg-[#292626]" : ""}`}>
       <div>
         <img
-          src={headerColor === "black" ? MenuBlackIcon : menuIcon}
+          src={headerColor === "black" && !isSidebarOpen ? MenuBlackIcon : menuIcon}
           alt="Menu"
           onClick={toggleSidebar}
           className="cursor-pointer"
@@ -136,7 +134,7 @@ const PhoneHeader = ({ headerColor }: { headerColor?: "white" | "black" }) => {
       </div>
       <div>
         <img
-          src={headerColor === "black" ? HomeBlackIcon : logoIcon}
+          src={headerColor === "black" && !isSidebarOpen ? HomeBlackIcon : logoIcon}
           alt="Home"
           onClick={() => navigate("/")}
           className="cursor-pointer"
@@ -144,16 +142,16 @@ const PhoneHeader = ({ headerColor }: { headerColor?: "white" | "black" }) => {
       </div>
       <div>
         <img
-          src={headerColor === "black" ? whatAppBlackIcon : whatAppIcon}
+          src={headerColor === "black" && !isSidebarOpen ? whatAppBlackIcon : whatAppIcon}
           alt="WhatsApp"
           onClick={openWhatsApp}
           className="cursor-pointer"
         />
       </div>
       {isSidebarOpen && (
-        <div className="fixed inset-0 z-50 flex">      
+        <div className="fixed inset-0 z-50 flex mt-[60px]">      
           <div
-            className={`w-full mt-[60px] bg-[#292626] p-4 transform transition-all duration-500 ease-in-out shadow-lg flex flex-col gap-[48px] justify-center ${
+            className={`w-full bg-[#292626] p-4 transform transition-all duration-500 ease-in-out shadow-lg flex flex-col gap-[48px] justify-center ${
               isSidebarOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
             }`}
           >
