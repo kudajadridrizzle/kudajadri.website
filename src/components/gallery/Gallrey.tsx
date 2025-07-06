@@ -9,8 +9,12 @@ import Faq  from "../Home/components/Faq";
 
 export const Gallrey = () => {
   usePageMetadata({
-    title: "Explore Wayanadad Homestay Photos – Cozy & Picturesque Accommodations",
-    description: "Wayanad homestays photo gallery showcasing beautiful stays, scenic views, and cozy accommodations. Discover the perfect homestay experience in Wayanad for families and couples."
+    title: "Explore Wayanad Homestay Photos – Cozy & Picturesque Accommodations",
+    description: "Wayanad homestays photo gallery showcasing beautiful stays, scenic views, and cozy accommodations. Discover the perfect homestay experience in Wayanad for families and couples.",
+    keywords: "wayanad homestay photos, accommodation gallery, scenic views, cozy stays, kudajadri gallery",
+    ogImage: "/aboutHero.jpg",
+    ogUrl: window.location.href,
+    twitterImage: "/aboutHero.jpg"
   });
 
   return (

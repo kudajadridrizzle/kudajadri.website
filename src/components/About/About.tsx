@@ -11,7 +11,11 @@ const About = () => {
   usePageMetadata({
     title: `Kalpetta homestays: Top homestay in Kalpetta for family & couple`,
     description: `Kalpetta homestays provide a peaceful retreat for families and couples. 
-    Discover the best homestays in Kalpetta with modern amenities and authentic experiences.`
+    Discover the best homestays in Kalpetta with modern amenities and authentic experiences.`,
+    keywords: "kalpetta homestays, best homestay kalpetta, family accommodation, couple stays, kudajadri homestay",
+    ogImage: "/aboutHero.jpg",
+    ogUrl: window.location.href,
+    twitterImage: "/aboutHero.jpg"
   });
 
   return (

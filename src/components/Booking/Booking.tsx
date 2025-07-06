@@ -2,8 +2,18 @@ import { useState } from "react";
 import { TextField } from "../Contact/ContactPage";
 import { Header } from "../Home/components/Header";
 import bookingImage from "../../../public/aboutHero.jpg";
+import { usePageMetadata } from "../../hooks/usePageMetadata";
 
 const Booking = () => {
+  usePageMetadata({
+    title: "Book Your Stay | Kudajadri Homestay Wayanad - Easy Online Booking",
+    description: "Book your stay at Kudajadri Homestay in Wayanad with instant confirmation. Easy online booking for families and couples. Get the best rates and secure your perfect accommodation.",
+    keywords: "book kudajadri homestay, wayanad accommodation booking, online reservation, instant confirmation",
+    ogImage: "/aboutHero.jpg",
+    ogUrl: window.location.href,
+    twitterImage: "/aboutHero.jpg"
+  });
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -50,9 +60,9 @@ Message: ${message}
                   Book Your Stay
                 </span>
                 <span className="text-secondary sm:text-xl font-albertSans">
-                  Fill the form to book your stay, and we’ll respond within 15
+                  Fill the form to book your stay, and we'll respond within 15
                   minutes. For queries, feedback, or suggestions, include
-                  details in your message. We’re here to assist!
+                  details in your message. We're here to assist!
                 </span>
               </div>
               <div className="flex flex-col gap-2.5">

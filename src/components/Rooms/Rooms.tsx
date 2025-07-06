@@ -12,6 +12,9 @@ const About = () => {
     keywords: 'wayanad accommodations, homestays, cottages, family rooms, swimming pool, comfort, relaxation',
     ogTitle: 'Wayanad Accommodations: Homestays, Cottages, and Family Rooms',
     ogDescription: 'Discover peaceful accommodations in Wayanad with cozy homestays, spacious cottages with swimming pool, and family rooms designed for comfort and relaxation',
+    ogImage: "/aboutHero.jpg",
+    ogUrl: window.location.href,
+    twitterImage: "/aboutHero.jpg"
   });
   return (
     <div>

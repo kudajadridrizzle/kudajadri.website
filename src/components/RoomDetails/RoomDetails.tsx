@@ -26,7 +26,9 @@ const RoomDetails = () => {
         keywords: 'heritage homestay wayanad, traditional stay wayanad, modern comfort, kudajadri homestay',
         ogTitle: 'Heritage Homestay in Wayanad: Traditional Stay with Modern Comfort',
         ogDescription: 'Experience a heritage homestay in Wayanad with traditional charm and modern amenities. Enjoy a peaceful stay surrounded by nature and rich culture.',
-        ogImage: roomImage
+        ogImage: roomImage,
+        ogUrl: window.location.href,
+        twitterImage: roomImage
       };
     }
     if (id === 'deluxe-rooms') {
@@ -36,7 +38,9 @@ const RoomDetails = () => {
         keywords: 'wayanad cottages, private cottages wayanad, family stay wayanad, kudajadri homestay',
         ogTitle: 'Wayanad Cottages: Private Cottages in Wayanad for Family',
         ogDescription: 'Stay at our Wayanad cottages designed for families. Our private cottages in Wayanad offer comfort, scenic views, and a peaceful holiday experience.',
-        ogImage: roomImage
+        ogImage: roomImage,
+        ogUrl: window.location.href,
+        twitterImage: roomImage
       };
     }
 
@@ -46,7 +50,9 @@ const RoomDetails = () => {
       keywords: `${roomContent.roomType.toLowerCase()} wayanad, homestay wayanad, accommodation wayanad, kudajadri homestay`,
       ogTitle: `${roomContent.roomType} -  Homestay`,
       ogDescription: `Experience luxury with scenic views in Wayanad. Starting at ₹${roomContent.pricePerNight} per night.`,
-      ogImage: roomImage
+      ogImage: roomImage,
+      ogUrl: window.location.href,
+      twitterImage: roomImage
     };
   };
 

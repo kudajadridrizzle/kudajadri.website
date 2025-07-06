@@ -16,7 +16,11 @@ import Faq from "./components/Faq";
 const Home = () => {
   usePageMetadata({
     title: "Wayanad homestays: Best homestays in Wayanad for families & couples",
-    description: "Wayanad homestays offer the perfect getaway for families and couples with cozy, comfortable accommodations. Explore the best homestays in Wayanad for a memorable stay."
+    description: "Wayanad homestays offer the perfect getaway for families and couples with cozy, comfortable accommodations. Explore the best homestays in Wayanad for a memorable stay.",
+    keywords: "wayanad homestays, best homestay wayanad, family accommodation, couple stays, kudajadri homestay",
+    ogImage: "/aboutHero.jpg",
+    ogUrl: window.location.href,
+    twitterImage: "/aboutHero.jpg"
   });
 
   return (
