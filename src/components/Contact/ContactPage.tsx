@@ -7,7 +7,6 @@ import { Header } from "../Home/components/Header";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 
-
 export const ContactPage = () => {
   const [form, setForm] = useState({
     name: "",
@@ -50,7 +49,7 @@ export const ContactPage = () => {
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Kudajadri Homestay" />
         
-        {/* Open Graph Meta Tags for Facebook/WhatsApp */}
+        {/* Open Graph Meta Tags */}
         <meta property="og:title" content="Online Booking & Reservation of Wayanad Homestays – Easy & Secure" />
         <meta property="og:description" content="Online booking and reservation of Wayanad homestays with instant confirmation. Find cozy and scenic stays perfect for families and couples." />
         <meta property="og:type" content="website" />
@@ -69,7 +68,7 @@ export const ContactPage = () => {
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="canonical" href={window.location.href} />
       </Helmet>
-      {/* Header */}
+
       <Header type="black" />
 
       {/* Main Content */}
@@ -188,7 +187,6 @@ export const ContactPage = () => {
     </div>
   );
 };
-
 
 interface TextFieldProps {
   label: string;
