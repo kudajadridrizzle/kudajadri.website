@@ -10,11 +10,14 @@ import { roomData, classicRooms, deluxeRooms, deluxeHeritageRooms, premiumRooms 
 
 const RoomDetails = () => {
   const { id } = useParams();
-  const roomContent = id === 'classic-rooms' ? classicRooms :
-                     id === 'deluxe-heritage-rooms' ? deluxeHeritageRooms :
-                     id === 'deluxe-rooms' ? deluxeRooms : 
-                     id === 'premium-rooms' ? premiumRooms : classicRooms;
-  
+
+  const roomContent =
+    id === 'classic-rooms' ? classicRooms :
+    id === 'deluxe-heritage-rooms' ? deluxeHeritageRooms :
+    id === 'deluxe-rooms' ? deluxeRooms :
+    id === 'premium-rooms' ? premiumRooms :
+    classicRooms;
+
   const getMetaContent = () => {
     const defaultImage = roomData['classic-rooms'].imageOne;
     const roomImage = roomData[id || 'classic-rooms']?.imageOne || defaultImage;
@@ -30,6 +33,7 @@ const RoomDetails = () => {
         ogImage: roomImage
       };
     }
+
     if (id === 'deluxe-rooms') {
       return {
         title: 'Wayanad Cottages: Private Cottages in Wayanad for Family',
@@ -37,6 +41,28 @@ const RoomDetails = () => {
         keywords: 'wayanad cottages, private cottages wayanad, family stay wayanad, kudajadri homestay',
         ogTitle: 'Wayanad Cottages: Private Cottages in Wayanad for Family',
         ogDescription: 'Stay at our Wayanad cottages designed for families. Our private cottages in Wayanad offer comfort, scenic views, and a peaceful holiday experience.',
+        ogImage: roomImage
+      };
+    }
+
+    if (id === 'classic-rooms') {
+      return {
+        title: 'Afforfdable homestay in Wayanad: Best budget Wayanad homestay',
+        description: 'Best Budget homestay in Wayanad with affordable rooms for families and travelers. Discover the best low-cost Wayanad homestays with comfort and convenience.',
+        keywords: 'wayanad cottages, private cottages wayanad, family stay wayanad, kudajadri homestay',
+        ogTitle: 'Afforfdable homestay in Wayanad: Best budget Wayanad homestay',
+        ogDescription: 'Best Budget homestay in Wayanad with affordable rooms for families and travelers. Discover the best low-cost Wayanad homestays with comfort and convenience.',
+        ogImage: roomImage
+      };
+    }
+
+    if (id === 'premium-rooms') {
+      return {
+        title: 'Premium homestay in Wayanad: Best luxury Wayanad homestays',
+        description: '"Best Premium homestay in Wayanad offering deluxe and luxury stays with top-tier amenities. Enjoy elegant rooms, scenic views, and a peaceful retreat in Wayanad',
+        keywords: 'wayanad cottages, private cottages wayanad, family stay wayanad, kudajadri homestay',
+        ogTitle: 'Premium homestay in Wayanad: Best luxury Wayanad homestays',
+        ogDescription: '"Best Premium homestay in Wayanad offering deluxe and luxury stays with top-tier amenities. Enjoy elegant rooms, scenic views, and a peaceful retreat in Wayanad',
         ogImage: roomImage
       };
     }
@@ -58,13 +84,13 @@ const RoomDetails = () => {
       <Helmet>
         {/* Browser Tab Title */}
         <title>{metaContent.title}</title>
-        
+
         {/* SEO Meta Tags */}
         <meta name="description" content={metaContent.description} />
         <meta name="keywords" content={metaContent.keywords} />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Kudajadri Homestay" />
-        
+
         {/* Open Graph Meta Tags for Facebook/WhatsApp */}
         <meta property="og:title" content={metaContent.ogTitle || metaContent.title} />
         <meta property="og:description" content={metaContent.ogDescription || metaContent.description} />
@@ -75,19 +101,20 @@ const RoomDetails = () => {
         <meta property="og:image" content={`${window.location.origin}${metaContent.ogImage}`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        
+
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={metaContent.ogTitle || metaContent.title} />
         <meta name="twitter:description" content={metaContent.ogDescription || metaContent.description} />
         <meta name="twitter:site" content="@kudajadrihomestay" />
         <meta name="twitter:image" content={`${window.location.origin}${metaContent.ogImage}`} />
-        
+
         {/* Additional Meta Tags */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="canonical" href={window.location.href} />
       </Helmet>
+
       <Header type="black" />
       <Hero />
       <RoomPriceSession />

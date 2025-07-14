@@ -251,7 +251,7 @@ export const classicRooms = {
     ],
   },
   bookingButtonText: "Book Now",
-  bookingButtonLink: "/booking",
+  bookingButtonLink: "/contact",
 };
 
 // rooms/classicRooms.ts
@@ -284,7 +284,7 @@ export const deluxeHeritageRooms = {
     ],
   },
   bookingButtonText: "Book Now",
-  bookingButtonLink: "/booking",
+  bookingButtonLink: "/contact",
 };
 
 // rooms/classicRooms.ts
@@ -317,7 +317,7 @@ export const deluxeRooms = {
     ],
   },
   bookingButtonText: "Book Now",
-  bookingButtonLink: "/booking",
+  bookingButtonLink: "/contact",
 };
 
 // rooms/premiumRooms.ts
@@ -350,7 +350,7 @@ export const premiumRooms = {
     ],
   },
   bookingButtonText: "Book Now",
-  bookingButtonLink: "/booking",
+  bookingButtonLink: "/contact",
 };
 
 export const roomDataMap: Record<string, RoomContent> = {
