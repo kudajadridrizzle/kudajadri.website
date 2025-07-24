@@ -12,6 +12,8 @@ import { FaqPage } from "./components/FAQ/Faq";
 import { TourPackages } from "./components/TourPackages/TourPackages";
 import FacilitiesPage from "./components/Facilities/FacilitiesPage";
 import { WayanadPage } from "./components/Wayanad/wayanadPage";
+import BlogList from "./components/Blog/BlogList";
+import BlogDetail from "./components/Blog/BlogDetail";
 
 const App = () => {
   return (
@@ -30,6 +32,8 @@ const App = () => {
         <Route path="/tour-packages" element={<TourPackages />} />
         <Route path="/facilities" element={<FacilitiesPage />} />
         <Route path="/wayanad" element={<WayanadPage />} />
+        <Route path="/blog" element={<BlogList />} />
+        <Route path="/blog/:slug" element={<BlogDetail />} />
         </Routes>
     </Router>
   );

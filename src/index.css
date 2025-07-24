@@ -26,3 +26,75 @@
 body{
   /* max-width:1600px */
 }
+
+/* Blog specific styles */
+.markdown-content {
+  @apply leading-relaxed text-gray-900;
+}
+
+.markdown-content h1 {
+  @apply mt-8 mb-6 text-3xl font-bold text-gray-900;
+}
+
+.markdown-content h2 {
+  @apply mt-6 mb-4 text-2xl font-semibold text-gray-900;
+}
+
+.markdown-content h3 {
+  @apply mt-5 mb-3 text-xl font-medium text-gray-900;
+}
+
+.markdown-content p {
+  @apply mb-4 leading-7 text-gray-700;
+}
+
+.markdown-content ul, .markdown-content ol {
+  @apply pl-6 mb-4;
+}
+
+.markdown-content li {
+  @apply mb-2 text-gray-700;
+}
+
+.markdown-content ul li {
+  @apply list-disc;
+}
+
+.markdown-content ol li {
+  @apply list-decimal;
+}
+
+.markdown-content blockquote {
+  @apply pl-4 my-4 italic text-gray-600 border-l-4 border-blue-500;
+}
+
+.markdown-content pre {
+  @apply p-4 mb-4 overflow-x-auto bg-gray-100 rounded-lg;
+}
+
+.markdown-content code {
+  @apply px-2 py-1 text-sm bg-gray-100 rounded;
+}
+
+.markdown-content img {
+  @apply h-auto max-w-full my-6 rounded-lg shadow-md;
+}
+
+.markdown-content a {
+  @apply text-blue-600 underline hover:text-blue-800;
+}
+
+/* Line clamp utilities for blog summaries */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
