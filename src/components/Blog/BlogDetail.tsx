@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { BlogPost, parseBlogMarkdown } from '../../helper/blogParser';
+import { Header } from '../Home/components/Header';
 
 const BlogDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -65,6 +66,7 @@ const BlogDetail: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Header />
       {/* Hero Section */}
       {blogPost.featuredImage && (
         <div className="relative bg-gray-900 h-96">
