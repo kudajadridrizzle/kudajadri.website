@@ -65,6 +65,7 @@ const Footer = () => {
             <div className="text-secondary font-albertSans sm:text-xl  flex flex-col gap-2">
               <Link to='/about'>About Us</Link>
               <Link to='/rooms'>Rooms</Link>
+              <Link to='/blog'>Blog</Link>
               <Link to='/gallery'>Gallery</Link>
               <Link to='/contact'>Contact Us</Link>
               <Link to='/tour-packages'>Tour Packages</Link>
