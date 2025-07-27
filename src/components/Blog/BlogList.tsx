@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BlogPost, parseBlogMarkdown } from '../../helper/blogParser';
-import Hero from './components/Hero';
+import { Header } from '../Home/components/Header';
+import Footer from '../Home/components/Footer';
+// Removed: import Hero from './components/Hero';
 
 const BlogList: React.FC = () => {
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
@@ -47,8 +49,10 @@ const BlogList: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen py-12 bg-gray-50">
-    <Hero/>
+    <>
+      <Header />
+      <div className="min-h-screen py-12 bg-gray-50">
+    {/* <Hero/> */}
       <div className="max-w-6xl px-4 mx-auto sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <h1 className="mb-4 text-4xl font-bold text-gray-900">Blog</h1>
@@ -137,7 +141,9 @@ const BlogList: React.FC = () => {
           </div>
         )}
       </div>
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 };
 
