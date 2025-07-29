@@ -36,7 +36,7 @@ const RoomDetails = () => {
 
     if (id === 'deluxe-rooms') {
       return {
-        title: 'Wayanad Cottages: Private Cottages in Wayanad for Family',
+        title: 'Wayanad Cottages: Private Cottages in Wayanad for Family, Groups',
         description: 'Stay at our Wayanad cottages designed for families. Our private cottages in Wayanad offer comfort, scenic views, and a peaceful holiday experience.',
         keywords: 'wayanad cottages, private cottages wayanad, family stay wayanad, kudajadri homestay',
         ogTitle: 'Wayanad Cottages: Private Cottages in Wayanad for Family',
