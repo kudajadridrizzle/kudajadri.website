@@ -1,5 +1,5 @@
 ---
-heading: KUDAJADRI DRIZZLE HOMESTAY, WAYANAD
+heading: KUDAJADRI DRIZZLE - The Best Homestays in Wayanad
 ---
 Kudajadri Drizzle Homestay is one of the most authentic **Wayanad homestays**, located in a charming 100-year-old traditional Jain Tharavadu. Nestled in a serene village, this heritage homestay offers a refreshing and peaceful escape for travelers seeking comfort and cultural connection.
 
