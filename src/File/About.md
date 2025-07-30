@@ -1,6 +1,5 @@
 ---
-heading: "Kudajadri Drizzle – #1 in Wayanad Homestays & Top Homestays in Wayanad
-  for Everyone"
+heading: "Kudajadri Drizzle – #1 in Wayanad Homestays & Top Homestays in Wayanad"
 ---
 ## **Wayanad Homestays with Heritage Charm and Modern Comfort**
 
