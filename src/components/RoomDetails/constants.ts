@@ -332,7 +332,7 @@ export const premiumRooms = {
     "Washine machine",
     "Dedicated workspace",
   ],
-  pricePerNight: 4000,
+  pricePerNight: 5000,
   priceNote: "Rates are twin share basis.",
   checkIn: "12:00 PM",
   checkOut: "10:00 AM",
