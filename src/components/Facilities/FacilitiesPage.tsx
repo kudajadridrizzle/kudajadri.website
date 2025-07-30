@@ -69,7 +69,7 @@ const FacilitiesPage = () => {
   return (
     <div>
       <Helmet>
-        <title>Swimming Pool Homestays in Wayanad: Best Facilities and Scenic Comfort</title>
+        <title>Swimming pool homestays in Wayanad: homestay with swimming pool</title>
         <meta
           name="description"
           content="Homestays in Wayanad with swimming pools offer the best facilities, comfort, and scenic views for a perfect relaxing getaway with family and friends."
@@ -80,7 +80,7 @@ const FacilitiesPage = () => {
         />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Kudajadri Homestay" />
-        <meta property="og:title" content="Swimming Pool Homestays in Wayanad: Best Facilities and Scenic Comfort" />
+        <meta property="og:title" content="Swimming pool homestays in Wayanad: homestay with swimming pool" />
         <meta
           property="og:description"
           content="Homestays in Wayanad with swimming pools offer the best facilities, comfort, and scenic views for a perfect relaxing getaway with family and friends."
@@ -95,7 +95,7 @@ const FacilitiesPage = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Swimming Pool Homestays in Wayanad: Best Facilities and Scenic Comfort"
+          content="Swimming pool homestays in Wayanad: homestay with swimming pool"
         />
         <meta
           name="twitter:description"
