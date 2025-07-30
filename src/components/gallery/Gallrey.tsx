@@ -4,7 +4,6 @@ import { HeroSession } from "./components/HeroSession";
 import { ImageSession } from "./components/ImageSession";
 import { ResponsiveImageSession } from "./components/ResponsiveImageSession";
 import { Helmet } from "react-helmet-async";
-import Faq from "../Home/components/Faq";
 
 export const Gallrey = () => {
   return (
@@ -75,7 +74,6 @@ export const Gallrey = () => {
           <ResponsiveImageSession />
         </div>
       </div>
-      <Faq />
       <Footer />
     </div>
   );
