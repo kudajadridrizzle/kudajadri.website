@@ -154,7 +154,7 @@ const RoomDetails = () => {
   };
 
   const metaContent = getMetaContent();
-  const faq = roomFAQs[id || 'classic-rooms'];
+  const faq = roomFAQs[id as keyof typeof roomFAQs || 'classic-rooms'];
 
   return (
     <div>
