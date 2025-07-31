@@ -15,9 +15,9 @@ const ReviewSession = () => {
         </div>
       </div>
       <div className="flex flex-col gap-2 items-center">
-        <h1 className="text-primary font-ivy sm:text-[44px] mobile:text-[32px] font-normal">
-          Guest favorite
-        </h1>
+        <h2 className="text-primary font-ivy sm:text-[44px] mobile:text-[32px] font-normal">
+          Guest favorite - What Our Wayanad Homestay Guests Love
+        </h2>
         <p className="sm:text-xl text-secondary text-center font-albertSans">
           One of the most loved homes! Highly rated for its exceptional reviews,
           reliability, and welcoming atmosphere. A truly unforgettable stay!

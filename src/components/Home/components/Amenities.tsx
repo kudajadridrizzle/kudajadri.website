@@ -7,14 +7,17 @@ import PeacefulEnvironment from "../../../assets/PeacefulEnvironment.svg";
 
 const Amenities = () => {
   return (
-    <div className="sm:px-[6%] sm:py-32 bg-primary mobile:px-4 mobile:py-14" id="a">
+    <div
+      className="sm:px-[6%] sm:py-32 bg-primary mobile:px-4 mobile:py-14"
+      id="a"
+    >
       <div className="flex flex-col sm:gap-16 mobile:gap-8">
         <div className="flex flex-col gap-6 sm:items-center mobile:items-start">
           <div className="flex flex-col gap-6 font-albertSans sm:items-center mobile:items-start">
             <p className="uppercase text-[#FFF] font-albertSans">amenities</p>
-            <h1 className="text-[#FFF] font-ivy text-[32px]">
-              What Awaits You
-            </h1>
+            <h2 className="text-[#FFF] font-ivy text-[32px]">
+              What Awaits You – Wayanad Homestay Highlights
+            </h2>
           </div>
           <p className="font-albertSans text-secondary text-[16px]">
             Discover a perfect blend of heritage, comfort, and nature, designed
@@ -39,10 +42,7 @@ const Amenities = () => {
           <AmititiesLogo logo={FastWifi} title="Tourist Access" />
           <AmititiesLogo logo={EnhancedSafety} title="Wildlife Spotting" />
           <AmititiesLogo logo={AmpleParking} title="Organic Garden" />
-          <AmititiesLogo
-            logo={PeacefulEnvironment}
-            title="Kerala Cuisine"
-          />
+          <AmititiesLogo logo={PeacefulEnvironment} title="Kerala Cuisine" />
         </div>
       </div>
     </div>
@@ -57,7 +57,9 @@ const AmititiesLogo = ({ logo, title }: { logo: string; title: string }) => {
       <div>
         <img src={logo} alt="" />
       </div>
-      <p className="text-[#FFF] text-base font-albertSans text-center">{title}</p>
+      <p className="text-[#FFF] text-base font-albertSans text-center">
+        {title}
+      </p>
     </div>
   );
 };
