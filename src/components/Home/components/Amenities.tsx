@@ -34,14 +34,14 @@ const Amenities = () => {
           />
         </div>
         <div className="flex flex-wrap sm:gap-14 mobile:gap-5 justify-center">
-          <AmititiesLogo logo={HeritageStay} title="Heritage Stay" />
-          <AmititiesLogo logo={PaddyFieldView} title="Paddy Field View" />
-          <AmititiesLogo logo={FastWifi} title="Fast WiFi" />
-          <AmititiesLogo logo={EnhancedSafety} title="Enhanced Safety" />
-          <AmititiesLogo logo={AmpleParking} title="Ample Parking" />
+          <AmititiesLogo logo={HeritageStay} title="Kids Play Area" />
+          <AmititiesLogo logo={PaddyFieldView} title="Nature Walks" />
+          <AmititiesLogo logo={FastWifi} title="Tourist Access" />
+          <AmititiesLogo logo={EnhancedSafety} title="Wildlife Spotting" />
+          <AmititiesLogo logo={AmpleParking} title="Organic Garden" />
           <AmititiesLogo
             logo={PeacefulEnvironment}
-            title="Peaceful Environment"
+            title="Kerala Cuisine"
           />
         </div>
       </div>

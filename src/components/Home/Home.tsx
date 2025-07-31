@@ -124,9 +124,8 @@ const Home = () => {
       {/* FAQ Section */}
       <div className="sm:px-[12%] sm:py-24 mobile:px-4 mobile:py-14 large:px-[18%] flex flex-col gap-8">
         <div>
-          <h1 className="flex-1 text-primary font-ivy sm:text-[44px] sm:text-center mobile:text-start mobile:text-[32px]">
-            Frequently Asked Questions
-          </h1>
+          <h2 className="flex-1 text-primary font-ivy sm:text-[44px] sm:text-center mobile:text-start mobile:text-[32px]">
+          Wayanad Homestays - FAQs          </h2>
         </div>
         <div className="flex sm:flex-row mobile:flex-col gap-[24px]">
           {[listOne, listTwo].map((faqList, colIndex) => (
