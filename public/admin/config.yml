@@ -66,3 +66,25 @@ collections:
             fields:
               - { label: "Question", name: "question", widget: "markdown" }
               - { label: "Answer", name: "answer", widget: "markdown" }
+      - file: "src/File/facilitiesfaqs.md"
+        label: "Facilities Page FAQs"
+        name: "facilities_faqs"
+        fields:
+          - { name: "title", label: "Title", widget: "string" }
+          - label: "FAQs"
+            name: "faqs"
+            widget: "list"
+            fields:
+              - { label: "Question", name: "question", widget: "markdown" }
+              - { label: "Answer", name: "answer", widget: "markdown" }
+      - file: "src/File/wayanadfaqs.md"
+        label: "Wayanad Page FAQs"
+        name: "wayanad_faqs"
+        fields:
+          - { name: "title", label: "Title", widget: "string" }
+          - label: "FAQs"
+            name: "faqs"
+            widget: "list"
+            fields:
+              - { label: "Question", name: "question", widget: "markdown" }
+              - { label: "Answer", name: "answer", widget: "markdown" }
