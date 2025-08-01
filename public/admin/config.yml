@@ -44,3 +44,14 @@ collections:
             fields:
               - { label: "Question", name: "question", widget: "markdown" }
               - { label: "Answer", name: "answer", widget: "markdown" }
+      - file: "src/File/aboutfaqs.md"
+        label: "About Page FAQs"
+        name: "about_faqs"
+        fields:
+          - { name: "title", label: "Title", widget: "string" }
+          - label: "FAQs"
+            name: "faqs"
+            widget: "list"
+            fields:
+              - { label: "Question", name: "question", widget: "markdown" }
+              - { label: "Answer", name: "answer", widget: "markdown" }
