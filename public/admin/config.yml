@@ -29,3 +29,19 @@ collections:
       - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Published", name: "published", widget: "boolean", default: true }
       - { label: "Body", name: "body", widget: "markdown", required: true }
+
+collections:
+  - name: "faqs"
+    label: "FAQs"
+    files:
+      - file: "src/File/faq/homefaqs.md"
+        label: "Home Page FAQs"
+        name: "home_faqs"
+        fields:
+          - { name: "title", label: "Title", widget: "string" }
+          - label: "FAQs"
+            name: "faqs"
+            widget: "list"
+            fields:
+              - { label: "Question", name: "question", widget: "string" }
+              - { label: "Answer", name: "answer", widget: "text" }
