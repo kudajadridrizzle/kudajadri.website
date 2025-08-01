@@ -104,7 +104,7 @@ export const TourPackages = () => {
                 >
                   <Accordion.Header>
                     <Accordion.Trigger className="group flex w-full items-center font-albertSans justify-between px-4 py-3 text-left text-lg font-medium hover:bg-gray-100 transition">
-                      {faq.question}
+                    <ReactMarkdown>{faq.question}</ReactMarkdown>
                       <ChevronDownIcon className="h-5 w-5 transition-transform duration-200 font-albertSans group-data-[state=open]:rotate-180" />
                     </Accordion.Trigger>
                   </Accordion.Header>
