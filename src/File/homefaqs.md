@@ -1,7 +1,7 @@
 ---
 title: Wayanad Homestays - FAQs
 faqs:
-  - question: What are Wayanad homestays and how are they different from hotels??
+  - question: What are Wayanad homestays and how are they different from hotels?
     answer: Wayanad homestays are accommodations provided by local hosts, offering a
       homely atmosphere, personal attention, and cultural experiences. Unlike
       hotels, homestays in Wayanad focus on simplicity, local food, and
