@@ -55,3 +55,14 @@ collections:
             fields:
               - { label: "Question", name: "question", widget: "markdown" }
               - { label: "Answer", name: "answer", widget: "markdown" }
+      - file: "src/File/roomsfaqs.md"
+        label: "Rooms Page FAQs"
+        name: "rooms_faqs"
+        fields:
+          - { name: "title", label: "Title", widget: "string" }
+          - label: "FAQs"
+            name: "faqs"
+            widget: "list"
+            fields:
+              - { label: "Question", name: "question", widget: "markdown" }
+              - { label: "Answer", name: "answer", widget: "markdown" }
