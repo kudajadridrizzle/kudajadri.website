@@ -88,3 +88,69 @@ collections:
             fields:
               - { label: "Question", name: "question", widget: "markdown" }
               - { label: "Answer", name: "answer", widget: "markdown" }
+      - file: "src/File/generalfaqs.md"
+        label: "General FAQ Component"
+        name: "general_faqs"
+        fields:
+          - { name: "title", label: "Title", widget: "string" }
+          - label: "FAQs"
+            name: "faqs"
+            widget: "list"
+            fields:
+              - { label: "Question", name: "question", widget: "markdown" }
+              - { label: "Answer", name: "answer", widget: "markdown" }
+      - file: "src/File/classicroomfaqs.md"
+        label: "Classic Room FAQs"
+        name: "classic_room_faqs"
+        fields:
+          - { name: "title", label: "Title", widget: "string" }
+          - label: "FAQs"
+            name: "faqs"
+            widget: "list"
+            fields:
+              - { label: "Question", name: "question", widget: "markdown" }
+              - { label: "Answer", name: "answer", widget: "markdown" }
+      - file: "src/File/deluxeheritageroomfaqs.md"
+        label: "Deluxe Heritage Room FAQs"
+        name: "deluxe_heritage_room_faqs"
+        fields:
+          - { name: "title", label: "Title", widget: "string" }
+          - label: "FAQs"
+            name: "faqs"
+            widget: "list"
+            fields:
+              - { label: "Question", name: "question", widget: "markdown" }
+              - { label: "Answer", name: "answer", widget: "markdown" }
+      - file: "src/File/deluxeroomfaqs.md"
+        label: "Deluxe Room FAQs"
+        name: "deluxe_room_faqs"
+        fields:
+          - { name: "title", label: "Title", widget: "string" }
+          - label: "FAQs"
+            name: "faqs"
+            widget: "list"
+            fields:
+              - { label: "Question", name: "question", widget: "markdown" }
+              - { label: "Answer", name: "answer", widget: "markdown" }
+      - file: "src/File/premiumroomfaqs.md"
+        label: "Premium Room FAQs"
+        name: "premium_room_faqs"
+        fields:
+          - { name: "title", label: "Title", widget: "string" }
+          - label: "FAQs"
+            name: "faqs"
+            widget: "list"
+            fields:
+              - { label: "Question", name: "question", widget: "markdown" }
+              - { label: "Answer", name: "answer", widget: "markdown" }
+      - file: "src/File/tourpackagesfaqs.md"
+        label: "Tour Packages FAQs"
+        name: "tour_packages_faqs"
+        fields:
+          - { name: "title", label: "Title", widget: "string" }
+          - label: "FAQs"
+            name: "faqs"
+            widget: "list"
+            fields:
+              - { label: "Question", name: "question", widget: "markdown" }
+              - { label: "Answer", name: "answer", widget: "markdown" }

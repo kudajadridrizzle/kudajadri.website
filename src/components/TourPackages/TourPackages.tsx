@@ -5,65 +5,27 @@ import { Packages } from "./components/packages";
 import { Helmet } from "react-helmet-async";
 import * as Accordion from "@radix-ui/react-accordion";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
+import fm from "front-matter";
+import tourPackagesFaqRaw from "../../File/tourpackagesfaqs.md?raw";
+import ReactMarkdown from "react-markdown";
 
-// Tour Package FAQs – split into two columns
-const listOne = [
-  {
-    question: "What is included in a typical Wayanad tour package?",
-    answer:
-      "Most Wayanad tour packages include accommodation, transportation, guided sightseeing, and entry fees to major attractions. Some packages also offer meals, jeep safaris, trekking, and cultural experiences depending on the itinerary and duration.",
-  },
-  {
-    question: "How many days are ideal for a Wayanad tour?",
-    answer:
-      "A 3-day, 2-night Wayanad tour package is ideal to cover popular spots like Edakkal Caves, Pookode Lake, Soochipara Falls, and Banasura Sagar Dam. Longer packages (4–5 days) allow a more relaxed experience and time for offbeat locations.",
-  },
-  {
-    question: "Are Wayanad holiday packages available from major cities?",
-    answer:
-      "Yes, Wayanad holiday packages are available from cities like Bangalore, Mysore, Kozhikode, and Kochi. These packages typically include round-trip transport, stay, sightseeing, and local support.",
-  },
-  {
-    question: "Do Wayanad packages include homestay options?",
-    answer:
-      "Many Wayanad tour packages offer the option to stay in Wayanad homestays, providing a local and personalized experience. Guests can choose between homestays, resorts, or hotels based on their comfort and budget preferences.",
-  },
-  {
-    question: "Are there Wayanad tour packages for couples or honeymooners?",
-    answer:
-      "Yes, several Wayanad honeymoon packages include private stays, romantic setups, candlelight dinners, and scenic spots. These packages are ideal for couples seeking a peaceful getaway in nature.",
-  },
-];
-
-const listTwo = [
-  {
-    question: "Can I customize a Wayanad holiday tour package?",
-    answer:
-      "Most travel providers allow customization of Wayanad packages to suit your needs. You can choose the number of days, type of accommodation, specific sightseeing spots, and even add-on experiences like trekking or boating.",
-  },
-  {
-    question: "What is the average cost of a Wayanad tour package?",
-    answer:
-      "Wayanad tour packages generally range from ₹4,000 to ₹12,000 per person depending on duration, accommodation type, and inclusions. Budget, standard, and luxury packages are available for all kinds of travelers.",
-  },
-  {
-    question: "Are group and family packages available for Wayanad?",
-    answer:
-      "Yes, Wayanad group tour packages are available for families, students, and corporate teams. These packages include large vehicle transport, multiple room bookings, and tailored itineraries for a smooth group travel experience.",
-  },
-  {
-    question: "Do Wayanad tour packages cover all major attractions?",
-    answer:
-      "Most packages cover key attractions like Edakkal Caves, Meenmutty Falls, Wayanad Wildlife Sanctuary, Kuruva Island, and viewpoints. Customized packages can include offbeat places, trekking spots, and cultural visits on request.",
-  },
-  {
-    question: "When should I book a Wayanad tour package?",
-    answer:
-      "The best time to book a Wayanad tour package is during the pleasant season from October to May. Advance booking is recommended during holidays and weekends to get the best stay and travel slots.",
-  },
-];
+// Define the shape of FAQ frontmatter
+interface FaqFrontMatterAttributes {
+  title: string;
+  faqs: Array<{
+    question: string;
+    answer: string;
+  }>;
+}
 
 export const TourPackages = () => {
+  const parsedFaq = fm<FaqFrontMatterAttributes>(tourPackagesFaqRaw);
+  const faqs = parsedFaq.attributes.faqs || [];
+  
+  const middleIndex = Math.ceil(faqs.length / 2);
+  const listOne = faqs.slice(0, middleIndex);
+  const listTwo = faqs.slice(middleIndex);
+
   return (
     <div>
       <Helmet>
@@ -119,11 +81,11 @@ export const TourPackages = () => {
       <Packages />
       <Direction />
 
-      {/* FAQ Section */}
+      {/* FAQ Section from CMS */}
       <div className="sm:px-[12%] sm:py-24 mobile:px-4 mobile:py-14 large:px-[18%] flex flex-col gap-8">
         <div>
           <h1 className="flex-1 text-primary font-ivy sm:text-[44px] sm:text-center mobile:text-start mobile:text-[32px]">
-            Frequently Asked Questions
+            {parsedFaq.attributes.title || "Frequently Asked Questions"}
           </h1>
         </div>
         <div className="flex sm:flex-row mobile:flex-col gap-[24px]">
@@ -147,7 +109,7 @@ export const TourPackages = () => {
                     </Accordion.Trigger>
                   </Accordion.Header>
                   <Accordion.Content className="px-4 pb-2 pt-2 text-gray-600 font-albertSans text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
-                    {faq.answer}
+                    <ReactMarkdown>{faq.answer}</ReactMarkdown>
                   </Accordion.Content>
                 </Accordion.Item>
               ))}

@@ -1,17 +1,32 @@
 import * as Accordion from "@radix-ui/react-accordion"
 import { ChevronDownIcon } from "@radix-ui/react-icons"
-import FaqList from "../Data/FaqList.json"
+import fm from "front-matter";
+import generalFaqRaw from "../../../File/generalfaqs.md?raw";
+import ReactMarkdown from "react-markdown";
+
+// Define the shape of FAQ frontmatter
+interface FaqFrontMatterAttributes {
+  title: string;
+  faqs: Array<{
+    question: string;
+    answer: string;
+  }>;
+}
 
 export default function Faq() {
-
- const middleIndex = Math.ceil(FaqList.length / 2); 
- const listOne = FaqList.slice(0, middleIndex);
- const listTwo = FaqList.slice(middleIndex, FaqList.length);
+  const parsedFaq = fm<FaqFrontMatterAttributes>(generalFaqRaw);
+  const faqs = parsedFaq.attributes.faqs || [];
+  
+  const middleIndex = Math.ceil(faqs.length / 2); 
+  const listOne = faqs.slice(0, middleIndex);
+  const listTwo = faqs.slice(middleIndex, faqs.length);
 
   return (
     <div className="sm:px-[12%] sm:py-24 mobile:px-4 mobile:py-14 large:px-[18%] flex flex-col gap-8">
       <div>
-        <h1 className="flex-1 text-primary font-ivy sm:text-[44px] sm:text-center mobile:text-start mobile:text-[32px]">Frequently Asked Questions</h1>
+        <h1 className="flex-1 text-primary font-ivy sm:text-[44px] sm:text-center mobile:text-start mobile:text-[32px]">
+          {parsedFaq.attributes.title || "Frequently Asked Questions"}
+        </h1>
       </div> 
       <div className="flex sm:flex-row mobile:flex-col gap-[24px]">
       <Accordion.Root
@@ -30,7 +45,7 @@ export default function Faq() {
               </Accordion.Trigger>
             </Accordion.Header>
             <Accordion.Content className="px-4 pb-2 pt-2 text-gray-600 font-albertSans text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
-              {faq.answer}
+              <ReactMarkdown>{faq.answer}</ReactMarkdown>
             </Accordion.Content>
           </Accordion.Item>
 
@@ -52,7 +67,7 @@ export default function Faq() {
               </Accordion.Trigger>
             </Accordion.Header>
             <Accordion.Content className="px-4 pb-2 pt-2 text-gray-600 font-albertSans text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
-              {faq.answer}
+              <ReactMarkdown>{faq.answer}</ReactMarkdown>
             </Accordion.Content>
           </Accordion.Item>
 
