@@ -33,7 +33,7 @@ collections:
   - name: "faqs"
     label: "FAQs"
     files:
-      - file: "src/File/faq/homefaqs.md"
+      - file: "src/File/homefaqs.md"
         label: "Home Page FAQs"
         name: "home_faqs"
         fields:
