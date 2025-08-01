@@ -1,7 +1,7 @@
 ---
 title: Tour Packages FAQs
 faqs:
-  - question: What is included in a typical **Wayanad** tour package?
+  - question: What is included in a typical Wayanad tour package?
     answer: Most Wayanad tour packages include accommodation, transportation, guided
       sightseeing, and entry fees to major attractions. Some packages also offer
       meals, jeep safaris, trekking, and cultural experiences depending on the
