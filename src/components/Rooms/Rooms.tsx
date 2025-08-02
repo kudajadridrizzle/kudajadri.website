@@ -1,69 +1,55 @@
 import { Helmet } from "react-helmet-async";
-import Hero from "./Components/Hero";
-import RoomSession from "../Home/components/RoomSession";
-import { IndividualRooms } from "../Home/components/IndividualRooms";
 import Footer from "../Home/components/Footer";
-import fm from "front-matter";
-import roomsFaqRaw from "../../File/roomsfaqs.md?raw";
 import FaqList from "../FaqComponent/FaqList";
-
-// Define the shape of FAQ frontmatter
-interface FaqFrontMatterAttributes {
-  title: string;
-  faqs: Array<{
-    question: string;
-    answer: string;
-  }>;
-}
+import { useRoomsCMS } from "../../hooks/useRoomsCMS";
+import CMSHero from "./Components/CMSHero";
+import CMSRoomSession from "./Components/CMSRoomSession";
+import CMSIndividualRooms from "./Components/CMSIndividualRooms";
 
 const Rooms = () => {
-  const parsedFaq = fm<FaqFrontMatterAttributes>(roomsFaqRaw);
+  const { seo, hero, roomsIntro, individualRooms, faq } = useRoomsCMS();
 
   return (
     <div>
       <Helmet>
-        <title>Wayanad Accommodations: Homestays, Cottages, and Family Rooms</title>
-        <meta
-          name="description"
-          content="Discover peaceful accommodations in Wayanad with cozy homestays, spacious cottages with swimming pool, and family rooms designed for comfort and relaxation"
-        />
-        <meta
-          name="keywords"
-          content="wayanad accommodations, homestays, cottages, family rooms, swimming pool, comfort, relaxation"
-        />
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.description} />
+        <meta name="keywords" content={seo.keywords} />
         <meta name="robots" content="index, follow" />
-        <meta name="author" content="Kudajadri Homestay" />
-        <meta property="og:title" content="Wayanad Accommodations: Homestays, Cottages, and Family Rooms" />
-        <meta
-          property="og:description"
-          content="Discover peaceful accommodations in Wayanad with cozy homestays, spacious cottages with swimming pool, and family rooms designed for comfort and relaxation"
-        />
+        <meta name="author" content={seo.author} />
+        <meta property="og:title" content={seo.title} />
+        <meta property="og:description" content={seo.description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={window.location.href} />
         <meta property="og:site_name" content="Kudajadri Homestay" />
         <meta property="og:locale" content="en_US" />
-        <meta property="og:image" content={`${window.location.origin}/aboutHero.jpg`} />
+        <meta property="og:image" content={`${window.location.origin}${seo.ogImage}`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Wayanad Accommodations: Homestays, Cottages, and Family Rooms" />
-        <meta
-          name="twitter:description"
-          content="Discover peaceful accommodations in Wayanad with cozy homestays, spacious cottages with swimming pool, and family rooms designed for comfort and relaxation"
-        />
-        <meta name="twitter:site" content="@kudajadrihomestay" />
-        <meta name="twitter:image" content={`${window.location.origin}/aboutHero.jpg`} />
+        <meta name="twitter:title" content={seo.title} />
+        <meta name="twitter:description" content={seo.description} />
+        <meta name="twitter:site" content={seo.twitterSite} />
+        <meta name="twitter:image" content={`${window.location.origin}${seo.ogImage}`} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="canonical" href={window.location.href} />
       </Helmet>
 
-      <Hero />
-      <RoomSession />
-      <IndividualRooms />
+      <CMSHero 
+        backgroundImage={hero.backgroundImage}
+        title={hero.title}
+        subtitle={hero.subtitle}
+        overlayOpacity={hero.overlayOpacity}
+      />
+      <CMSRoomSession 
+        heading={roomsIntro.heading}
+        content={roomsIntro.content}
+      />
+      <CMSIndividualRooms rooms={individualRooms} />
 
       {/* FAQ Section from CMS */}
-      <FaqList {...parsedFaq.attributes} />
+      <FaqList {...faq} />
 
       <Footer />
     </div>
