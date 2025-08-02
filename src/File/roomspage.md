@@ -35,13 +35,6 @@ individualRooms:
     image: PremiumImg1
     type: normal
     path: /rooms/premium-rooms
-  - id: deluxe-rooms
-    title: Deluxe Rooms – Cottage-Style Homestays in Wayanad
-    description: An economic escape in a lush atmosphere. This is affordable luxury
-      with no compromises.
-    image: roomOne
-    type: normal
-    path: /rooms/deluxe-rooms
   - id: deluxe-heritage-rooms
     title: Deluxe Heritage Rooms - Traditional Homestays in Wayanad
     description: An economic escape in a lush atmosphere. This is affordable luxury
@@ -49,4 +42,11 @@ individualRooms:
     image: roomTwo
     type: reverse
     path: /rooms/deluxe-heritage-rooms
+  - id: deluxe-rooms
+    title: Deluxe Rooms – Cottage-Style Homestays in Wayanad
+    description: An economic escape in a lush atmosphere. This is affordable luxury
+      with no compromises.
+    image: roomOne
+    type: normal
+    path: /rooms/deluxe-rooms
 ---
