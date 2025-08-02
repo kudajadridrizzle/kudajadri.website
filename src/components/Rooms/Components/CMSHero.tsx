@@ -1,4 +1,4 @@
-import Header from "../../Home/components/Header";
+import { Header } from "../../Home/components/Header";
 
 interface CMSHeroProps {
   backgroundImage: string; // Already processed image URL

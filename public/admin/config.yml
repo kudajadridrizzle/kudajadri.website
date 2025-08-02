@@ -154,3 +154,57 @@ collections:
             fields:
               - { label: "Question", name: "question", widget: "markdown" }
               - { label: "Answer", name: "answer", widget: "markdown" }
+
+  - name: "rooms_page"
+    label: "Rooms Page"
+    files:
+      - file: "src/File/roomspage.md"
+        label: "Rooms Page Content"
+        name: "rooms_page_content"
+        fields:
+          - label: "SEO Settings"
+            name: "seo"
+            widget: "object"
+            fields:
+              - { label: "Page Title", name: "title", widget: "string", required: true }
+              - { label: "Meta Description", name: "description", widget: "text", required: true }
+              - { label: "Keywords", name: "keywords", widget: "string", required: true }
+              - { label: "Author", name: "author", widget: "string", required: true }
+              - { label: "Twitter Site", name: "twitterSite", widget: "string", required: true }
+              - { label: "OG Image", name: "ogImage", widget: "string", required: true }
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - label: "Background Image"
+                name: "backgroundImage"
+                widget: "select"
+                options: ["aboutHero", "roomOne", "roomTwo", "roomThree", "PremiumImg1"]
+                required: true
+              - { label: "Main Title", name: "title", widget: "string", required: true }
+              - { label: "Subtitle", name: "subtitle", widget: "string", required: true }
+              - { label: "Overlay Opacity", name: "overlayOpacity", widget: "number", value_type: "float", min: 0, max: 1, step: 0.1, required: true }
+          - label: "Rooms Introduction"
+            name: "roomsIntro"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string", required: true }
+              - { label: "Content", name: "content", widget: "markdown", required: true }
+          - label: "Individual Rooms"
+            name: "individualRooms"
+            widget: "list"
+            fields:
+              - { label: "Room ID", name: "id", widget: "string", required: true }
+              - { label: "Room Title", name: "title", widget: "string", required: true }
+              - { label: "Description", name: "description", widget: "text", required: true }
+              - label: "Room Image"
+                name: "image"
+                widget: "select"
+                options: ["roomOne", "roomTwo", "roomThree", "PremiumImg1"]
+                required: true
+              - label: "Layout Type"
+                name: "type"
+                widget: "select"
+                options: ["normal", "reverse"]
+                required: true
+              - { label: "Page Path", name: "path", widget: "string", required: true }
