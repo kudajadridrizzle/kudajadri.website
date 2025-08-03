@@ -27,7 +27,7 @@ sections:
       the Karapuzha River for irrigation purposes. Surrounded by wooded hills,
       it is a major freshwater reservoir and a top tourist attraction in
       Wayanad. Located at Karapuzha, Kakkavayal.
-    image: /images/wayanad/karapuzha.jpg
+    image: /images/kurumbalakotta_hillock_08.jpg
   - title: Wayanad Kuruva Island
     description: Kuruva Island is a 950-acre uninhabited forest on the Kabini River
       tributaries. It is a peaceful picnic spot rich in rare birds, orchids, and
