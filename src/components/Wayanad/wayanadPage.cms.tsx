@@ -19,6 +19,8 @@ export const WayanadPageCMS = () => {
       </div>
     );
   }
+  
+  //error handling
 
   if (error || !data) {
     return (
