@@ -48,41 +48,41 @@ sections:
       Karamanathodu tributary of the Kabini River. The upstream region forms
       islands when the dam is full, creating a scenic view with Banasura hills
       in the backdrop.
-    image: /images/wayanad/banasurasagar-dam.jpg
+    image: https://www.dtpcwayanad.com/destination/banasura-sagar-dam-wayanad
   - title: Wayanad Edakkal Caves
     description: Edakkal Caves, located 1,200 meters above sea level on Ambukutty
       Hill, are the only known Indian site with Stone Age carvings. These
       petroglyphs are believed to date back to 6,000 B.C. The caves are 3 km
       from Ambalavayal and 25 km from Kalpetta.
-    image: /images/wayanad/edakkal-caves.jpg
+    image: https://in.musafir.com/blog/why-visit-the-edakkal-caves-in-wayanad
   - title: Wayanad Thirunelli Temple
     description: Thirunelli Temple, dedicated to Lord Maha Vishnu, is situated at
       900 meters altitude in North Wayanad. A stream called Papanasini flows
       beneath the temple. The temple lies 32 km from Mananthavady, surrounded by
       lush forests and hills.
-    image: /images/wayanad/thirunelli-temple.jpg
+    image: https://www.dtpcwayanad.com/destination/thirunelli-temple-wayanad
   - title: Wayanad Chembra Peak
     description: Chembra Peak is the highest peak in Wayanad at 2,100 meters (6,890
       ft) above sea level. It is a popular trekking destination, offering a
       breathtaking panoramic view of the entire district from the summit.
-    image: /images/wayanad/chembra-peak.jpg
+    image: https://www.seawatersports.com/places/kerala/chembra-peak-in-kerala
   - title: Wayanad Chain Tree
     description: The Chain Tree is a large Ficus tree located about 15 km from
       Kalpetta. Local legend says a tribal spirit was chained here by a priest.
       A small temple now stands to honor the spirit of Kariyanthandan.
-    image: /images/wayanad/chain-tree.jpg
+    image: https://wayanadtourism.co.in/chain-tree-wayanad
   - title: Wayanad Neelimala View Point
     description: Neelimala View Point, 27 km from Kalpetta and 12 km from Sulthan
       Bathery, offers stunning views of Meenmutty Waterfalls breaking through
       thick forest canopies. It's a well-known spot for trekking and
       photography.
-    image: /images/wayanad/neelimala-view-point.jpg
+    image: https://wayanadtourism.co.in/neelimala-view-point-wayanad
   - title: Wayanad Lakkidi View Point
     description: Lakkidi View Point, located 700 meters above sea level at the crest
       of Thamarassery Ghat, offers panoramic views of mist-covered hills and
       valleys. It's perfect for sunrise and sunset views, with 9 hairpin bends
       across 16 km.
-    image: /images/wayanad/lakkidi-view-point.jpg
+    image: https://wayanadtourism.co.in/lakkidi-view-point-wayanad
 ---
 
 # Explore the Beauty of Wayanad
