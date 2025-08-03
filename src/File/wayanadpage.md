@@ -21,7 +21,7 @@ sections:
       km in Wayanad. It is the largest abode of wild animals in Malabar and a
       reserved area for rare Indian tigers. The Forest Department also offers
       elephant rides to tourists.
-    image: http://northkeralatourpackages.com/tour-item/muthanga-wild-life-sanctuary/
+    image: https://myholidayhappiness.com/uploads/muthanga-wildlife-sanctuary-wayanad-3873.jpg
   - title: Wayanad Karapuzha Dam
     description: Karapuzha Dam, one of the largest earth dams in India, is built on
       the Karapuzha River for irrigation purposes. Surrounded by wooded hills,
