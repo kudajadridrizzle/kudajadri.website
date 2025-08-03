@@ -46,9 +46,4 @@ faqs:
       and relaxing environments. While some activities like trekking may not
       suit elderly travelers, there are many gentle nature experiences and
       scenic drives they can enjoy.
-  - question: "**How many days are enough to explore Wayanad?**"
-    answer: A 3-day trip is ideal to cover major attractions and enjoy the natural
-      beauty of **Wayanad**. However, if you want a relaxed stay with time for
-      local experiences and offbeat spots, consider staying for 4 to 5 days.
->>>>>>> bc6bb7d676ee3552c9f2710f221820aa381601f2
 ---

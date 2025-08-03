@@ -22,8 +22,43 @@ sections:
   - title: "Wayanad Kuruva Island"
     description: "Kuruva Island is a 950-acre uninhabited forest on the Kabini River tributaries. It is a peaceful picnic spot rich in rare birds, orchids, and herbs, making it an untouched natural haven away from city life."
     image: "/images/wayanad/kuruva.jpg"
----
 
+  - title: "Wayanad Pookkode Lake"
+    description: "Pookkode Lake is a natural freshwater lake nestled among evergreen mountains and the Western Ghats. Spread across 13 acres and 40 meters deep, it's a scenic, serene spot perfect for boating and nature walks. Located at Vythiri."
+    image: "/images/wayanad/pookkode.jpg"
+
+  - title: "Wayanad Soochipara Waterfalls"
+    description: "Also known as Sentinel Rock Waterfall, Soochipara is a three-tiered waterfall in Vellarimala near Meppadi. With cascading drops ranging from 100 to 300 feet, it's a thrilling destination for nature lovers and adventure seekers."
+    image: "/images/wayanad/soochipara.jpg"
+
+  - title: "Wayanad Banasurasagar Dam"
+    description: "Banasurasagar Dam is the largest earthen dam in India, built on the Karamanathodu tributary of the Kabini River. The dam’s reservoir forms many scenic islands surrounded by the majestic Banasura hills, offering a mesmerizing view."
+    image: "/images/wayanad/banasura.jpg"
+
+  - title: "Wayanad Edakkal Caves"
+    description: "Edakkal Caves, located 1,200 meters above sea level on Ambukutty Hill, feature ancient Stone Age carvings estimated to be over 6,000 years old. This archaeological wonder is near Ambalavayal, about 25 km from Kalpetta."
+    image: "/images/wayanad/edakkal.jpg"
+
+  - title: "Wayanad Thirunelli Temple"
+    description: "Thirunelli Temple is an ancient pilgrimage site dedicated to Lord Maha Vishnu, situated at 900 meters altitude in a forest valley. The Papanasini stream flowing nearby is believed to wash away sins. Located 32 km from Mananthavady."
+    image: "/images/wayanad/thirunelli.jpg"
+
+  - title: "Wayanad Chembra Peak"
+    description: "Chembra Peak, the highest point in Wayanad at 2,100 meters, is famous for trekking. From the summit, one can enjoy a panoramic view of the entire district. A heart-shaped lake en route adds charm to the trek."
+    image: "/images/wayanad/chembra.jpg"
+
+  - title: "Wayanad Chain Tree"
+    description: "The Chain Tree near Vythiri is wrapped in local legend. It's believed to be haunted and was chained by a priest to contain the spirit of a tribal guide named Karinthandan. The site now houses a small shrine."
+    image: "/images/wayanad/chaintree.jpg"
+
+  - title: "Wayanad Neelimala View Point"
+    description: "Neelimala View Point, located 27 km from Kalpetta, offers breathtaking views of Meenmutty Falls cutting through lush forest. This spot is popular for trekking and photography, with unmatched views of the Wayanad landscape."
+    image: "/images/wayanad/neelimala.jpg"
+
+  - title: "Wayanad Lakkidi View Point"
+    description: "Lakkidi is the gateway to Wayanad, perched 700 meters above sea level on the Thamarassery Ghat Pass. Famous for its misty mornings, sharp hairpin bends, and panoramic views, it’s best visited at sunrise or sunset."
+    image: "/images/wayanad/lakkidi.jpg"
+---
 
 # Explore the Beauty of Wayanad
 
