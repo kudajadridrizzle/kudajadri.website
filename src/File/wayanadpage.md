@@ -21,28 +21,28 @@ sections:
       km in Wayanad. It is the largest abode of wild animals in Malabar and a
       reserved area for rare Indian tigers. The Forest Department also offers
       elephant rides to tourists.
-    image: /images/wayanad/muthanga-wildlife-sanctuary.jpg
+    image: http://northkeralatourpackages.com/tour-item/muthanga-wild-life-sanctuary/
   - title: Wayanad Karapuzha Dam
     description: Karapuzha Dam, one of the largest earth dams in India, is built on
       the Karapuzha River for irrigation purposes. Surrounded by wooded hills,
       it is a major freshwater reservoir and a top tourist attraction in
       Wayanad. Located at Karapuzha, Kakkavayal.
-    image: /images/wayanad/karapuzha-dam.jpg
+    image: https://wayanadtourism.co.in/karapuzha-dam-wayanad
   - title: Wayanad Kuruva Island
     description: Kuruva Island is a 950-acre uninhabited forest on the Kabini River
       tributaries. It is a peaceful picnic spot rich in rare birds, orchids, and
       herbs, making it an untouched natural haven away from city life.
-    image: /images/wayanad/kuruva-island.jpg
+    image: https://www.lanternstay.com/blog/uncovering-the-ecological-wonders-of-kuruva-island-a-journey-through-one-of-keralas-most-pristine-destinations
   - title: Wayanad Pookkode Lake
     description: Pookkode Lake is a natural freshwater lake surrounded by evergreen
       mountains and forests. Located at Vythiri, it spans 13 acres and reaches a
       depth of 40 meters. The climate is cool, and the scenery is mesmerizing.
-    image: /images/wayanad/pookkode-lake.jpg
+    image: https://pranavamresort.com/pookode-lake-wayanad.php
   - title: Wayanad Soochipara Waterfalls
     description: Soochipara Waterfalls, also known as Sentinel Rock Waterfalls, is a
       three-tiered waterfall located in Vellarimala near Meppadi. The cascading
       falls range from 100 to 300 feet and offer a spectacular natural display.
-    image: /images/wayanad/soochipara-waterfalls.jpg
+    image: https://www.flickr.com/photos/rajipv/21532721698
   - title: Wayanad Banasurasagar Dam
     description: Banasurasagar Dam, the largest earth dam in India, impounds the
       Karamanathodu tributary of the Kabini River. The upstream region forms
