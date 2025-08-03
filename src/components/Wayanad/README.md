@@ -92,7 +92,7 @@ For best performance:
 - Check browser console for errors
 
 #### Image Manager Not Showing
-- Ensure you're in development mode (`NODE_ENV === 'development'`)
+- Ensure you're in development mode (the ImageManager only shows in dev mode)
 - Check if the ImageManager component is imported and rendered
 
 #### Fallback Image Issues

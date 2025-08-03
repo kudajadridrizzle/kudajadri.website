@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { getAttractionImage } from '../utils/attractionImages';
+import { isDevelopment } from '../../../utils/env';
 
 interface AttractionCardProps {
   title: string;
@@ -77,7 +78,7 @@ export const EnhancedAttractionCard: React.FC<AttractionCardProps> = ({
               dangerouslySetInnerHTML={{ __html: description }}
             />
             {/* Image management info for admin */}
-            {process.env.NODE_ENV === 'development' && (
+            {isDevelopment && (
               <div className="mt-4 p-3 bg-blue-50 rounded-lg text-xs text-blue-700">
                 <div><strong>Image Path:</strong> {image}</div>
                 <div><strong>Image ID:</strong> {attractionImage?.id || 'Not found'}</div>

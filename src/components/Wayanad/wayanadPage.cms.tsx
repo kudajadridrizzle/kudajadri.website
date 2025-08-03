@@ -5,6 +5,7 @@ import Footer from "../Home/components/Footer";
 import { EnhancedAttractionCard } from "./components/EnhancedAttractionCard";
 import { ImageManager } from "./components/ImageManager";
 import { WayanadFaqs } from "./components/WayanadFaqs";
+import { isDevelopment } from "../../utils/env";
 
 // FAQ management is handled separately through the CMS faqs collection
 
@@ -106,7 +107,7 @@ export const WayanadPageCMS = () => {
       <Footer />
       
       {/* Image Manager for Development */}
-      {process.env.NODE_ENV === 'development' && <ImageManager />}
+      {isDevelopment && <ImageManager />}
     </div>
   );
 };
