@@ -6,7 +6,7 @@ description: Discover top tourist attractions and must-visit destinations in
 keywords: wayanad tourist attractions, wayanad destinations, nature trails,
   wildlife, cultural sites, kudajadri wayanad
 author: Kudajadri Homestay
-heroImage: /wayanadImg.jpg
+heroImage: /images/hero.jpg
 heroTitle: Wayanad
 sections:
   - title: Wayanad Tholpetty Wildlife Sanctuary
