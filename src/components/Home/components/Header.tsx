@@ -21,7 +21,8 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
     location.pathname === '/about' ||
     location.pathname === '/rooms' ||
     location.pathname === '/attractions' ||
-    location.pathname === '/wayanad';
+    location.pathname === '/wayanad' ||
+    location.pathname === '/facilities';
   const headerColor = scrolled ? 'black' : type;
 
   useEffect(() => {
