@@ -178,8 +178,7 @@ collections:
             fields:
               - label: "Background Image"
                 name: "backgroundImage"
-                widget: "select"
-                options: ["aboutHero", "roomOne", "roomTwo", "roomThree", "PremiumImg1"]
+                widget: "image"
                 required: true
               - { label: "Main Title", name: "title", widget: "string", required: true }
               - { label: "Subtitle", name: "subtitle", widget: "string", required: true }
@@ -199,8 +198,7 @@ collections:
               - { label: "Description", name: "description", widget: "text", required: true }
               - label: "Room Image"
                 name: "image"
-                widget: "select"
-                options: ["roomOne", "roomTwo", "roomThree", "PremiumImg1"]
+                widget: "image"
                 required: true
               - label: "Layout Type"
                 name: "type"
