@@ -1,17 +1,21 @@
+<<<<<<< HEAD
 import { Helmet } from 'react-helmet-async';
 import { Header } from '../Home/components/Header';
 import FaqList from '../FaqComponent/FaqList';
 import useWayanadCMS from '../../hooks/useWayanadCMS';
 import { useEffect, useState } from 'react';
+=======
+import { Helmet } from "react-helmet-async";
+import { Header } from "../Home/components/Header";
+import useWayanadCMS from "../../hooks/useWayanadCMS";
+import Footer from "../Home/components/Footer";
+import { EnhancedAttractionCard } from "./components/EnhancedAttractionCard";
+import { ImageManager } from "./components/ImageManager";
+import { WayanadFaqs } from "./components/WayanadFaqs";
+import { isDevelopment } from "../../utils/env";
+>>>>>>> bc6bb7d676ee3552c9f2710f221820aa381601f2
 
-// Define the shape of FAQ frontmatter for compatibility with FaqList
-interface FaqFrontMatterAttributes {
-  title: string;
-  faqs: Array<{
-    question: string;
-    answer: string;
-  }>;
-}
+// FAQ management is handled separately through the CMS faqs collection
 
 const WayanadHero = ({
   heroImage,
@@ -38,6 +42,7 @@ const WayanadHero = ({
   );
 };
 
+<<<<<<< HEAD
 const AttractionCard = ({
   title,
   description,
@@ -97,6 +102,12 @@ export const WayanadPageCMS = () => {
       });
     }
   }, [data]);
+=======
+// Removed the old AttractionCard component as we're now using EnhancedAttractionCard
+
+export const WayanadPageCMS = () => {
+  const { data, loading, error } = useWayanadCMS();
+>>>>>>> bc6bb7d676ee3552c9f2710f221820aa381601f2
 
   if (loading) {
     return (
@@ -168,7 +179,7 @@ export const WayanadPageCMS = () => {
         {/* Attractions List */}
         <div className="space-y-16">
           {sections.map((attraction, index) => (
-            <AttractionCard
+            <EnhancedAttractionCard
               key={index}
               index={index}
               title={attraction.title}
@@ -179,8 +190,13 @@ export const WayanadPageCMS = () => {
         </div>
       </div>
 
-      {/* FAQ Section */}
-      {faqData && <FaqList {...faqData} />}
+      {/* Optional FAQ Section - managed separately through CMS */}
+      <WayanadFaqs />
+
+      <Footer />
+      
+      {/* Image Manager for Development */}
+      {isDevelopment && <ImageManager />}
     </div>
   );
 };
