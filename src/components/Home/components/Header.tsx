@@ -41,32 +41,28 @@ export const Header = ({ type = "white" }: HeaderProps) => {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-white shadow-sm" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-sm" : "bg-transparent"
+        }`}
     >
       <div className="flex items-end justify-center gap-24 sm:py-6 mobile:hidden sm:flex">
         <NavLink
           to="/"
-          className={`px-4 py-2 ${
-            headerColor === "white" ? "text-[#FFF]" : "text-primary"
-          } font-albertSans`}
+          className={`px-4 py-2 ${headerColor === "white" ? "text-[#FFF]" : "text-primary"
+            } font-albertSans`}
         >
           Wayanad Homestays
         </NavLink>
         <NavLink
           to="/about"
-          className={`px-4 py-2 ${
-            headerColor === "white" ? "text-[#FFF]" : "text-primary"
-          } font-albertSans`}
+          className={`px-4 py-2 ${headerColor === "white" ? "text-[#FFF]" : "text-primary"
+            } font-albertSans`}
         >
           About Us
         </NavLink>
         <NavLink
           to="/rooms"
-          className={`px-4 py-2 ${
-            headerColor === "white" ? "text-[#FFF]" : "text-primary"
-          } font-albertSans`}
+          className={`px-4 py-2 ${headerColor === "white" ? "text-[#FFF]" : "text-primary"
+            } font-albertSans`}
         >
           Rooms
         </NavLink>
@@ -80,26 +76,23 @@ export const Header = ({ type = "white" }: HeaderProps) => {
           </div>
         </NavLink>
         <NavLink
+          to="/facilities"
+          className={`px-4 py-2 ${headerColor === "white" ? "text-[#FFF]" : "text-primary"
+            } font-albertSans`}
+        >
+          Facilities
+        </NavLink>
+        <NavLink
           to="/gallery"
-          className={`px-4 py-2 ${
-            headerColor === "white" ? "text-[#FFF]" : "text-primary"
-          } font-albertSans`}
+          className={`px-4 py-2 ${headerColor === "white" ? "text-[#FFF]" : "text-primary"
+            } font-albertSans`}
         >
           Gallery
         </NavLink>
         <NavLink
-          to="/wayanad"
-          className={`px-4 py-2 ${
-            headerColor === "white" ? "text-[#FFF]" : "text-primary"
-          } font-albertSans`}
-        >
-          Wayanad
-        </NavLink>
-        <NavLink
           to="/contact"
-          className={`px-4 py-2 ${
-            headerColor === "white" ? "text-[#FFF]" : "text-primary"
-          } font-albertSans`}
+          className={`px-4 py-2 ${headerColor === "white" ? "text-[#FFF]" : "text-primary"
+            } font-albertSans`}
         >
           Contact Us
         </NavLink>
@@ -149,11 +142,10 @@ const PhoneHeader = ({ headerColor }: { headerColor?: "white" | "black" }) => {
         />
       </div>
       {isSidebarOpen && (
-        <div className="fixed inset-0 z-50 flex mt-[60px]">      
+        <div className="fixed inset-0 z-50 flex mt-[60px]">
           <div
-            className={`w-full bg-[#292626] p-4 transform transition-all duration-500 ease-in-out shadow-lg flex flex-col gap-[48px] justify-center ${
-              isSidebarOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
-            }`}
+            className={`w-full bg-[#292626] p-4 transform transition-all duration-500 ease-in-out shadow-lg flex flex-col gap-[48px] justify-center ${isSidebarOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
+              }`}
           >
             <div className="text-black">
               <ul className="flex flex-col gap-[12px]">
