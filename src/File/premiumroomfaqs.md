@@ -21,4 +21,4 @@ faqs:
     answer: Yes, premium homestays in Wayanad typically serve homemade Kerala cuisine, often with the option of customizing meals. Some even provide private dining setups, barbecue options, or candlelit dinners for a more exclusive experience.
   - question: Is parking available at premium homestays in Wayanad?
     answer: Yes, almost all premium homestays provide free and secure parking for guests. Properties located on estates or hilltops often have private driveways with enough space for multiple vehicles.
---- 
+---

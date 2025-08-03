@@ -3,7 +3,7 @@ interface IndivdualRoomsSessionProp {
   title?: string;
   discription?: string;
   subTitle?: string;
-  type?: "default" | "reverse";
+  type?: 'default' | 'reverse';
   onClick?: () => void;
 }
 
@@ -12,14 +12,14 @@ export const IndividualRoomSession = ({
   title,
   discription,
   // subTitle,
-  type = "default",
+  type = 'default',
   onClick,
 }: IndivdualRoomsSessionProp) => {
-  const isReverse = type === "reverse";
+  const isReverse = type === 'reverse';
   return (
     <div
       className={`flex flex-col sm:gap-8 sm:flex-row ${
-        isReverse && "sm:flex-row-reverse"
+        isReverse && 'sm:flex-row-reverse'
       }`}
     >
       <div className="sm:flex-1 ">

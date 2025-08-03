@@ -1,6 +1,6 @@
-import img1 from "/src/assets/imageTwo.jpg";
-import img2 from "/src/assets/imageOne.jpg";
-import img3 from "/src/assets/aboutLegacyImage.jpg"
+import img1 from '/src/assets/imageTwo.jpg';
+import img2 from '/src/assets/imageOne.jpg';
+import img3 from '/src/assets/aboutLegacyImage.jpg';
 const GallarySession = () => {
   return (
     <>
@@ -15,9 +15,9 @@ const GallarySession = () => {
           <img src={img2} alt="" />
         </div>
       </div>
-      <img src={img2} className="sm:hidden"/>
+      <img src={img2} className="sm:hidden" />
     </>
   );
-}
+};
 
-export default GallarySession
+export default GallarySession;

@@ -1,4 +1,4 @@
-import { Header } from "../../Home/components/Header";
+import { Header } from '../../Home/components/Header';
 
 const Hero = () => {
   return (
@@ -18,7 +18,7 @@ const Hero = () => {
               modern comfort. Here’s
             </span>
             <span>
-                everything waiting for you at Kudajadri Drizzle Homestay:
+              everything waiting for you at Kudajadri Drizzle Homestay:
             </span>
           </div>
         </div>

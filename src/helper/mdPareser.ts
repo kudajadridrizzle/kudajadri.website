@@ -1,4 +1,4 @@
-import fm from "front-matter";
+import fm from 'front-matter';
 
 // Define the shape of your frontmatter
 interface FrontMatterAttributes {

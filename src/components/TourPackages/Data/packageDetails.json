@@ -1,0 +1,79 @@
+{
+  "tour_package": [
+    {
+      "title": "Green Wayanad Tour Package",
+      "description": "We Make Best Wayanad Tour Packages For IT Groups, Families And Honeymoon Couple At The Lowest Possible Cost.",
+      "duration": "1 Night 2 Days",
+      "pickup_drop": "Kalpetta",
+      "price": {
+        "current_price": "₹8,500",
+        "original_price": "₹9,000.00",
+        "note": "Includes Stay For 2 Adults. ₹750 Per Extra Person."
+      },
+      "details": [
+        {
+          "title": "Overview",
+          "body": [
+            "Wayanad Trip Planner LLP Offers Perfectly Curated 2 Days & 1 Nights Wayanad Tour Packages—Ideal For Couples, Families, And Small Groups Looking To Explore The Scenic Beauty Of Wayanad At A Relaxed Pace. The Package Includes Premium Or Budget Stays, Private Cab Transfers, Sightseeing, Local Cuisine, And Optional Add-Ons Like Trekking, Campfires, And Wildlife Safaris."
+          ]
+        },
+        {
+          "title": "Sightseeing Locations",
+          "body": [
+            "Soochippara Waterfalls",
+            "Pookode Lake",
+            "Chain Tree",
+            "Lakkidi View Point",
+            "Kuruva Island (Currently Closed)",
+            "Edakkal Caves",
+            "Karapuzha Dam",
+            "Tholpetty Wildlife Sanctuary (Part Of Nagarhole National Park)"
+          ]
+        },
+        {
+          "title": "First Day (Check In)",
+          "body": [
+            "Pick Up From Kalpetta",
+            "Soochippara Water Falls",
+            "Pookode Lake",
+            "Lakkidi View Point"
+          ]
+        },
+        {
+          "title": "Second Day",
+          "body": [
+            "Provide Breakfast From Our Homestay",
+            "Sightseeing To",
+            "Kuruva Island (Now Closed)",
+            "Edakkal Caves",
+            "Karapuzha Dam"
+          ]
+        },
+        {
+          "title": "Inclusions",
+          "body": [
+            "Accommodation",
+            "Breakfast",
+            "Tea & Coffee",
+            "Dinner",
+            "Tax",
+            "Wayanad Sight Seeing – Driver Bata"
+          ]
+        },
+        {
+          "title": "Exclusions",
+          "body": ["Entry Tickets", "Parking Fee", "Lunch"]
+        },
+        {
+          "title": "Contact",
+          "body": [
+            "mobile: +91 9946 354 511",
+            "phone: 04936 286 840",
+            "email: Kudajadri@Ymail.Com",
+            "website: www.Kudajadririzzile.com"
+          ]
+        }
+      ]
+    }
+  ]
+}

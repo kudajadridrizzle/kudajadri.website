@@ -1,13 +1,13 @@
-import Direction from "../Home/components/Direction";
-import Footer from "../Home/components/Footer";
-import FacilitiesSession from "./components/FacilitiesSession";
-import Hero from "./components/Hero";
-import ImageSession from "./components/ImageSession";
-import ListSession from "./components/ListSession";
-import { Helmet } from "react-helmet-async";
-import fm from "front-matter";
-import facilitiesFaqRaw from "../../File/facilitiesfaqs.md?raw";
-import FaqList from "../FaqComponent/FaqList";
+import Direction from '../Home/components/Direction';
+import Footer from '../Home/components/Footer';
+import FacilitiesSession from './components/FacilitiesSession';
+import Hero from './components/Hero';
+import ImageSession from './components/ImageSession';
+import ListSession from './components/ListSession';
+import { Helmet } from 'react-helmet-async';
+import fm from 'front-matter';
+import facilitiesFaqRaw from '../../File/facilitiesfaqs.md?raw';
+import FaqList from '../FaqComponent/FaqList';
 
 // Define the shape of FAQ frontmatter
 interface FaqFrontMatterAttributes {
@@ -24,7 +24,9 @@ const FacilitiesPage = () => {
   return (
     <div>
       <Helmet>
-        <title>Swimming pool homestays in Wayanad: homestay with swimming pool</title>
+        <title>
+          Swimming pool homestays in Wayanad: homestay with swimming pool
+        </title>
         <meta
           name="description"
           content="Homestays in Wayanad with swimming pools offer the best facilities, comfort, and scenic views for a perfect relaxing getaway with family and friends."
@@ -35,7 +37,10 @@ const FacilitiesPage = () => {
         />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Kudajadri Homestay" />
-        <meta property="og:title" content="Swimming pool homestays in Wayanad: homestay with swimming pool" />
+        <meta
+          property="og:title"
+          content="Swimming pool homestays in Wayanad: homestay with swimming pool"
+        />
         <meta
           property="og:description"
           content="Homestays in Wayanad with swimming pools offer the best facilities, comfort, and scenic views for a perfect relaxing getaway with family and friends."
@@ -44,7 +49,10 @@ const FacilitiesPage = () => {
         <meta property="og:url" content={window.location.href} />
         <meta property="og:site_name" content="Kudajadri Homestay" />
         <meta property="og:locale" content="en_US" />
-        <meta property="og:image" content={`${window.location.origin}/aboutHero.jpg`} />
+        <meta
+          property="og:image"
+          content={`${window.location.origin}/aboutHero.jpg`}
+        />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -57,7 +65,10 @@ const FacilitiesPage = () => {
           content="Homestays in Wayanad with swimming pools offer the best facilities, comfort, and scenic views for a perfect relaxing getaway with family and friends."
         />
         <meta name="twitter:site" content="@kudajadrihomestay" />
-        <meta name="twitter:image" content={`${window.location.origin}/aboutHero.jpg`} />
+        <meta
+          name="twitter:image"
+          content={`${window.location.origin}/aboutHero.jpg`}
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="canonical" href={window.location.href} />

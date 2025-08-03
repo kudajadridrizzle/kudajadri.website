@@ -28,7 +28,11 @@ interface WayanadCMSData {
   body: string;
 }
 
-const useWayanadCMS = (): { data: WayanadCMSData | null; loading: boolean; error: Error | null } => {
+const useWayanadCMS = (): {
+  data: WayanadCMSData | null;
+  loading: boolean;
+  error: Error | null;
+} => {
   const [data, setData] = useState<WayanadCMSData | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<Error | null>(null);
@@ -40,14 +44,18 @@ const useWayanadCMS = (): { data: WayanadCMSData | null; loading: boolean; error
         // For now, we'll import the markdown file directly
         const wayanadPageRaw = await import('../File/wayanadpage.md?raw');
         const parsed = fm<WayanadFrontMatterAttributes>(wayanadPageRaw.default);
-        
+
         setData({
           attributes: parsed.attributes,
-          body: parsed.body
+          body: parsed.body,
         });
       } catch (err) {
         console.error('Error loading Wayanad page data:', err);
-        setError(err instanceof Error ? err : new Error('Failed to load Wayanad page data'));
+        setError(
+          err instanceof Error
+            ? err
+            : new Error('Failed to load Wayanad page data')
+        );
       } finally {
         setLoading(false);
       }

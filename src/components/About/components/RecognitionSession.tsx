@@ -1,7 +1,7 @@
-import recognitionSessionLogo1 from "../../../assets/recognitionSessionLogo1.svg";
-import recognitionSessionLogo2 from "../../../assets/recognitionSessionLogo2.svg";
-import recognitionSessionLogo3 from "../../../assets/recognitionSessionLogo3.svg";
-import recognitionSessionLogo4 from "../../../assets/recognitionSessionLogo4.svg";
+import recognitionSessionLogo1 from '../../../assets/recognitionSessionLogo1.svg';
+import recognitionSessionLogo2 from '../../../assets/recognitionSessionLogo2.svg';
+import recognitionSessionLogo3 from '../../../assets/recognitionSessionLogo3.svg';
+import recognitionSessionLogo4 from '../../../assets/recognitionSessionLogo4.svg';
 
 const RecognitionSession = () => {
   return (

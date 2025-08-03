@@ -1,16 +1,18 @@
-import Footer from "../Home/components/Footer";
-import { Header } from "../Home/components/Header";
-import { HeroSession } from "./components/HeroSession";
-import { ImageSession } from "./components/ImageSession";
-import { ResponsiveImageSession } from "./components/ResponsiveImageSession";
-import { Helmet } from "react-helmet-async";
+import Footer from '../Home/components/Footer';
+import { Header } from '../Home/components/Header';
+import { HeroSession } from './components/HeroSession';
+import { ImageSession } from './components/ImageSession';
+import { ResponsiveImageSession } from './components/ResponsiveImageSession';
+import { Helmet } from 'react-helmet-async';
 
 export const Gallrey = () => {
   return (
     <div>
       <Helmet>
         {/* Browser Tab Title */}
-        <title>Photos & Videos Gallery - Kudajadri Drizzle Homestays in Wayanad</title>
+        <title>
+          Photos & Videos Gallery - Kudajadri Drizzle Homestays in Wayanad
+        </title>
 
         {/* SEO Meta Tags */}
         <meta

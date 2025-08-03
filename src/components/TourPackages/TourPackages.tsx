@@ -1,11 +1,11 @@
-import Hero from "../About/components/Hero";
-import Direction from "../Home/components/Direction";
-import Footer from "../Home/components/Footer";
-import { Packages } from "./components/packages";
-import { Helmet } from "react-helmet-async";
-import fm from "front-matter";
-import tourPackagesFaqRaw from "../../File/tourpackagesfaqs.md?raw";
-import FaqList from "../FaqComponent/FaqList";
+import Hero from '../About/components/Hero';
+import Direction from '../Home/components/Direction';
+import Footer from '../Home/components/Footer';
+import { Packages } from './components/packages';
+import { Helmet } from 'react-helmet-async';
+import fm from 'front-matter';
+import tourPackagesFaqRaw from '../../File/tourpackagesfaqs.md?raw';
+import FaqList from '../FaqComponent/FaqList';
 
 // Define the shape of FAQ frontmatter
 interface FaqFrontMatterAttributes {
@@ -22,7 +22,9 @@ export const TourPackages = () => {
   return (
     <div>
       <Helmet>
-        <title>Wayanad Holiday Tour Packages: Best Trip Deals for Families & Couples</title>
+        <title>
+          Wayanad Holiday Tour Packages: Best Trip Deals for Families & Couples
+        </title>
         <meta
           name="description"
           content="Discover the best Wayanad holiday tour packages with top deals for families, groups, and couples. Enjoy a perfect getaway with nature, adventure, and comfort."

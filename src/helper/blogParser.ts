@@ -1,5 +1,5 @@
-import fm from "front-matter";
-import { marked } from "marked";
+import fm from 'front-matter';
+import { marked } from 'marked';
 
 // Define the shape of blog frontmatter
 interface BlogFrontMatterAttributes {

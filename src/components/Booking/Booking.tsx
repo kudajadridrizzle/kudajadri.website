@@ -1,25 +1,25 @@
-import { useState } from "react";
-import { TextField } from "../Contact/ContactPage";
-import { Header } from "../Home/components/Header";
-import bookingImage from "../../../public/aboutHero.jpg";
-import { Helmet } from "react-helmet-async";
+import { useState } from 'react';
+import { TextField } from '../Contact/ContactPage';
+import { Header } from '../Home/components/Header';
+import bookingImage from '../../../public/aboutHero.jpg';
+import { Helmet } from 'react-helmet-async';
 
 const Booking = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
   });
 
   const handleChange = (key: string, value: string) => {
-    setFormData((prev) => ({ ...prev, [key]: value }));
+    setFormData(prev => ({ ...prev, [key]: value }));
   };
 
   const handleSubmit = () => {
     const phoneNumber = import.meta.env.VITE_WHATSAPP_NUMBER;
     if (!phoneNumber) {
-      console.error("VITE_WHATSAPP_NUMBER is not defined");
+      console.error('VITE_WHATSAPP_NUMBER is not defined');
       return;
     }
 
@@ -43,32 +43,58 @@ Message: ${message}
     <div>
       <Helmet>
         {/* Browser Tab Title */}
-        <title>Book Your Stay | Kudajadri Homestay Wayanad - Easy Online Booking</title>
-        
+        <title>
+          Book Your Stay | Kudajadri Homestay Wayanad - Easy Online Booking
+        </title>
+
         {/* SEO Meta Tags */}
-        <meta name="description" content="Book your stay at Kudajadri Homestay in Wayanad with instant confirmation. Easy online booking for families and couples. Get the best rates and secure your perfect accommodation." />
-        <meta name="keywords" content="book kudajadri homestay, wayanad accommodation booking, online reservation, instant confirmation" />
+        <meta
+          name="description"
+          content="Book your stay at Kudajadri Homestay in Wayanad with instant confirmation. Easy online booking for families and couples. Get the best rates and secure your perfect accommodation."
+        />
+        <meta
+          name="keywords"
+          content="book kudajadri homestay, wayanad accommodation booking, online reservation, instant confirmation"
+        />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Kudajadri Homestay" />
-        
+
         {/* Open Graph Meta Tags for Facebook/WhatsApp */}
-        <meta property="og:title" content="Book Your Stay | Kudajadri Homestay Wayanad - Easy Online Booking" />
-        <meta property="og:description" content="Book your stay at Kudajadri Homestay in Wayanad with instant confirmation. Easy online booking for families and couples. Get the best rates and secure your perfect accommodation." />
+        <meta
+          property="og:title"
+          content="Book Your Stay | Kudajadri Homestay Wayanad - Easy Online Booking"
+        />
+        <meta
+          property="og:description"
+          content="Book your stay at Kudajadri Homestay in Wayanad with instant confirmation. Easy online booking for families and couples. Get the best rates and secure your perfect accommodation."
+        />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={window.location.href} />
         <meta property="og:site_name" content="Kudajadri Homestay" />
         <meta property="og:locale" content="en_US" />
-        <meta property="og:image" content={`${window.location.origin}/aboutHero.jpg`} />
+        <meta
+          property="og:image"
+          content={`${window.location.origin}/aboutHero.jpg`}
+        />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        
+
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Book Your Stay | Kudajadri Homestay Wayanad - Easy Online Booking" />
-        <meta name="twitter:description" content="Book your stay at Kudajadri Homestay in Wayanad with instant confirmation. Easy online booking for families and couples. Get the best rates and secure your perfect accommodation." />
+        <meta
+          name="twitter:title"
+          content="Book Your Stay | Kudajadri Homestay Wayanad - Easy Online Booking"
+        />
+        <meta
+          name="twitter:description"
+          content="Book your stay at Kudajadri Homestay in Wayanad with instant confirmation. Easy online booking for families and couples. Get the best rates and secure your perfect accommodation."
+        />
         <meta name="twitter:site" content="@kudajadrihomestay" />
-        <meta name="twitter:image" content={`${window.location.origin}/aboutHero.jpg`} />
-        
+        <meta
+          name="twitter:image"
+          content={`${window.location.origin}/aboutHero.jpg`}
+        />
+
         {/* Additional Meta Tags */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
@@ -93,22 +119,30 @@ Message: ${message}
                 <TextField
                   label="Full Name"
                   value={formData.name}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleChange("name", e.target.value)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    handleChange('name', e.target.value)
+                  }
                 />
                 <TextField
                   label="Email"
                   value={formData.email}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleChange("email", e.target.value)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    handleChange('email', e.target.value)
+                  }
                 />
                 <TextField
                   label="Phone Number"
                   value={formData.phone}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleChange("phone", e.target.value)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    handleChange('phone', e.target.value)
+                  }
                 />
                 <TextField
                   label="Message"
                   value={formData.message}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleChange("message", e.target.value)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    handleChange('message', e.target.value)
+                  }
                 />
                 <div className="pt-6">
                   <button

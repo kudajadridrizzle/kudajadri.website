@@ -6,7 +6,9 @@ export const WayanadPage = () => {
   return (
     <>
       <Helmet>
-        <title>Wayanad: Explore Tourist Attractions and Destinations in Wayanad</title>
+        <title>
+          Wayanad: Explore Tourist Attractions and Destinations in Wayanad
+        </title>
         <meta
           name="description"
           content="Discover top tourist attractions and must-visit destinations in Wayanad. Plan your perfect trip to explore nature, wildlife, and cultural sites."
@@ -20,7 +22,7 @@ export const WayanadPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
       </Helmet>
-      
+
       <WayanadPageCMS />
     </>
   );
