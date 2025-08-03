@@ -42,7 +42,7 @@ sections:
     description: Soochipara Waterfalls, also known as Sentinel Rock Waterfalls, is a
       three-tiered waterfall located in Vellarimala near Meppadi. The cascading
       falls range from 100 to 300 feet and offer a spectacular natural display.
-    image: https://www.flickr.com/photos/rajipv/21532721698
+    image: https://wayanadtourism.co.in/images//tourist-places/meenmutty-waterfalls-wayanad/meenmutty-waterfalls-wayanad-tourism-entry-ticket-price.jpg
   - title: Wayanad Banasurasagar Dam
     description: Banasurasagar Dam, the largest earth dam in India, impounds the
       Karamanathodu tributary of the Kabini River. The upstream region forms
