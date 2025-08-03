@@ -6,12 +6,10 @@ import { ImageManager } from "./components/ImageManager";
 import { WayanadFaqs } from "./components/WayanadFaqs";
 import { EnhancedHero } from "./components/EnhancedHero";
 import { isDevelopment } from "../../utils/env";
+import { Header } from "@radix-ui/react-accordion";
 
 // FAQ management is handled separately through the CMS faqs collection
 
-<<<<<<< HEAD
-// Using EnhancedHero component instead of the old WayanadHero
-=======
 const WayanadHero = ({
   heroImage,
   heroTitle,
@@ -36,7 +34,6 @@ const WayanadHero = ({
     </div>
   );
 };
->>>>>>> 6c59e6070ebb3c0254f02df44e6ffeb4e2ba93b6
 
 // Removed the old AttractionCard component as we're now using EnhancedAttractionCard
 

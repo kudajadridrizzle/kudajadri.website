@@ -17,7 +17,7 @@ interface FaqFrontMatterAttributes {
 }
 
 export const TourPackages = () => {
-  const parsedFaq = fm<FaqFrontMatterAttributes>(tourPackagesFaqRaw);
+  // const parsedFaq = fm<FaqFrontMatterAttributes>(tourPackagesFaqRaw);
 
   return (
     <div>
@@ -76,8 +76,8 @@ export const TourPackages = () => {
       <Packages />
       <Direction />
 
-      {/* FAQ Section from CMS */}
-      <FaqList {...parsedFaq.attributes} />
+      {/* FAQ Section from CMS
+      <FaqList {...parsedFaq.attributes} /> */}
 
       <Footer />
     </div>
