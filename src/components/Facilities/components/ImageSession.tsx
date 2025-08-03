@@ -1,7 +1,7 @@
-import imageOne from "../assets/image1.jpg";
-import imageTwo from "../assets/image2.jpg";
-import imageThree from "../assets/image3.jpg";
-import imageMobile from "../assets/mobileImage.jpg";
+import imageOne from '../assets/image1.jpg';
+import imageTwo from '../assets/image2.jpg';
+import imageThree from '../assets/image3.jpg';
+import imageMobile from '../assets/mobileImage.jpg';
 
 const ImageSession = () => {
   return (

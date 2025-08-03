@@ -21,4 +21,4 @@ faqs:
     answer: Yes, Kudajadri Drizzle has 24x7 CCTV surveillance and is known for its safe, welcoming, and homely atmosphere.
   - question: How can I book a stay at Kudajadri Drizzle?
     answer: Bookings can be made directly via our website, through WhatsApp, or using popular travel platforms where we're listed.
---- 
+---

@@ -1,9 +1,9 @@
-import faceBookLogo from "../../../assets/Facebook.svg";
-import instaLogo from "../../../assets/Insta.svg";
-import youtubeLogo from "../../../assets/youtube.svg";
-import twitterLogo from "../../../assets/twitter.svg";
-import threadLogo from "../../../assets/Thread.svg";
-import { Link, useNavigate } from "react-router-dom";
+import faceBookLogo from '../../../assets/Facebook.svg';
+import instaLogo from '../../../assets/Insta.svg';
+import youtubeLogo from '../../../assets/youtube.svg';
+import twitterLogo from '../../../assets/twitter.svg';
+import threadLogo from '../../../assets/Thread.svg';
+import { Link, useNavigate } from 'react-router-dom';
 
 const whatsappNumber = '+91 9946 354 511';
 const email = 'kudajadri@ymail.com';
@@ -16,12 +16,13 @@ const Footer = () => {
       {/* Top CTA Section */}
       <div className="sm:px-[12%] large:px-[18%] sm:py-14 mobile:py-7 mobile:px-4 flex flex-col sm:flex-row sm:justify-between border-b border-[#fff] sm:gap-0 mobile:gap-[30px] items-center">
         <span className="block text-[#fff] font-ivy sm:text-[44px] mobile:text-[32px]">
-        Ready to Discover Nature? Book Your Wayanad Homestay Now.        </span>
+          Ready to Discover Nature? Book Your Wayanad Homestay Now.{' '}
+        </span>
         <div className="w-[100%] flex items-start">
           <button
             className="px-6 py-3 bg-[#fff] rounded-full text-primary font-albertSans text-base font-medium capitalize"
             onClick={() => {
-              navigate("/contact");
+              navigate('/contact');
             }}
           >
             Book Now
@@ -42,7 +43,6 @@ const Footer = () => {
 
         {/* Footer Links */}
         <div className="flex flex-col sm:flex-row sm:gap-[30px] justify-between mobile:gap-11 mobile:py-10 mobile:px-4 sm:p-0">
-
           {/* Contact Section */}
           <div className="flex flex-col sm:gap-9 mobile:gap-6">
             <span className="text-[#fff] font-albertSans text-base uppercase block">
@@ -101,8 +101,12 @@ const Footer = () => {
               <Link to="/facilities">Homestay with Swimming Pool</Link>
               <Link to="/gallery">Homestay in Wayanad Photos</Link>
               <Link to="/rooms">Wayanad Accommodations</Link>
-              <Link to="/rooms/premium-rooms">Premium Homestays in Wayanad</Link>
-              <Link to="/rooms/deluxe-heritage-rooms">Heritage Homestays in Wayanad</Link>
+              <Link to="/rooms/premium-rooms">
+                Premium Homestays in Wayanad
+              </Link>
+              <Link to="/rooms/deluxe-heritage-rooms">
+                Heritage Homestays in Wayanad
+              </Link>
             </div>
           </div>
 
@@ -114,14 +118,15 @@ const Footer = () => {
             <div className="text-secondary font-albertSans sm:text-xl flex flex-col gap-2">
               <Link to="/rooms/classic-rooms">Classic Rooms</Link>
               <Link to="/rooms/deluxe-rooms">Deluxe Rooms</Link>
-              <Link to="/rooms/deluxe-heritage-rooms">Deluxe Heritage Rooms</Link>
+              <Link to="/rooms/deluxe-heritage-rooms">
+                Deluxe Heritage Rooms
+              </Link>
               <Link to="/rooms/premium-rooms">Premium Rooms</Link>
               <Link to="/contact">Book Rooms in Wayanad</Link>
               <Link to="/rooms/deluxe-rooms">Wayanad Cottage</Link>
               <Link to="/rooms/premium-rooms">Luxury Wayanad Homestays</Link>
             </div>
           </div>
-
         </div>
       </div>
     </div>

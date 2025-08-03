@@ -1,12 +1,12 @@
-import Footer from "../Home/components/Footer";
-import ReviewSession from "../Home/components/ReviewSession";
-import AboutSession from "./components/AboutSession";
-import Hero from "./components/Hero";
-import RecognitionSession from "./components/RecognitionSession";
-import { Helmet } from "react-helmet-async";
-import fm from "front-matter";
-import aboutFaqRaw from "../../File/aboutfaqs.md?raw";
-import FaqList from "../FaqComponent/FaqList";
+import Footer from '../Home/components/Footer';
+import ReviewSession from '../Home/components/ReviewSession';
+import AboutSession from './components/AboutSession';
+import Hero from './components/Hero';
+import RecognitionSession from './components/RecognitionSession';
+import { Helmet } from 'react-helmet-async';
+import fm from 'front-matter';
+import aboutFaqRaw from '../../File/aboutfaqs.md?raw';
+import FaqList from '../FaqComponent/FaqList';
 
 // Define the shape of FAQ frontmatter
 interface FaqFrontMatterAttributes {

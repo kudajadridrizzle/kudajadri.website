@@ -1,4 +1,4 @@
-import { Header } from "../../Home/components/Header";
+import { Header } from '../../Home/components/Header';
 
 interface CMSHeroProps {
   backgroundImage: string; // Already processed image URL
@@ -7,14 +7,19 @@ interface CMSHeroProps {
   overlayOpacity: number;
 }
 
-const CMSHero = ({ backgroundImage, title, subtitle, overlayOpacity }: CMSHeroProps) => {
+const CMSHero = ({
+  backgroundImage,
+  title,
+  subtitle,
+  overlayOpacity,
+}: CMSHeroProps) => {
   return (
-    <div 
+    <div
       className="relative h-screen bg-no-repeat bg-cover"
       style={{ backgroundImage: `url('${backgroundImage}')` }}
     >
       {/* Overlay */}
-      <div 
+      <div
         className="absolute inset-0 bg-black"
         style={{ opacity: overlayOpacity }}
       ></div>

@@ -21,4 +21,4 @@ faqs:
     answer: Yes, most cottages in Wayanad are located near top tourist attractions like Edakkal Caves, Pookode Lake, Soochipara Falls, and Banasura Sagar Dam, offering convenience for Wayanad sightseeing and day trips.
   - question: How can I book a cottage stay in Wayanad?
     answer: You can book online through the property's official website or trusted platforms. Always check photos, amenities, and guest reviews to choose the right cottage that fits your needs and budget.
---- 
+---

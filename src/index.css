@@ -8,22 +8,19 @@
   --color-secondary: rgba(128, 128, 128, 1);
   --fonts-primary-font: Staylistam;
   --fonts-secondary-font: Ivy Mode;
-  --fonts-tertiary-font: "Albert Sans", serif;
+  --fonts-tertiary-font: 'Albert Sans', serif;
 }
 
 @font-face {
   font-family: 'Staylista';
-  src: url('/src/assets/font/staylista.ttf') 
-
- 
+  src: url('/src/assets/font/staylista.ttf');
 }
 @font-face {
   font-family: 'Ivy';
-  src: url('/src/assets/font/ivy.ttf') 
-
+  src: url('/src/assets/font/ivy.ttf');
 }
 
-body{
+body {
   /* max-width:1600px */
 }
 
@@ -48,7 +45,8 @@ body{
   @apply mb-4 leading-7 text-gray-700;
 }
 
-.markdown-content ul, .markdown-content ol {
+.markdown-content ul,
+.markdown-content ol {
   @apply pl-6 mb-4;
 }
 

@@ -1,5 +1,5 @@
-import { useNavigate, useParams } from "react-router-dom";
-import { roomData } from "../constants";
+import { useNavigate, useParams } from 'react-router-dom';
+import { roomData } from '../constants';
 
 const AnotherRoomSession = () => {
   const { id } = useParams<{ id: string }>();
@@ -14,7 +14,13 @@ const AnotherRoomSession = () => {
       <div className="flex gap-8 sm:flex-row mobile:flex-col">
         <div className="flex flex-col gap-8 sm:w-[412px] mobile:w-full">
           <div>
-            {id && <img src={roomData[id]?.anotherRoomOne?.image} alt="" className="mobile:w-full" />}
+            {id && (
+              <img
+                src={roomData[id]?.anotherRoomOne?.image}
+                alt=""
+                className="mobile:w-full"
+              />
+            )}
           </div>
           <div className="flex flex-col gap-4">
             {/* <span className="text-[#000] text-lg font-albertSans">
@@ -29,11 +35,14 @@ const AnotherRoomSession = () => {
               </span>
             </div>
             <div>
-              <button className="px-10 py-4 capitalize border rounded-full text-primary font-albertSans border-primary" onClick={() => {
-                if (id) {
-                  navigate(roomData[id].anotherRoomOne.navigate as string);
-                }
-              }}>
+              <button
+                className="px-10 py-4 capitalize border rounded-full text-primary font-albertSans border-primary"
+                onClick={() => {
+                  if (id) {
+                    navigate(roomData[id].anotherRoomOne.navigate as string);
+                  }
+                }}
+              >
                 See room
               </button>
             </div>
@@ -41,7 +50,11 @@ const AnotherRoomSession = () => {
         </div>
         <div className="flex flex-col gap-8 sm:w-[412px]">
           <div>
-            <img src={id && roomData[id]?.anotherRoomTwo.image} alt="" className="mobile:w-full" />
+            <img
+              src={id && roomData[id]?.anotherRoomTwo.image}
+              alt=""
+              className="mobile:w-full"
+            />
           </div>
           <div className="flex flex-col gap-3">
             {/* <span className="text-[#000] text-lg font-albertSans">
@@ -54,19 +67,26 @@ const AnotherRoomSession = () => {
               {id && roomData[id]?.anotherRoomTwo.discription}
             </span>
             <div>
-              <button className="px-10 py-4 capitalize border rounded-full text-primary font-albertSans border-primary" onClick={() => {
-                if (id) {
-                  navigate(roomData[id].anotherRoomTwo.navigate as string);
-                }
-              }}>
+              <button
+                className="px-10 py-4 capitalize border rounded-full text-primary font-albertSans border-primary"
+                onClick={() => {
+                  if (id) {
+                    navigate(roomData[id].anotherRoomTwo.navigate as string);
+                  }
+                }}
+              >
                 See room
               </button>
             </div>
           </div>
         </div>
-                <div className="flex flex-col gap-8 sm:w-[412px]">
+        <div className="flex flex-col gap-8 sm:w-[412px]">
           <div>
-            <img src={id && roomData[id]?.anotherRoomThree.image} alt="" className="mobile:w-full" />
+            <img
+              src={id && roomData[id]?.anotherRoomThree.image}
+              alt=""
+              className="mobile:w-full"
+            />
           </div>
           <div className="flex flex-col gap-3">
             {/* <span className="text-[#000] text-lg font-albertSans">
@@ -79,11 +99,14 @@ const AnotherRoomSession = () => {
               {id && roomData[id]?.anotherRoomThree.discription}
             </span>
             <div>
-              <button className="px-10 py-4 capitalize border rounded-full text-primary font-albertSans border-primary" onClick={() => {
-                if (id) {
-                  navigate(roomData[id].anotherRoomThree.navigate as string);
-                }
-              }}>
+              <button
+                className="px-10 py-4 capitalize border rounded-full text-primary font-albertSans border-primary"
+                onClick={() => {
+                  if (id) {
+                    navigate(roomData[id].anotherRoomThree.navigate as string);
+                  }
+                }}
+              >
                 See room
               </button>
             </div>

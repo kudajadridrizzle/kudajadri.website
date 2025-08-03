@@ -1,9 +1,9 @@
-import HeritageStay from "../../../assets/HeritageStay.svg";
-import PaddyFieldView from "../../../assets/PaddyFieldView.svg";
-import FastWifi from "../../../assets/FastWiFi.svg";
-import EnhancedSafety from "../../../assets/EnhancedSafety.svg";
-import AmpleParking from "../../../assets/AmpleParking.svg";
-import PeacefulEnvironment from "../../../assets/PeacefulEnvironment.svg";
+import HeritageStay from '../../../assets/HeritageStay.svg';
+import PaddyFieldView from '../../../assets/PaddyFieldView.svg';
+import FastWifi from '../../../assets/FastWiFi.svg';
+import EnhancedSafety from '../../../assets/EnhancedSafety.svg';
+import AmpleParking from '../../../assets/AmpleParking.svg';
+import PeacefulEnvironment from '../../../assets/PeacefulEnvironment.svg';
 
 const Amenities = () => {
   return (

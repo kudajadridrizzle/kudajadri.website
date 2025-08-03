@@ -1,6 +1,6 @@
-import { useState } from "react";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import { useState } from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 interface CMSRoomSessionProps {
   heading: string;
@@ -12,7 +12,7 @@ const CMSRoomSession = ({ heading, content }: CMSRoomSessionProps) => {
   const maxChars = 400;
 
   const isLong = content.length > maxChars;
-  const preview = isLong ? content.slice(0, maxChars) + "..." : content;
+  const preview = isLong ? content.slice(0, maxChars) + '...' : content;
 
   return (
     <div className="sm:px-[12%] sm:pt-32 sm:pb-0 bg-[#FFF] px-4 mobile:pt-14 mobile:pb-6 large:px-[18%]">
@@ -29,7 +29,7 @@ const CMSRoomSession = ({ heading, content }: CMSRoomSessionProps) => {
               onClick={() => setExpanded(!expanded)}
               className="mt-2 block text-sm text-primary hover:underline focus:outline-none"
             >
-              {expanded ? "Read less" : "Read more"}
+              {expanded ? 'Read less' : 'Read more'}
             </button>
           )}
         </div>

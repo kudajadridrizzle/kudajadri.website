@@ -2,7 +2,11 @@ import { useMemo } from 'react';
 import fm from 'front-matter';
 import roomsPageRaw from '../File/roomspage.md?raw';
 import roomsFaqRaw from '../File/roomsfaqs.md?raw';
-import { getRoomImage, RoomImageKey, roomImages } from '../assets/images/roomImages';
+import {
+  getRoomImage,
+  RoomImageKey,
+  roomImages,
+} from '../assets/images/roomImages';
 
 // Helper function to process image - handles both uploaded paths and predefined keys
 const processImage = (imageValue: string): string => {

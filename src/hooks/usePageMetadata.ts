@@ -31,12 +31,12 @@ export const usePageMetadata = ({
   twitterTitle,
   twitterDescription,
   twitterImage,
-  twitterSite = '@kudajadrihomestay'
+  twitterSite = '@kudajadrihomestay',
 }: PageMetadata) => {
   useEffect(() => {
     // Update title
     document.title = title;
-    
+
     // Update meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
@@ -56,8 +56,14 @@ export const usePageMetadata = ({
     metaKeywords.setAttribute('content', keywords || '');
 
     // Update or create meta tags
-    const updateOrCreateMeta = (property: string, content: string, isProperty = true) => {
-      const selector = isProperty ? `meta[property="${property}"]` : `meta[name="${property}"]`;
+    const updateOrCreateMeta = (
+      property: string,
+      content: string,
+      isProperty = true
+    ) => {
+      const selector = isProperty
+        ? `meta[property="${property}"]`
+        : `meta[name="${property}"]`;
       let meta = document.querySelector(selector);
       if (!meta) {
         meta = document.createElement('meta');
@@ -83,15 +89,23 @@ export const usePageMetadata = ({
     // Twitter Card tags
     updateOrCreateMeta('twitter:card', twitterCard, false);
     updateOrCreateMeta('twitter:title', twitterTitle || title, false);
-    updateOrCreateMeta('twitter:description', twitterDescription || description, false);
+    updateOrCreateMeta(
+      'twitter:description',
+      twitterDescription || description,
+      false
+    );
     if (twitterImage) updateOrCreateMeta('twitter:image', twitterImage, false);
     updateOrCreateMeta('twitter:site', twitterSite, false);
 
     // Additional meta tags
     updateOrCreateMeta('robots', 'index, follow', false);
     updateOrCreateMeta('author', 'Kudajadri Homestay', false);
-    updateOrCreateMeta('viewport', 'width=device-width, initial-scale=1.0', false);
-    
+    updateOrCreateMeta(
+      'viewport',
+      'width=device-width, initial-scale=1.0',
+      false
+    );
+
     // Canonical URL
     if (ogUrl) {
       let canonical = document.querySelector('link[rel="canonical"]');
@@ -102,5 +116,20 @@ export const usePageMetadata = ({
       }
       canonical.setAttribute('href', ogUrl);
     }
-  }, [title, description, keywords, ogTitle, ogDescription, ogImage, ogType, ogUrl, ogSiteName, twitterCard, twitterTitle, twitterDescription, twitterImage, twitterSite]);
-}; 
+  }, [
+    title,
+    description,
+    keywords,
+    ogTitle,
+    ogDescription,
+    ogImage,
+    ogType,
+    ogUrl,
+    ogSiteName,
+    twitterCard,
+    twitterTitle,
+    twitterDescription,
+    twitterImage,
+    twitterSite,
+  ]);
+};

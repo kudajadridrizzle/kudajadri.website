@@ -1,10 +1,10 @@
-import { Helmet } from "react-helmet-async";
-import Footer from "../Home/components/Footer";
-import FaqList from "../FaqComponent/FaqList";
-import { useRoomsCMS } from "../../hooks/useRoomsCMS";
-import CMSHero from "./Components/CMSHero";
-import CMSRoomSession from "./Components/CMSRoomSession";
-import CMSIndividualRooms from "./Components/CMSIndividualRooms";
+import { Helmet } from 'react-helmet-async';
+import Footer from '../Home/components/Footer';
+import FaqList from '../FaqComponent/FaqList';
+import { useRoomsCMS } from '../../hooks/useRoomsCMS';
+import CMSHero from './Components/CMSHero';
+import CMSRoomSession from './Components/CMSRoomSession';
+import CMSIndividualRooms from './Components/CMSIndividualRooms';
 
 const Rooms = () => {
   const { seo, hero, roomsIntro, individualRooms, faq } = useRoomsCMS();
@@ -23,26 +23,32 @@ const Rooms = () => {
         <meta property="og:url" content={window.location.href} />
         <meta property="og:site_name" content="Kudajadri Homestay" />
         <meta property="og:locale" content="en_US" />
-        <meta property="og:image" content={`${window.location.origin}${seo.ogImage}`} />
+        <meta
+          property="og:image"
+          content={`${window.location.origin}${seo.ogImage}`}
+        />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={seo.title} />
         <meta name="twitter:description" content={seo.description} />
         <meta name="twitter:site" content={seo.twitterSite} />
-        <meta name="twitter:image" content={`${window.location.origin}${seo.ogImage}`} />
+        <meta
+          name="twitter:image"
+          content={`${window.location.origin}${seo.ogImage}`}
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="canonical" href={window.location.href} />
       </Helmet>
 
-      <CMSHero 
+      <CMSHero
         backgroundImage={hero.backgroundImage}
         title={hero.title}
         subtitle={hero.subtitle}
         overlayOpacity={hero.overlayOpacity}
       />
-      <CMSRoomSession 
+      <CMSRoomSession
         heading={roomsIntro.heading}
         content={roomsIntro.content}
       />

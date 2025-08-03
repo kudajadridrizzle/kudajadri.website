@@ -26,7 +26,9 @@ const BlogList: React.FC = () => {
           if (post.published) posts.push(post);
         }
 
-        posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+        posts.sort(
+          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+        );
         setBlogPosts(posts);
       } catch (error) {
         console.error('Error loading blog posts:', error);
@@ -49,7 +51,9 @@ const BlogList: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Wayanad Travel Blog: Latest News, Tourism Updates, & Insights</title>
+        <title>
+          Wayanad Travel Blog: Latest News, Tourism Updates, & Insights
+        </title>
         <meta
           name="description"
           content="Stay updated with the Wayanad Travel Blog. Get the latest news, tourism updates, local insights, travel tips, and experiences to help you plan your perfect trip."
@@ -60,7 +64,10 @@ const BlogList: React.FC = () => {
         />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Kudajadri Homestay" />
-        <meta property="og:title" content="Wayanad Travel Blog: Latest News, Tourism Updates, & Insights" />
+        <meta
+          property="og:title"
+          content="Wayanad Travel Blog: Latest News, Tourism Updates, & Insights"
+        />
         <meta
           property="og:description"
           content="Stay updated with the Wayanad Travel Blog. Get the latest news, tourism updates, local insights, travel tips, and experiences to help you plan your perfect trip."
@@ -68,14 +75,23 @@ const BlogList: React.FC = () => {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={window.location.href} />
         <meta property="og:site_name" content="Kudajadri Homestay" />
-        <meta property="og:image" content={`${window.location.origin}/aboutHero.jpg`} />
+        <meta
+          property="og:image"
+          content={`${window.location.origin}/aboutHero.jpg`}
+        />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Wayanad Travel Blog: Latest News, Tourism Updates, & Insights" />
+        <meta
+          name="twitter:title"
+          content="Wayanad Travel Blog: Latest News, Tourism Updates, & Insights"
+        />
         <meta
           name="twitter:description"
           content="Stay updated with the Wayanad Travel Blog. Get the latest news, tourism updates, local insights, travel tips, and experiences to help you plan your perfect trip."
         />
-        <meta name="twitter:image" content={`${window.location.origin}/aboutHero.jpg`} />
+        <meta
+          name="twitter:image"
+          content={`${window.location.origin}/aboutHero.jpg`}
+        />
         <link rel="canonical" href={window.location.href} />
       </Helmet>
 
@@ -91,11 +107,13 @@ const BlogList: React.FC = () => {
 
           {blogPosts.length === 0 ? (
             <div className="py-12 text-center">
-              <p className="text-lg text-gray-500">No blog posts available yet.</p>
+              <p className="text-lg text-gray-500">
+                No blog posts available yet.
+              </p>
             </div>
           ) : (
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {blogPosts.map((post) => (
+              {blogPosts.map(post => (
                 <article
                   key={post.slug}
                   className="overflow-hidden transition-shadow duration-300 bg-white rounded-lg shadow-md hover:shadow-lg"
@@ -127,7 +145,9 @@ const BlogList: React.FC = () => {
                       {post.title}
                     </h2>
 
-                    <p className="mb-4 text-gray-600 line-clamp-3">{post.description}</p>
+                    <p className="mb-4 text-gray-600 line-clamp-3">
+                      {post.description}
+                    </p>
 
                     {post.tags && post.tags.length > 0 && (
                       <div className="flex flex-wrap gap-2 mb-4">
@@ -153,7 +173,12 @@ const BlogList: React.FC = () => {
                         stroke="currentColor"
                         viewBox="0 0 24 24"
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
                       </svg>
                     </Link>
                   </div>

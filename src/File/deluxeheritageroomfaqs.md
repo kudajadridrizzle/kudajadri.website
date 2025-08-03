@@ -21,4 +21,4 @@ faqs:
     answer: Yes, many heritage and traditional homestays in Wayanad offer experiences like cooking demos, folklore storytelling, farming participation, or traditional art and dance performances, depending on the host and season.
   - question: Why choose a heritage or traditional homestay over a hotel?
     answer: These homestays offer deeper cultural connection, personalized service, and a peaceful setting not found in typical hotels. Staying in a traditional or heritage homestay in Wayanad means living like a local, not just visiting.
---- 
+---

@@ -1,13 +1,12 @@
-import imageOne from "../assets/Gallery1.jpg";
-import imageTwo from "../assets/gallery2.jpg";
-import imageThree from "../assets/gallery3.jpg";
-import imagefour from "../assets/gallery4.jpg";
-import imagefive from "../assets/gallery5.jpg";
-import imagesix from "../assets/gallery6.jpg";
-import imageseven from "../assets/gallery7.jpg";
-import imageeight from "../assets/gallery8.jpg";
-import imagenine from "../assets/gallery9.jpg";
-
+import imageOne from '../assets/Gallery1.jpg';
+import imageTwo from '../assets/gallery2.jpg';
+import imageThree from '../assets/gallery3.jpg';
+import imagefour from '../assets/gallery4.jpg';
+import imagefive from '../assets/gallery5.jpg';
+import imagesix from '../assets/gallery6.jpg';
+import imageseven from '../assets/gallery7.jpg';
+import imageeight from '../assets/gallery8.jpg';
+import imagenine from '../assets/gallery9.jpg';
 
 export const ImageSession = () => {
   return (

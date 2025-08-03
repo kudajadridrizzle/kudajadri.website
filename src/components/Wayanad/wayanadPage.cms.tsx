@@ -1,8 +1,8 @@
-import { Helmet } from "react-helmet-async";
-import { Header } from "../Home/components/Header";
-import FaqList from "../FaqComponent/FaqList";
-import useWayanadCMS from "../../hooks/useWayanadCMS";
-import { useEffect, useState } from "react";
+import { Helmet } from 'react-helmet-async';
+import { Header } from '../Home/components/Header';
+import FaqList from '../FaqComponent/FaqList';
+import useWayanadCMS from '../../hooks/useWayanadCMS';
+import { useEffect, useState } from 'react';
 
 // Define the shape of FAQ frontmatter for compatibility with FaqList
 interface FaqFrontMatterAttributes {
@@ -13,9 +13,18 @@ interface FaqFrontMatterAttributes {
   }>;
 }
 
-const WayanadHero = ({ heroImage, heroTitle }: { heroImage: string; heroTitle: string }) => {
+const WayanadHero = ({
+  heroImage,
+  heroTitle,
+}: {
+  heroImage: string;
+  heroTitle: string;
+}) => {
   return (
-    <div className="relative h-screen bg-cover bg-center" style={{ backgroundImage: `url('${heroImage}')` }}>
+    <div
+      className="relative h-screen bg-cover bg-center"
+      style={{ backgroundImage: `url('${heroImage}')` }}
+    >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-60"></div>
       {/* Content */}
@@ -29,19 +38,19 @@ const WayanadHero = ({ heroImage, heroTitle }: { heroImage: string; heroTitle: s
   );
 };
 
-const AttractionCard = ({ 
-  title, 
-  description, 
+const AttractionCard = ({
+  title,
+  description,
   image,
-  index 
-}: { 
-  title: string; 
-  description: string; 
+  index,
+}: {
+  title: string;
+  description: string;
   image: string;
   index: number;
 }) => {
   const formattedIndex = index < 10 ? `0${index + 1}` : `${index + 1}`;
-  
+
   return (
     <div className="flex flex-col items-center self-stretch bg-white sm:flex-row mb-16">
       <div className="w-full sm:w-1/2 flex items-center p-0 pr-custom-padding pb-[73px] mobile:pb-[24px] flex-[1_0_0] self-stretch mobile:p-[16px]">
@@ -61,7 +70,7 @@ const AttractionCard = ({
             <h2 className="text-4xl font-normal leading-normal text-[#1D1D1D] font-ivy">
               {title}
             </h2>
-            <div 
+            <div
               className="text-[#6E6E6E] text-base font-medium leading-6 font-albertSans"
               dangerouslySetInnerHTML={{ __html: description }}
             />
@@ -83,14 +92,18 @@ export const WayanadPageCMS = () => {
         title: data.attributes.faq.title,
         faqs: data.attributes.faq.faqs.map(item => ({
           question: item.question,
-          answer: item.answer
-        }))
+          answer: item.answer,
+        })),
       });
     }
   }, [data]);
 
   if (loading) {
-    return <div className="min-h-screen flex items-center justify-center">Loading Wayanad page...</div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        Loading Wayanad page...
+      </div>
+    );
   }
 
   if (error || !data) {
@@ -119,14 +132,20 @@ export const WayanadPageCMS = () => {
         <meta property="og:url" content={window.location.href} />
         <meta property="og:site_name" content="Kudajadri Homestay" />
         <meta property="og:locale" content="en_US" />
-        <meta property="og:image" content={`${window.location.origin}${heroImage}`} />
+        <meta
+          property="og:image"
+          content={`${window.location.origin}${heroImage}`}
+        />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:site" content="@kudajadrihomestay" />
-        <meta name="twitter:image" content={`${window.location.origin}${heroImage}`} />
+        <meta
+          name="twitter:image"
+          content={`${window.location.origin}${heroImage}`}
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="canonical" href={window.location.href} />
@@ -140,7 +159,7 @@ export const WayanadPageCMS = () => {
           <h2 className="text-4xl font-ivy font-normal text-gray-900 mb-6">
             Explore the Beauty of Wayanad
           </h2>
-          <div 
+          <div
             className="prose max-w-3xl mx-auto text-gray-600 text-lg"
             dangerouslySetInnerHTML={{ __html: body }}
           />

@@ -1,6 +1,6 @@
-import video from "../../../assets/videoBackGround.mp4";
-import {Header} from "./Header";
-import { useNavigate } from "react-router-dom";
+import video from '../../../assets/videoBackGround.mp4';
+import { Header } from './Header';
+import { useNavigate } from 'react-router-dom';
 
 const VideoBackground = () => {
   const navigate = useNavigate();
@@ -39,7 +39,12 @@ const VideoBackground = () => {
             </div>
           </div>
           <div className="flex justify-center mb-[120px]">
-            <button className="px-6 py-3 rounded-full border text-[#FFF]" onClick={() => {navigate("/contact")}}>
+            <button
+              className="px-6 py-3 rounded-full border text-[#FFF]"
+              onClick={() => {
+                navigate('/contact');
+              }}
+            >
               Book Now
             </button>
           </div>
@@ -50,5 +55,3 @@ const VideoBackground = () => {
 };
 
 export default VideoBackground;
-
-

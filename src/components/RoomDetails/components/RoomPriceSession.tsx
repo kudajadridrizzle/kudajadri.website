@@ -1,11 +1,10 @@
-import { useNavigate, useParams } from "react-router-dom";
-import { roomDataMap } from "../constants";
-
+import { useNavigate, useParams } from 'react-router-dom';
+import { roomDataMap } from '../constants';
 
 export const RoomPriceSession = () => {
   const navigate = useNavigate();
   const { id } = useParams(); // 'classic-rooms' etc.
-  const roomData = roomDataMap[id || "classic-rooms"]
+  const roomData = roomDataMap[id || 'classic-rooms'];
   return (
     <div className="sm:px-[12%] sm:pb-32 flex mobile:flex-col sm:flex-row px-4 large:px-[18%]">
       <div className="flex flex-col sm:gap-10 flex-1 mobile:gap-6 mobile:pb-8 sm:pb-0">
@@ -59,7 +58,9 @@ export const RoomPriceSession = () => {
               <li key={`cancel-${i}`}>{rule}</li>
             ))}
           </ul>
-          <h1 className="text-primary font-albertSans">{roomData.extraPerson.note}</h1>
+          <h1 className="text-primary font-albertSans">
+            {roomData.extraPerson.note}
+          </h1>
           <ul className="list-disc pl-5 space-y-2 text-secondary font-albertSans">
             {roomData.extraPerson.rules.map((rule, i) => (
               <li key={`extra-${i}`}>{rule}</li>

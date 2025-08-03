@@ -21,7 +21,7 @@ const BlogDetail: React.FC = () => {
         // Try to import the specific markdown file
         const content = await import(`../../blog/${slug}.md?raw`);
         const post = parseBlogMarkdown(content.default, slug);
-        
+
         if (!post.published) {
           setError('Blog post not found or not published');
         } else {
@@ -109,13 +109,13 @@ const BlogDetail: React.FC = () => {
           <h1 className="mb-4 text-4xl font-bold text-gray-900">
             {blogPost.title}
           </h1>
-          
+
           <div className="flex items-center mb-4 text-gray-600">
             <time dateTime={blogPost.date} className="text-sm">
               {new Date(blogPost.date).toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'long',
-                day: 'numeric'
+                day: 'numeric',
               })}
             </time>
             <span className="mx-2">•</span>

@@ -1,4 +1,4 @@
-import locationImage from "../../../assets/locationImage.jpg";
+import locationImage from '../../../assets/locationImage.jpg';
 const LocationImage = () => {
   return (
     <div className="sm:px-[12%] sm:py-24 flex flex-col sm:flex-row mobile:px-4 mobile:py-14 large:px-[18%]">
