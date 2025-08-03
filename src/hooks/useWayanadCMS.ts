@@ -14,13 +14,7 @@ export interface WayanadFrontMatterAttributes {
     description: string;
     image: string;
   }>;
-  faq: {
-    title: string;
-    faqs: Array<{
-      question: string;
-      answer: string;
-    }>;
-  };
+
 }
 
 interface WayanadCMSData {

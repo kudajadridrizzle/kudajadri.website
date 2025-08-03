@@ -4,7 +4,7 @@ import Footer from '../Home/components/Footer';
 import { EnhancedAttractionCard } from './components/EnhancedAttractionCard';
 import { ImageManager } from './components/ImageManager';
 import { EnhancedHero } from './components/EnhancedHero';
-import { WayanadFaqsCMS } from './components/WayanadFaqsCMS';
+import { WayanadFaqs } from './components/WayanadFaqs';
 import { isDevelopment } from '../../utils/env';
 
 
@@ -31,7 +31,7 @@ export const WayanadPageCMS = () => {
 
   const { attributes, body } = data;
   const { title, description, keywords, author } = attributes;
-  const { heroImage, heroTitle, sections, faq } = attributes;
+  const { heroImage, heroTitle, sections } = attributes;
 
   return (
     <div>
@@ -95,9 +95,7 @@ export const WayanadPageCMS = () => {
       </div>
 
       {/* FAQ Section */}
-      {faq && faq.faqs && faq.faqs.length > 0 && (
-        <WayanadFaqsCMS title={faq.title} faqs={faq.faqs} />
-      )}
+      <WayanadFaqs />
 
       <Footer />
 

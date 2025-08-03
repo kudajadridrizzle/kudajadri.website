@@ -237,14 +237,3 @@ collections:
             name: "body"
             widget: "markdown"
             required: true
-          - label: "FAQ Section"
-            name: "faq"
-            widget: "object"
-            fields:
-              - { label: "FAQ Title", name: "title", widget: "string", required: true }
-              - label: "FAQs"
-                name: "faqs"
-                widget: "list"
-                fields:
-                  - { label: "Question", name: "question", widget: "markdown", required: true }
-                  - { label: "Answer", name: "answer", widget: "markdown", required: true }
