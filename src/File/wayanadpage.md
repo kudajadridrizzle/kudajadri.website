@@ -7,7 +7,7 @@ keywords: wayanad tourist attractions, wayanad destinations, nature trails,
   wildlife, cultural sites, kudajadri wayanad
 author: Kudajadri Homestay
 heroImage: /images/hero.jpg
-heroTitle: Wayanad
+heroTitle: Wayanad Green Paradise
 sections:
   - title: Wayanad Tholpetty Wildlife Sanctuary
     description: Tholpetty Wildlife Sanctuary is a popular wildlife sanctuary in
