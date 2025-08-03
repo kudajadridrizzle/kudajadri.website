@@ -15,7 +15,7 @@ sections:
       memorable experiences is night camping. The watchtower of this sanctuary
       is situated above the lake and serves as the main water source for
       animals. Situated at Tholpetty.
-    image: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGDc3vqT25msZ-faUofOLtu36dUbMDeNxKJA&s
+    image: https://www.keralatourism.org/images/enchanting_kerala/hri/Tholpetty_Wildlife_Sanctuary_Where_Wildlife_Thrives_1113.jpg
   - title: Wayanad Muthanga Wildlife Sanctuary
     description: Muthanga Wildlife Sanctuary is a vast forest area covering 345 sq.
       km in Wayanad. It is the largest abode of wild animals in Malabar and a
