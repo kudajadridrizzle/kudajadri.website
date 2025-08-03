@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-import { Helmet } from 'react-helmet-async';
-import { Header } from '../Home/components/Header';
-import FaqList from '../FaqComponent/FaqList';
-import useWayanadCMS from '../../hooks/useWayanadCMS';
-import { useEffect, useState } from 'react';
-=======
 import { Helmet } from "react-helmet-async";
 import { Header } from "../Home/components/Header";
 import useWayanadCMS from "../../hooks/useWayanadCMS";
@@ -13,7 +6,6 @@ import { EnhancedAttractionCard } from "./components/EnhancedAttractionCard";
 import { ImageManager } from "./components/ImageManager";
 import { WayanadFaqs } from "./components/WayanadFaqs";
 import { isDevelopment } from "../../utils/env";
->>>>>>> bc6bb7d676ee3552c9f2710f221820aa381601f2
 
 // FAQ management is handled separately through the CMS faqs collection
 
@@ -26,7 +18,7 @@ const WayanadHero = ({
 }) => {
   return (
     <div
-      className="relative h-screen bg-cover bg-center"
+      className="relative h-screen bg-center bg-cover"
       style={{ backgroundImage: `url('${heroImage}')` }}
     >
       {/* Overlay */}
@@ -42,76 +34,14 @@ const WayanadHero = ({
   );
 };
 
-<<<<<<< HEAD
-const AttractionCard = ({
-  title,
-  description,
-  image,
-  index,
-}: {
-  title: string;
-  description: string;
-  image: string;
-  index: number;
-}) => {
-  const formattedIndex = index < 10 ? `0${index + 1}` : `${index + 1}`;
-
-  return (
-    <div className="flex flex-col items-center self-stretch bg-white sm:flex-row mb-16">
-      <div className="w-full sm:w-1/2 flex items-center p-0 pr-custom-padding pb-[73px] mobile:pb-[24px] flex-[1_0_0] self-stretch mobile:p-[16px]">
-        <img
-          src={image}
-          alt={title}
-          className="object-cover w-full h-auto rounded-[16px] aspect-[16/9]"
-          loading="lazy"
-        />
-      </div>
-      <div className="w-full sm:w-1/2">
-        <div className="flex items-start self-stretch gap-8 flex-row">
-          <div className="flex justify-start h-full align-top text-start text-[#1D1D1D] text-[32px] font-normal leading-normal font-ivy">
-            {formattedIndex}
-          </div>
-          <div className="flex flex-col gap-6">
-            <h2 className="text-4xl font-normal leading-normal text-[#1D1D1D] font-ivy">
-              {title}
-            </h2>
-            <div
-              className="text-[#6E6E6E] text-base font-medium leading-6 font-albertSans"
-              dangerouslySetInnerHTML={{ __html: description }}
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export const WayanadPageCMS = () => {
-  const { data, loading, error } = useWayanadCMS();
-  const [faqData, setFaqData] = useState<FaqFrontMatterAttributes | null>(null);
-
-  useEffect(() => {
-    if (data) {
-      // Transform the FAQ data to match the expected format for FaqList
-      setFaqData({
-        title: data.attributes.faq.title,
-        faqs: data.attributes.faq.faqs.map(item => ({
-          question: item.question,
-          answer: item.answer,
-        })),
-      });
-    }
-  }, [data]);
-=======
 // Removed the old AttractionCard component as we're now using EnhancedAttractionCard
 
 export const WayanadPageCMS = () => {
   const { data, loading, error } = useWayanadCMS();
->>>>>>> bc6bb7d676ee3552c9f2710f221820aa381601f2
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="flex items-center justify-center min-h-screen">
         Loading Wayanad page...
       </div>
     );
@@ -119,7 +49,7 @@ export const WayanadPageCMS = () => {
 
   if (error || !data) {
     return (
-      <div className="min-h-screen flex items-center justify-center text-red-500">
+      <div className="flex items-center justify-center min-h-screen text-red-500">
         Error loading Wayanad page: {error?.message || 'Unknown error'}
       </div>
     );
@@ -165,13 +95,13 @@ export const WayanadPageCMS = () => {
       <WayanadHero heroImage={heroImage} heroTitle={heroTitle} />
 
       {/* Attractions Section */}
-      <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-ivy font-normal text-gray-900 mb-6">
+      <div className="px-4 py-16 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+        <div className="mb-16 text-center">
+          <h2 className="mb-6 text-4xl font-normal text-gray-900 font-ivy">
             Explore the Beauty of Wayanad
           </h2>
           <div
-            className="prose max-w-3xl mx-auto text-gray-600 text-lg"
+            className="max-w-3xl mx-auto text-lg prose text-gray-600"
             dangerouslySetInnerHTML={{ __html: body }}
           />
         </div>
