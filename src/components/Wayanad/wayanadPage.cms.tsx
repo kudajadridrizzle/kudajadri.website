@@ -3,11 +3,9 @@ import useWayanadCMS from '../../hooks/useWayanadCMS';
 import Footer from '../Home/components/Footer';
 import { EnhancedAttractionCard } from './components/EnhancedAttractionCard';
 import { ImageManager } from './components/ImageManager';
-import { WayanadFaqs } from './components/WayanadFaqs';
 import { EnhancedHero } from './components/EnhancedHero';
 import { isDevelopment } from '../../utils/env';
 
-// Removed the old AttractionCard component as we're now using EnhancedAttractionCard
 
 export const WayanadPageCMS = () => {
   const { data, loading, error } = useWayanadCMS();
@@ -95,8 +93,7 @@ export const WayanadPageCMS = () => {
         </div>
       </div>
 
-      {/* Optional FAQ Section - managed separately through CMS */}
-      <WayanadFaqs />
+ 
 
       <Footer />
 
