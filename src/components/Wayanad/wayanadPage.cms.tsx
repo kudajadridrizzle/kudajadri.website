@@ -1,29 +1,15 @@
 import { Helmet } from "react-helmet-async";
-import { Header } from "../Home/components/Header";
 import useWayanadCMS from "../../hooks/useWayanadCMS";
 import Footer from "../Home/components/Footer";
 import { EnhancedAttractionCard } from "./components/EnhancedAttractionCard";
 import { ImageManager } from "./components/ImageManager";
 import { WayanadFaqs } from "./components/WayanadFaqs";
+import { EnhancedHero } from "./components/EnhancedHero";
 import { isDevelopment } from "../../utils/env";
 
 // FAQ management is handled separately through the CMS faqs collection
 
-const WayanadHero = ({ heroImage, heroTitle }: { heroImage: string; heroTitle: string }) => {
-  return (
-    <div className="relative h-screen bg-cover bg-center" style={{ backgroundImage: `url('${heroImage}')` }}>
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-60"></div>
-      {/* Content */}
-      <div className="relative z-10">
-        <Header />
-        <div className="text-[#ffff] font-staylista sm:text-[72px] h-[100vh] flex flex-col items-center justify-end mobile:text-5xl">
-          <h1 className="text-center mb-[114px]">{heroTitle}</h1>
-        </div>
-      </div>
-    </div>
-  );
-};
+// Using EnhancedHero component instead of the old WayanadHero
 
 // Removed the old AttractionCard component as we're now using EnhancedAttractionCard
 
@@ -73,7 +59,7 @@ export const WayanadPageCMS = () => {
         <link rel="canonical" href={window.location.href} />
       </Helmet>
 
-      <WayanadHero heroImage={heroImage} heroTitle={heroTitle} />
+      <EnhancedHero heroImage={heroImage} heroTitle={heroTitle} />
 
       {/* Attractions Section */}
       <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">

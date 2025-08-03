@@ -99,6 +99,11 @@ For best performance:
 - Verify `/images/wayanad/placeholder.svg` exists
 - Check if the fallback path is correctly set in `attractionImages.ts`
 
+#### Hero Image Issues
+- Verify `/wayanadImg.jpg` exists in the public directory
+- Check browser console for image loading errors
+- The EnhancedHero component will automatically use fallback images if the main hero image fails to load
+
 ## Technical Details
 
 ### Components
