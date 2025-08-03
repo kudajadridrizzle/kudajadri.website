@@ -3,6 +3,9 @@ import { Header } from "../Home/components/Header";
 import FaqList from "../FaqComponent/FaqList";
 import useWayanadCMS from "../../hooks/useWayanadCMS";
 import { useEffect, useState } from "react";
+import fm from "front-matter";
+import wayanadFaqRaw from "../../File/wayanadfaqs.md?raw";
+import Footer from "../Home/components/Footer";
 
 // Define the shape of FAQ frontmatter for compatibility with FaqList
 interface FaqFrontMatterAttributes {
@@ -77,17 +80,10 @@ export const WayanadPageCMS = () => {
   const [faqData, setFaqData] = useState<FaqFrontMatterAttributes | null>(null);
 
   useEffect(() => {
-    if (data) {
-      // Transform the FAQ data to match the expected format for FaqList
-      setFaqData({
-        title: data.attributes.faq.title,
-        faqs: data.attributes.faq.faqs.map(item => ({
-          question: item.question,
-          answer: item.answer
-        }))
-      });
-    }
-  }, [data]);
+    // Use the existing wayanadfaqs.md file for FAQ data
+    const parsedFaq = fm<FaqFrontMatterAttributes>(wayanadFaqRaw);
+    setFaqData(parsedFaq.attributes);
+  }, []);
 
   if (loading) {
     return <div className="min-h-screen flex items-center justify-center">Loading Wayanad page...</div>;
@@ -162,6 +158,7 @@ export const WayanadPageCMS = () => {
 
       {/* FAQ Section */}
       {faqData && <FaqList {...faqData} />}
+      <Footer />
     </div>
   );
 };

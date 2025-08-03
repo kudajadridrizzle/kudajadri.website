@@ -241,17 +241,6 @@ collections:
                 name: "image"
                 widget: "image"
                 required: true
-          - label: "FAQ Section"
-            name: "faq"
-            widget: "object"
-            fields:
-              - { label: "Section Title", name: "title", widget: "string", required: true }
-              - label: "FAQs"
-                name: "faqs"
-                widget: "list"
-                fields:
-                  - { label: "Question", name: "question", widget: "string", required: true }
-                  - { label: "Answer", name: "answer", widget: "markdown", required: true }
           - label: "Page Content"
             name: "body"
             widget: "markdown"
