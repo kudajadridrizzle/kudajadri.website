@@ -9,34 +9,7 @@ import { isDevelopment } from "../../utils/env";
 
 // FAQ management is handled separately through the CMS faqs collection
 
-<<<<<<< HEAD
-// Using EnhancedHero component instead of the old WayanadHero
-=======
-const WayanadHero = ({
-  heroImage,
-  heroTitle,
-}: {
-  heroImage: string;
-  heroTitle: string;
-}) => {
-  return (
-    <div
-      className="relative h-screen bg-center bg-cover"
-      style={{ backgroundImage: `url('${heroImage}')` }}
-    >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-60"></div>
-      {/* Content */}
-      <div className="relative z-10">
-        <Header />
-        <div className="text-[#ffff] font-staylista sm:text-[72px] h-[100vh] flex flex-col items-center justify-end mobile:text-5xl">
-          <h1 className="text-center mb-[114px]">{heroTitle}</h1>
-        </div>
-      </div>
-    </div>
-  );
-};
->>>>>>> 6c59e6070ebb3c0254f02df44e6ffeb4e2ba93b6
+
 
 // Removed the old AttractionCard component as we're now using EnhancedAttractionCard
 
