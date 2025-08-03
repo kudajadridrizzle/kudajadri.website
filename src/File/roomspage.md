@@ -10,7 +10,7 @@ seo:
   twitterSite: "@kudajadrihomestay"
   ogImage: /aboutHero.jpg
 hero:
-  backgroundImage: /images/hero.jpg
+  backgroundImage: /images/5a8a9701-1-.jpg
   title: Designed by
   subtitle: nature, Sumptuously.
   overlayOpacity: 0.6
