@@ -214,30 +214,22 @@ collections:
         label: "Wayanad Page Content"
         name: "wayanad_page_content"
         fields:
-          - label: "SEO Settings"
-            name: "seo"
-            widget: "object"
-            fields:
-              - { label: "Page Title", name: "title", widget: "string", required: true }
-              - { label: "Meta Description", name: "description", widget: "text", required: true }
-              - { label: "Keywords", name: "keywords", widget: "string", required: true }
-              - { label: "Author", name: "author", widget: "string", required: true }
-          - label: "Hero Section"
-            name: "hero"
-            widget: "object"
-            fields:
-              - label: "Background Image"
-                name: "heroImage"
-                widget: "image"
-                required: true
-              - { label: "Hero Title", name: "heroTitle", widget: "string", required: true }
+          - { label: "Page Title", name: "title", widget: "string", required: true }
+          - { label: "Meta Description", name: "description", widget: "text", required: true }
+          - { label: "Keywords", name: "keywords", widget: "string", required: true }
+          - { label: "Author", name: "author", widget: "string", required: true }
+          - label: "Hero Background Image"
+            name: "heroImage"
+            widget: "image"
+            required: true
+          - { label: "Hero Title", name: "heroTitle", widget: "string", required: true }
           - label: "Attractions"
             name: "sections"
             widget: "list"
             fields:
-              - { label: "Title", name: "title", widget: "string", required: true }
+              - { label: "Attraction Title", name: "title", widget: "string", required: true }
               - { label: "Description", name: "description", widget: "markdown", required: true }
-              - label: "Image"
+              - label: "Attraction Image"
                 name: "image"
                 widget: "image"
                 required: true

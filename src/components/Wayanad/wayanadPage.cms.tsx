@@ -1,20 +1,12 @@
 import { Helmet } from "react-helmet-async";
 import { Header } from "../Home/components/Header";
-import FaqList from "../FaqComponent/FaqList";
 import useWayanadCMS from "../../hooks/useWayanadCMS";
-import { useEffect, useState } from "react";
-import fm from "front-matter";
-import wayanadFaqRaw from "../../File/wayanadfaqs.md?raw";
 import Footer from "../Home/components/Footer";
+import { EnhancedAttractionCard } from "./components/EnhancedAttractionCard";
+import { ImageManager } from "./components/ImageManager";
+import { WayanadFaqs } from "./components/WayanadFaqs";
 
-// Define the shape of FAQ frontmatter for compatibility with FaqList
-interface FaqFrontMatterAttributes {
-  title: string;
-  faqs: Array<{
-    question: string;
-    answer: string;
-  }>;
-}
+// FAQ management is handled separately through the CMS faqs collection
 
 const WayanadHero = ({ heroImage, heroTitle }: { heroImage: string; heroTitle: string }) => {
   return (
@@ -32,58 +24,10 @@ const WayanadHero = ({ heroImage, heroTitle }: { heroImage: string; heroTitle: s
   );
 };
 
-const AttractionCard = ({ 
-  title, 
-  description, 
-  image,
-  index 
-}: { 
-  title: string; 
-  description: string; 
-  image: string;
-  index: number;
-}) => {
-  const formattedIndex = index < 10 ? `0${index + 1}` : `${index + 1}`;
-  
-  return (
-    <div className="flex flex-col items-center self-stretch bg-white sm:flex-row mb-16">
-      <div className="w-full sm:w-1/2 flex items-center p-0 pr-custom-padding pb-[73px] mobile:pb-[24px] flex-[1_0_0] self-stretch mobile:p-[16px]">
-        <img
-          src={image}
-          alt={title}
-          className="object-cover w-full h-auto rounded-[16px] aspect-[16/9]"
-          loading="lazy"
-        />
-      </div>
-      <div className="w-full sm:w-1/2">
-        <div className="flex items-start self-stretch gap-8 flex-row">
-          <div className="flex justify-start h-full align-top text-start text-[#1D1D1D] text-[32px] font-normal leading-normal font-ivy">
-            {formattedIndex}
-          </div>
-          <div className="flex flex-col gap-6">
-            <h2 className="text-4xl font-normal leading-normal text-[#1D1D1D] font-ivy">
-              {title}
-            </h2>
-            <div 
-              className="text-[#6E6E6E] text-base font-medium leading-6 font-albertSans"
-              dangerouslySetInnerHTML={{ __html: description }}
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+// Removed the old AttractionCard component as we're now using EnhancedAttractionCard
 
 export const WayanadPageCMS = () => {
   const { data, loading, error } = useWayanadCMS();
-  const [faqData, setFaqData] = useState<FaqFrontMatterAttributes | null>(null);
-
-  useEffect(() => {
-    // Use the existing wayanadfaqs.md file for FAQ data
-    const parsedFaq = fm<FaqFrontMatterAttributes>(wayanadFaqRaw);
-    setFaqData(parsedFaq.attributes);
-  }, []);
 
   if (loading) {
     return <div className="min-h-screen flex items-center justify-center">Loading Wayanad page...</div>;
@@ -145,7 +89,7 @@ export const WayanadPageCMS = () => {
         {/* Attractions List */}
         <div className="space-y-16">
           {sections.map((attraction, index) => (
-            <AttractionCard
+            <EnhancedAttractionCard
               key={index}
               index={index}
               title={attraction.title}
@@ -156,9 +100,13 @@ export const WayanadPageCMS = () => {
         </div>
       </div>
 
-      {/* FAQ Section */}
-      {faqData && <FaqList {...faqData} />}
+      {/* Optional FAQ Section - managed separately through CMS */}
+      <WayanadFaqs />
+
       <Footer />
+      
+      {/* Image Manager for Development */}
+      {process.env.NODE_ENV === 'development' && <ImageManager />}
     </div>
   );
 };
