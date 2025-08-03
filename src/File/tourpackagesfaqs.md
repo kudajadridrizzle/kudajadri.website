@@ -1,7 +1,6 @@
 ---
 title: Tour Packages FAQs
 faqs:
-<<<<<<< HEAD
   - question: What is included in a typical Wayanad tour package?
     answer:
       Most Wayanad tour packages include accommodation, transportation, guided
@@ -49,7 +48,6 @@ faqs:
   - question: Do Wayanad tour packages cover all major attractions?
     answer:
       Most packages cover key attractions like Edakkal Caves, Meenmutty Falls,
-=======
   - question: "**What is included in a typical Wayanad tour package?**"
     answer: Most **Wayanad tour packages** include
       [accommodation](https://www.kudajadridrizzle.com/rooms), transportation,
@@ -93,7 +91,6 @@ faqs:
       experience.
   - question: "**Do Wayanad tour packages cover all major attractions?**"
     answer: Most packages cover key attractions like Edakkal Caves, Meenmutty Falls,
->>>>>>> bc6bb7d676ee3552c9f2710f221820aa381601f2
       Wayanad Wildlife Sanctuary, Kuruva Island, and viewpoints. Customized
       packages can include offbeat places, trekking spots, and cultural visits
       on request.
