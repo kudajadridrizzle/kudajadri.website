@@ -6,34 +6,8 @@ import { ImageManager } from "./components/ImageManager";
 import { WayanadFaqs } from "./components/WayanadFaqs";
 import { EnhancedHero } from "./components/EnhancedHero";
 import { isDevelopment } from "../../utils/env";
-import { Header } from "@radix-ui/react-accordion";
 
-// FAQ management is handled separately through the CMS faqs collection
 
-const WayanadHero = ({
-  heroImage,
-  heroTitle,
-}: {
-  heroImage: string;
-  heroTitle: string;
-}) => {
-  return (
-    <div
-      className="relative h-screen bg-center bg-cover"
-      style={{ backgroundImage: `url('${heroImage}')` }}
-    >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-60"></div>
-      {/* Content */}
-      <div className="relative z-10">
-        <Header />
-        <div className="text-[#ffff] font-staylista sm:text-[72px] h-[100vh] flex flex-col items-center justify-end mobile:text-5xl">
-          <h1 className="text-center mb-[114px]">{heroTitle}</h1>
-        </div>
-      </div>
-    </div>
-  );
-};
 
 // Removed the old AttractionCard component as we're now using EnhancedAttractionCard
 
