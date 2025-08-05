@@ -5,8 +5,13 @@
       "description": "We Make Best Wayanad Tour Packages For IT Groups, Families And Honeymoon Couple At The Lowest Possible Cost.",
       "duration": "4 Days 3 Nights",
       "pickup_drop": "Kalpetta",
+      "meta": {
+        "title": "Green Wayanad Tour Package: Wild Life Sanctuaries, Edakkal Cave, Kuruva Island, Pookkode Lake",
+        "description": "Green Wayanad Tour Package: Explore lush wildlife sanctuaries, ancient Edakkal Cave, serene Kuruva Island, and scenic Pookkode Lake for a perfect nature getaway.",
+        "keywords": "green wayanad tour package, wayanad 4 days tour, kudajadri homestay, wayanad waterfalls, wildlife sanctuary"
+      },
       "price": {
-        "current_price": "₹18,000",
+        "current_price": "₹18,500",
         "original_price": "₹20,000.00",
         "note": "Includes Stay For 2 Adults. ₹750 Per Extra Person."
       },
@@ -62,7 +67,11 @@
         },
         {
           "title": "Exclusions",
-          "body": ["Entry Tickets", "Parking Fee", "Lunch"]
+          "body": [
+            "Entry Tickets",
+            "Parking Fee",
+            "Lunch"
+          ]
         },
         {
           "title": "Contact",
@@ -76,56 +85,84 @@
       ]
     },
     {
-      "title": "Premium Wayanad Adventure Package",
-      "description": "Experience the ultimate adventure in Wayanad with our premium package designed for thrill-seekers and nature lovers.",
-      "duration": "5 Days 4 Nights",
+      "title": "Dream Wayanad Tour Package (Standard)",
+      "description": "Experience the beauty of Wayanad in just 3 days with our Dream Wayanad Package—perfect for families and couples.",
+      "duration": "3 Days 2 Nights",
       "pickup_drop": "Kalpetta",
+      "meta": {
+        "title": "Dream Wayanad Tour Packages: Edakkal Caves, Kuruva Island, Chembra Peak, Thirunelli Temple",
+        "description": "Dream Wayanad Tour Package: Explore mystical Edakkal Caves, lush Kuruva Island, breathtaking Chembra Peak, and the spiritual vibes of Thirunelli Temple.",
+        "keywords": "dream wayanad tour package, wayanad 3 days tour, standard package, family tour wayanad, couple tour wayanad"
+      },
       "price": {
-        "current_price": "₹25,000",
-        "original_price": "₹28,000.00",
-        "note": "Includes Stay For 4 Adults. ₹800 Per Extra Person."
+        "current_price": "₹13,500",
+        "original_price": "₹15,000.00",
+        "note": "Includes Stay For 2 Adults. ₹1,500 Per Extra Person."
       },
       "details": [
         {
           "title": "Overview",
           "body": [
-            "Our Premium Wayanad Adventure Package is perfect for adventure enthusiasts and nature lovers. This 5-day package includes thrilling activities like trekking, wildlife safaris, and adventure sports while maintaining the comfort and luxury you deserve."
+            "Perfect for a short getaway, this 2 Nights / 3 Days Wayanad tour package offers serene landscapes, waterfalls, temples, and wildlife. Explore top tourist spots while enjoying homely food and comfortable stays."
           ]
         },
         {
-          "title": "Adventure Activities",
+          "title": "Sightseeing Locations",
           "body": [
-            "Trekking to Chembra Peak",
-            "Wildlife Safari at Tholpetty",
-            "Bamboo Rafting at Kuruva Island",
-            "Rock Climbing at Edakkal Caves",
-            "Night Camping Experience",
-            "Adventure Sports at Pookode Lake"
+            "Tholpetty Wildlife Sanctuary (Nagarhole National Park) / Muthanga Wildlife Sanctuary (Bandipur National Park)",
+            "Thirunelli Temple / Edakkal Caves",
+            "Kuruva Island (Now Closed)",
+            "Banasura Sagar Dam",
+            "Pookote Lake",
+            "Chain Tree",
+            "Lakkidi View Point",
+            "Chembra Peak (Now Closed)",
+            "Soochippara Waterfalls"
           ]
         },
         {
-          "title": "Accommodation",
+          "title": "First Day (Check In)",
           "body": [
-            "Premium Heritage Rooms",
-            "Mountain View Accommodation",
-            "Private Balcony Access",
-            "24/7 Room Service"
+            "Pick Up From Kalpetta",
+            "Option 1: Tholpetty Wildlife Sanctuary & Thirunelli Temple",
+            "Option 2: Edakkal Caves & Muthanga Wildlife Sanctuary",
+            "Dinner at our Homestay"
+          ]
+        },
+        {
+          "title": "Second Day",
+          "body": [
+            "Breakfast at our Homestay",
+            "Sightseeing: Kuruva Island (Now Closed), Banasura Sagar Dam, Pookote Lake, Lakkidi View Point",
+            "Dinner at our Homestay"
+          ]
+        },
+        {
+          "title": "Third Day",
+          "body": [
+            "Breakfast at our Homestay",
+            "Sightseeing: Chembra Peak (Now Closed), Soochippara Waterfalls",
+            "Drop at Kalpetta"
           ]
         },
         {
           "title": "Inclusions",
           "body": [
-            "Premium Accommodation",
-            "All Meals (Breakfast, Lunch, Dinner)",
-            "Adventure Activity Equipment",
-            "Professional Guide Services",
-            "Transportation",
-            "Insurance Coverage"
+            "Accommodation",
+            "Breakfast",
+            "Tea & Coffee",
+            "Dinner",
+            "Tax",
+            "Wayanad Sight Seeing – Driver Bata"
           ]
         },
         {
           "title": "Exclusions",
-          "body": ["Personal Expenses", "Optional Activities", "Alcoholic Beverages"]
+          "body": [
+            "Entry Tickets",
+            "Parking Fee",
+            "Lunch"
+          ]
         },
         {
           "title": "Contact",
@@ -139,58 +176,78 @@
       ]
     },
     {
-      "title": "Luxury Wayanad Experience Package",
-      "description": "Indulge in the finest luxury experience Wayanad has to offer with our exclusive luxury package.",
-      "duration": "6 Days 5 Nights",
+      "title": "Vibrant Wayanad Tour Package (Short Trip)",
+      "description": "Explore the highlights of Wayanad with this 1 Night / 2 Days budget-friendly tour package.",
+      "duration": "2 Days 1 Night",
       "pickup_drop": "Kalpetta",
+      "meta": {
+        "title": "Vibrant Wayanad Tour Package: Soochippara Water falls, Lakkidi View Point, Karapauzha Dam",
+        "description": "Vibrant Wayanad Tour Package: Explore thrilling Soochippara Waterfalls, panoramic views from Lakkidi View Point, and the tranquil charm of Karapuzha Dam.",
+        "keywords": "vibrant wayanad tour package, wayanad short trip, 2 days wayanad tour, budget tour wayanad, weekend getaway wayanad"
+      },
       "price": {
-        "current_price": "₹35,000",
-        "original_price": "₹40,000.00",
-        "note": "Includes Stay For 6 Adults. ₹1000 Per Extra Person."
+        "current_price": "₹8,500",
+        "original_price": "₹9,500.00",
+        "note": "Includes Stay For 2 Adults. ₹750 Per Extra Person."
       },
       "details": [
         {
           "title": "Overview",
           "body": [
-            "Our Luxury Wayanad Experience Package offers the ultimate in comfort, luxury, and personalized service. Enjoy exclusive access to premium locations, private tours, and world-class amenities throughout your stay."
+            "Ideal for a quick escape, this short Wayanad trip covers waterfalls, viewpoints, caves, and wildlife in just two days with comfort and care."
           ]
         },
         {
-          "title": "Luxury Features",
+          "title": "Sightseeing Locations",
           "body": [
-            "Private Villa Accommodation",
-            "Personal Butler Service",
-            "Exclusive Dining Experiences",
-            "Spa and Wellness Sessions",
-            "Private Transportation",
-            "Concierge Services"
+            "Soochippara Waterfalls",
+            "Pookote Lake",
+            "Chain Tree",
+            "Lakkidi View Point",
+            "Kuruva Island (Now Closed)",
+            "Edakkal Caves",
+            "Karapuzha Dam",
+            "Tholpetty Wildlife Sanctuary (Nagarhole National Park)",
+            "Thirunelli Temple"
           ]
         },
         {
-          "title": "Exclusive Experiences",
+          "title": "First Day (Check In)",
           "body": [
-            "Private Sunset Viewing",
-            "Exclusive Wildlife Photography",
-            "Cultural Performance Shows",
-            "Wine Tasting Sessions",
-            "Private Cooking Classes",
-            "Helicopter Sightseeing (Optional)"
+            "Pick Up From Kalpetta",
+            "Soochippara Waterfalls",
+            "Pookote Lake",
+            "Lakkidi View Point",
+            "Dinner at our Homestay"
+          ]
+        },
+        {
+          "title": "Second Day",
+          "body": [
+            "Breakfast at our Homestay",
+            "Option 1: Kuruva Island (Now Closed), Edakkal Caves, Karapuzha Dam",
+            "Option 2: Kuruva Island (Now Closed), Tholpetty Wildlife Sanctuary, Thirunelli Temple",
+            "Drop at Kalpetta"
           ]
         },
         {
           "title": "Inclusions",
           "body": [
-            "Luxury Villa Accommodation",
-            "All-Inclusive Dining",
-            "Personal Butler Service",
-            "Spa and Wellness Access",
-            "Private Transportation",
-            "Exclusive Activity Access"
+            "Accommodation",
+            "Breakfast",
+            "Tea & Coffee",
+            "Dinner",
+            "Tax",
+            "Wayanad Sight Seeing – Driver Bata"
           ]
         },
         {
           "title": "Exclusions",
-          "body": ["Optional Helicopter Tours", "Personal Shopping", "Premium Alcohol"]
+          "body": [
+            "Entry Tickets",
+            "Parking Fee",
+            "Lunch"
+          ]
         },
         {
           "title": "Contact",

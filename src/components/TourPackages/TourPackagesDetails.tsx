@@ -3,16 +3,85 @@ import packageDetails from './Data/packageDetails.json';
 import { Header } from '../Home/components/Header';
 import cloud from '/cloud.jpg';
 import Footer from '../Home/components/Footer';
+import { Helmet } from 'react-helmet-async';
+
+// TypeScript interfaces for tour package structure
+interface PackageMeta {
+  title: string;
+  description: string;
+  keywords: string;
+}
+
+interface PackagePrice {
+  current_price: string;
+  original_price: string;
+  note: string;
+}
+
+interface PackageDetail {
+  title: string;
+  body: string[];
+}
+
+interface TourPackage {
+  title: string;
+  description: string;
+  duration: string;
+  pickup_drop: string;
+  meta?: PackageMeta;
+  price: PackagePrice;
+  details: PackageDetail[];
+}
+
+interface PackageDetailsData {
+  tour_package: TourPackage[];
+}
 
 const TourPackagesDetails = () => {
   // This component will display the details of a specific tour package
   const { id } = useParams<{ id: string }>();
   const decodedTitle = id ? decodeURIComponent(id) : '';
-  const packageDetailsData = packageDetails.tour_package.find(
+  const packageDetailsData = (packageDetails as PackageDetailsData).tour_package.find(
     pkg => pkg.title === decodedTitle
   );
+
+  // Default meta information
+  const defaultMeta: PackageMeta = {
+    title: "Tour Package Details | Kudajadri Homestay Wayanad",
+    description: "Explore our exclusive tour packages in Wayanad. Discover the best deals for families, couples, and groups with comfortable accommodation and exciting activities.",
+    keywords: "wayanad tour packages, kudajadri homestay, wayanad tourism, tour packages wayanad"
+  };
+
+  // Use package-specific meta if available, otherwise use default
+  const metaInfo = packageDetailsData?.meta || defaultMeta;
+
   return (
     <div>
+      <Helmet>
+        <title>{metaInfo.title}</title>
+        <meta name="description" content={metaInfo.description} />
+        <meta name="keywords" content={metaInfo.keywords} />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Kudajadri Homestay" />
+        <meta property="og:title" content={metaInfo.title} />
+        <meta property="og:description" content={metaInfo.description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={window.location.href} />
+        <meta property="og:site_name" content="Kudajadri Homestay" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image" content={`${window.location.origin}/wayanadImg.jpg`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={metaInfo.title} />
+        <meta name="twitter:description" content={metaInfo.description} />
+        <meta name="twitter:site" content="@kudajadrihomestay" />
+        <meta name="twitter:image" content={`${window.location.origin}/wayanadImg.jpg`} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="canonical" href={window.location.href} />
+      </Helmet>
+
       <Header />
       {packageDetailsData ? (
         <div className="package-details  mt-[60px] p-[80px]">

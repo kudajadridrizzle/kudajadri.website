@@ -2,21 +2,21 @@
   "packages": [
     {
       "title": "Green Wayanad Tour Package",
-      "price": "Rs 18,000",
+      "price": "₹18,500",
       "days": "4 Days 3 Nights",
       "people": "2 guests applicable"
     },
     {
-      "title": "Premium Wayanad Adventure Package",
-      "price": "Rs 25,000",
-      "days": "5 Days 4 Nights",
-      "people": "4 guests applicable"
+      "title": "Dream Wayanad Tour Package (Standard)",
+      "price": "₹13,500",
+      "days": "3 Days 2 Nights",
+      "people": "2 guests applicable"
     },
     {
-      "title": "Luxury Wayanad Experience Package",
-      "price": "Rs 35,000",
-      "days": "6 Days 5 Nights",
-      "people": "6 guests applicable"
+      "title": "Vibrant Wayanad Tour Package (Short Trip)",
+      "price": "₹8,500",
+      "days": "2 Days 1 Night",
+      "people": "2 guests applicable"
     }
   ]
 }
