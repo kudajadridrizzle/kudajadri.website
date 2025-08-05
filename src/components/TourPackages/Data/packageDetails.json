@@ -3,18 +3,18 @@
     {
       "title": "Green Wayanad Tour Package",
       "description": "We Make Best Wayanad Tour Packages For IT Groups, Families And Honeymoon Couple At The Lowest Possible Cost.",
-      "duration": "1 Night 2 Days",
+      "duration": "4 Days 3 Nights",
       "pickup_drop": "Kalpetta",
       "price": {
-        "current_price": "₹8,500",
-        "original_price": "₹9,000.00",
+        "current_price": "₹18,000",
+        "original_price": "₹20,000.00",
         "note": "Includes Stay For 2 Adults. ₹750 Per Extra Person."
       },
       "details": [
         {
           "title": "Overview",
           "body": [
-            "Wayanad Trip Planner LLP Offers Perfectly Curated 2 Days & 1 Nights Wayanad Tour Packages—Ideal For Couples, Families, And Small Groups Looking To Explore The Scenic Beauty Of Wayanad At A Relaxed Pace. The Package Includes Premium Or Budget Stays, Private Cab Transfers, Sightseeing, Local Cuisine, And Optional Add-Ons Like Trekking, Campfires, And Wildlife Safaris."
+            "Wayanad Trip Planner LLP Offers Perfectly Curated 4 Days & 3 Nights Wayanad Tour Packages—Ideal For Couples, Families, And Small Groups Looking To Explore The Scenic Beauty Of Wayanad At A Relaxed Pace. The Package Includes Premium Or Budget Stays, Private Cab Transfers, Sightseeing, Local Cuisine, And Optional Add-Ons Like Trekking, Campfires, And Wildlife Safaris."
           ]
         },
         {
@@ -63,6 +63,134 @@
         {
           "title": "Exclusions",
           "body": ["Entry Tickets", "Parking Fee", "Lunch"]
+        },
+        {
+          "title": "Contact",
+          "body": [
+            "mobile: +91 9946 354 511",
+            "phone: 04936 286 840",
+            "email: Kudajadri@Ymail.Com",
+            "website: www.Kudajadririzzile.com"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Premium Wayanad Adventure Package",
+      "description": "Experience the ultimate adventure in Wayanad with our premium package designed for thrill-seekers and nature lovers.",
+      "duration": "5 Days 4 Nights",
+      "pickup_drop": "Kalpetta",
+      "price": {
+        "current_price": "₹25,000",
+        "original_price": "₹28,000.00",
+        "note": "Includes Stay For 4 Adults. ₹800 Per Extra Person."
+      },
+      "details": [
+        {
+          "title": "Overview",
+          "body": [
+            "Our Premium Wayanad Adventure Package is perfect for adventure enthusiasts and nature lovers. This 5-day package includes thrilling activities like trekking, wildlife safaris, and adventure sports while maintaining the comfort and luxury you deserve."
+          ]
+        },
+        {
+          "title": "Adventure Activities",
+          "body": [
+            "Trekking to Chembra Peak",
+            "Wildlife Safari at Tholpetty",
+            "Bamboo Rafting at Kuruva Island",
+            "Rock Climbing at Edakkal Caves",
+            "Night Camping Experience",
+            "Adventure Sports at Pookode Lake"
+          ]
+        },
+        {
+          "title": "Accommodation",
+          "body": [
+            "Premium Heritage Rooms",
+            "Mountain View Accommodation",
+            "Private Balcony Access",
+            "24/7 Room Service"
+          ]
+        },
+        {
+          "title": "Inclusions",
+          "body": [
+            "Premium Accommodation",
+            "All Meals (Breakfast, Lunch, Dinner)",
+            "Adventure Activity Equipment",
+            "Professional Guide Services",
+            "Transportation",
+            "Insurance Coverage"
+          ]
+        },
+        {
+          "title": "Exclusions",
+          "body": ["Personal Expenses", "Optional Activities", "Alcoholic Beverages"]
+        },
+        {
+          "title": "Contact",
+          "body": [
+            "mobile: +91 9946 354 511",
+            "phone: 04936 286 840",
+            "email: Kudajadri@Ymail.Com",
+            "website: www.Kudajadririzzile.com"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Luxury Wayanad Experience Package",
+      "description": "Indulge in the finest luxury experience Wayanad has to offer with our exclusive luxury package.",
+      "duration": "6 Days 5 Nights",
+      "pickup_drop": "Kalpetta",
+      "price": {
+        "current_price": "₹35,000",
+        "original_price": "₹40,000.00",
+        "note": "Includes Stay For 6 Adults. ₹1000 Per Extra Person."
+      },
+      "details": [
+        {
+          "title": "Overview",
+          "body": [
+            "Our Luxury Wayanad Experience Package offers the ultimate in comfort, luxury, and personalized service. Enjoy exclusive access to premium locations, private tours, and world-class amenities throughout your stay."
+          ]
+        },
+        {
+          "title": "Luxury Features",
+          "body": [
+            "Private Villa Accommodation",
+            "Personal Butler Service",
+            "Exclusive Dining Experiences",
+            "Spa and Wellness Sessions",
+            "Private Transportation",
+            "Concierge Services"
+          ]
+        },
+        {
+          "title": "Exclusive Experiences",
+          "body": [
+            "Private Sunset Viewing",
+            "Exclusive Wildlife Photography",
+            "Cultural Performance Shows",
+            "Wine Tasting Sessions",
+            "Private Cooking Classes",
+            "Helicopter Sightseeing (Optional)"
+          ]
+        },
+        {
+          "title": "Inclusions",
+          "body": [
+            "Luxury Villa Accommodation",
+            "All-Inclusive Dining",
+            "Personal Butler Service",
+            "Spa and Wellness Access",
+            "Private Transportation",
+            "Exclusive Activity Access"
+          ]
+        },
+        {
+          "title": "Exclusions",
+          "body": ["Optional Helicopter Tours", "Personal Shopping", "Premium Alcohol"]
         },
         {
           "title": "Contact",

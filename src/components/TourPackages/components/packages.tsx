@@ -15,7 +15,8 @@ export const Packages = () => {
           {...pkg}
           image={index === 0 ? img1 : index === 1 ? img2 : img3}
           onClick={() => {
-            navigate(`/tour-packages/${pkg.title}`, {
+            const encodedTitle = encodeURIComponent(pkg.title);
+            navigate(`/tour-packages/${encodedTitle}`, {
               state: { fromDashboard: true },
             });
           }}

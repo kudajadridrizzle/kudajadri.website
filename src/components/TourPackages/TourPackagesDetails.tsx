@@ -7,13 +7,14 @@ import Footer from '../Home/components/Footer';
 const TourPackagesDetails = () => {
   // This component will display the details of a specific tour package
   const { id } = useParams<{ id: string }>();
+  const decodedTitle = id ? decodeURIComponent(id) : '';
   const packageDetailsData = packageDetails.tour_package.find(
-    pkg => pkg.title === id
+    pkg => pkg.title === decodedTitle
   );
   return (
     <div>
       <Header />
-      {packageDetailsData && (
+      {packageDetailsData ? (
         <div className="package-details  mt-[60px] p-[80px]">
           <PackageCard
             title={packageDetailsData.title}
@@ -32,6 +33,19 @@ const TourPackagesDetails = () => {
                 />
               ))}
           </div>
+        </div>
+      ) : (
+        <div className="package-details mt-[60px] p-[80px] text-center">
+          <h1 className="text-2xl font-bold mb-4">Package Not Found</h1>
+          <p className="text-gray-600 mb-8">
+            The tour package "{decodedTitle}" could not be found.
+          </p>
+          <button
+            onClick={() => window.history.back()}
+            className="bg-[#292626] text-white py-3 px-6 rounded-full hover:bg-[#1a1a1a] transition-colors"
+          >
+            Go Back
+          </button>
         </div>
       )}
       <Footer />
