@@ -1,9 +1,17 @@
-import HeritageStay from '../../../assets/HeritageStay.svg';
-import PaddyFieldView from '../../../assets/PaddyFieldView.svg';
-import FastWifi from '../../../assets/FastWiFi.svg';
-import EnhancedSafety from '../../../assets/EnhancedSafety.svg';
-import AmpleParking from '../../../assets/AmpleParking.svg';
-import PeacefulEnvironment from '../../../assets/PeacefulEnvironment.svg';
+import { 
+  Baby, 
+  Trees, 
+  MapPin, 
+  Eye, 
+  Sprout, 
+  ChefHat,
+  Home,
+  Mountain,
+  Wifi,
+  Shield,
+  Car,
+  Heart
+} from 'lucide-react';
 
 const Amenities = () => {
   return (
@@ -26,23 +34,20 @@ const Amenities = () => {
         </div>
 
         <div className="flex flex-wrap sm:gap-14 mobile:gap-5 justify-center">
-          <AmititiesLogo logo={HeritageStay} title="Heritage Stay" />
-          <AmititiesLogo logo={PaddyFieldView} title="Paddy Field View" />
-          <AmititiesLogo logo={FastWifi} title="Fast WiFi" />
-          <AmititiesLogo logo={EnhancedSafety} title="Enhanced Safety" />
-          <AmititiesLogo logo={AmpleParking} title="Ample Parking" />
-          <AmititiesLogo
-            logo={PeacefulEnvironment}
-            title="Peaceful Environment"
-          />
+          <AmenityIcon Icon={Home} title="Heritage Stay" />
+          <AmenityIcon Icon={Mountain} title="Paddy Field View" />
+          <AmenityIcon Icon={Wifi} title="Fast WiFi" />
+          <AmenityIcon Icon={Shield} title="Enhanced Safety" />
+          <AmenityIcon Icon={Car} title="Ample Parking" />
+          <AmenityIcon Icon={Heart} title="Peaceful Environment" />
         </div>
         <div className="flex flex-wrap sm:gap-14 mobile:gap-5 justify-center">
-          <AmititiesLogo logo={HeritageStay} title="Kids Play Area" />
-          <AmititiesLogo logo={PaddyFieldView} title="Nature Walks" />
-          <AmititiesLogo logo={FastWifi} title="Tourist Access" />
-          <AmititiesLogo logo={EnhancedSafety} title="Wildlife Spotting" />
-          <AmititiesLogo logo={AmpleParking} title="Organic Garden" />
-          <AmititiesLogo logo={PeacefulEnvironment} title="Kerala Cuisine" />
+          <AmenityIcon Icon={Baby} title="Kids Play Area" />
+          <AmenityIcon Icon={Trees} title="Nature Walks" />
+          <AmenityIcon Icon={MapPin} title="Tourist Access" />
+          <AmenityIcon Icon={Eye} title="Wildlife Spotting" />
+          <AmenityIcon Icon={Sprout} title="Organic Garden" />
+          <AmenityIcon Icon={ChefHat} title="Kerala Cuisine" />
         </div>
       </div>
     </div>
@@ -51,11 +56,11 @@ const Amenities = () => {
 
 export default Amenities;
 
-const AmititiesLogo = ({ logo, title }: { logo: string; title: string }) => {
+const AmenityIcon = ({ Icon, title }: { Icon: React.ComponentType<{ className?: string }>; title: string }) => {
   return (
     <div className="flex flex-col gap-2 items-center mobile:py-7 sm:py-0 mobile:w-[140px]">
-      <div>
-        <img src={logo} alt="" />
+      <div className="text-white">
+        <Icon className="w-8 h-8" />
       </div>
       <p className="text-[#FFF] text-base font-albertSans text-center">
         {title}
