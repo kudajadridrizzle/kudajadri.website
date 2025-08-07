@@ -15,8 +15,6 @@ import homeFaqRaw from '../../File/homefaqs.md?raw';
 import FaqList from '../FaqComponent/FaqList';
 import { ContentSection } from '../shared';
 import heritage1 from '../../assets/heritage1.jpg';
-import nature1 from '../../assets/nature1.jpg';
-import roomOne from '../../assets/roomOne.jpg';
 
 // Define the shape of FAQ frontmatter
 interface FaqFrontMatterAttributes {
