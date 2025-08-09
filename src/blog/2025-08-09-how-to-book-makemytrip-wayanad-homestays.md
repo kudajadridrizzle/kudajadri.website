@@ -19,7 +19,7 @@ Booking **MakeMyTrip homestays in Wayanad** has many benefits:
 * Attractive deals and discounts
 * Flexible cancellation policies
 
-These features make MakeMyTrip a reliable option for booking homestays in Wayanad.
+These features make MakeMyTrip a reliable option for booking [homestays in Wayanad](https://www.kudajadridrizzle.com).
 
 ## What to Know Before Booking MakeMyTrip Homestays in Wayanad
 
