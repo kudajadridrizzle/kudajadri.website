@@ -1,5 +1,6 @@
 import AboutSession from './components/AboutSession';
 import Amenities from './components/Amenities';
+import CardsSection from './components/CardsSection';
 import Direction from './components/Direction';
 import Footer from './components/Footer';
 import GallarySession from './components/GallarySession';
@@ -15,6 +16,7 @@ import homeFaqRaw from '../../File/homefaqs.md?raw';
 import FaqList from '../FaqComponent/FaqList';
 import { ContentSection } from '../shared';
 import heritage1 from '../../assets/heritage1.jpg';
+import { cardsData } from './components/cardsData';
 
 // Define the shape of FAQ frontmatter
 interface FaqFrontMatterAttributes {
@@ -108,6 +110,11 @@ const Home = () => {
       <ContentSection
         title="Discover Our Homestay"
         items={contentItems}
+      />
+      <CardsSection
+        title="Attractions Near Kudajadri Drizzle Homestay Wayanad"
+        subtitle="Experience"
+        cards={cardsData}
       />
       <FaqList {...content} />
 

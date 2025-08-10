@@ -23,7 +23,9 @@
     "noUncheckedSideEffectImports": true,
 
     /* Environment */
-    "types": []
+    "types": [],
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   },
   "include": ["src"]
 }
