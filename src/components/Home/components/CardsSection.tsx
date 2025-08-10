@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { CardData } from './cardsData';
 
 interface CardsSectionProps {
@@ -6,33 +6,6 @@ interface CardsSectionProps {
   subtitle: string;
   cards: CardData[];
 }
-
-// Component for expandable text with read more functionality
-const ExpandableText: React.FC<{ text: string; maxLength?: number; className?: string }> = ({ 
-  text, 
-  maxLength = 150, 
-  className = "" 
-}) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-  
-  if (text.length <= maxLength) {
-    return <span className={className}>{text}</span>;
-  }
-  
-  const truncatedText = text.slice(0, maxLength);
-  
-  return (
-    <span className={className}>
-      {isExpanded ? text : `${truncatedText}...`}
-      <button
-        onClick={() => setIsExpanded(!isExpanded)}
-        className="ml-2 text-primary hover:text-primary/80 font-medium underline transition-colors duration-200"
-      >
-        {isExpanded ? 'Read Less' : 'Read More'}
-      </button>
-    </span>
-  );
-};
 
 const CardsSection: React.FC<CardsSectionProps> = ({ 
   title, 
@@ -50,8 +23,6 @@ const CardsSection: React.FC<CardsSectionProps> = ({
           {title}
         </h2>
       </div>
-
-
 
       {/* Cards Grid */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mobile:grid-cols-1">
