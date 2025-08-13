@@ -1,7 +1,7 @@
 ---
 title: How to Book MakeMyTrip Wayanad Homestays
 description: How to Book MakeMyTrip Wayanad Homestays
-author: Admin
+author: Admi
 date: 2025-08-09T11:07:49.682Z
 published: true
 ---
