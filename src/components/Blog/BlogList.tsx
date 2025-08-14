@@ -54,7 +54,7 @@ const BlogList: React.FC = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <div className="text-xl">Loading blog posts...</div>
+        <div className="text-xl font-albertSans">Loading blog posts...</div>
       </div>
     );
   }
@@ -62,9 +62,7 @@ const BlogList: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>
-          Wayanad Travel Blog: Latest News, Tourism Updates, & Insights
-        </title>
+        <title>Wayanad Travel Blog: Latest News, Tourism Updates, & Insights</title>
         <meta
           name="description"
           content="Stay updated with the Wayanad Travel Blog. Get the latest news, tourism updates, local insights, travel tips, and experiences to help you plan your perfect trip."
@@ -107,27 +105,25 @@ const BlogList: React.FC = () => {
       </Helmet>
 
       <Header />
-      <div className="min-h-screen py-12 bg-gray-50">
-        <div className="max-w-6xl px-4 mx-auto sm:px-6 lg:px-8">
-          <div className="mb-12 text-center">
-            <h1 className="mb-4 text-4xl font-bold text-gray-900">Blog</h1>
-            <p className="text-xl text-gray-600">
-              Discover stories, insights, and updates from Kudajadri
-            </p>
-          </div>
+      <div className="min-h-screen bg-white">
+        <div className="sm:px-[12%] sm:py-32 px-4 py-14 large:px-[18%]">
+          <h1 className="text-[32px] sm:text-[44px] font-ivy mb-8">Blog</h1>
+          <p className="text-secondary font-albertSans text-lg mb-12">
+            Discover stories, insights, and updates from Kudajadri
+          </p>
 
           {blogPosts.length === 0 ? (
             <div className="py-12 text-center">
-              <p className="text-lg text-gray-500">
+              <p className="text-lg text-secondary font-albertSans">
                 No blog posts available yet.
               </p>
             </div>
           ) : (
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {blogPosts.map(post => (
+              {blogPosts.map((post) => (
                 <article
                   key={post.slug}
-                  className="overflow-hidden transition-shadow duration-300 bg-white rounded-lg shadow-md hover:shadow-lg"
+                  className="overflow-hidden transition-all duration-300 bg-white rounded-lg shadow-sm hover:shadow-md border border-gray-100"
                 >
                   {post.featuredImage && (
                     <div className="aspect-w-16 aspect-h-9">
@@ -140,7 +136,7 @@ const BlogList: React.FC = () => {
                   )}
 
                   <div className="p-6">
-                    <div className="flex items-center mb-2 text-sm text-gray-500">
+                    <div className="flex items-center mb-3 text-sm text-gray-500 font-albertSans">
                       <time dateTime={post.date}>
                         {new Date(post.date).toLocaleDateString('en-US', {
                           year: 'numeric',
@@ -152,11 +148,11 @@ const BlogList: React.FC = () => {
                       <span>{post.author}</span>
                     </div>
 
-                    <h2 className="mb-3 text-xl font-semibold text-gray-900 line-clamp-2">
+                    <h2 className="mb-3 text-xl font-semibold text-gray-900 font-albertSans">
                       {post.title}
                     </h2>
 
-                    <p className="mb-4 text-gray-600 line-clamp-3">
+                    <p className="mb-4 text-secondary font-albertSans line-clamp-3">
                       {post.description}
                     </p>
 
@@ -165,7 +161,7 @@ const BlogList: React.FC = () => {
                         {post.tags.slice(0, 3).map((tag: string) => (
                           <span
                             key={tag}
-                            className="px-2 py-1 text-xs text-blue-800 bg-blue-100 rounded-full"
+                            className="px-2 py-1 text-xs text-blue-800 bg-blue-50 rounded-full font-albertSans"
                           >
                             {tag}
                           </span>
@@ -175,7 +171,7 @@ const BlogList: React.FC = () => {
 
                     <Link
                       to={`/blog/${post.slug}`}
-                      className="inline-flex items-center font-medium text-blue-600 hover:text-blue-800"
+                      className="inline-flex items-center font-medium text-primary hover:text-primary-dark font-albertSans"
                     >
                       Read more
                       <svg

@@ -48,7 +48,7 @@ const BlogDetail: React.FC = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <div className="text-xl">Loading blog post...</div>
+        <div className="text-xl font-albertSans">Loading blog post...</div>
       </div>
     );
   }
@@ -57,12 +57,12 @@ const BlogDetail: React.FC = () => {
     return (
       <div className="flex items-center justify-center min-h-screen">
         <div className="text-center">
-          <h1 className="mb-4 text-2xl font-bold text-gray-900">
+          <h1 className="mb-4 text-2xl font-bold text-gray-900 font-albertSans">
             {error || 'Blog post not found'}
           </h1>
           <Link
             to="/blog"
-            className="font-medium text-blue-600 hover:text-blue-800"
+            className="font-medium text-primary hover:text-primary-dark font-albertSans"
           >
             ← Back to Blog
           </Link>
@@ -111,25 +111,26 @@ const BlogDetail: React.FC = () => {
       
       <div className="min-h-screen bg-white">
         <Header />
+        
         {/* Hero Section */}
         {blogPost.featuredImage && (
-          <div className="relative bg-gray-900 h-96">
+          <div className="relative h-[400px] w-full">
             <img
               src={blogPost.featuredImage}
               alt={blogPost.title}
-              className="object-cover w-full h-full opacity-70"
+              className="object-cover w-full h-full"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+            <div className="absolute inset-0 bg-black/30" />
           </div>
         )}
 
         {/* Content */}
-        <div className="max-w-4xl px-4 py-12 mx-auto sm:px-6 lg:px-8">
+        <div className="sm:px-[12%] px-4 py-12 large:px-[18%] bg-white">
           {/* Back Button */}
           <div className="mb-8">
             <Link
               to="/blog"
-              className="inline-flex items-center font-medium text-blue-600 hover:text-blue-800"
+              className="inline-flex items-center font-medium text-primary hover:text-primary-dark font-albertSans"
             >
               <svg
                 className="w-4 h-4 mr-1"
@@ -149,13 +150,13 @@ const BlogDetail: React.FC = () => {
           </div>
 
           {/* Article Header */}
-          <header className="mb-8">
-            <h1 className="mb-4 text-4xl font-bold text-gray-900">
+          <header className="mb-12">
+            <h1 className="mb-4 text-3xl sm:text-4xl font-ivy text-gray-900">
               {blogPost.title}
             </h1>
 
-            <div className="flex items-center mb-4 text-gray-600">
-              <time dateTime={blogPost.date} className="text-sm">
+            <div className="flex items-center mb-6 text-secondary font-albertSans">
+              <time dateTime={blogPost.date}>
                 {new Date(blogPost.date).toLocaleDateString('en-US', {
                   year: 'numeric',
                   month: 'long',
@@ -163,21 +164,21 @@ const BlogDetail: React.FC = () => {
                 })}
               </time>
               <span className="mx-2">•</span>
-              <span className="text-sm">By {blogPost.author}</span>
+              <span>By {blogPost.author}</span>
             </div>
 
             {blogPost.description && (
-              <p className="mb-6 text-xl leading-relaxed text-gray-600">
+              <p className="mb-6 text-lg leading-relaxed text-secondary font-albertSans">
                 {blogPost.description}
               </p>
             )}
 
             {blogPost.tags && blogPost.tags.length > 0 && (
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mt-6">
                 {blogPost.tags.map((tag: string) => (
                   <span
                     key={tag}
-                    className="px-3 py-1 text-sm text-blue-800 bg-blue-100 rounded-full"
+                    className="px-3 py-1 text-sm text-blue-800 bg-blue-50 rounded-full font-albertSans"
                   >
                     {tag}
                   </span>
@@ -187,7 +188,7 @@ const BlogDetail: React.FC = () => {
           </header>
 
           {/* Article Content */}
-          <article className="prose prose-lg max-w-none">
+          <article className="prose prose-lg max-w-none font-albertSans text-secondary">
             <div
               className="markdown-content"
               dangerouslySetInnerHTML={{ __html: blogPost.content }}
@@ -195,13 +196,13 @@ const BlogDetail: React.FC = () => {
           </article>
 
           {/* Back to Blog */}
-          <div className="pt-8 mt-12 border-t border-gray-200">
+          <div className="pt-8 mt-12 border-t border-gray-100">
             <Link
               to="/blog"
-              className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50"
+              className="inline-flex items-center font-medium text-primary hover:text-primary-dark font-albertSans"
             >
               <svg
-                className="w-4 h-4 mr-2"
+                className="w-4 h-4 mr-1"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -213,7 +214,7 @@ const BlogDetail: React.FC = () => {
                   d="M15 19l-7-7 7-7"
                 />
               </svg>
-              Back to all posts
+              Back to Blog
             </Link>
           </div>
         </div>
