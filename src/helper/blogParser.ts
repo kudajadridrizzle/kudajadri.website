@@ -5,8 +5,10 @@ import { marked } from 'marked';
 interface BlogFrontMatterAttributes {
   title: string;
   description: string;
-  metaTitle?: string;
-  metaDescription?: string;
+  seo?: {
+    metaTitle?: string;
+    metaDescription?: string;
+  };
   author: string;
   date: string;
   featuredImage?: string;
@@ -35,8 +37,8 @@ export function parseBlogMarkdown(raw: string, slug: string): BlogPost {
   return {
     title: attributes.title || 'Untitled',
     description: attributes.description || '',
-    metaTitle: attributes.metaTitle || attributes.title || 'Untitled',
-    metaDescription: attributes.metaDescription || attributes.description || '',
+    metaTitle: attributes.seo?.metaTitle || attributes.title || 'Untitled',
+    metaDescription: attributes.seo?.metaDescription || attributes.description || '',
     author: attributes.author || 'Anonymous',
     date: attributes.date || new Date().toISOString(),
     featuredImage: attributes.featuredImage,

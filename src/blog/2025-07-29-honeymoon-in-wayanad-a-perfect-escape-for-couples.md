@@ -1,8 +1,9 @@
 ---
 title: Honeymoon in Wayanad - A Perfect Escape for Couples
 description: Experience the perfect honeymoon in Wayanad with our comprehensive guide. Discover romantic stays, activities, and the best time to visit.
-metaTitle: "Honeymoon in Wayanad - Ultimate Romantic Escape for Newlyweds"
-metaDescription: "Plan your dream honeymoon in Wayanad with our complete guide. Find romantic homestays, activities, best time to visit, and travel tips for couples."
+seo:
+  metaTitle: "Honeymoon in Wayanad - Ultimate Romantic Escape for Newlyweds"
+  metaDescription: "Plan your dream honeymoon in Wayanad with our complete guide. Find romantic homestays, activities, best time to visit, and travel tips for couples."
 author: Kudajadri Homestay
 date: 2025-07-29T10:00:00.000Z
 featuredImage: /images/wayanad-hills.jpg

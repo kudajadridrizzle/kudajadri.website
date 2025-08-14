@@ -1,6 +1,9 @@
 ---
 title: How to Book Booking.com Homestays in Wayanad
 description: How to Book Booking.com Homestays in Wayanad
+seo:
+  metaTitle: "Book Booking.com Wayanad Homestays - Complete Guide & Tips"
+  metaDescription: "Learn how to book the best Wayanad homestays through Booking.com. Get step-by-step booking guide, find verified homestays, and enjoy secure booking with great deals."
 author: Admin
 date: 2025-08-09T10:57:35.158Z
 published: true

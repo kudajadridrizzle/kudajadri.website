@@ -1,8 +1,9 @@
 ---
 title: Kerala Honeymoon Destinations - Romantic Getaways in God's Own Country
 description: Discover the most romantic honeymoon destinations in Kerala, from the serene backwaters to the misty hill stations. Plan your perfect romantic escape.
-metaTitle: "Kerala Honeymoon Destinations - Top 10 Romantic Places for Couples"
-metaDescription: "Explore the best honeymoon destinations in Kerala including Munnar, Alleppey, Wayanad and more. Find romantic resorts, activities and travel tips for couples."
+seo:
+  metaTitle: "Kerala Honeymoon Destinations - Top 10 Romantic Places for Couples"
+  metaDescription: "Explore the best honeymoon destinations in Kerala including Munnar, Alleppey, Wayanad and more. Find romantic resorts, activities and travel tips for couples."
 author: Kudajadri Homestay
 date: 2025-07-28T10:00:00.000Z
 featuredImage: /images/kerala-backwaters.jpg
