@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { getAttractionImage } from '../utils/attractionImages';
-import { isDevelopment } from '../../../utils/env';
 
 interface AttractionCardProps {
   title: string;
@@ -19,10 +17,7 @@ export const EnhancedAttractionCard: React.FC<AttractionCardProps> = ({
   const [imageLoading, setImageLoading] = useState(true);
   const formattedIndex = index < 10 ? `0${index + 1}` : `${index + 1}`;
   
-  // Get attraction image data for better alt text
-  const attractionImage = getAttractionImage(title);
-  const altText = attractionImage?.altText || title;
-  const fallbackImage = attractionImage?.fallbackImage || '/images/wayanad/placeholder.svg';
+  const fallbackImage = '/images/wayanad/placeholder.svg';
   
   const handleImageLoad = () => {
     setImageLoading(false);
@@ -46,7 +41,7 @@ export const EnhancedAttractionCard: React.FC<AttractionCardProps> = ({
           )}
           <img
             src={displayImage}
-            alt={altText}
+            alt={title}
             className={`object-cover w-full h-auto rounded-[16px] aspect-[16/9] transition-opacity duration-300 ${
               imageLoading ? 'opacity-0' : 'opacity-100'
             }`}
@@ -77,18 +72,6 @@ export const EnhancedAttractionCard: React.FC<AttractionCardProps> = ({
               className="text-[#6E6E6E] text-base font-medium leading-6 font-albertSans"
               dangerouslySetInnerHTML={{ __html: description }}
             />
-            {/* Image management info for admin */}
-            {isDevelopment && (
-              <div className="mt-4 p-3 bg-blue-50 rounded-lg text-xs text-blue-700">
-                <div><strong>Image Path:</strong> {image}</div>
-                <div><strong>Image ID:</strong> {attractionImage?.id || 'Not found'}</div>
-                {imageError && (
-                  <div className="text-red-600 mt-1">
-                    ⚠️ Image failed to load, using fallback
-                  </div>
-                )}
-              </div>
-            )}
           </div>
         </div>
       </div>

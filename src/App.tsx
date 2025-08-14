@@ -21,7 +21,7 @@ const App = () => {
     <Router>
       <ScrollToTop />
       <CurtainTransition />
-      <Routes location={location} key={location.pathname}>
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<ContactPage />} />

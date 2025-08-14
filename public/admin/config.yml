@@ -22,6 +22,13 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Description", name: "description", widget: "text", required: true }
+      - label: "SEO Settings"
+        name: "seo"
+        widget: "object"
+        fields:
+          - { label: "Meta Title", name: "metaTitle", widget: "string", required: false, hint: "Leave empty to use the main title" }
+          - { label: "Meta Description", name: "metaDescription", widget: "text", required: false, hint: "Leave empty to use the main description" }
       - { label: "Author", name: "author", widget: "string", required: true }
       - { label: "Date", name: "date", widget: "datetime", required: true }
       - { label: "Featured Image", name: "featuredImage", widget: "image", required: false }

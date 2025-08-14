@@ -18,7 +18,7 @@ export default function Faq(content: FaqFrontMatterAttributes) {
   const listTwo = faqs.slice(middleIndex, faqs.length);
 
   return (
-    <div className="sm:px-[12%] sm:py-24 mobile:px-4 mobile:py-14 large:px-[18%] flex flex-col gap-8">
+    <div className="sm:px-[12%] sm:py-24 mobile:px-4 mobile:py-14 large:px-[18%] flex flex-col gap-8 faq-container">
       <div>
         <h1 className="flex-1 text-primary font-ivy sm:text-[44px] sm:text-center mobile:text-start mobile:text-[32px]">
           {content.title || 'Frequently Asked Questions'}
@@ -28,22 +28,26 @@ export default function Faq(content: FaqFrontMatterAttributes) {
         <Accordion.Root
           type="single"
           collapsible
-          className="w-full mx-auto  bg-white shadow-sm"
+          className="w-full mx-auto bg-white shadow-sm rounded-lg overflow-hidden"
         >
           {listOne.map((faq, index) => (
             <Accordion.Item
               key={index}
               value={`item-${index}`}
-              className="border-b"
+              className="border-b border-gray-100 last:border-b-0"
             >
               <Accordion.Header>
-                <Accordion.Trigger className="group flex w-full items-center font-albertSans justify-between px-4 py-3 text-left text-lg font-medium hover:bg-gray-100 transition">
-                  <ReactMarkdown>{faq.question}</ReactMarkdown>
-                  <ChevronDownIcon className="h-5 w-5 transition-transform duration-200 font-albertSans group-data-[state=open]:rotate-180" />
+                <Accordion.Trigger className="group flex w-full items-center font-albertSans justify-between px-6 py-4 text-left text-lg font-medium hover:bg-gray-50 transition-all duration-300 ease-in-out">
+                  <div className="flex-1 pr-4">
+                    <ReactMarkdown>{faq.question}</ReactMarkdown>
+                  </div>
+                  <ChevronDownIcon className="h-5 w-5 transition-transform duration-300 ease-in-out text-primary group-data-[state=open]:rotate-180 flex-shrink-0" />
                 </Accordion.Trigger>
               </Accordion.Header>
-              <Accordion.Content className="px-4 pb-2 pt-2 text-gray-600 font-albertSans text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
-                <ReactMarkdown>{faq.answer}</ReactMarkdown>
+              <Accordion.Content className="overflow-hidden">
+                <div className="px-6 pb-4 pt-2 text-gray-600 font-albertSans text-base leading-relaxed">
+                  <ReactMarkdown>{faq.answer}</ReactMarkdown>
+                </div>
               </Accordion.Content>
             </Accordion.Item>
           ))}
@@ -51,22 +55,26 @@ export default function Faq(content: FaqFrontMatterAttributes) {
         <Accordion.Root
           type="single"
           collapsible
-          className="w-full mx-auto  bg-white shadow-sm"
+          className="w-full mx-auto bg-white shadow-sm rounded-lg overflow-hidden"
         >
           {listTwo.map((faq, index) => (
             <Accordion.Item
               key={index}
-              value={`item-${index}`}
-              className="border-b"
+              value={`item-${index + middleIndex}`}
+              className="border-b border-gray-100 last:border-b-0"
             >
               <Accordion.Header>
-                <Accordion.Trigger className="group flex w-full items-center font-albertSans justify-between px-4 py-3 text-left text-lg font-medium hover:bg-gray-100 transition">
-                  <ReactMarkdown>{faq.question}</ReactMarkdown>
-                  <ChevronDownIcon className="h-5 w-5 transition-transform duration-200 font-albertSans group-data-[state=open]:rotate-180" />
+                <Accordion.Trigger className="group flex w-full items-center font-albertSans justify-between px-6 py-4 text-left text-lg font-medium hover:bg-gray-50 transition-all duration-300 ease-in-out">
+                  <div className="flex-1 pr-4">
+                    <ReactMarkdown>{faq.question}</ReactMarkdown>
+                  </div>
+                  <ChevronDownIcon className="h-5 w-5 transition-transform duration-300 ease-in-out text-primary group-data-[state=open]:rotate-180 flex-shrink-0" />
                 </Accordion.Trigger>
               </Accordion.Header>
-              <Accordion.Content className="px-4 pb-2 pt-2 text-gray-600 font-albertSans text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
-                <ReactMarkdown>{faq.answer}</ReactMarkdown>
+              <Accordion.Content className="overflow-hidden">
+                <div className="px-6 pb-4 pt-2 text-gray-600 font-albertSans text-base leading-relaxed">
+                  <ReactMarkdown>{faq.answer}</ReactMarkdown>
+                </div>
               </Accordion.Content>
             </Accordion.Item>
           ))}

@@ -1,0 +1,133 @@
+{
+  "pageMetadata": {
+    "title": "Wayanad: Explore Tourist Attractions and Destinations in Wayanad",
+    "description": "Discover top tourist attractions and must-visit destinations in Wayanad. Plan your perfect trip to explore nature, wildlife, and cultural sites.",
+    "keywords": "wayanad tourist attractions, wayanad destinations, nature trails, wildlife, cultural sites, kudajadri wayanad",
+    "author": "Kudajadri Homestay",
+    "robots": "index, follow"
+  },
+  "heroSection": {
+    "heroTitle": "Explore the Beauty of Wayanad",
+    "heroSubtitle": "Discover the enchanting landscapes, rich wildlife, and cultural heritage of God's Own Country",
+    "heroDescription": "Wayanad, nestled in the Western Ghats of Kerala, is a paradise for nature lovers and adventure seekers. From misty mountains and cascading waterfalls to ancient caves and wildlife sanctuaries, Wayanad offers an unforgettable experience for every traveler."
+  },
+  "attractions": [
+    {
+      "title": "Wayanad Tholpetty Wildlife Sanctuary",
+      "description": "Tholpetty Wildlife Sanctuary is a popular wildlife sanctuary in Wayanad, which is a habitat for rare species of wild animals. One of the memorable experiences is night camping. The watchtower of this sanctuary is situated above the lake and serves as the main water source for animals. Situated at Tholpetty.",
+      "image": "/images/tholpetty_wildlife.jpg",
+      "location": "Tholpetty",
+      "highlights": ["Wildlife watching", "Night camping", "Watchtower views", "Lake ecosystem"]
+    },
+    {
+      "title": "Wayanad Muthanga Wildlife Sanctuary",
+      "description": "Muthanga Wildlife Sanctuary is a vast forest area covering 345 sq. km in Wayanad. It is the largest abode of wild animals in Malabar and a reserved area for rare Indian tigers. The Forest Department also offers elephant rides to tourists.",
+      "image": "/images/muthanga_wildlife.jpg",
+      "location": "Muthanga",
+      "highlights": ["Tiger reserve", "Elephant rides", "Forest trails", "Wildlife photography"]
+    },
+    {
+      "title": "Wayanad Karapuzha Dam",
+      "description": "Karapuzha Dam, one of the largest earth dams in India, is built on the Karapuzha River for irrigation purposes. Surrounded by wooded hills, it is a major freshwater reservoir and a top tourist attraction in Wayanad. Located at Karapuzha, Kakkavayal.",
+      "image": "/images/karapuzha_dam.jpg",
+      "location": "Karapuzha, Kakkavayal",
+      "highlights": ["Dam views", "Boating", "Scenic landscapes", "Photography"]
+    },
+    {
+      "title": "Wayanad Kuruva Island",
+      "description": "Kuruva Island is a 950-acre uninhabited forest on the Kabini River tributaries. It is a peaceful picnic spot rich in rare birds, orchids, and herbs, making it an untouched natural haven away from city life.",
+      "image": "/images/kuruva_island.jpg",
+      "location": "Kabini River",
+      "highlights": ["Bird watching", "Nature trails", "Picnic spot", "River views"]
+    },
+    {
+      "title": "Wayanad Pookkode Lake",
+      "description": "Pookkode Lake is a natural freshwater lake surrounded by evergreen mountains and forests. Located at Vythiri, it spans 13 acres and reaches a depth of 40 meters. The climate is cool, and the scenery is mesmerizing.",
+      "image": "/images/pookkode_lake.jpg",
+      "location": "Vythiri",
+      "highlights": ["Boating", "Mountain views", "Cool climate", "Forest surroundings"]
+    },
+    {
+      "title": "Wayanad Soochipara Waterfalls",
+      "description": "Soochipara Waterfalls, also known as Sentinel Rock Waterfalls, is a three-tiered waterfall located in Vellarimala near Meppadi. The cascading falls range from 100 to 300 feet and offer a spectacular natural display.",
+      "image": "/images/soochipara_waterfalls.jpg",
+      "location": "Vellarimala, Meppadi",
+      "highlights": ["Waterfall views", "Trekking", "Rock climbing", "Natural beauty"]
+    },
+    {
+      "title": "Wayanad Banasurasagar Dam",
+      "description": "Banasurasagar Dam, the largest earth dam in India, impounds the Karamanathodu tributary of the Kabini River. The upstream region forms islands when the dam is full, creating a scenic view with Banasura hills in the backdrop.",
+      "image": "/images/banasurasagar_dam.jpg",
+      "location": "Banasura Hills",
+      "highlights": ["Dam views", "Island formation", "Mountain backdrop", "Scenic beauty"]
+    },
+    {
+      "title": "Wayanad Edakkal Caves",
+      "description": "Edakkal Caves, located 1,200 meters above sea level on Ambukutty Hill, are the only known Indian site with Stone Age carvings. These petroglyphs are believed to date back to 6,000 B.C. The caves are 3 km from Ambalavayal and 25 km from Kalpetta.",
+      "image": "/images/edakkal_caves.jpg",
+      "location": "Ambukutty Hill",
+      "highlights": ["Ancient carvings", "Historical significance", "Mountain trek", "Archaeological site"]
+    },
+    {
+      "title": "Wayanad Thirunelli Temple",
+      "description": "Thirunelli Temple, dedicated to Lord Maha Vishnu, is situated at 900 meters altitude in North Wayanad. A stream called Papanasini flows beneath the temple. The temple lies 32 km from Mananthavady, surrounded by lush forests and hills.",
+      "image": "/images/thirunelli_temple.jpg",
+      "location": "North Wayanad",
+      "highlights": ["Temple architecture", "Religious significance", "Forest surroundings", "Mountain views"]
+    },
+    {
+      "title": "Wayanad Chembra Peak",
+      "description": "Chembra Peak is the highest peak in Wayanad at 2,100 meters (6,890 ft) above sea level. It is a popular trekking destination, offering a breathtaking panoramic view of the entire district from the summit.",
+      "image": "/images/chembra_peak.jpg",
+      "location": "Chembra",
+      "highlights": ["Trekking", "Panoramic views", "Highest peak", "Adventure sports"]
+    },
+    {
+      "title": "Wayanad Chain Tree",
+      "description": "The Chain Tree is a large Ficus tree located about 15 km from Kalpetta. Local legend says a tribal spirit was chained here by a priest. A small temple now stands to honor the spirit of Kariyanthandan.",
+      "image": "/images/chain_tree.jpg",
+      "location": "15 km from Kalpetta",
+      "highlights": ["Local legend", "Cultural significance", "Temple", "Historical site"]
+    },
+    {
+      "title": "Wayanad Neelimala View Point",
+      "description": "Neelimala View Point, 27 km from Kalpetta and 12 km from Sulthan Bathery, offers stunning views of Meenmutty Waterfalls breaking through thick forest canopies. It's a well-known spot for trekking and photography.",
+      "image": "/images/neelimala_viewpoint.jpg",
+      "location": "27 km from Kalpetta",
+      "highlights": ["Waterfall views", "Trekking", "Photography", "Forest canopy"]
+    },
+    {
+      "title": "Wayanad Lakkidi View Point",
+      "description": "Lakkidi View Point, located 700 meters above sea level at the crest of Thamarassery Ghat, offers panoramic views of mist-covered hills and valleys. It's perfect for sunrise and sunset views, with 9 hairpin bends across 16 km.",
+      "image": "/images/lakkidi_viewpoint.jpg",
+      "location": "Thamarassery Ghat",
+      "highlights": ["Sunrise views", "Sunset views", "Misty landscapes", "Hairpin bends"]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is the best time to visit Wayanad?",
+      "answer": "The best time to visit Wayanad is from October to May when the weather is pleasant and ideal for outdoor activities. The monsoon season (June to September) brings heavy rainfall but offers lush green landscapes."
+    },
+    {
+      "question": "How many days are needed to explore Wayanad?",
+      "answer": "A minimum of 3-4 days is recommended to explore the major attractions in Wayanad. This allows time to visit wildlife sanctuaries, waterfalls, viewpoints, and experience the local culture."
+    },
+    {
+      "question": "Are there accommodation options in Wayanad?",
+      "answer": "Yes, Wayanad offers various accommodation options including luxury resorts, homestays, eco-lodges, and budget hotels. Kudajadri Homestay provides comfortable and authentic local experiences."
+    },
+    {
+      "question": "What activities can I do in Wayanad?",
+      "answer": "Wayanad offers activities like trekking, wildlife safaris, boating, rock climbing, bird watching, nature walks, and cultural experiences. Adventure enthusiasts can enjoy various outdoor activities."
+    },
+    {
+      "question": "Is Wayanad safe for solo travelers?",
+      "answer": "Yes, Wayanad is generally safe for solo travelers. However, it's recommended to book guided tours for activities like trekking and wildlife safaris for better safety and experience."
+    },
+    {
+      "question": "What should I pack for a trip to Wayanad?",
+      "answer": "Pack comfortable walking shoes, light cotton clothes, rain gear (during monsoon), sunscreen, insect repellent, camera, and any specific medications you may need."
+    }
+  ]
+}

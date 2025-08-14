@@ -18,7 +18,7 @@ const Footer = () => {
         <span className="block text-[#fff] font-ivy sm:text-[44px] mobile:text-[32px]">
           Ready to Discover Nature? Book Your Wayanad Homestay Now.{' '}
         </span>
-        <div className="w-[100%] flex items-start">
+        <div className="w-[100%] flex items-start sm:justify-between">
           <button
             className="px-6 py-3 bg-[#fff] rounded-full text-primary font-albertSans text-base font-medium capitalize"
             onClick={() => {

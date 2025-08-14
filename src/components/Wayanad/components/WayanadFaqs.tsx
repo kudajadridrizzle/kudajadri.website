@@ -1,31 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import fm from 'front-matter';
-import wayanadFaqRaw from '../../../File/wayanadfaqs.md?raw';
+import React from 'react';
 import FaqList from '../../FaqComponent/FaqList';
 
-interface FaqFrontMatterAttributes {
-  title: string;
-  faqs: Array<{
-    question: string;
-    answer: string;
-  }>;
+interface FaqItem {
+  question: string;
+  answer: string;
 }
 
-export const WayanadFaqs: React.FC = () => {
-  const [faqData, setFaqData] = useState<FaqFrontMatterAttributes | null>(null);
+interface WayanadFaqsProps {
+  faqs: FaqItem[];
+}
 
-  useEffect(() => {
-    try {
-      const parsedFaq = fm<FaqFrontMatterAttributes>(wayanadFaqRaw);
-      setFaqData(parsedFaq.attributes);
-    } catch (error) {
-      console.error('Error loading Wayanad FAQs:', error);
-    }
-  }, []);
-
-  if (!faqData) {
-    return null; // Don't render anything if FAQs are not available
+export const WayanadFaqs: React.FC<WayanadFaqsProps> = ({ faqs }) => {
+  if (!faqs || faqs.length === 0) {
+    return null;
   }
 
-  return <FaqList {...faqData} />;
+  return <FaqList title="Frequently Asked Questions about Wayanad" faqs={faqs} />;
 }; 

@@ -1,11 +1,17 @@
 ---
-title: 'Honeymoon in Wayanad: A Perfect Escape for Couples'
-description: Plan your dream honeymoon in Wayanad, Kerala’s romantic hill
-  station. From misty peaks and waterfalls to private treehouses and peaceful
-  lakes, Wayanad offers the perfect escape for couples. Discover the best places
-  to visit, things to do, and where to stay for a memorable honeymoon.
-author: Admin
-date: 2025-07-29T10:50:04.923Z
+title: Honeymoon in Wayanad - A Perfect Escape for Couples
+description: Experience the perfect honeymoon in Wayanad with our comprehensive guide. Discover romantic stays, activities, and the best time to visit.
+metaTitle: "Honeymoon in Wayanad - Ultimate Romantic Escape for Newlyweds"
+metaDescription: "Plan your dream honeymoon in Wayanad with our complete guide. Find romantic homestays, activities, best time to visit, and travel tips for couples."
+author: Kudajadri Homestay
+date: 2025-07-29T10:00:00.000Z
+featuredImage: /images/wayanad-hills.jpg
+tags:
+  - honeymoon
+  - wayanad
+  - romantic
+  - travel
+  - couples
 published: true
 ---
 

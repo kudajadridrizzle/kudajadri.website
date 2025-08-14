@@ -80,11 +80,9 @@ const FacilitiesPage = () => {
         <ImageSession />
       </div>
       <ListSession />
-
+      <Direction />
       {/* FAQ Section from CMS */}
       <FaqList {...parsedFaq.attributes} />
-
-      <Direction />
       <Footer />
     </div>
   );

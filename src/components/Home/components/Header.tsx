@@ -16,6 +16,9 @@ interface HeaderProps {
 export const Header = ({ type = 'white' }: HeaderProps) => {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  
   const isHome =
     location.pathname === '/' ||
     location.pathname === '/about' ||
@@ -33,18 +36,34 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
     }
 
     const handleScroll = () => {
+      const currentScrollY = window.scrollY;
       const heroHeight = 700;
-      setScrolled(window.scrollY > heroHeight - 80);
+      
+      // Set scrolled state for transparency
+      setScrolled(currentScrollY > heroHeight - 80);
+      
+      // Handle header visibility
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down and past hero section
+        setIsVisible(false);
+      } else if (currentScrollY < lastScrollY) {
+        // Scrolling up
+        setIsVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [isHome]);
+  }, [isHome, lastScrollY]);
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out ${
         scrolled ? 'bg-white shadow-sm' : 'bg-transparent'
+      } ${
+        isVisible ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
       <div className="flex items-end justify-center gap-24 sm:py-6 mobile:hidden sm:flex">
@@ -114,19 +133,45 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
 const PhoneHeader = ({ headerColor }: { headerColor?: 'white' | 'black' }) => {
   const navigate = useNavigate();
   const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const toggleSidebar = () => setSidebarOpen(prevState => !prevState);
 
   const openWhatsApp = () => {
     const phoneNumber = '919946354511';
-    const message = 'Hi, I’m checking room availability.';
+    const message = 'Hi, I\'m checking room availability.';
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Handle header visibility for mobile
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down and past hero section
+        setIsVisible(false);
+      } else if (currentScrollY < lastScrollY) {
+        // Scrolling up
+        setIsVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
   return (
     <div
-      className={`flex justify-between p-4 sm:hidden ${isSidebarOpen ? 'bg-[#292626]' : ''}`}
+      className={`flex justify-between p-4 sm:hidden transition-all duration-500 ease-in-out ${
+        isSidebarOpen ? 'bg-[#292626]' : ''
+      } ${
+        isVisible ? 'translate-y-0' : '-translate-y-full'
+      }`}
     >
       <div>
         <img
@@ -161,7 +206,9 @@ const PhoneHeader = ({ headerColor }: { headerColor?: 'white' | 'black' }) => {
         />
       </div>
       {isSidebarOpen && (
-        <div className="fixed inset-0 z-50 flex mt-[60px]">
+        <div className={`fixed inset-0 z-50 flex mt-[60px] transition-all duration-500 ease-in-out ${
+          isVisible ? 'translate-y-0' : '-translate-y-full'
+        }`}>
           <div
             className={`w-full bg-[#292626] p-4 transform transition-all duration-500 ease-in-out shadow-lg flex flex-col gap-[48px] justify-center ${
               isSidebarOpen
@@ -245,11 +292,29 @@ const PhoneHeader = ({ headerColor }: { headerColor?: 'white' | 'black' }) => {
                 </li>
                 <li className="text-center">
                   <Link
+                    to="/facilities"
+                    className="text-[32px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-white"
+                    onClick={toggleSidebar}
+                  >
+                    Facilities
+                  </Link>
+                </li>
+                <li className="text-center">
+                  <Link
                     to="/wayanad"
                     className="text-[32px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-white"
                     onClick={toggleSidebar}
                   >
                     Wayanad
+                  </Link>
+                </li>
+                <li className="text-center">
+                  <Link
+                    to="/tour-packages"
+                    className="text-[32px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-white"
+                    onClick={toggleSidebar}
+                  >
+                    Tour Packages
                   </Link>
                 </li>
                 <li className="text-center">
