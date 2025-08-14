@@ -2,7 +2,7 @@
 title: How to Book MakeMyTrip Wayanad Homestays
 description: How to Book MakeMyTrip Wayanad Homestays
 seo:
-  metaTitle: Bok MakeMyTrip Wayanad Homestays - Complete Booking Guide & Tips
+  metaTitle: Book MakeMyTrip Wayanad Homestays - Complete Booking Guide & Tips
   metaDescription: Learn how to book the best Wayanad homestays through
     MakeMyTrip. Get step-by-step booking guide, tips, and find verified
     homestays with great deals and discounts.
