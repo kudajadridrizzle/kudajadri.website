@@ -5,9 +5,9 @@ import { marked } from 'marked';
 interface BlogFrontMatterAttributes {
   title: string;
   description: string;
-  seo?: {
-    metaTitle?: string;
-    metaDescription?: string;
+  seo: {
+    metaTitle: string;
+    metaDescription: string;
   };
   author: string;
   date: string;
@@ -20,8 +20,8 @@ interface BlogFrontMatterAttributes {
 export interface BlogPost {
   title: string;
   description: string;
-  metaTitle?: string;
-  metaDescription?: string;
+  metaTitle: string;
+  metaDescription: string;
   author: string;
   date: string;
   featuredImage?: string;
@@ -34,11 +34,16 @@ export interface BlogPost {
 export function parseBlogMarkdown(raw: string, slug: string): BlogPost {
   const { attributes, body } = fm<BlogFrontMatterAttributes>(raw);
 
+  // Validate required SEO fields
+  if (!attributes.seo?.metaTitle || !attributes.seo?.metaDescription) {
+    throw new Error(`Blog post ${slug} is missing required SEO fields. Both metaTitle and metaDescription are required.`);
+  }
+
   return {
     title: attributes.title || 'Untitled',
     description: attributes.description || '',
-    metaTitle: attributes.seo?.metaTitle || attributes.title || 'Untitled',
-    metaDescription: attributes.seo?.metaDescription || attributes.description || '',
+    metaTitle: attributes.seo.metaTitle,
+    metaDescription: attributes.seo.metaDescription,
     author: attributes.author || 'Anonymous',
     date: attributes.date || new Date().toISOString(),
     featuredImage: attributes.featuredImage,

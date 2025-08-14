@@ -26,9 +26,10 @@ collections:
       - label: "SEO Settings"
         name: "seo"
         widget: "object"
+        required: true
         fields:
-          - { label: "Meta Title", name: "metaTitle", widget: "string", required: false, hint: "Leave empty to use the main title" }
-          - { label: "Meta Description", name: "metaDescription", widget: "text", required: false, hint: "Leave empty to use the main description" }
+          - { label: "Meta Title", name: "metaTitle", widget: "string", required: true, hint: "SEO optimized title for search results (required)" }
+          - { label: "Meta Description", name: "metaDescription", widget: "text", required: true, hint: "SEO optimized description for search results (required)" }
       - { label: "Author", name: "author", widget: "string", required: true }
       - { label: "Date", name: "date", widget: "datetime", required: true }
       - { label: "Featured Image", name: "featuredImage", widget: "image", required: false }

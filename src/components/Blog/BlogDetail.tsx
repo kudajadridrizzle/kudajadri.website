@@ -25,12 +25,18 @@ const BlogDetail: React.FC = () => {
 
         if (!post.published) {
           setError('Blog post not found or not published');
+        } else if (!post.metaTitle || !post.metaDescription) {
+          setError('Blog post is missing required SEO fields');
         } else {
           setBlogPost(post);
         }
       } catch (error) {
         console.error('Error loading blog post:', error);
-        setError('Blog post not found');
+        if (error instanceof Error && error.message.includes('required SEO fields')) {
+          setError('Blog post is missing required SEO fields. Please contact the administrator.');
+        } else {
+          setError('Blog post not found');
+        }
       } finally {
         setLoading(false);
       }

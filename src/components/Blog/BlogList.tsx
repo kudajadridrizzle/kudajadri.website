@@ -20,10 +20,21 @@ const BlogList: React.FC = () => {
         const posts: BlogPost[] = [];
 
         for (const path in blogModules) {
-          const content = await blogModules[path]();
-          const slug = path.split('/').pop()?.replace('.md', '') || '';
-          const post = parseBlogMarkdown(content as string, slug);
-          if (post.published) posts.push(post);
+          try {
+            const content = await blogModules[path]();
+            const slug = path.split('/').pop()?.replace('.md', '') || '';
+            const post = parseBlogMarkdown(content as string, slug);
+            
+            // Only include posts that are published and have required SEO fields
+            if (post.published && post.metaTitle && post.metaDescription) {
+              posts.push(post);
+            } else {
+              console.warn(`Blog post ${slug} skipped: missing required fields or not published`);
+            }
+          } catch (error) {
+            console.error(`Error parsing blog post ${path}:`, error);
+            // Continue loading other posts even if one fails
+          }
         }
 
         posts.sort(
