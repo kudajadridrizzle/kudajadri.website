@@ -201,16 +201,15 @@ const PhoneHeader = ({ headerColor }: { headerColor?: 'white' | 'black' }) => {
                 {[/* eslint-disable @typescript-eslint/no-unused-vars */
                   { to: "/", text: "Wayanad Homestays" },
                   { to: "/about", text: "About Us" },
-                  { to: "/rooms", text: "Rooms" },
-                  { to: "/rooms/classic-rooms", text: "Classic Rooms", className: "text-[#808080] text-2xl" },
-                  { to: "/rooms/deluxe-rooms", text: "Deluxe Rooms", className: "text-[#808080] text-2xl" },
-                  { to: "/rooms/deluxe-heritage-rooms", text: "Deluxe Heritage ", className: "text-[#808080] text-2xl" },
-                  { to: "/rooms/premium-rooms", text: "Premium Rooms", className: "text-[#808080] text-2xl" },
+                  { to: "/rooms", text: "Rooms" },{ to: "/rooms/classic-rooms", text: "Classic Rooms", className: "text-[#808080] text-[24px]" },
+                  { to: "/rooms/deluxe-rooms", text: "Deluxe Rooms", className: "text-[#808080] text-[24px]" },
+                  { to: "/rooms/deluxe-heritage-rooms", text: "Deluxe Heritage", className: "text-[#808080] text-[24px]" },
+                  { to: "/rooms/premium-rooms", text: "Premium Rooms", className: "text-[#808080] text-[24px]" },
                   { to: "/facilities", text: "Facilities" },
                   { to: "/gallery", text: "Gallery" },
                   { to: "/wayanad", text: "Wayanad" },
-                  { to: "/attractions", text: "Attractions" },
-                  { to: "/tour-packages", text: "Tour Packages" },
+                  // { to: "/attractions", text: "Attractions" },
+                  // { to: "/tour-packages", text: "Tour Packages" },
                   { to: "/contact", text: "Contact Us" },
                 ].map((item) => (
                   <li key={item.to} className="text-center">
