@@ -22,7 +22,6 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string", required: true }
-      - { label: "Description", name: "description", widget: "text", required: true }
       - label: "SEO Settings"
         name: "seo"
         widget: "object"

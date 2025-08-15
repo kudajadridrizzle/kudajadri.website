@@ -75,7 +75,7 @@ const FacilitiesPage = () => {
       </Helmet>
 
       <Hero />
-      <div className="flex flex-col items-center self-stretch gap-16 bg-white mobile:p-4 sm:p-14 sm:flex-row">
+      <div className="flex flex-col items-center self-stretch gap-16 bg-white mobile:p-4 sm:p-14 sm:flex-row 2xl:px-[18%] lg:px-[12%]">
         <FacilitiesSession />
         <ImageSession />
       </div>
