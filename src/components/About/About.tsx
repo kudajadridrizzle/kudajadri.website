@@ -3,10 +3,12 @@ import ReviewSession from '../Home/components/ReviewSession';
 import AboutSession from './components/AboutSession';
 import Hero from './components/Hero';
 import RecognitionSession from './components/RecognitionSession';
+import { ContentSection } from '../shared/ContentSection';
 import { Helmet } from 'react-helmet-async';
 import fm from 'front-matter';
 import aboutFaqRaw from '../../File/aboutfaqs.md?raw';
 import FaqList from '../FaqComponent/FaqList';
+import { Header } from '../Home/components/Header';
 
 // Define the shape of FAQ frontmatter
 interface FaqFrontMatterAttributes {
@@ -20,8 +22,20 @@ interface FaqFrontMatterAttributes {
 const About = () => {
   const parsedFaq = fm<FaqFrontMatterAttributes>(aboutFaqRaw);
 
+  // Sample content for the ContentSection
+  const contentItems = [
+    {
+      image: "images/heritage.jpg",
+      title: "Our Heritage & Culture",
+      paragraph: "Discover the rich cultural heritage and traditions that inspire our homestay experience. We blend modern comfort with authentic local traditions to give you a truly immersive stay.",
+      imageAlt: "Heritage and culture at our homestay"
+    },
+   
+  ];
+
   return (
-    <div>
+    <div className="relative">
+      <Header type="white" />
       <Helmet>
         <title>
           Kalpetta Homestays: #1 Homestays in Kalpetta with Airbnb reviews
@@ -77,7 +91,11 @@ const About = () => {
       <AboutSession />
       <ReviewSession />
       <RecognitionSession />
-
+        <ContentSection
+              title="Discover Our Homestay"
+              items={contentItems}
+            />
+   
       {/* FAQ Section from CMS */}
       <FaqList {...parsedFaq.attributes} />
 

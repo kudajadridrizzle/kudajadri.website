@@ -14,11 +14,11 @@ const Footer = () => {
   return (
     <div className="bg-primary">
       {/* Top CTA Section */}
-      <div className="sm:px-[12%] large:px-[18%] sm:py-14 mobile:py-7 mobile:px-4 flex flex-col sm:flex-row sm:justify-between border-b border-[#fff] sm:gap-0 mobile:gap-[30px] items-center">
+      <div className="sm:px-[12%] large:px-[18%] sm:py-14 mobile:py-7 mobile:px-4 flex flex-col sm:flex-row gap-x-[30px] items-center border-b border-[#fff]">
         <span className="block text-[#fff] font-ivy sm:text-[44px] mobile:text-[32px]">
           Ready to Discover Nature? Book Your Wayanad Homestay Now.{' '}
         </span>
-        <div className="w-[100%] flex items-start sm:justify-between">
+        <div className="w-[100%] flex items-start justify-end sm:justify-between">
           <button
             className="px-6 py-3 bg-[#fff] rounded-full text-primary font-albertSans text-base font-medium capitalize"
             onClick={() => {

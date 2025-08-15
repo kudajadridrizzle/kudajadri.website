@@ -30,21 +30,16 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
   const headerColor = scrolled ? 'black' : type;
 
   useEffect(() => {
-    if (!isHome) {
-      setScrolled(true);
-      return;
-    }
-
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      const heroHeight = 700;
+      const heroHeight = isHome ? 700 : 100; // Smaller threshold for non-home pages
       
       // Set scrolled state for transparency
       setScrolled(currentScrollY > heroHeight - 80);
       
       // Handle header visibility
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Scrolling down and past hero section
+        // Scrolling down and past threshold
         setIsVisible(false);
       } else if (currentScrollY < lastScrollY) {
         // Scrolling up
@@ -54,16 +49,23 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
       setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    // Set initial scrolled state based on current scroll position
+    const heroHeight = isHome ? 700 : 100;
+    setScrolled(window.scrollY > heroHeight - 80);
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isHome, lastScrollY]);
+
+  // Check if mobile view
+  const isMobile = window.innerWidth < 640; // Tailwind's sm breakpoint
 
   return (
     <div
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out ${
-        scrolled ? 'bg-white shadow-sm' : 'bg-transparent'
+        scrolled || isMobile ? 'bg-white shadow-sm' : isMobile ? 'bg-white' : 'bg-transparent'
       } ${
-        isVisible ? 'translate-y-0' : '-translate-y-full'
+        isVisible || isMobile ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
       <div className="flex items-end justify-center gap-24 sm:py-6 mobile:hidden sm:flex">
@@ -133,10 +135,12 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
 const PhoneHeader = ({ headerColor }: { headerColor?: 'white' | 'black' }) => {
   const navigate = useNavigate();
   const [isSidebarOpen, setSidebarOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [, setIsVisible] = useState(true);
 
-  const toggleSidebar = () => setSidebarOpen(prevState => !prevState);
+  const toggleSidebar = () => {
+    setSidebarOpen(prevState => !prevState);
+    setIsVisible(prev => !prev);
+  };
 
   const openWhatsApp = () => {
     const phoneNumber = '919946354511';
@@ -146,202 +150,99 @@ const PhoneHeader = ({ headerColor }: { headerColor?: 'white' | 'black' }) => {
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      // Handle header visibility for mobile
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Scrolling down and past hero section
-        setIsVisible(false);
-      } else if (currentScrollY < lastScrollY) {
-        // Scrolling up
-        setIsVisible(true);
-      }
-      
-      setLastScrollY(currentScrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+    setIsVisible(true);
+  }, []);
 
   return (
-    <div
-      className={`flex justify-between p-4 sm:hidden transition-all duration-500 ease-in-out ${
-        isSidebarOpen ? 'bg-[#292626]' : ''
-      } ${
-        isVisible ? 'translate-y-0' : '-translate-y-full'
-      }`}
-    >
-      <div>
-        <img
-          src={
-            headerColor === 'black' && !isSidebarOpen ? MenuBlackIcon : menuIcon
-          }
-          alt="Menu"
-          onClick={toggleSidebar}
-          className="cursor-pointer"
-        />
+    <>
+      {/* Header Bar */}
+      <div className={`fixed top-0 left-0 w-full z-50 flex justify-between p-4 sm:hidden transition-all duration-500 ease-in-out ${
+        isSidebarOpen ? 'bg-[#292626]' : headerColor === 'white' ? 'bg-transparent' : 'bg-white shadow-sm'
+      }`}>
+        <div>
+          <img
+            src={headerColor === 'black' && !isSidebarOpen ? MenuBlackIcon : menuIcon}
+            alt="Menu"
+            onClick={toggleSidebar}
+            className="cursor-pointer w-6 h-6"
+          />
+        </div>
+        <div>
+          <img
+            src={headerColor === 'black' && !isSidebarOpen ? HomeBlackIcon : logoIcon}
+            alt="Home"
+            onClick={() => navigate('/')}
+            className="cursor-pointer h-6"
+          />
+        </div>
+        <div>
+          <img
+            src={headerColor === 'black' && !isSidebarOpen ? whatAppBlackIcon : whatAppIcon}
+            alt="WhatsApp"
+            onClick={openWhatsApp}
+            className="cursor-pointer w-6 h-6"
+          />
+        </div>
       </div>
-      <div>
-        <img
-          src={
-            headerColor === 'black' && !isSidebarOpen ? HomeBlackIcon : logoIcon
-          }
-          alt="Home"
-          onClick={() => navigate('/')}
-          className="cursor-pointer"
-        />
-      </div>
-      <div>
-        <img
-          src={
-            headerColor === 'black' && !isSidebarOpen
-              ? whatAppBlackIcon
-              : whatAppIcon
-          }
-          alt="WhatsApp"
-          onClick={openWhatsApp}
-          className="cursor-pointer"
-        />
-      </div>
+
+      {/* Mobile Menu Overlay */}
       {isSidebarOpen && (
-        <div className={`fixed inset-0 z-50 flex mt-[60px] transition-all duration-500 ease-in-out ${
-          isVisible ? 'translate-y-0' : '-translate-y-full'
-        }`}>
-          <div
-            className={`w-full bg-[#292626] p-4 transform transition-all duration-500 ease-in-out shadow-lg flex flex-col gap-[48px] justify-center ${
-              isSidebarOpen
-                ? 'translate-x-0 opacity-100'
-                : 'translate-x-full opacity-0'
-            }`}
+        <div 
+          className="fixed inset-0 z-40 bg-black bg-opacity-50 transition-opacity duration-300" 
+          onClick={toggleSidebar}
+          style={{ height: '100dvh' }}
+        >
+          <div 
+            className="fixed top-0 left-0 w-full h-[100dvh] bg-[#292626] overflow-y-auto p-6 pt-20 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+            onClick={(e) => e.stopPropagation()}
           >
-            <div className="text-black">
-              <ul className="flex flex-col gap-[12px]">
-                <li className="text-center">
-                  <Link
-                    to="/"
-                    className="text-[32px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-white"
-                    onClick={toggleSidebar}
-                  >
-                    Wayanad Homestays
-                  </Link>
-                </li>
-                <li className="text-center">
-                  <Link
-                    to="/about"
-                    className="text-[32px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-white"
-                    onClick={toggleSidebar}
-                  >
-                    About Us
-                  </Link>
-                </li>
-                <li className="text-center">
-                  <Link
-                    to="/rooms"
-                    className="text-[32px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-white"
-                    onClick={toggleSidebar}
-                  >
-                    Rooms
-                  </Link>
-                </li>
-                <li className="text-center">
-                  <Link
-                    to="/rooms/classic-rooms"
-                    className="text-[24px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-[#808080]"
-                    onClick={toggleSidebar}
-                  >
-                    Classic Rooms
-                  </Link>
-                </li>
-                <li className="text-center">
-                  <Link
-                    to="/rooms/deluxe-rooms"
-                    className="text-[24px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-[#808080]"
-                    onClick={toggleSidebar}
-                  >
-                    Deluxe Rooms
-                  </Link>
-                </li>
-                <li className="text-center">
-                  <Link
-                    to="/rooms/deluxe-heritage-rooms"
-                    className="text-[24px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-[#808080]"
-                    onClick={toggleSidebar}
-                  >
-                    Deluxe Heritage Rooms
-                  </Link>
-                </li>
-                <li className="text-center">
-                  <Link
-                    to="/rooms/premium-rooms"
-                    className="text-[24px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-[#808080]"
-                    onClick={toggleSidebar}
-                  >
-                    Premium Rooms
-                  </Link>
-                </li>
-                <li className="text-center">
-                  <Link
-                    to="/gallery"
-                    className="text-[32px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-white  "
-                    onClick={toggleSidebar}
-                  >
-                    Gallery
-                  </Link>
-                </li>
-                <li className="text-center">
-                  <Link
-                    to="/facilities"
-                    className="text-[32px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-white"
-                    onClick={toggleSidebar}
-                  >
-                    Facilities
-                  </Link>
-                </li>
-                <li className="text-center">
-                  <Link
-                    to="/wayanad"
-                    className="text-[32px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-white"
-                    onClick={toggleSidebar}
-                  >
-                    Wayanad
-                  </Link>
-                </li>
-                <li className="text-center">
-                  <Link
-                    to="/tour-packages"
-                    className="text-[32px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-white"
-                    onClick={toggleSidebar}
-                  >
-                    Tour Packages
-                  </Link>
-                </li>
-                <li className="text-center">
-                  <Link
-                    to="/contact"
-                    className="text-[32px] leading-[32px] font-normal tracking-[0em] text-center font-ivy text-white"
-                    onClick={toggleSidebar}
-                  >
-                    Contact Us
-                  </Link>
-                </li>
+            <div className="flex flex-col gap-8 pt-4">
+              <ul className="flex flex-col gap-3">
+                {[/* eslint-disable @typescript-eslint/no-unused-vars */
+                  { to: "/", text: "Wayanad Homestays" },
+                  { to: "/about", text: "About Us" },
+                  { to: "/rooms", text: "Rooms" },
+                  { to: "/rooms/classic-rooms", text: "Classic Rooms", className: "text-[#808080] text-2xl" },
+                  { to: "/rooms/deluxe-rooms", text: "Deluxe Rooms", className: "text-[#808080] text-2xl" },
+                  { to: "/rooms/deluxe-heritage-rooms", text: "Deluxe Heritage ", className: "text-[#808080] text-2xl" },
+                  { to: "/rooms/premium-rooms", text: "Premium Rooms", className: "text-[#808080] text-2xl" },
+                  { to: "/facilities", text: "Facilities" },
+                  { to: "/gallery", text: "Gallery" },
+                  { to: "/wayanad", text: "Wayanad" },
+                  { to: "/attractions", text: "Attractions" },
+                  { to: "/tour-packages", text: "Tour Packages" },
+                  { to: "/contact", text: "Contact Us" },
+                ].map((item) => (
+                  <li key={item.to} className="text-center">
+                    <Link
+                      to={item.to}
+                      className={`text-3xl leading-8 font-normal tracking-wide font-ivy ${
+                        item.className || 'text-white'
+                      }`}
+                      onClick={toggleSidebar}
+                    >
+                      {item.text}
+                    </Link>
+                  </li>
+                ))}
               </ul>
-            </div>
-            <div className="flex justify-center">
-              <button
-                onClick={toggleSidebar}
-                className="text-lg font-semibold text-black focus:outline-none w-[44px] h-[44px]"
-              >
-                <span className="material-icons text-[44px] text-white">
-                  close
-                </span>
-              </button>
+              
+              <div className="flex justify-center">
+                <button
+                  onClick={toggleSidebar}
+                  className="w-11 h-11 flex items-center justify-center"
+                  aria-label="Close menu"
+                >
+                  <span className="material-icons text-4xl text-white">
+                    close
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
