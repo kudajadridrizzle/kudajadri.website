@@ -1,10 +1,22 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { roomDataMap } from '../constants';
+import { Wifi, Tv, Shield, Gamepad2, Fan, Home, Refrigerator, Droplets } from 'lucide-react';
 
 export const RoomPriceSession = () => {
   const navigate = useNavigate();
   const { id } = useParams(); // 'classic-rooms' etc.
   const roomData = roomDataMap[id || 'classic-rooms'];
+  
+  const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } = {
+    'Fridge': Refrigerator,
+    'WIFI': Wifi,
+    'TV': Tv,
+    'Iron': Droplets, // Using Droplets as a placeholder for Iron
+    'Window guards': Shield,
+    'Board games': Gamepad2,
+    'Portable fans': Fan,
+    'Essentials': Home,
+  };
   return (
     <div className="sm:px-[12%] sm:pb-32 flex mobile:flex-col sm:flex-row px-4 large:px-[18%]">
       <div className="flex flex-col sm:gap-10 flex-1 mobile:gap-6 mobile:pb-8 sm:pb-0">
@@ -12,23 +24,22 @@ export const RoomPriceSession = () => {
           <h1 className="text-primary font-ivy mobile:text-[32px] sm:text-[44px]">
             {roomData.roomType}
           </h1>
-          <p className="text-secondary sm:text-xl">{roomData.description}</p>
+          <p className="text-secondary sm:text-xl font-albertSans">{roomData.description}</p>
         </div>
         <div className="flex flex-col sm:gap-12 mobile:gap-5">
           <h2 className="text-primary font-ivy sm:text-[32px] mobile:text-2xl">
             {roomData.offersTitle}
           </h2>
-          <div className="flex gap-24 text-primary font-albertSans">
-            <div className="flex flex-col gap-3.5">
-              {roomData.offers.map((offer, i) => (
-                <span key={`offer-1-${i}`}>{offer}</span>
-              ))}
-            </div>
-            <div className="flex flex-col gap-3.5">
-              {roomData.offers.map((offer, i) => (
-                <span key={`offer-2-${i}`}>{offer}</span>
-              ))}
-            </div>
+          <div className="grid grid-cols-2 gap-x-12 gap-y-4 text-primary font-albertSans">
+            {roomData.offers.map((offer, i) => {
+              const Icon = iconMap[offer] || Home;
+              return (
+                <div key={`offer-${i}`} className="flex items-center gap-2">
+                  <Icon className="w-5 h-5 text-primary" />
+                  <span>{offer}</span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

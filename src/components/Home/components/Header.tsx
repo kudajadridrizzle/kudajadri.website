@@ -207,7 +207,7 @@ const PhoneHeader = ({ headerColor }: { headerColor?: 'white' | 'black' }) => {
                   { to: "/rooms/premium-rooms", text: "Premium Rooms", className: "text-[#808080] text-[24px]" },
                   { to: "/facilities", text: "Facilities" },
                   { to: "/gallery", text: "Gallery" },
-                  { to: "/wayanad", text: "Wayanad" },
+                  // { to: "/wayanad", text: "Wayanad" },
                   // { to: "/attractions", text: "Attractions" },
                   // { to: "/tour-packages", text: "Tour Packages" },
                   { to: "/contact", text: "Contact Us" },

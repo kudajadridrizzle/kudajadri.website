@@ -2,7 +2,7 @@ import { Header } from '../../Home/components/Header';
 
 const Hero = () => {
   return (
-    <div className="relative h-screen bg-[url('/aboutHero.jpg')] bg-no-repeat bg-cover">
+    <div className="relative h-screen bg-[url('/images/pool.jpg')] bg-no-repeat bg-cover bg-center">
       {/* Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-60"></div>
       {/* Content */}
