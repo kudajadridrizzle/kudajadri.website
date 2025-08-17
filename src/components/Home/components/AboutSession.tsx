@@ -22,9 +22,9 @@ const AboutSession = () => {
           About us
         </p>
         <div className="flex flex-col gap-6 flex-1">
-          <h2 className="sm:text-[44px] text-[32px] font-ivy text-primary">
+          <h1 className="sm:text-[44px] text-[32px] font-ivy text-primary">
             {heading}
-          </h2>
+          </h1>
           <div className="text-secondary font-albertSans sm:text-xl prose prose-p:my-0 prose-a:text-blue-600 prose-strong:font-semibold">
             <ReactMarkdown remarkPlugins={[remarkGfm]}>
               {expanded || !isLong ? content : preview}
