@@ -31,13 +31,13 @@ export const IndividualRoomSession = ({
       </div>
       <div className="sm:p-6 sm:flex-1">
         <div className="flex flex-col justify-center h-full gap-4 mobile:pt-6 sm:pt-0">
-          {/* <h1 className="font-albertSans sm:text-base mobile:text-sm text-primary">
+          {/* <h2 className="font-albertSans sm:text-base mobile:text-sm text-primary">
             {subTitle}
-          </h1> */}
+          </h2> */}
           <div className="flex flex-col gap-3">
-            <h1 className="text-primary sm:text-[44px] mobile:text-[28px] font-ivy">
+            <h2 className="text-primary sm:text-[44px] mobile:text-[28px] font-ivy">
               {title}
-            </h1>
+            </h2>
             <p className="opacity-50 text-primary font-albertSans">
               {discription}
             </p>

@@ -51,9 +51,9 @@ const OurGallery = () => {
   return (
     <div className="sm:py-32 sm:px-[12%] flex flex-col gap-[66px] mobile:px-4 mobile:py-14 large:px-[18%]">
       <div className="flex flex-col sm:flex-row">
-        <h1 className="flex-1 text-primary font-ivy sm:text-[44px] mobile:text-[32px]">
+        <h2 className="flex-1 text-primary font-ivy sm:text-[44px] mobile:text-[32px]">
           {heading}
-        </h1>
+        </h2>
         <div className="flex-1 text-secondary sm:text-xl font-albertSans">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>
             {expanded || !isLong ? content : preview}

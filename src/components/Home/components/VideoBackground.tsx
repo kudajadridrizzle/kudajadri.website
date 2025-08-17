@@ -28,8 +28,8 @@ const VideoBackground = () => {
             <div className="flex flex-col gap-2.5">
               <div className="flex items-center gap-2.5">
                 <div className="border border-[#FFF] flex-1" />
-                <h1 className="sm:text-3xl uppercase text-[#FFF] font-ivy mobile:text-sm">
-                  Kudajadri Drizzle Homestay in Wayanad                </h1>
+                <h2 className="sm:text-3xl uppercase text-[#FFF] font-ivy mobile:text-sm">
+                  Kudajadri Drizzle Homestay in Wayanad                </h2>
                 <div className="border border-[#FFF] flex-1" />
               </div>
               <span className="sm:text-7xl text-[#FFF] font-staylista mobile:text-5xl sm:w-full text-center m-auto">

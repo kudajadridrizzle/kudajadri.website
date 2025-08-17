@@ -7,9 +7,9 @@ const LocationImage = () => {
       </div>
       <div className="sm:w-1/2 bg-primary sm:px-24 flex sm:items-center mobile:px-4 mobile:py-12">
         <div className="flex flex-col gap-6">
-          <h1 className="text-[#fff] text-base font-albertSans">
+          <h2 className="text-[#fff] text-base font-albertSans">
             WAYANAD, KERALA
-          </h1>
+          </h2>
           <div>
             <h2 className="text-[#fff] font-ivy font-normal sm:text-[44px] mobile:text-[32px]">
               Nature, Comfort, and Serenity Await
