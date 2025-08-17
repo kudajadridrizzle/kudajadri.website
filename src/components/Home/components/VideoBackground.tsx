@@ -29,13 +29,12 @@ const VideoBackground = () => {
               <div className="flex items-center gap-2.5">
                 <div className="border border-[#FFF] flex-1" />
                 <h1 className="sm:text-3xl uppercase text-[#FFF] font-ivy mobile:text-sm">
-                  Kudajadri Welcomes you
-                </h1>
+                  Kudajadri Drizzle Homestay in Wayanad                </h1>
                 <div className="border border-[#FFF] flex-1" />
               </div>
-              <h1 className="sm:text-7xl text-[#FFF] font-staylista mobile:text-5xl sm:w-full text-center m-auto">
-                Feel the Difference
-              </h1>
+              <span className="sm:text-7xl text-[#FFF] font-staylista mobile:text-5xl sm:w-full text-center m-auto">
+                Experience True Serenity
+              </span>
             </div>
           </div>
           <div className="flex justify-center mb-[120px]">

@@ -4,9 +4,12 @@ import { EnhancedAttractionCard } from './components/EnhancedAttractionCard';
 import { EnhancedHero } from './components/EnhancedHero';
 import { WayanadFaqs } from './components/WayanadFaqs';
 import wayanadData from './Data/wayanadPageData.json';
+import { ContentSection } from '../shared';
+import { useContentSection } from '../../hooks/useContentSection';
 
 export const WayanadPage = () => {
   const { pageMetadata, heroSection, attractions, faqs } = wayanadData;
+  const contentSection = useContentSection('wayanad');
 
   return (
     <div>
@@ -72,6 +75,14 @@ export const WayanadPage = () => {
           ))}
         </div>
       </div>
+
+      {/* Shared Content Section (centralized JSON) */}
+      {contentSection && (
+        <ContentSection
+          title={contentSection.title}
+          items={contentSection.items}
+        />
+      )}
 
       {/* FAQ Section */}
       <WayanadFaqs faqs={faqs} />

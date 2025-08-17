@@ -1,0 +1,105 @@
+{
+  "facilities": {
+    "title": "Discover Nearby Attractions",
+    "subtitle": "Experience",
+    "subParagraph": "Kudajadri Drizzle Homestay in Wayanad is ideally located, equidistant from Bathery, Mananthavady, Kalpetta, and Meppadi, making it a perfect base to explore the region. Guests can easily visit stunning waterfalls, serene lakes, and lush spice plantations nearby. Wildlife sanctuaries, trekking trails, and ancient temples are also within reach, offering a mix of adventure, culture, and nature. With panoramic viewpoints and scenic landscapes just a short drive away, staying at Kudajadri Drizzle ensures convenient access to Wayanad’s top attractions for an unforgettable and well-rounded travel experience.",
+    "cards": [
+      {
+        "imageUrl": "/images/chembra_peak.jpg",
+        "title": "Chembra Peak Wayanad",
+        "description": "Chembra Peak is the highest peak in Wayanad, at 2,050 m above sea level. With a height of 2,100 m (6,890 ft), the summit offers breathtaking views of the entire Wayanad region."
+      },
+      {
+        "imageUrl": "/images/kuruva_island.jpg",
+        "title": "Kuruva Island Wayanad",
+        "description": "Kuruva Island, spread across 950 acres of evergreen forest on the Kabani River, is an ideal picnic spot away from city life. This uninhabited island is perfect for peace and nature lovers."
+      },
+      {
+        "imageUrl": "/images/edakkal_caves.jpg",
+        "title": "Edakkal Caves Wayanad",
+        "description": "Edakkal Caves, located 1,200 m above sea level on Ambukutty Hill, are the only known place in India with Stone Age carvings. These ancient cave paintings date back to 6000 BC."
+      },
+      {
+        "imageUrl": "/images/pookode_lake.jpg",
+        "title": "Pookkode Lake Wayanad",
+        "description": "Pookkode Lake is a natural freshwater lake in Lakkidi, surrounded by evergreen forests and the Western Ghats. Its pristine beauty and unspoiled charm make it a must-visit destination."
+      }
+    ]
+  },
+  "about": {
+    "title": "Resort-Style Facilities You'll Love",
+    "subtitle": "Comforts",
+    "cards": [
+      {
+        "imageUrl": "/images/5a8a9701-1-.jpg",
+        "title": "Swimming Pool",
+        "description": "Refreshing pool with scenic views for a relaxing dip."
+      },
+      {
+        "imageUrl": "/images/aboutHero.jpg",
+        "title": "Cozy Rooms",
+        "description": "Spacious, well-furnished rooms designed for comfort."
+      },
+      {
+        "imageUrl": "/images/hero.jpg",
+        "title": "Green Spaces",
+        "description": "Beautifully landscaped areas to unwind and connect with nature."
+      },
+      {
+        "imageUrl": "/images/cloud.jpg",
+        "title": "Great Location",
+        "description": "Close to top Wayanad attractions and local experiences."
+      }
+    ]
+  },
+  "home": {
+    "title": "Attractions Near Kudajadri Drizzle Homestay Wayanad",
+    "subtitle": "Experience",
+    "cards": [
+      { "imageUrl": "/images/chembra_peak.jpg", "title": "Chembra Peak, Wayanad", "description": "Chembra Peak is the highest peak in Wayanad, standing at 2,100 m above sea level with panoramic views." },
+      { "imageUrl": "/images/kuruva_island.jpg", "title": "Kuruva Island, Wayanad", "description": "A 950-acre evergreen forest island on the Kabani River — ideal for a peaceful day out." },
+      { "imageUrl": "/images/edakkal_caves.jpg", "title": "Edakkal Caves, Wayanad", "description": "Home to Stone Age carvings dating back millennia, reachable via a scenic hike." },
+      { "imageUrl": "/images/pookode_lake.jpg", "title": "Pookode Lake, Wayanad", "description": "A natural freshwater lake surrounded by evergreen forests and the Western Ghats." }
+    ]
+  },
+  "rooms": {
+    "title": "Stay Highlights Around Our Rooms",
+    "subtitle": "Explore",
+    "cards": [
+      { "imageUrl": "/images/aboutHero.jpg", "title": "Heritage Ambience", "description": "Experience classic architecture blended with modern comfort across our rooms." },
+      { "imageUrl": "/images/5a8a9701-1-.jpg", "title": "Poolside Relaxation", "description": "Unwind by the tranquil pool after a day of exploration." },
+      { "imageUrl": "/images/cloud.jpg", "title": "Serene Views", "description": "Wake up to misty mornings and soothing greenery all around." },
+      { "imageUrl": "/images/hero.jpg", "title": "Family-Friendly Spaces", "description": "Spacious rooms and amenities ideal for families and groups." }
+    ]
+  },
+  "roomDetails": {
+    "title": "Why Guests Love Staying With Us",
+    "subtitle": "Highlights",
+    "cards": [
+      { "imageUrl": "/images/hero.jpg", "title": "Comfortable Interiors", "description": "Thoughtfully designed rooms for restful nights and cozy mornings." },
+      { "imageUrl": "/images/pookode_lake.jpg", "title": "Close to Attractions", "description": "Quick access to Wayanad’s top sights from our central location." },
+      { "imageUrl": "/images/aboutHero.jpg", "title": "Authentic Heritage", "description": "A century-old legacy that adds character to your stay." },
+      { "imageUrl": "/images/5a8a9701-1-.jpg", "title": "Modern Amenities", "description": "Enjoy convenience with Wi‑Fi, pool access, and curated services." }
+    ]
+  },
+  "tourpackages": {
+    "title": "Top Experiences To Add To Your Trip",
+    "subtitle": "Activities",
+    "cards": [
+      { "imageUrl": "/images/edakkal_caves.jpg", "title": "Heritage Trails", "description": "Explore ancient caves, temples, and cultural hotspots with guided tours." },
+      { "imageUrl": "/images/kuruva_island.jpg", "title": "Nature Walks", "description": "Immerse yourself in Wayanad’s lush forests and river islands." },
+      { "imageUrl": "/images/chembra_peak.jpg", "title": "Adventure Treks", "description": "Scale peaks and chase waterfalls with curated trekking routes." },
+      { "imageUrl": "/images/pookode_lake.jpg", "title": "Leisure & Boating", "description": "Relax by serene lakes or enjoy a calm boating session." }
+    ]
+  },
+  "wayanad": {
+    "title": "Must-Visit Spots Around Wayanad",
+    "subtitle": "Attractions",
+    "cards": [
+      { "imageUrl": "/images/chembra_peak.jpg", "title": "Chembra Peak", "description": "Iconic trek offering breathtaking views of Wayanad’s valleys." },
+      { "imageUrl": "/images/edakkal_caves.jpg", "title": "Edakkal Caves", "description": "Ancient petroglyphs and a memorable hiking experience." },
+      { "imageUrl": "/images/pookode_lake.jpg", "title": "Pookode Lake", "description": "A peaceful lake perfect for families and couples alike." },
+      { "imageUrl": "/images/kuruva_island.jpg", "title": "Kuruva Island", "description": "Untouched riverine ecosystem ideal for nature lovers." }
+    ]
+  }
+}

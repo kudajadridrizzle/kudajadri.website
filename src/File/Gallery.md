@@ -1,5 +1,5 @@
 ---
-heading: Our Gallery
+heading: Our Gallery - Wayanad Homestays Visual Tour
 ---
 
 Explore the charm and beauty of traditional living through our **Wayanad homestay photo gallery**. Kudajadri Drizzle Homestay showcases a 100-year-old heritage home set in the heart of nature.

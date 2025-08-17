@@ -16,7 +16,7 @@ const Footer = () => {
       {/* Top CTA Section */}
       <div className="sm:px-[12%] large:px-[18%] sm:py-14 mobile:py-7 mobile:px-4 flex flex-col sm:flex-row gap-x-[30px] items-center border-b border-[#fff]">
         <span className="block text-[#fff] font-ivy sm:text-[44px] mobile:text-[32px]">
-          Ready to Discover Nature? Book Your Wayanad Homestay Now.{' '}
+          Book Kudajadri Drizzle Homestays in Wayanad Now{' '}
         </span>
         <div className="w-[100%] flex items-start justify-end sm:justify-between">
           <button

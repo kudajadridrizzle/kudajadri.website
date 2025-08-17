@@ -16,11 +16,10 @@ const ReviewSession = () => {
       </div>
       <div className="flex flex-col gap-2 items-center">
         <h2 className="text-primary font-ivy sm:text-[44px] mobile:text-[32px] font-normal">
-          Guest favorite - What Our Wayanad Homestay Guests Love
+          Why Guests Choose Our Wayanad Homestay
         </h2>
         <p className="sm:text-xl text-secondary text-center font-albertSans">
-          One of the most loved homes! Highly rated for its exceptional reviews,
-          reliability, and welcoming atmosphere. A truly unforgettable stay!
+        Discover why guests recommend us among the best homestays in Wayanad. From the warm welcome to the peaceful surroundings, many share how our hospitality, authentic home-cooked meals, and personal attention made their visit truly special. Read their reviews, feel their experiences, and see why they keep coming back. If you’ve stayed with us, we’d love to hear your story too. Share your review and help fellow travelers find comfort, culture, and memorable moments at our homestay. Your words could inspire someone to choose the perfect stay in the beautiful hills of Wayanad.
         </p>
       </div>
       <div>

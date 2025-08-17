@@ -8,6 +8,8 @@ import { Helmet } from 'react-helmet-async';
 import fm from 'front-matter';
 import facilitiesFaqRaw from '../../File/facilitiesfaqs.md?raw';
 import FaqList from '../FaqComponent/FaqList';
+import { ContentSection } from '../shared';
+import { useContentSection } from '../../hooks/useContentSection';
 
 // Define the shape of FAQ frontmatter
 interface FaqFrontMatterAttributes {
@@ -20,6 +22,7 @@ interface FaqFrontMatterAttributes {
 
 const FacilitiesPage = () => {
   const parsedFaq = fm<FaqFrontMatterAttributes>(facilitiesFaqRaw);
+  const contentSection = useContentSection('facilities');
 
   return (
     <div>
@@ -81,6 +84,12 @@ const FacilitiesPage = () => {
       </div>
       <ListSession />
       <Direction />
+      {contentSection && (
+        <ContentSection
+          title={contentSection.title}
+          items={contentSection.items}
+        />
+      )}
       {/* FAQ Section from CMS */}
       <FaqList {...parsedFaq.attributes} />
       <Footer />

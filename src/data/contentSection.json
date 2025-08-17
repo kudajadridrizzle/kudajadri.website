@@ -1,0 +1,109 @@
+{
+  "home": {
+    "title": "Kudajadri Drizzle: The Best Homestay in Wayanad",
+    "items": [
+      {
+        "image": "/images/heritage.jpg",
+        "title": "Perfect Blend of Nature and Comfort at Our Wayanad Homestays",
+        "paragraph": "Kudajadri Drizzle is a serene retreat among the lush hills of Kerala, offering one of the best Wayanad home stay accommodations. Surrounded by green forests and plantations, it provides a peaceful escape for travelers seeking calm and natural beauty. Staying here lets you experience the true charm of homestays in Wayanad.",
+        "imageAlt": "Nature view of Kudajadri Drizzle homestay"
+      },
+      {
+        "image": "/images/rooms.jpg",
+        "title": "Cozy and Modern Rooms in Our Wayanad Home Stay",
+        "paragraph": "Our Wayanad home stay features spacious, well-designed rooms with modern amenities. Each room has a private balcony overlooking scenic hills, combining comfort with nature. Guests at this homest in Wayanad enjoy cozy interiors that make every stay relaxing and memorable.",
+        "imageAlt": "Premium room interior at Kudajadri Drizzle"
+      },
+      {
+        "image": "/images/food.jpg",
+        "title": "Delicious Kerala Cuisine at the Best Homestays in Wayanad",
+        "paragraph": "Kudajadri Drizzle serves authentic Kerala meals prepared with fresh, local ingredients. Guests at the best homestays in Wayanad can enjoy traditional flavors in a homely setting. Both vegetarian and non-vegetarian options are available, enhancing the overall experience at this Wayanad home stay.",
+        "imageAlt": "Traditional Kerala food served at Kudajadri Drizzle"
+      },
+      {
+        "image": "/images/explore.webp",
+        "title": "Explore Wayanad from One of the Best Wayanad Homestays",
+        "paragraph": "The homestay’s prime location allows easy access to waterfalls, wildlife sanctuaries, trekking trails, and spice plantations. Guests at homestays in Wayanad can explore nature, adventure, and culture while returning to a comfortable, peaceful retreat each day.",
+        "imageAlt": "Scenic Wayanad landscape near the homestay"
+      },
+      {
+        "image": "/images/hospitality.jpg",
+        "title": "Warm and Personalized Hospitality at Our Homestay in Wayanad",
+        "paragraph": "Kudajadri Drizzle offers attentive, personalized service for every guest. With 24/7 assistance and guidance for local attractions, this homestay in Wayanad ensures a welcoming and hassle-free stay, making it one of the best homestays in Wayanad.",
+        "imageAlt": "Friendly hospitality at Kudajadri Drizzle"
+      },
+      {
+        "image": "/images/peace.jpg",
+        "title": "Peaceful Ambiance for All Travelers at Our Wayanad Home Stay",
+        "paragraph": "Whether visiting with family, friends, or solo, guests enjoy serene mornings and quiet evenings surrounded by nature. This Wayanad home stay delivers an unforgettable experience, combining comfort, hospitality, and scenic beauty for the best homestays in Wayanad. Kudajadri Drizzle is truly among the best Wayanad homestays, offering nature, comfort, and warm hospitality in one perfect retreat.",
+        "imageAlt": "Peaceful homestay atmosphere"
+      }
+    ]
+  },
+  "about": {
+    "title": "Discover Our Homestay",
+    "items": [
+      {
+        "image": "/images/heritage.jpg",
+        "title": "Our Heritage & Culture",
+        "paragraph": "Discover the rich cultural heritage and traditions that inspire our homestay experience. We blend modern comfort with authentic local traditions to give you a truly immersive stay.",
+        "imageAlt": "Heritage and culture at our homestay"
+      }
+    ]
+  },
+  "facilities": {
+    "title": "Comfort & Convenience",
+    "items": [
+      {
+        "image": "/images/5a8a9701-1-.jpg",
+        "title": "Relax By The Pool",
+        "paragraph": "Unwind in our clean and refreshing swimming pool, surrounded by peaceful greenery.",
+        "imageAlt": "Swimming pool"
+      }
+    ]
+  },
+  "rooms": {
+    "title": "Why Choose Our Rooms",
+    "items": [
+      {
+        "image": "/images/hero.jpg",
+        "title": "Designed For Comfort",
+        "paragraph": "Spacious, airy rooms thoughtfully set up for families, couples, and groups.",
+        "imageAlt": "Comfortable room"
+      }
+    ]
+  },
+  "roomDetails": {
+    "title": "What Makes This Room Special",
+    "items": [
+      {
+        "image": "/images/cloud.jpg",
+        "title": "Peaceful Ambience",
+        "paragraph": "Wake up to calm mornings, enjoy lush views, and relax in total comfort.",
+        "imageAlt": "Peaceful greenery"
+      }
+    ]
+  },
+  "tourpackages": {
+    "title": "Plan Your Perfect Wayanad Escape",
+    "items": [
+      {
+        "image": "/images/pookode_lake.jpg",
+        "title": "Curated Experiences",
+        "paragraph": "From nature walks to heritage trails, pick activities that match your pace.",
+        "imageAlt": "Pookode Lake"
+      }
+    ]
+  },
+  "wayanad": {
+    "title": "Experience Wayanad",
+    "items": [
+      {
+        "image": "/images/wayanad/chembra_peak.jpg",
+        "title": "Nature, Heritage, Adventure",
+        "paragraph": "Explore the best of Wayanad with easy access from our homestay.",
+        "imageAlt": "Chembra Peak"
+      }
+    ]
+  }
+}

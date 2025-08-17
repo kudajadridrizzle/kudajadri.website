@@ -1,6 +1,5 @@
 import AboutSession from './components/AboutSession';
 import Amenities from './components/Amenities';
-import CardsSection from './components/CardsSection';
 import Direction from './components/Direction';
 import Footer from './components/Footer';
 import GallarySession from './components/GallarySession';
@@ -15,8 +14,9 @@ import fm from 'front-matter';
 import homeFaqRaw from '../../File/homefaqs.md?raw';
 import FaqList from '../FaqComponent/FaqList';
 import { ContentSection } from '../shared';
-import heritage1 from '../../assets/heritage1.jpg';
-import { cardsData } from './components/cardsData';
+import { useContentSection } from '../../hooks/useContentSection';
+import CardSection from './components/CardSection';
+// Removed CardsSection in favor of ContentSection
 
 // Define the shape of FAQ frontmatter
 interface FaqFrontMatterAttributes {
@@ -33,16 +33,9 @@ const Home = () => {
     title: parsedFaq.attributes.title || 'Frequently Asked Questions',
     faqs: parsedFaq.attributes.faqs || [],
   };
+  const contentSection = useContentSection('home');
 
-  // Sample content for the ContentSection
-  const contentItems = [
-    {
-      image: heritage1,
-      title: "Heritage Homestay Experience",
-      paragraph: "Step into a world of timeless elegance at Kudajadri Homestay, where every corner tells a story of our rich heritage. Our 100-year-old property has been lovingly preserved to offer you an authentic experience that combines the charm of yesteryears with modern comforts. The traditional architecture, antique furnishings, and warm hospitality create an atmosphere that transports you to a bygone era while ensuring your stay is nothing short of luxurious. Our heritage rooms are thoughtfully designed to maintain the original character while providing all the amenities you need for a comfortable stay. Experience the perfect blend of history and hospitality as you immerse yourself in the cultural richness of our homestay.",
-      imageAlt: "Heritage homestay exterior"
-    }
-  ];
+  // ContentSection content comes from centralized JSON via hook
 
   return (
     <div>
@@ -107,17 +100,14 @@ const Home = () => {
       <ReviewSession />
       <LocationImage />
       <Direction />
-      <ContentSection
-        title="Discover Our Homestay"
-        items={contentItems}
-      />
-      <CardsSection
-        title="Attractions Near Kudajadri Drizzle Homestay Wayanad"
-        subtitle="Experience"
-        cards={cardsData}
-      />
+      {contentSection && (
+        <ContentSection
+          title={contentSection.title}
+          items={contentSection.items}
+        />
+      )}
+      <CardSection sectionKey="facilities" className="bg-gray-50" />
       <FaqList {...content} />
-
       <Footer />
     </div>
   );

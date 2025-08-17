@@ -15,6 +15,8 @@ import {
 } from './constants';
 import fm from 'front-matter';
 import FaqList from '../FaqComponent/FaqList';
+import { ContentSection } from '../shared';
+import { useContentSection } from '../../hooks/useContentSection';
 
 // Import room-specific FAQ markdown files
 import classicRoomFaqRaw from '../../File/classicroomfaqs.md?raw';
@@ -49,6 +51,7 @@ const getRoomFaqMarkdown = (roomId: string | undefined): string => {
 
 const RoomDetails = () => {
   const { id } = useParams();
+  const contentSection = useContentSection('roomDetails');
 
   const roomContent =
     id === 'classic-rooms'
@@ -192,6 +195,13 @@ const RoomDetails = () => {
       <MorningSession />
       <AnotherRoomSession />
 
+      {/* Shared Content Section (centralized JSON) */}
+      {contentSection && (
+        <ContentSection
+          title={contentSection.title}
+          items={contentSection.items}
+        />
+      )}
       {/* Room Specific FAQ Section from CMS */}
       <FaqList {...parsedFaq.attributes} />
 

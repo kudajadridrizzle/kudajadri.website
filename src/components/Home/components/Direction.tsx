@@ -7,16 +7,15 @@ const Direction = () => {
   return (
     <div className="sm:px-[12%] sm:py-32 flex flex-col gap-24 mobile:px-4 mobile:py-14 large:px-[18%]">
       <div className="flex flex-col gap-6 items-center">
-        <h1 className="uppercase text-primary tracking-[1.6px] font-albertSans">
+        <span className="uppercase text-primary tracking-[1.6px] font-albertSans">
           Direction
-        </h1>
+        </span>
         <div className="flex flex-col gap-4 items-center">
-          <span className="block text-primary sm:text-[44px] mobile:text-[32px] font-ivy">
-            Getting Here – Easy Guide to Wayanad Homestays{' '}
-          </span>
+          <h2 className="block text-primary sm:text-[44px] mobile:text-[32px] font-ivy">
+          Getting to Our Wayanad Homestay{' '}
+          </h2>
           <p className="text-secondary sm:text-xl font-albertSans text-center">
-            Easily accessible, our homestay in Kaniyambetta, Wayanad, is close
-            to Kalpetta and Sultan Bathery, ensuring a hassle-free journey.
+          Getting to our Kudajadri Drizzle Wayanad homestay is easy and convenient. Well-connected by road from Kozhikode, Bengaluru, and Mysuru, travelers can reach us via car, taxi, or bus. Surrounded by scenic hills and plantations, the journey itself is a delightful introduction to Wayanad’s natural beauty, ensuring a smooth and pleasant arrival.
           </p>
         </div>
         <div>

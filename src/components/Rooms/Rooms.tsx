@@ -6,9 +6,12 @@ import CMSHero from './Components/CMSHero';
 import CMSRoomSession from './Components/CMSRoomSession';
 import CMSIndividualRooms from './Components/CMSIndividualRooms';
 import { Header } from '../Home/components/Header';
+import { ContentSection } from '../shared';
+import { useContentSection } from '../../hooks/useContentSection';
 
 const Rooms = () => {
   const { seo, hero, roomsIntro, individualRooms, faq } = useRoomsCMS();
+  const contentSection = useContentSection('rooms');
 
   return (
     <div className="relative">
@@ -56,6 +59,13 @@ const Rooms = () => {
       />
       <CMSIndividualRooms rooms={individualRooms} />
 
+      {/* Shared Content Section (centralized JSON) */}
+      {contentSection && (
+        <ContentSection
+          title={contentSection.title}
+          items={contentSection.items}
+        />
+      )}
       {/* FAQ Section from CMS */}
       <FaqList {...faq} />
 

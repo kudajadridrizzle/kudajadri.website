@@ -6,6 +6,8 @@ import { Helmet } from 'react-helmet-async';
 import fm from 'front-matter';
 import tourPackagesFaqRaw from '../../File/tourpackagesfaqs.md?raw';
 import FaqList from '../FaqComponent/FaqList';
+import { ContentSection } from '../shared';
+import { useContentSection } from '../../hooks/useContentSection';
 
 // Define the shape of FAQ frontmatter
 interface FaqFrontMatterAttributes {
@@ -18,6 +20,7 @@ interface FaqFrontMatterAttributes {
 
 export const TourPackages = () => {
   const parsedFaq = fm<FaqFrontMatterAttributes>(tourPackagesFaqRaw);
+  const contentSection = useContentSection('tourpackages');
 
   return (
     <div>
@@ -76,6 +79,13 @@ export const TourPackages = () => {
       <Packages />
       <Direction />
 
+      {/* Shared Content Section (centralized JSON) */}
+      {contentSection && (
+        <ContentSection
+          title={contentSection.title}
+          items={contentSection.items}
+        />
+      )}
       {/* FAQ Section from CMS */}
       <FaqList {...parsedFaq.attributes} />
 

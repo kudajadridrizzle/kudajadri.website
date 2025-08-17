@@ -1,9 +1,9 @@
-import { 
-  Baby, 
-  Trees, 
-  MapPin, 
-  Eye, 
-  Sprout, 
+import {
+  Baby,
+  Trees,
+  MapPin,
+  Eye,
+  Sprout,
   ChefHat,
   Home,
   Mountain,
@@ -24,12 +24,10 @@ const Amenities = () => {
           <div className="flex flex-col gap-6 font-albertSans sm:items-center mobile:items-start">
             <p className="uppercase text-[#FFF] font-albertSans">amenities</p>
             <h2 className="text-[#FFF] font-ivy text-[32px]">
-              What Awaits You – Wayanad Homestay Highlights
-            </h2>
+              Wayanad Homestays Highlights            </h2>
           </div>
-          <p className="font-albertSans text-secondary text-[16px]">
-            Discover a perfect blend of heritage, comfort, and nature, designed
-            to make your stay truly unforgettable.
+          <p className="font-albertSans text-secondary text-[16px] text-center">
+            Discover a perfect blend of heritage, comfort, and nature at our Wayanad homestays. Enjoy cozy heritage-inspired rooms, scenic paddy field views, peaceful surroundings, and engaging activities like nature walks and wildlife spotting. With family-friendly spaces, Kerala cuisine, and modern amenities, your stay promises relaxation, adventure, and unforgettable memories.
           </p>
         </div>
 
