@@ -1,5 +1,4 @@
 ---
-heading: Wayanad Homestays – Explore Our Comfortable Rooms
+heading: Wayanad Homestays – Explore Our Rooms
 ---
-
-Our rooms blend the charm of a 100-year-old Jain Tharavadu with modern comforts. Choose from Premium, Deluxe , or Classic options, each offering spacious layouts, serene views, and essential amenities for a memorable stay.
+Wayanad Homestays invite you to explore our comfortable rooms, designed for a relaxing and cozy stay. Each room combines modern amenities with a warm, homely atmosphere, ensuring a memorable experience. Perfect for nature lovers and travelers seeking peace, our Wayanad homestays offer comfort, convenience, and stunning surroundings
