@@ -1,7 +1,4 @@
 ---
 heading: Our Gallery - Wayanad Homestays Visual Tour
 ---
-
-Explore the charm and beauty of traditional living through our **Wayanad homestay photo gallery**. Kudajadri Drizzle Homestay showcases a 100-year-old heritage home set in the heart of nature.
-
-Our gallery features spacious bedrooms, wooden interiors, peaceful surroundings, and glimpses of daily life at one of the top-rated **homestays in Wayanad**. From cozy rooms to scenic views of paddy fields, every image reflects the comfort and culture we offer. Whether you're planning a family vacation or a romantic getaway, our photo gallery helps you experience the warmth of Wayanad before your stay. Browse and book your stay with confidence.
+Take a visual tour of our beautiful property through our gallery and video tour. Explore images of our well-appointed rooms, traditional architecture, and serene outdoor spaces surrounded by lush greenery. See the inviting dining area where guests enjoy authentic home-cooked meals and the cozy corners perfect for relaxation. Our video tour offers a complete walkthrough, showcasing every detail that makes our **homestay in Wayanad** truly unique. From landscaped gardens to charming interiors, each photo captures the comfort, warmth, and natural beauty you’ll find here. Let our property gallery inspire your next stay at one of the finest homestays in Wayanad.
