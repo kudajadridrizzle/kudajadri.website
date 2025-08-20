@@ -4,11 +4,11 @@ const ReviewSession = () => {
   return (
     <ReviewSection 
       rating="4.6"
-      title="Why Guests Love Our Homestay in Kalpetta"
-      description="Our guests consistently praise Kudajadri Drizzle for its warm hospitality, serene ambiance, and personalized attention. Highly rated among Kalpetta homestays, we are known for creating a welcoming and memorable environment."
+      title="Why Guests Choose Our Wayanad Homestay"
+      description="Discover why guests recommend us among the best homestays in Wayanad. From the warm welcome to the peaceful surroundings, many share how our hospitality, authentic home-cooked meals, and personal attention made their visit truly special. Read their reviews, feel their experiences, and see why they keep coming back. If you’ve stayed with us, we’d love to hear your story too. Share your review and help fellow travelers find comfort, culture, and memorable moments at our homestay. Your words could inspire someone to choose the perfect stay in the beautiful hills of Wayanad."
       className="bg-white"
     >
-      <div className="grid md:grid-cols-2 gap-8 w-full">
+      {/* <div className="grid md:grid-cols-2 gap-8 w-full">
         <div className="bg-white p-6 rounded-lg shadow-md">
           <h3 className="text-xl font-semibold mb-3">Perfect Getaway</h3>
           <p className="text-secondary">"An amazing experience! The perfect blend of comfort and nature. Can't wait to come back!" - Ravi K.</p>
@@ -17,7 +17,7 @@ const ReviewSession = () => {
           <h3 className="text-xl font-semibold mb-3">Excellent Hospitality</h3>
           <p className="text-secondary">"The staff went above and beyond to make our stay memorable. The food was delicious!" - Priya M.</p>
         </div>
-      </div>
+      </div> */}
     </ReviewSection>
   );
 };
