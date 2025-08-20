@@ -9,7 +9,6 @@ import fm from 'front-matter';
 import aboutFaqRaw from '../../File/aboutfaqs.md?raw';
 import FaqList from '../FaqComponent/FaqList';
 import { Header } from '../Home/components/Header';
-import { useCardsSection } from '../../hooks/useCardsSection';
 
 // Define the shape of FAQ frontmatter
 interface FaqFrontMatterAttributes {
@@ -22,7 +21,6 @@ interface FaqFrontMatterAttributes {
 
 const About = () => {
   const parsedFaq = fm<FaqFrontMatterAttributes>(aboutFaqRaw);
-  const cardsContent = useCardsSection('about');
 
   // Sample content for the ContentSection
   const contentItems = [
