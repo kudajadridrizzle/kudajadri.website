@@ -20,9 +20,9 @@ export default function Faq(content: FaqFrontMatterAttributes) {
   return (
     <div className="sm:px-[12%] sm:py-24 mobile:px-4 mobile:py-14 large:px-[18%] flex flex-col gap-8 faq-container">
       <div>
-        <h1 className="flex-1 text-primary font-ivy sm:text-[44px] sm:text-center mobile:text-start mobile:text-[32px]">
+        <h2 className="flex-1 text-primary font-ivy sm:text-[44px] sm:text-center mobile:text-start mobile:text-[32px]">
           {content.title || 'Frequently Asked Questions'}
-        </h1>
+        </h2>
       </div>
       <div className="flex sm:flex-row mobile:flex-col gap-[24px]">
         <Accordion.Root

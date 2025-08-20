@@ -1,5 +1,5 @@
 import Footer from '../Home/components/Footer';
-import ReviewSession from '../Home/components/ReviewSession';
+import ReviewSession from './components/ReviewSession';
 import AboutSession from './components/AboutSession';
 import Hero from './components/Hero';
 import RecognitionSession from './components/RecognitionSession';
@@ -9,7 +9,6 @@ import fm from 'front-matter';
 import aboutFaqRaw from '../../File/aboutfaqs.md?raw';
 import FaqList from '../FaqComponent/FaqList';
 import { Header } from '../Home/components/Header';
-import CardsSection from '../shared/CardsSection';
 import { useCardsSection } from '../../hooks/useCardsSection';
 
 // Define the shape of FAQ frontmatter
@@ -29,8 +28,8 @@ const About = () => {
   const contentItems = [
     {
       image: "images/heritage.jpg",
-      title: "Our Heritage & Culture",
-      paragraph: "Discover the rich cultural heritage and traditions that inspire our homestay experience. We blend modern comfort with authentic local traditions to give you a truly immersive stay.",
+      title: "Experience Kudajadri Drizzle – Your Kalpetta Homestay Retreat",
+      paragraph: "Whether for a family vacation, honeymoon, or solo trip, Kudajadri Drizzle offers a perfect combination of heritage, comfort, and natural beauty. Guests can relax, enjoy authentic cuisine, and immerse themselves in Wayanad’s culture. Book your stay at one of the most loved Kalpetta homestays for an unforgettable retreat surrounded by the tranquility of the Western Ghats, rich heritage, and warm hospitality. Kudajadri Drizzle is where nature, comfort, and culture meet to create a truly exceptional stay.",
       imageAlt: "Heritage and culture at our homestay"
     },
    
@@ -98,14 +97,6 @@ const About = () => {
               title="Discover Our Homestay"
               items={contentItems}
             />
-      {/* Reusable Cards Section (managed via centralized JSON) */}
-      {cardsContent && (
-        <CardsSection
-          title={cardsContent.title}
-          subtitle={cardsContent.subtitle}
-          cards={cardsContent.cards}
-        />
-      )}
       {/* FAQ Section from CMS */}
       <FaqList {...parsedFaq.attributes} />
 
