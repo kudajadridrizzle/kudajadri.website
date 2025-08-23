@@ -1,6 +1,12 @@
 import { useMemo } from 'react';
 import data from '../data/cardsSection.json';
-import type { CardData } from '../components/Home/components/CardSection';
+
+// Define the interface locally since it's not exported from CardSection
+export interface CardData {
+  imageUrl: string;
+  title: string;
+  description: string;
+}
 
 export interface CardsSectionContent {
   title: string;
