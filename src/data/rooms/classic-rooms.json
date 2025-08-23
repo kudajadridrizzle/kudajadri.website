@@ -1,0 +1,161 @@
+{
+  "id": "classic-rooms",
+  "roomType": "Classic Room",
+  "slug": "classic-rooms",
+  "description": "Looking for a peaceful and affordable homestay in Wayanad? Our Classic Rooms at Kudajadri Drizzle offer comfort, charm, and a true homely feel without stretching your budget. Surrounded by greenery and the calmness of nature, this is the perfect place to relax while enjoying all the essentials for a memorable stay.",
+  "shortDescription": "Affordable comfort in the heart of Wayanad's nature",
+  "maxOccupancy": 2,
+  "size": "250 sq.ft",
+  "view": "Garden View",
+  "bedType": "King Size Bed or Twin Beds",
+  
+  "images": [
+    { "src": "/images/1 (1).jpg", "alt": "Classic Room - Cozy Bedroom" },
+    { "src": "/images/1 (2).jpg", "alt": "Classic Room - Seating Area" },
+    { "src": "/images/1 (3).jpg", "alt": "Classic Room - Bathroom" },
+    { "src": "/images/1 (4).jpg", "alt": "Classic Room - Room View" },
+    { "src": "/images/1 (5).jpg", "alt": "Classic Room - Balcony View" }
+  ],
+  
+  "pricePerNight": 2500,
+  "priceIncludes": [
+    "Complimentary breakfast",
+    "Free WiFi",
+    "Air conditioning",
+    "Daily housekeeping",
+    "Bottled water"
+  ],
+  
+  "session": {
+    "title": "Budget Friendly Homestays in Wayanad with Comfort and Style",
+    "subTitles": [
+      "Staying in Wayanad doesn't need to be expensive. Our Classic Rooms are designed for travelers who want comfort at a price that fits their budget. Each room is well-furnished with clean interiors, cozy beds, and a welcoming atmosphere.",
+      "Comfortable bedding for restful sleep",
+      "Spacious, well-ventilated rooms",
+      "Essential amenities for your stay",
+      "A peaceful environment surrounded by nature"
+    ],
+    "image": "/images/1 (2).jpg"
+  },
+  
+  "richBlocks": [
+    {
+      "type": "text",
+      "title": "Why Choose Our Classic Rooms in Wayanad",
+      "content": "<p>Our Classic Rooms are more than just a place to sleep—they are a complete experience of Wayanad's hospitality. Whether you're visiting for a short weekend or a long vacation, you'll find everything you need here.</p>"
+    },
+    {
+      "type": "text",
+      "title": "Great Value for Money",
+      "content": "<p>Travelers often struggle to balance affordability and comfort. At Kudajadri Drizzle, you don't have to compromise. The Classic Rooms combine both—giving you a neat, well-maintained space at a reasonable price.</p>"
+    },
+    {
+      "type": "amenities",
+      "title": "Room Amenities",
+      "amenities": [
+        { "name": "Air Conditioning", "icon": "fas fa-snowflake" },
+        { "name": "Free WiFi", "icon": "fas fa-wifi" },
+        { "name": "King Size Bed", "icon": "fas fa-bed" },
+        { "name": "Private Bathroom", "icon": "fas fa-bath" },
+        { "name": "Hot Water", "icon": "fas fa-shower" },
+        { "name": "TV", "icon": "fas fa-tv" },
+        { "name": "Mineral Water", "icon": "fas fa-wine-bottle" },
+        { "name": "Room Service", "icon": "fas fa-concierge-bell" }
+      ]
+    },
+    {
+      "type": "gallery",
+      "title": "Experience the Comfort",
+      "images": [
+        { "src": "/images/1 (3).jpg", "alt": "Classic Room Interior" },
+        { "src": "/images/1 (4).jpg", "alt": "Classic Room View" },
+        { "src": "/images/1 (5).jpg", "alt": "Classic Room Amenities" }
+      ]
+    },
+    {
+      "type": "pricing",
+      "title": "Pricing & Policies",
+      "content": "<p>Our transparent pricing ensures you know exactly what you're paying for. All rates are inclusive of taxes and service charges.</p><p>Check-in: 12:00 PM | Check-out: 11:00 AM</p>"
+    },
+    {
+      "type": "cta",
+      "cta": {
+        "text": "Book Your Stay Now",
+        "link": "/booking?room=classic-rooms",
+        "variant": "primary"
+      }
+    }
+  ],
+  
+  "amenities": [
+    { "name": "Free Parking", "icon": "fas fa-parking" },
+    { "name": "24/7 Front Desk", "icon": "fas fa-concierge-bell" },
+    { "name": "Garden Area", "icon": "fas fa-tree" },
+    { "name": "Luggage Storage", "icon": "fas fa-suitcase" },
+    { "name": "Airport Transfer", "icon": "fas fa-shuttle-van" },
+    { "name": "Laundry Service", "icon": "fas fa-tshirt" }
+  ],
+  
+  "anotherRooms": [
+    {
+      "roomType": "Deluxe Heritage Rooms",
+      "description": "Experience traditional Kerala architecture with modern comforts in our heritage rooms.",
+      "image": "/images/deluxe-heritage/1.jpg",
+      "navigate": "/rooms/deluxe-heritage-rooms",
+      "price": 3500
+    },
+    {
+      "roomType": "Deluxe Rooms",
+      "description": "Spacious rooms with modern amenities and beautiful garden views.",
+      "image": "/images/deluxe/1.jpg",
+      "navigate": "/rooms/deluxe-rooms",
+      "price": 4000
+    },
+    {
+      "roomType": "Premium Rooms",
+      "description": "Luxurious accommodations with premium amenities and stunning views.",
+      "image": "/images/premium/1.jpg",
+      "navigate": "/rooms/premium-rooms",
+      "price": 5000
+    }
+  ],
+  
+  "meta": {
+    "title": "Affordable Homestay in Wayanad – Classic Rooms at Kudajadri Drizzle",
+    "description": "Experience comfortable and affordable accommodation in Wayanad with our Classic Rooms. Perfect for budget-conscious travelers looking for quality stay.",
+    "keywords": ["affordable homestay wayanad", "budget stay wayanad", "cheap homestay wayanad", "classic rooms wayanad"],
+    "ogTitle": "Affordable Classic Rooms in Wayanad | Kudajadri Drizzle",
+    "ogDescription": "Book our comfortable and affordable Classic Rooms in Wayanad. Experience the best of Wayanad's hospitality at budget-friendly prices.",
+    "ogImage": "/images/1 (1).jpg"
+  },
+  
+  "checkInTime": "12:00 PM",
+  "checkOutTime": "11:00 AM",
+  
+  "cancellationPolicy": [
+    "Free cancellation before 7 days of check-in",
+    "50% refund if cancelled 3-7 days before check-in",
+    "No refund if cancelled within 48 hours of check-in"
+  ],
+  
+  "extraPersonPolicy": {
+    "note": "Extra person charges may apply",
+    "rules": [
+      "Children under 5 years stay free",
+      "Extra bed available on request (charges apply)",
+      "Maximum 1 extra bed allowed per room"
+    ]
+  },
+  
+  "bookingButtonText": "Book Now",
+  "bookingButtonLink": "/booking?room=classic-rooms",
+  
+  "seo": {
+    "title": "Affordable Classic Rooms in Wayanad | Kudajadri Drizzle Homestay",
+    "description": "Book our comfortable and affordable Classic Rooms in Wayanad. Experience the best of Wayanad's hospitality at budget-friendly prices with modern amenities.",
+    "canonicalUrl": "https://kudajadri.com/rooms/classic-rooms",
+    "ogType": "website",
+    "ogImage": "https://kudajadri.com/images/1 (1).jpg",
+    "twitterCard": "summary_large_image"
+  }
+}

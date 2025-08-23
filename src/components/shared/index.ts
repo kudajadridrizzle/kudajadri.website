@@ -1,2 +1,1 @@
-export { ContentCard } from './ContentCard';
-export { ContentSection } from './ContentSection'; 
+export { ContentSection } from './ContentSection';

@@ -10,7 +10,7 @@ import {
   Wifi,
   Shield,
   Car,
-  Heart
+  Heart,
 } from 'lucide-react';
 
 const Amenities = () => {
@@ -23,11 +23,17 @@ const Amenities = () => {
         <div className="flex flex-col gap-6 sm:items-center mobile:items-start">
           <div className="flex flex-col gap-6 font-albertSans sm:items-center mobile:items-start">
             <p className="uppercase text-[#FFF] font-albertSans">amenities</p>
-            <h2 className="text-[#FFF] font-ivy text-[32px]">
-              Wayanad Homestays Highlights            </h2>
+            <h2 className="text-[#FFF] font-ivy text-[32px] sm:text-[44px]">
+              Wayanad Homestays Highlights
+            </h2>
           </div>
-          <p className="font-albertSans text-secondary text-[16px] text-center">
-            Discover a perfect blend of heritage, comfort, and nature at our Wayanad homestays. Enjoy cozy heritage-inspired rooms, scenic paddy field views, peaceful surroundings, and engaging activities like nature walks and wildlife spotting. With family-friendly spaces, Kerala cuisine, and modern amenities, your stay promises relaxation, adventure, and unforgettable memories.
+          <p className="font-albertSans text-secondary text-[16px] sm:text-[20px] text-start sm:text-center">
+            Discover a perfect blend of heritage, comfort, and nature at our
+            Wayanad homestays. Enjoy cozy heritage-inspired rooms, scenic paddy
+            field views, peaceful surroundings, and engaging activities like
+            nature walks and wildlife spotting. With family-friendly spaces,
+            Kerala cuisine, and modern amenities, your stay promises relaxation,
+            adventure, and unforgettable memories.
           </p>
         </div>
 
@@ -39,6 +45,7 @@ const Amenities = () => {
           <AmenityIcon Icon={Car} title="Ample Parking" />
           <AmenityIcon Icon={Heart} title="Peaceful Environment" />
         </div>
+
         <div className="flex flex-wrap sm:gap-14 mobile:gap-5 justify-center">
           <AmenityIcon Icon={Baby} title="Kids Play Area" />
           <AmenityIcon Icon={Trees} title="Nature Walks" />
@@ -54,7 +61,13 @@ const Amenities = () => {
 
 export default Amenities;
 
-const AmenityIcon = ({ Icon, title }: { Icon: React.ComponentType<{ className?: string }>; title: string }) => {
+const AmenityIcon = ({
+  Icon,
+  title,
+}: {
+  Icon: React.ComponentType<{ className?: string }>;
+  title: string;
+}) => {
   return (
     <div className="flex flex-col gap-2 items-center mobile:py-7 sm:py-0 mobile:w-[140px]">
       <div className="text-white">

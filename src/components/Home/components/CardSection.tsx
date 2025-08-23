@@ -1,5 +1,6 @@
 import React from 'react';
 import { useCardsSection, type CardsPageKey } from '../../../hooks/useCardsSection';
+import { Link } from 'react-router-dom'; // assuming react-router is used
 
 interface CardProps {
   imageUrl: string;
@@ -34,6 +35,14 @@ export const CardSection: React.FC<CardsSectionProps> = ({ sectionKey, className
             {section.subParagraph}
           </p>
         )}
+
+        {/* CTA Button */}
+        <Link
+          to="/wayanad"
+          className="mt-4 inline-block bg-primary text-white font-albertSans px-6 py-3 rounded-full shadow-md hover:bg-primary/90 transition"
+        >
+          Explore Wayanad
+        </Link>
       </div>
 
       {/* Cards Grid */}

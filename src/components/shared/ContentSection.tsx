@@ -1,4 +1,4 @@
-import { ContentCard } from './ContentCard';
+import { ContentCard } from '../Home/components/ContentCard';
 
 interface ContentItem {
   image: string;
@@ -22,9 +22,9 @@ export const ContentSection = ({
     <div className={`sm:px-[12%] sm:py-24 mobile:px-4 mobile:py-14 large:px-[18%] ${className}`}>
       {title && (
         <div className="text-center mb-16">
-          <h1 className="text-primary font-ivy sm:text-[44px] mobile:text-[32px]">
+          <h2 className="text-primary font-ivy sm:text-[44px] mobile:text-[32px]">
             {title}
-          </h1>
+          </h2>
         </div>
       )}
       
