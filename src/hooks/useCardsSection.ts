@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import data from '../data/cardsSection.json';
-import type { CardData } from '../components/shared/CardsSection';
+import type { CardData } from '../components/Home/components/CardSection';
 
 export interface CardsSectionContent {
   title: string;
