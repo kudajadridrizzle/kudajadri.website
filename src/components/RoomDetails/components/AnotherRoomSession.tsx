@@ -23,15 +23,15 @@ const AnotherRoomSession = () => {
             )}
           </div>
           <div className="flex flex-col gap-4">
-            {/* <span className="text-[#000] text-lg font-albertSans">
-              {id && roomData[id]?.anotherRoomOne?.titlestr}
-            </span> */}
+            <span className="text-[#000] text-lg font-albertSans">
+              {id && roomData[id]?.anotherRoomOne?.title}
+            </span>
             <div className="flex flex-col gap-3">
               <span className="sm:text-4xl mobile:text-[28px] font-light text-primary font-ivy">
                 {id && roomData[id]?.anotherRoomOne.roomType}
               </span>
               <span className="text-lg text-secondary font-albertSans">
-                {id && roomData[id].anotherRoomOne.discription}
+                {id && roomData[id].anotherRoomOne.description}
               </span>
             </div>
             <div>
@@ -57,14 +57,11 @@ const AnotherRoomSession = () => {
             />
           </div>
           <div className="flex flex-col gap-3">
-            {/* <span className="text-[#000] text-lg font-albertSans">
-              {id && roomData[id]?.anotherRoomTwo.titlestr}
-            </span> */}
             <span className="sm:text-4xl mobile:text-[28px] font-light text-primary font-ivy">
               {id && roomData[id]?.anotherRoomTwo.roomType}
             </span>
             <span className="text-lg text-secondary font-albertSans">
-              {id && roomData[id]?.anotherRoomTwo.discription}
+              {id && roomData[id]?.anotherRoomTwo.description}
             </span>
             <div>
               <button
@@ -89,14 +86,11 @@ const AnotherRoomSession = () => {
             />
           </div>
           <div className="flex flex-col gap-3">
-            {/* <span className="text-[#000] text-lg font-albertSans">
-              {id && roomData[id]?.anotherRoomThree.titlestr}
-            </span> */}
             <span className="sm:text-4xl mobile:text-[28px] font-light text-primary font-ivy">
               {id && roomData[id]?.anotherRoomThree.roomType}
             </span>
             <span className="text-lg text-secondary font-albertSans">
-              {id && roomData[id]?.anotherRoomThree.discription}
+              {id && roomData[id]?.anotherRoomThree.description}
             </span>
             <div>
               <button

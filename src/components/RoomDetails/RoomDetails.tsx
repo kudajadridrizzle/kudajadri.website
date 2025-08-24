@@ -15,10 +15,7 @@ import {
 } from './constants';
 import fm from 'front-matter';
 import FaqList from '../FaqComponent/FaqList';
-import { ContentSection } from '../shared';
-import { useContentSection } from '../../hooks/useContentSection';
 
-// Import room-specific FAQ markdown files
 import classicRoomFaqRaw from '../../File/classicroomfaqs.md?raw';
 import deluxeHeritageRoomFaqRaw from '../../File/deluxeheritageroomfaqs.md?raw';
 import deluxeRoomFaqRaw from '../../File/deluxeroomfaqs.md?raw';
@@ -51,18 +48,21 @@ const getRoomFaqMarkdown = (roomId: string | undefined): string => {
 
 const RoomDetails = () => {
   const { id } = useParams();
-  const contentSection = useContentSection('roomDetails');
 
+  // Get the room data with the correct type
+  const roomDataItem = roomData[id as keyof typeof roomData] || roomData['classic-rooms'];
+  
+  // Get the room content for other components
   const roomContent =
     id === 'classic-rooms'
       ? classicRooms
       : id === 'deluxe-heritage-rooms'
-        ? deluxeHeritageRooms
-        : id === 'deluxe-rooms'
-          ? deluxeRooms
-          : id === 'premium-rooms'
-            ? premiumRooms
-            : classicRooms;
+      ? deluxeHeritageRooms
+      : id === 'deluxe-rooms'
+      ? deluxeRooms
+      : id === 'premium-rooms'
+      ? premiumRooms
+      : classicRooms;
 
   const getMetaContent = () => {
     const defaultImage = roomData['classic-rooms'].imageOne;
@@ -86,8 +86,7 @@ const RoomDetails = () => {
 
     if (id === 'deluxe-rooms') {
       return {
-        title:
-          'Wayanad Cottages: Private Cottages in Wayanad for Family, Groups',
+        title: 'Wayanad Cottages: Private Cottages in Wayanad for Family, Groups',
         description:
           'Stay at our Wayanad cottages designed for families. Our private cottages in Wayanad offer comfort, scenic views, and a peaceful holiday experience.',
         keywords:
@@ -192,19 +191,9 @@ const RoomDetails = () => {
       <Header type="black" />
       <Hero />
       <RoomPriceSession />
-      <MorningSession />
+      <MorningSession roomData={roomDataItem} />
       <AnotherRoomSession />
-
-      {/* Shared Content Section (centralized JSON) */}
-      {contentSection && (
-        <ContentSection
-          title={contentSection.title}
-          items={contentSection.items}
-        />
-      )}
-      {/* Room Specific FAQ Section from CMS */}
       <FaqList {...parsedFaq.attributes} />
-
       <Footer />
     </div>
   );
