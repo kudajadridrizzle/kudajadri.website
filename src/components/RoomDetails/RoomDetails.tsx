@@ -6,6 +6,7 @@ import MorningSession from './components/MorningSession';
 import { RoomPriceSession } from './components/RoomPriceSession';
 import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
+import SEOData from './components/SEOData';
 import {
   roomData,
   classicRooms,
@@ -192,6 +193,7 @@ const RoomDetails = () => {
       <Hero />
       <RoomPriceSession />
       <MorningSession roomData={roomDataItem} />
+      <SEOData roomType={roomDataItem.roomType} />
       <AnotherRoomSession />
       <FaqList {...parsedFaq.attributes} />
       <Footer />
