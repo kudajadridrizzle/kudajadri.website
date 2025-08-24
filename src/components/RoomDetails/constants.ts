@@ -447,7 +447,7 @@ export const classicRooms: RoomContent = {
     ],
   },
   bookingButtonText: 'Check Availability',
-  bookingButtonLink: '/book-now',
+  bookingButtonLink: '/contact',
 };
 
 // rooms/classicRooms.ts

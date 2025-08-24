@@ -4,29 +4,49 @@ import { useParams } from 'react-router-dom';
 
 const Hero = () => {
   const { id: roomId } = useParams();
+  
+  if (!roomId || !roomData[roomId]) {
+    return <div>No room data available</div>;
+  }
+
+  const room = roomData[roomId];
+  
   return (
-    <>
-      {roomId && roomData[roomId] ? (
-        <div className="mobile:hidden sm:flex p-20  gap-2 justify-center">
-          <div>
-            <img src={roomData[roomId].imageOne} alt="roomImage" />
+    <div className="w-full">
+      {/* Desktop Layout */}
+      <div className="hidden md:block w-full max-w-7xl mx-auto px-4 py-12">
+        <div className="grid grid-cols-4 grid-rows-2 gap-2 h-[60vh]">
+          {/* Large image - spans 2 columns and 2 rows */}
+          <div className="col-span-2 row-span-2 overflow-hidden rounded-xl">
+            <img 
+              src={room.imageOne} 
+              alt="Room overview" 
+              className="w-full h-full object-cover"
+            />
           </div>
-          <div className="flex flex-col gap-2">
-            <img src={roomData[roomId].imageTwo} alt="roomImage" />
-            <img src={roomData[roomId].imageThree} alt="roomImage" />
-          </div>
-          <div className="flex flex-col gap-2">
-            <img src={roomData[roomId].imageFour} alt="roomImage" />
-            <img src={roomData[roomId].imageFive} alt="roomImage" />
-          </div>
+          
+          {/* 2x2 grid of smaller images */}
+          {[room.imageTwo, room.imageThree, room.imageFour, room.imageFive].map((img, index) => (
+            <div key={index} className="overflow-hidden rounded-xl">
+              <img 
+                src={img} 
+                alt={`Room view ${index + 1}`} 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
         </div>
-      ) : (
-        <div>No room data available</div>
-      )}
-      <div className="sm:hidden px-4 pb-8">
-        <img src={mabileRoomImage} alt="" className="rounded-[14px]" />
       </div>
-    </>
+      
+      {/* Mobile Layout */}
+      <div className="md:hidden px-4 pb-8">
+        <img 
+          src={mabileRoomImage} 
+          alt="Room overview" 
+          className="w-full h-auto rounded-[14px]" 
+        />
+      </div>
+    </div>
   );
 };
 
