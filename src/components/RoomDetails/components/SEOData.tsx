@@ -27,7 +27,7 @@ const SEOData = ({ roomType }: SEODataProps) => {
                 <li>Panoramic views of lush valleys and plantations</li>
                 <li>Peaceful environment for relaxation and rejuvenation</li>
                 <li>Tasteful décor blending modern and traditional styles</li>
-                <li>Perfect for weekend getaways, romantic trips, or family vacations</li>
+                <li>Peaceful, private, and secure </li>
               </ul>
 
               <h2 className="text-primary font-ivy sm:text-[32px] mobile:text-2xl mb-6 mt-12">
@@ -715,6 +715,84 @@ const SEOData = ({ roomType }: SEODataProps) => {
                 </li>
               </ul>
 
+              
+              <h2 className="text-primary font-ivy sm:text-[32px] mobile:text-2xl mb-6 mt-12">
+                Facilities at Our Affordable Homestay in Wayanad
+              </h2>
+              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
+                We believe in keeping things simple yet satisfying. Our Classic Rooms come with everything you need for a comfortable stay.
+              </p>
+
+              <h3 className="text-primary font-ivy text-2xl mb-4 mt-8">
+                Room Amenities
+              </h3>
+              <ul className="list-disc pl-6 mb-8 space-y-2">
+                <li className="text-secondary font-albertSans">
+                  Clean and cozy double beds
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Private bathrooms with hot water
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Free Wi-Fi to stay connected
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Seating area for relaxation
+                </li>
+              </ul>
+
+              <h3 className="text-primary font-ivy text-2xl mb-4 mt-8">
+                Property Features
+              </h3>
+              <ul className="list-disc pl-6 mb-8 space-y-2">
+                <li className="text-secondary font-albertSans">
+                  Safe parking space
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Traditional Kerala-style architecture
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Common areas to sit and unwind
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Lush greenery all around
+                </li>
+              </ul>
+              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
+                With these features, you'll get the best of both worlds—budget pricing with quality services.
+              </p>
+
+              <h2 className="text-primary font-ivy sm:text-[32px] mobile:text-2xl mb-6 mt-12">
+                Local Experiences Around Our Budget Friendly Homestays in Wayanad
+              </h2>
+              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
+                Staying at Kudajadri Drizzle places you close to some of the most beautiful attractions in Wayanad. From waterfalls to wildlife, you'll have plenty of options to explore.
+              </p>
+              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-4">
+                Nearby places you can visit:
+              </p>
+              <ul className="list-disc pl-6 mb-8 space-y-2">
+                <li className="text-secondary font-albertSans">
+                  Edakkal Caves – Famous for ancient carvings
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Pookode Lake – A scenic freshwater lake
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Soochipara Waterfalls – Perfect for adventure lovers
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Wayanad Wildlife Sanctuary – Spot elephants and other wildlife
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Chembra Peak – Popular trekking destination
+                </li>
+              </ul>
+              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
+                After a day of sightseeing, you can return to your Classic Room and relax in comfort.
+              </p>
+
+
               <h2 className="text-primary font-ivy sm:text-[32px] mobile:text-2xl mb-6 mt-12">
                 The Charm of Staying in a Homestay in Wayanad
               </h2>
@@ -812,390 +890,9 @@ const SEOData = ({ roomType }: SEODataProps) => {
               <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
                 Reserve your Classic Room today and experience the best of Wayanad without stretching your budget.
               </p>
-
-              <h2 className="text-primary font-ivy sm:text-[32px] mobile:text-2xl mb-6 mt-12">
-                Facilities at Our Affordable Homestay in Wayanad
-              </h2>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
-                We believe in keeping things simple yet satisfying. Our Classic Rooms come with everything you need for a comfortable stay.
-              </p>
-
-              <h3 className="text-primary font-ivy text-2xl mb-4 mt-8">
-                Room Amenities
-              </h3>
-              <ul className="list-disc pl-6 mb-8 space-y-2">
-                <li className="text-secondary font-albertSans">
-                  Clean and cozy double beds
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Private bathrooms with hot water
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Free Wi-Fi to stay connected
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Seating area for relaxation
-                </li>
-              </ul>
-
-              <h3 className="text-primary font-ivy text-2xl mb-4 mt-8">
-                Property Features
-              </h3>
-              <ul className="list-disc pl-6 mb-8 space-y-2">
-                <li className="text-secondary font-albertSans">
-                  Safe parking space
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Traditional Kerala-style architecture
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Common areas to sit and unwind
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Lush greenery all around
-                </li>
-              </ul>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
-                With these features, you'll get the best of both worlds—budget pricing with quality services.
-              </p>
-
-              <h2 className="text-primary font-ivy sm:text-[32px] mobile:text-2xl mb-6 mt-12">
-                Local Experiences Around Our Budget Friendly Homestays in Wayanad
-              </h2>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
-                Staying at Kudajadri Drizzle places you close to some of the most beautiful attractions in Wayanad. From waterfalls to wildlife, you'll have plenty of options to explore.
-              </p>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-4">
-                Nearby places you can visit:
-              </p>
-              <ul className="list-disc pl-6 mb-8 space-y-2">
-                <li className="text-secondary font-albertSans">
-                  Edakkal Caves – Famous for ancient carvings
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Pookode Lake – A scenic freshwater lake
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Soochipara Waterfalls – Perfect for adventure lovers
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Wayanad Wildlife Sanctuary – Spot elephants and other wildlife
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Chembra Peak – Popular trekking destination
-                </li>
-              </ul>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
-                After a day of sightseeing, you can return to your Classic Room and relax in comfort.
-              </p>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
-                Hotels may provide luxury, but homestays offer something unique—warmth and personal care. Our Classic Rooms give you the chance to experience Wayanad's culture and lifestyle closely.
-              </p>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-4">
-                Benefits of choosing a homestay over hotels:
-              </p>
-              <ul className="list-disc pl-6 mb-8 space-y-2">
-                <li className="text-secondary font-albertSans">
-                  Friendly and personalized hospitality
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Homely atmosphere with local touch
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Authentic Kerala food on request
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Peaceful surroundings away from crowds
-                </li>
-              </ul>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
-                This is why travelers looking for an affordable homestay in Wayanad prefer our Classic Rooms.
-              </p>
-
-              <h2 className="text-primary font-ivy sm:text-[32px] mobile:text-2xl mb-6 mt-12">
-                Who Should Book Our Classic Rooms
-              </h2>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
-                Our rooms are suited for a wide range of travelers. If you fall into any of these categories, you'll find them ideal:
-              </p>
-              <ul className="list-disc pl-6 mb-8 space-y-2">
-                <li className="text-secondary font-albertSans">
-                  Budget Travelers – Affordable stay without cutting down on comfort
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Families – Spacious rooms with homely vibes
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Couples – Quiet and private atmosphere
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Nature Lovers – Surrounded by greenery and fresh air
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Workation Seekers – Wi-Fi and peaceful setting for remote work
-                </li>
-              </ul>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
-                No matter your travel purpose, our Classic Rooms give you the best of Wayanad without overspending.
-              </p>
-
-              <h2 className="text-primary font-ivy sm:text-[32px] mobile:text-2xl mb-6 mt-12">
-                Affordable Homestay in Wayanad with a Touch of Tradition
-              </h2>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
-                One of the highlights of our Wayanad homestay is its traditional design. The Classic Rooms reflect the charm of Kerala's architecture while blending modern convenience. From wooden accents to open spaces filled with natural light, every detail adds to the authentic experience.
-              </p>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
-                It's not just about staying—it's about feeling the culture of Wayanad while enjoying a warm and cozy space.
-              </p>
-
-              <h2 className="text-primary font-ivy sm:text-[32px] mobile:text-2xl mb-6 mt-12">
-                How to Make the Most of Your Stay in Wayanad
-              </h2>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
-                If you're planning your trip, here are a few tips to make it more enjoyable while staying at our budget friendly homestays in Wayanad:
-              </p>
-              <ul className="list-disc pl-6 mb-8 space-y-2">
-                <li className="text-secondary font-albertSans">
-                  Start your mornings with a walk around the property to enjoy fresh air.
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Try local dishes offered on request for an authentic taste of Kerala.
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Plan short day trips to nearby attractions and return to relax in your Classic Room.
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Carry a camera to capture the scenic beauty around the homestay.
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Spend your evenings enjoying the calmness instead of rushing around.
-                </li>
-              </ul>
-
-              <h2 className="text-primary font-ivy sm:text-[32px] mobile:text-2xl mb-6 mt-12">
-                Book Your Budget Friendly Homestay in Wayanad Today
-              </h2>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
-                Finding the right place to stay can make or break your trip. If you're looking for an affordable homestay in Wayanad that feels like home, Kudajadri Drizzle's Classic Rooms are the perfect choice. With budget-friendly pricing, cozy interiors, and a location close to major attractions, your stay will be both relaxing and memorable.
-              </p>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
-                Reserve your Classic Room today and experience the best of Wayanad without stretching your budget.
-              </p>
-
-              <h2 className="text-primary font-ivy sm:text-[32px] mobile:text-2xl mb-6 mt-12">
-                Local Experiences Around Our Budget Friendly Homestays in Wayanad
-              </h2>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
-                Staying at Kudajadri Drizzle places you close to some of the most beautiful attractions in Wayanad. From waterfalls to wildlife, you'll have plenty of options to explore.
-              </p>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-4">
-                Nearby places you can visit:
-              </p>
-              <ul className="list-disc pl-6 mb-8 space-y-2">
-                <li className="text-secondary font-albertSans">
-                  Edakkal Caves – Famous for ancient carvings
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Pookode Lake – A scenic freshwater lake
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Soochipara Waterfalls – Perfect for adventure lovers
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Wayanad Wildlife Sanctuary – Spot elephants and other wildlife
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Chembra Peak – Popular trekking destination
-                </li>
-              </ul>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
-                After a day of sightseeing, you can return to your Classic Room and relax in comfort.
-              </p>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
-                Hotels may provide luxury, but homestays offer something unique—warmth and personal care. Our Classic Rooms give you the chance to experience Wayanad's culture and lifestyle closely.
-              </p>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-4">
-                Benefits of choosing a homestay over hotels:
-              </p>
-              <ul className="list-disc pl-6 mb-8 space-y-2">
-                <li className="text-secondary font-albertSans">
-                  Friendly and personalized hospitality
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Homely atmosphere with local touch
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Authentic Kerala food on request
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Peaceful surroundings away from crowds
-                </li>
-              </ul>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
-                This is why travelers looking for an affordable homestay in Wayanad prefer our Classic Rooms.
-              </p>
-
-              <h2 className="text-primary font-ivy sm:text-[32px] mobile:text-2xl mb-6 mt-12">
-                Who Should Book Our Classic Rooms
-              </h2>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
-                Our rooms are suited for a wide range of travelers. If you fall into any of these categories, you'll find them ideal:
-              </p>
-              <ul className="list-disc pl-6 mb-8 space-y-2">
-                <li className="text-secondary font-albertSans">
-                  Budget Travelers – Affordable stay without cutting down on comfort
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Families – Spacious rooms with homely vibes
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Couples – Quiet and private atmosphere
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Nature Lovers – Surrounded by greenery and fresh air
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Workation Seekers – Wi-Fi and peaceful setting for remote work
-                </li>
-              </ul>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
-                No matter your travel purpose, our Classic Rooms give you the best of Wayanad without overspending.
-              </p>
-
-              <h2 className="text-primary font-ivy sm:text-[32px] mobile:text-2xl mb-6 mt-12">
-                Affordable Homestay in Wayanad with a Touch of Tradition
-              </h2>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
-                One of the highlights of our Wayanad homestay is its traditional design. The Classic Rooms reflect the charm of Kerala's architecture while blending modern convenience. From wooden accents to open spaces filled with natural light, every detail adds to the authentic experience.
-              </p>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
-                It's not just about staying—it's about feeling the culture of Wayanad while enjoying a warm and cozy space.
-              </p>
-
-              <h2 className="text-primary font-ivy sm:text-[32px] mobile:text-2xl mb-6 mt-12">
-                How to Make the Most of Your Stay in Wayanad
-              </h2>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
-                If you're planning your trip, here are a few tips to make it more enjoyable while staying at our budget friendly homestays in Wayanad:
-              </p>
-              <ul className="list-disc pl-6 mb-8 space-y-2">
-                <li className="text-secondary font-albertSans">
-                  Start your mornings with a walk around the property to enjoy fresh air.
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Try local dishes offered on request for an authentic taste of Kerala.
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Plan short day trips to nearby attractions and return to relax in your Classic Room.
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Carry a camera to capture the scenic beauty around the homestay.
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Spend your evenings enjoying the calmness instead of rushing around.
-                </li>
-              </ul>
-
-              <h2 className="text-primary font-ivy sm:text-[32px] mobile:text-2xl mb-6 mt-12">
-                Book Your Budget Friendly Homestay in Wayanad Today
-              </h2>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
-                Finding the right place to stay can make or break your trip. If you're looking for an affordable homestay in Wayanad that feels like home, Kudajadri Drizzle's Classic Rooms are the perfect choice. With budget-friendly pricing, cozy interiors, and a location close to major attractions, your stay will be both relaxing and memorable.
-              </p>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
-                Reserve your Classic Room today and experience the best of Wayanad without stretching your budget.
-              </p>
-
-              <h2 className="text-primary font-ivy sm:text-[32px] mobile:text-2xl mb-6 mt-12">
-                Local Experiences Around Our Budget Friendly Homestays in Wayanad
-              </h2>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
-                Staying at Kudajadri Drizzle places you close to some of the most beautiful attractions in Wayanad. From waterfalls to wildlife, you'll have plenty of options to explore.
-              </p>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-4">
-                Nearby places you can visit:
-              </p>
-              <ul className="list-disc pl-6 mb-8 space-y-2">
-                <li className="text-secondary font-albertSans">
-                  Edakkal Caves – Famous for ancient carvings
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Pookode Lake – A scenic freshwater lake
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Soochipara Waterfalls – Perfect for adventure lovers
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Wayanad Wildlife Sanctuary – Spot elephants and other wildlife
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Chembra Peak – Popular trekking destination
-                </li>
-              </ul>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
-                After a day of sightseeing, you can return to your Classic Room and relax in comfort.
-              </p>
             </>
           ) : (
             <>
-              <h3 className="text-primary font-ivy text-2xl mb-4 mt-8">
-                Benefits of Choosing Our Wayanad {roomType}
-              </h3>
-              <ul className="list-disc pl-6 mb-8 space-y-2">
-                <li className="text-secondary font-albertSans">
-                  Peaceful surroundings for relaxation
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Close to major tourist attractions
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Traditional architecture with modern comforts
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Personalized service and local insights
-                </li>
-              </ul>
-
-              <h3 className="text-primary font-ivy text-2xl mb-4 mt-8">
-                Amenities in Our {roomType}
-              </h3>
-              <ul className="list-disc pl-6 mb-8 space-y-2">
-                <li className="text-secondary font-albertSans">
-                  Comfortable bedding with fresh linens
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Air-conditioning for hot and humid days
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Private bathroom with hot water
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Free Wi-Fi access
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Tea/coffee making facilities
-                </li>
-                <li className="text-secondary font-albertSans">
-                  24/7 room service
-                </li>
-              </ul>
-
-              <h3 className="text-primary font-ivy text-2xl mb-4 mt-8">
-                Experience Local Culture
-              </h3>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
-                Our {roomType.toLowerCase()} are designed to give you an
-                authentic Wayanad experience. The decor features local materials
-                and traditional craftsmanship, while the layout ensures you have
-                all the modern comforts you need. Wake up to the sound of birds
-                and enjoy your morning tea with a view of the surrounding
-                greenery.
-              </p>
-
-              <h3 className="text-primary font-ivy text-2xl mb-4 mt-8">
-                Perfect For
-              </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <h4 className="font-ivy text-lg text-primary mb-2">
@@ -1230,35 +927,6 @@ const SEOData = ({ roomType }: SEODataProps) => {
                   </p>
                 </div>
               </div>
-
-              <h3 className="text-primary font-ivy text-2xl mb-4 mt-8">
-                Nearby Attractions
-              </h3>
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
-                Our {roomType.toLowerCase()} are conveniently located near
-                Wayanad's top attractions. Within a short drive, you can visit:
-              </p>
-              <ul className="list-disc pl-6 mb-8 space-y-2">
-                <li className="text-secondary font-albertSans">
-                  Tholpetty Wildlife Sanctuary - 15 km
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Kuruva Island - 25 km
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Edakkal Caves - 30 km
-                </li>
-                <li className="text-secondary font-albertSans">
-                  Chembra Peak - 35 km
-                </li>
-              </ul>
-
-              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
-                Whether you're looking for adventure, relaxation, or cultural
-                experiences, our {roomType.toLowerCase()} in Wayanad are the
-                ideal choice. Experience privacy, scenic beauty, and modern
-                comfort while exploring everything Wayanad has to offer.
-              </p>
             </>
           )}
 
