@@ -26,12 +26,12 @@ const About = () => {
   // Sample content for the ContentSection
   const contentItems = [
     {
-      image: "images/heritage.jpg",
-      title: "Experience Kudajadri Drizzle – Your Kalpetta Homestay Retreat",
-      paragraph: "Whether for a family vacation, honeymoon, or solo trip, Kudajadri Drizzle offers a perfect combination of heritage, comfort, and natural beauty. Guests can relax, enjoy authentic cuisine, and immerse themselves in Wayanad’s culture. Book your stay at one of the most loved Kalpetta homestays for an unforgettable retreat surrounded by the tranquility of the Western Ghats, rich heritage, and warm hospitality. Kudajadri Drizzle is where nature, comfort, and culture meet to create a truly exceptional stay.",
-      imageAlt: "Heritage and culture at our homestay"
+      image: 'images/heritage.jpg',
+      // title: 'Experience Kudajadri Drizzle – Your Kalpetta Homestay Retreat',
+      paragraph:
+        'Whether for a family vacation, honeymoon, or solo trip, Kudajadri Drizzle offers a perfect combination of heritage, comfort, and natural beauty. Guests can relax, enjoy authentic cuisine, and immerse themselves in Wayanad’s culture. Book your stay at one of the most loved Kalpetta homestays for an unforgettable retreat surrounded by the tranquility of the Western Ghats, rich heritage, and warm hospitality. Kudajadri Drizzle is where nature, comfort, and culture meet to create a truly exceptional stay.',
+      imageAlt: 'Heritage and culture at our homestay',
     },
-   
   ];
 
   return (
@@ -93,13 +93,8 @@ const About = () => {
       <ReviewSession />
       <GuestTestimonials />
       <RecognitionSession />
-        <ContentSection
-              title="Discover Our Homestay"
-              items={contentItems}
-            />
-      {/* FAQ Section from CMS */}
+      <ContentSection title="Experience Kudajadri Drizzle – Your Kalpetta Homestay Retreat" items={contentItems} />
       <FaqList {...parsedFaq.attributes} />
-
       <Footer />
     </div>
   );
