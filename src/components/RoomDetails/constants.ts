@@ -29,7 +29,7 @@ interface SessionMorning {
   image: string;
 }
 interface AnotherRoom {
-  title: string;
+  title?: string;
   roomType: string;
   description: string;
   image: string;
@@ -172,21 +172,18 @@ Features of Our Deluxe Rooms:<br/>
       image: sessionImage,
     },
     {
-      title: 'ESSENTIAL',
       roomType: 'Deluxe Heritage Rooms',
       description: 'An economic escape in a lush atmosphere. This is affordable luxury with no compromises.',
       image: deluxeHeritageRoomsImage1,
       navigate: '/rooms/deluxe-heritage-rooms'
     },
     {
-      title: 'EXPLORER',
       roomType: 'Classic Rooms',
       description: 'Experience authentic Wayanad hospitality in our Classic Rooms, blending traditional charm with modern comforts.',
       image: classicRoomsImage1,
       navigate: '/rooms/classic-rooms'
     },
     {
-      title: 'LUXURY',
       roomType: 'Premium Rooms',
       description: 'Indulge in luxury with our Premium Rooms, featuring elegant interiors and premium amenities.',
       image: premiumRoomsImage22,
@@ -212,21 +209,18 @@ Features of Our Deluxe Rooms:<br/>
       • Modern bathrooms with hot water and premium toiletries<br/><br/>`,      image: sessionImage,
     },
     {
-      title: 'Deluxe Room',
       roomType: 'Deluxe Room',
       description: 'An economic escape in a lush atmosphere. This is affordable luxury with no compromises.',
       image: duluxeRoomsImage1,
       navigate: '/rooms/deluxe-rooms',
     },
     {
-      title: 'EXPLORER',
       roomType: 'Classic Rooms',
       description: 'Experience authentic Wayanad hospitality in our Classic Rooms, blending traditional charm with modern comforts.',
       image: classicRoomsImage1,
       navigate: '/rooms/classic-rooms',
     },
     {
-      title: 'LUXURY',
       roomType: 'Premium Rooms',
       description: 'Indulge in luxury with our Premium Rooms, featuring elegant interiors and premium amenities.',
       image: premiumRoomsImage22,
@@ -254,21 +248,18 @@ This makes our Classic Rooms one of the top budget friendly homestays in Wayanad
       image: sessionImage,
     },
     {
-      title: 'ESSENTIAL',
       roomType: 'Deluxe Heritage Rooms',
       description: 'An economic escape in a lush atmosphere. This is affordable luxury with no compromises.',
       image: deluxeHeritageRoomsImage1,
       navigate: '/rooms/deluxe-heritage-rooms',
     },
     {
-      title: 'EXPLORER',
       roomType: 'Deluxe Rooms',
       description: 'Experience the perfect blend of comfort and style in our well-appointed Deluxe Rooms.',
       image: duluxeRoomsImage1,
       navigate: '/rooms/deluxe-rooms',
     },
     {
-      title: 'LUXURY',
       roomType: 'Premium Rooms',
       description: 'Indulge in luxury with our Premium Rooms, featuring elegant interiors and premium amenities.',
       image: premiumRoomsImage22,
@@ -295,21 +286,18 @@ This makes our Classic Rooms one of the top budget friendly homestays in Wayanad
       image: sessionImage,
     },
     {
-      title: 'ESSENTIAL',
       roomType: 'Deluxe Heritage Rooms',
       description: 'An economic escape in a lush atmosphere. This is affordable luxury with no compromises.',
       image: deluxeHeritageRoomsImage1,
       navigate: '/rooms/deluxe-heritage-rooms',
     },
     {
-      title: 'EXPLORER',
       roomType: 'Deluxe Rooms',
       description: 'Experience the perfect blend of comfort and style in our well-appointed Deluxe Rooms.',
       image: duluxeRoomsImage1,
       navigate: '/rooms/deluxe-rooms',
     },
     {
-      title: 'CLASSIC',
       roomType: 'Classic Rooms',
       description: 'Experience authentic Wayanad hospitality in our Classic Rooms, blending traditional charm with modern comforts.',
       image: classicRoomsImage1,

@@ -12,7 +12,197 @@ const SEOData = ({ roomType }: SEODataProps) => {
     <div className="w-full bg-white sm:py-32 mobile:py-14">
       <div className="sm:px-[12%] mobile:px-4 large:px-[18%] w-full">
         <div className="mb-12">
-          {isDeluxeRoom ? (
+{isHeritageRoom ? (
+            <>
+              <h2 className="text-primary font-ivy sm:text-[32px] mobile:text-2xl mb-6">
+                Heritage Homestays in Wayanad with Authentic Charm
+              </h2>
+              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
+                A stay in our Deluxe Heritage Rooms is like stepping back in time while enjoying all the comforts of today. The heritage-inspired décor, antique furniture, and locally crafted accents create a unique ambiance. Guests often appreciate the combination of tradition and luxury, making these rooms one of the top heritage homestays in Wayanad.
+              </p>
+
+              <h3 className="text-primary font-ivy text-2xl mb-4 mt-8">
+                Unique Features of Heritage Rooms
+              </h3>
+              <ul className="list-disc pl-6 mb-8 space-y-2">
+                <li className="text-secondary font-albertSans">
+                  High ceilings with traditional wooden beams
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Vintage décor and art pieces reflecting local culture
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Peaceful and scenic surroundings
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Natural ventilation and sunlight for a refreshing stay
+                </li>
+              </ul>
+
+              <h2 className="text-primary font-ivy sm:text-[32px] mobile:text-2xl mb-6 mt-12">
+                Personalized Services in Our Traditional Homestay in Wayanad
+              </h2>
+              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
+                We ensure that your stay in our traditional homestay in Wayanad is comfortable and memorable. Our staff provides personalized attention, helping with sightseeing, meals, and any special requests to make your experience seamless.
+              </p>
+
+              <h3 className="text-primary font-ivy text-2xl mb-4 mt-8">
+                Guest Services Include
+              </h3>
+              <ul className="list-disc pl-6 mb-8 space-y-2">
+                <li className="text-secondary font-albertSans">
+                  Home-cooked Kerala meals on request
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Assistance with local travel and excursions
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Housekeeping and room service
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Guidance on cultural and heritage tours
+                </li>
+              </ul>
+
+              <h2 className="text-primary font-ivy sm:text-[32px] mobile:text-2xl mb-6 mt-12">
+                Explore Wayanad While Staying in Heritage Rooms
+              </h2>
+              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
+                Staying at our heritage homestay in Wayanad puts you close to nature and cultural attractions. You can enjoy the serenity of the hills while planning visits to famous landmarks, waterfalls, and plantations.
+              </p>
+
+              <h3 className="text-primary font-ivy text-2xl mb-4 mt-8">
+                Nearby Attractions
+              </h3>
+              <ul className="list-disc pl-6 mb-8 space-y-2">
+                <li className="text-secondary font-albertSans">
+                  Edakkal Caves – Ancient rock carvings and history
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Banasura Sagar Dam – Scenic views and leisure activities
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Pookode Lake – Boating and nature walks
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Wayanad Wildlife Sanctuary – Wildlife spotting
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Chembra Peak – Trekking and panoramic vistas
+                </li>
+              </ul>
+
+              <h2 className="text-primary font-ivy sm:text-[32px] mobile:text-2xl mb-6 mt-12">
+                Comfort and Tradition Combined
+              </h2>
+              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
+                Our Deluxe Heritage Rooms are designed to offer both luxury and the warmth of tradition. Spacious layouts, traditional woodwork, and thoughtful amenities create a memorable stay. Guests enjoy the blend of modern convenience and cultural authenticity, making our Wayanad homestay a preferred choice among travelers seeking heritage homestays in Wayanad.
+              </p>
+
+              <h3 className="text-primary font-ivy text-2xl mb-4 mt-8">
+                Room Amenities Include
+              </h3>
+              <ul className="list-disc pl-6 mb-8 space-y-2">
+                <li className="text-secondary font-albertSans">
+                  Comfortable beds with premium linens
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Air-conditioning for added comfort
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Private seating areas and balconies
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Modern bathrooms with hot water and toiletries
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Free Wi-Fi and entertainment options
+                </li>
+              </ul>
+
+              <h2 className="text-primary font-ivy sm:text-[32px] mobile:text-2xl mb-6 mt-12">
+                Ideal for Families, Couples, and Cultural Travelers
+              </h2>
+              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
+                Our Deluxe Heritage Rooms are suitable for a variety of travelers. Families appreciate the space and safety, couples enjoy the romantic and peaceful atmosphere, and cultural enthusiasts find inspiration in the traditional décor and heritage vibe.
+              </p>
+
+              <h3 className="text-primary font-ivy text-2xl mb-4 mt-8">
+                Who Should Book Heritage Rooms?
+              </h3>
+              <ul className="list-disc pl-6 mb-8 space-y-2">
+                <li className="text-secondary font-albertSans">
+                  Couples seeking a romantic getaway
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Families wanting a cultural and cozy stay
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Solo travelers exploring Wayanad's heritage
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Nature and culture lovers looking for authentic experiences
+                </li>
+              </ul>
+
+              <h2 className="text-primary font-ivy sm:text-[32px] mobile:text-2xl mb-6 mt-12">
+                Authentic Kerala Hospitality in a Traditional Homestay in Wayanad
+              </h2>
+              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
+                One of the biggest draws of staying in our traditional homestay in Wayanad is the hospitality. From warm welcomes to personalized care, our team ensures every guest feels special. Guests can enjoy home-cooked meals, guidance for local attractions, and tips to explore Wayanad's hidden gems.
+              </p>
+
+              <h3 className="text-primary font-ivy text-2xl mb-4 mt-8">
+                What Makes Our Heritage Homestay Special
+              </h3>
+              <ul className="list-disc pl-6 mb-8 space-y-2">
+                <li className="text-secondary font-albertSans">
+                  Personalized guest services for a comfortable stay
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Home-style Kerala meals with fresh ingredients
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Warm and welcoming hosts sharing local knowledge
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Peaceful, scenic surroundings away from crowds
+                </li>
+              </ul>
+
+              <h2 className="text-primary font-ivy sm:text-[32px] mobile:text-2xl mb-6 mt-12">
+                Plan Your Stay in Our Heritage Homestay in Wayanad
+              </h2>
+              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
+                Booking our Deluxe Heritage Rooms guarantees an unforgettable experience of Wayanad. With the perfect combination of culture, comfort, and scenic beauty, these rooms are ideal for those looking to enjoy both heritage and modern amenities.
+              </p>
+
+              <h3 className="text-primary font-ivy text-2xl mb-4 mt-8">
+                Key Advantages of Staying in Deluxe Heritage Rooms
+              </h3>
+              <ul className="list-disc pl-6 mb-8 space-y-2">
+                <li className="text-secondary font-albertSans">
+                  Prime location with easy access to attractions
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Authentic traditional interiors and décor
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Modern facilities for a comfortable stay
+                </li>
+                <li className="text-secondary font-albertSans">
+                  Personal care and attention from hosts
+                </li>
+              </ul>
+
+              <h2 className="text-primary font-ivy sm:text-[32px] mobile:text-2xl mb-6 mt-12">
+                Book Your Heritage Homestay in Wayanad Today
+              </h2>
+              <p className="text-secondary font-albertSans text-lg leading-relaxed mb-6">
+                If you're looking for a heritage homestay in Wayanad or a traditional homestay in Wayanad, our Deluxe Heritage Rooms offer the perfect solution. Enjoy cultural authenticity, modern comfort, and scenic surroundings while exploring Wayanad. Reserve your stay today and experience Wayanad in style and tradition.
+              </p>
+            </>
+          ) : isDeluxeRoom ? (
             <>
               <h2 className="text-primary font-ivy sm:text-[32px] mobile:text-2xl mb-6">
                 Why Choose Our Cottages in Wayanad
