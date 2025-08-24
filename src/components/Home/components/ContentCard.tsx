@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 interface ContentCardProps {
   image: string;
-  title: string;
+  title?: string;
   paragraph: string;
   imageAlt?: string;
   className?: string;

@@ -3,7 +3,7 @@ import data from '../data/contentSection.json';
 
 export interface ContentItem {
   image: string;
-  title: string;
+  title?: string;
   paragraph: string;
   imageAlt?: string;
 }

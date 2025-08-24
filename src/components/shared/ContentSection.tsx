@@ -2,7 +2,7 @@ import { ContentCard } from '../Home/components/ContentCard';
 
 interface ContentItem {
   image: string;
-  title: string;
+  title?: string;
   paragraph: string;
   imageAlt?: string;
 }
