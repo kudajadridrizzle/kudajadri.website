@@ -8,6 +8,7 @@ import { Helmet } from 'react-helmet-async';
 import fm from 'front-matter';
 import aboutFaqRaw from '../../File/aboutfaqs.md?raw';
 import FaqList from '../FaqComponent/FaqList';
+import GuestTestimonials from './components/GuestTestimonials';
 import { Header } from '../Home/components/Header';
 
 // Define the shape of FAQ frontmatter
@@ -90,6 +91,7 @@ const About = () => {
       <Hero />
       <AboutSession />
       <ReviewSession />
+      <GuestTestimonials />
       <RecognitionSession />
         <ContentSection
               title="Discover Our Homestay"

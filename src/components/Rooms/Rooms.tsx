@@ -6,7 +6,6 @@ import CMSHero from './Components/CMSHero';
 import CMSRoomSession from './Components/CMSRoomSession';
 import CMSIndividualRooms from './Components/CMSIndividualRooms';
 import { Header } from '../Home/components/Header';
-import { useContentSection } from '../../hooks/useContentSection';
 
 const Rooms = () => {
   const { seo, hero, roomsIntro, individualRooms, faq } = useRoomsCMS();
