@@ -36,6 +36,9 @@ interface AnotherRoom {
   navigate: string;
 }
 export interface Room {
+  // Room type and basic info
+  roomType: string;
+  
   // Image properties
   imageOne: string;
   imageTwo: string;
@@ -125,6 +128,7 @@ export interface RoomContent {
 
 // Helper function to create room data with required properties
 export const createRoomData = (
+  roomType: string,
   imageOne: string, 
   imageTwo: string, 
   imageThree: string, 
@@ -135,6 +139,7 @@ export const createRoomData = (
   anotherRoomTwo: AnotherRoom,
   anotherRoomThree: AnotherRoom
 ): Room => ({
+  roomType,
   imageOne,
   imageTwo,
   imageThree,
@@ -148,6 +153,7 @@ export const createRoomData = (
 
 export const roomData: RoomData = {
   'deluxe-rooms': createRoomData(
+    'Deluxe Rooms',
     duluxeRoomsImage1,
     duluxeRoomsImage2,
     duluxeRoomsImage3,
@@ -188,6 +194,7 @@ Features of Our Deluxe Rooms:<br/>
     }
   ),
   'deluxe-heritage-rooms': createRoomData(
+    'Deluxe Heritage Rooms',
     deluxeHeritageRoomsImage1,
     deluxeHeritageRoomsImage2,
     deluxeHeritageRoomsImage3,
@@ -227,6 +234,7 @@ Features of Our Deluxe Rooms:<br/>
     }
   ),
   'classic-rooms': createRoomData(
+    'Classic Rooms',
     classicRoomsImage1,
     classicRoomsImage2,
     classicRoomsImage3,
@@ -268,6 +276,7 @@ This makes our Classic Rooms one of the top budget friendly homestays in Wayanad
     }
   ),
   'premium-rooms': createRoomData(
+    'Premium Rooms',
     premiumRoomsImage22,
     premiumRoomsImage11,
     premiumRoomsImage13,
