@@ -21,8 +21,6 @@ description: Discover the most romantic honeymoon destinations in Kerala, from
 ---
 ## Kerala Honeymoon Destinations
 
-Discover Incredible Savings on Summer Holiday Packages!
-
 Kerala known as the ‘God’s Own Country’ is one of the most important tourist destinations in India. With its lush green flora, diverse fauna, abundant natural resources and distinguished climate Kerala is home for a number of tourists across the world. Especially the picturesque peaks, lovely woods, the brimming water bodies and the pleasant climate makes Kerala one of the most important honeymoon destinations in India.
 
 Travelling together is the best way for the newlyweds to know each other well and to mark the onset of a new life together. Kerala is a melting pot which can offer you various experiences singlehandedly. Kerala has in its store:
@@ -51,8 +49,6 @@ Don’t Miss:
 * Lovely walk through the Bird Sanctuary
 * Small but spectacular Aruvikkuzhi Falls.
 
-
-
 ### Munnar, Idukki, Kerala
 
 Munnar is a pretty little hill station in the Western Ghat mountain ranges of Kerala. Famous for its misty peaks, tea estates and greenery, it is also known as the ‘Kashmir of South India’ The beautiful landscape and pleasant climate here provides you a ceaselessly cheerful experience. The couples can enjoy the rides through the winding paths of Munnar, marvel at the vast views of tea estates, walk together through the valleys and hike up the beautiful mountains together.
@@ -64,8 +60,6 @@ Munnar is a pretty little hill station in the Western Ghat mountain ranges of Ke
 * The mind blowing sight of the Attukal Waterfalls
 * Early morning visit to the beautiful Kundala Lake.
 
-
-
 ### Allepey, Kerala
 
 Allepey is a backwater town on the western coast of India. Famous for the backwaters, it is also called as the ‘Venice of the East’. A houseboat cruise through this backwater is a good choice for the couples to begin their new life. The green paddy fields and the tranquil village life gives you heart warming memories.
@@ -76,8 +70,6 @@ Allepey is a backwater town on the western coast of India. Famous for the backwa
 * The cuisine of Allepey
 * Sunset at Kuttanad
 * Some quiet time watching the deeply blue sea at Alappuzha Beach.
-
-
 
 ### Wayanad, Kerala
 
@@ -93,8 +85,6 @@ Wayanad with wide diversity of flora and fauna and extremely salubrious climate 
 
 Book [Best Homestay in Wayanad](https://www.kudajadridrizzle.com)
 
-
-
 ### Kovalam, Trivandrum, Kerala
 
 An ideal getaway for couples who are in love with beaches. As the one of the most pristine beaches of India you can enjoy the vast blue sea in front of you and engage in various games in the beach. The funfilled moments at the Kovalam Beach, view from the Light House, and cuisine from the restaurants in the beach will be everlasting memories for the couples.
@@ -105,8 +95,6 @@ An ideal getaway for couples who are in love with beaches. As the one of the mos
 * Food from the beach restaurants
 * Walk under the swaying coconut palms of Lighthouse Beach
 * The curio shops, and hawkers of Kashmiri and Tibetan products.
-
-
 
 ### Thekkady, Kerala
 
