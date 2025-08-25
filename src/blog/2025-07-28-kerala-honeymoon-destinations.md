@@ -36,6 +36,8 @@ Travelling together is the best way for the newlyweds to know each other well an
 
 Not only the newlyweds but also the couples who wish to cherish their romantic relationship can go for a second honeymoon and renew their vows. Kerala has got a bunch of places where couples can enjoy a happy and carefree honeymoon days. And here are some famous honeymoon destinations in Kerala.
 
+
+
 ## Honeymoon Hotspots In Kerala
 
 ### Kumarakom, Kerala
@@ -49,6 +51,8 @@ Don’t Miss:
 * Lovely walk through the Bird Sanctuary
 * Small but spectacular Aruvikkuzhi Falls.
 
+
+
 ### Munnar, Idukki, Kerala
 
 Munnar is a pretty little hill station in the Western Ghat mountain ranges of Kerala. Famous for its misty peaks, tea estates and greenery, it is also known as the ‘Kashmir of South India’ The beautiful landscape and pleasant climate here provides you a ceaselessly cheerful experience. The couples can enjoy the rides through the winding paths of Munnar, marvel at the vast views of tea estates, walk together through the valleys and hike up the beautiful mountains together.
@@ -60,6 +64,8 @@ Munnar is a pretty little hill station in the Western Ghat mountain ranges of Ke
 * The mind blowing sight of the Attukal Waterfalls
 * Early morning visit to the beautiful Kundala Lake.
 
+
+
 ### Allepey, Kerala
 
 Allepey is a backwater town on the western coast of India. Famous for the backwaters, it is also called as the ‘Venice of the East’. A houseboat cruise through this backwater is a good choice for the couples to begin their new life. The green paddy fields and the tranquil village life gives you heart warming memories.
@@ -70,6 +76,8 @@ Allepey is a backwater town on the western coast of India. Famous for the backwa
 * The cuisine of Allepey
 * Sunset at Kuttanad
 * Some quiet time watching the deeply blue sea at Alappuzha Beach.
+
+
 
 ### Wayanad, Kerala
 
@@ -83,7 +91,9 @@ Wayanad with wide diversity of flora and fauna and extremely salubrious climate 
 * To forget yourself among the fog filled tea plantations
 *
 
-Book [Best Homestay in Wayanad Now](https://www.kudajadridrizzle.com)
+Book [Best Homestay in Wayanad](https://www.kudajadridrizzle.com)
+
+
 
 ### Kovalam, Trivandrum, Kerala
 
@@ -96,6 +106,8 @@ An ideal getaway for couples who are in love with beaches. As the one of the mos
 * Walk under the swaying coconut palms of Lighthouse Beach
 * The curio shops, and hawkers of Kashmiri and Tibetan products.
 
+
+
 ### Thekkady, Kerala
 
 A small town in the outskirts of Periyar Wildlife Sanctuary. If you are looking to repose in the lap of nature, then Thekkady is a great choice for you. Filled with lush green forests and wildlife it offers you an escape from the polluted city life and a chance to be at the core of nature with your loved one.
@@ -105,6 +117,8 @@ A small town in the outskirts of Periyar Wildlife Sanctuary. If you are looking 
 * Boat ride in the Periyaar Lake
 * Bamboo rafting
 * Trekking through the forests and exploring the diverse fauna of the region.
+
+
 
 ### Kochi, Ernakulam, Kerala
 
@@ -116,6 +130,8 @@ Kochi being a port city and most populous metropolitan area in Kerala attracts c
 * Passing down the Jew Street wondering about the antiquity of the region,
 * An evening walk through the Marine drive
 * Cruise through the Arabian Sea.
+
+
 
 ### Marayoor, Idukki, Kerala
 
@@ -136,6 +152,8 @@ Don’t Miss
 * Boat ride
 * Lovely strolls down the beach
 * Fresh sea food
+
+
 
 ### Bekal Fort, Kasargod, Kerala
 
