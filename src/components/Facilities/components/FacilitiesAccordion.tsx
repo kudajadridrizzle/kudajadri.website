@@ -138,7 +138,7 @@ const FacilitiesAccordion = () => {
         {/* Image (Right) */}
         <div className="w-full h-full">
         <img
-            src="/images/1 (48).jpg"
+            src="/images/pool34.jpg"
             alt="Wayanad Homestay Facilities"
             className="w-full h-64 sm:h-80 lg:h-full rounded-xl shadow-lg object-cover"
           />

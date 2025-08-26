@@ -25,18 +25,18 @@ const FacilitiesSession = () => {
 {/* Right - 3 Image Grid */}
 <div className="grid grid-cols-2 grid-rows-2 gap-2 w-full h-full">
   <img
-    src="/images/1 (49).jpg"
+    src="/images/pool34.jpg"
     alt="Homestay swimming pool"
     className="w-full h-full object-cover col-span-2 row-span-1 rounded-[16px]"
   />
   <img
-    src="/images/1 (50).jpg"
+    src="/images/pool2.jpg"
     alt="Homestay room"
     className="w-full h-full object-cover rounded-[16px]"
   />
   <img
-    src="/images/1 (51).jpg"
-    alt="Homestay exterior"
+    src="/images/pool1.avif"
+    alt="Homestay "
     className="w-full h-full object-cover rounded-[16px]"
   />
 </div>
