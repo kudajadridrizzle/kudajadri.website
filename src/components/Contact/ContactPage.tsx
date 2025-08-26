@@ -87,11 +87,11 @@ export const ContactPage = () => {
         <div className="flex flex-col sm:gap-[90px] gap-7">
           <div className="flex flex-col items-center gap-6">
             <span className="text-[#000] font-albertSans tracking-[1.6px] text-base">
-              Contact Us
+              CONTACT US{' '}
             </span>
-            <span className="sm:text-[72px] text-[32px] text-[#000] font-staylista">
-              Experience Kudajadri
-            </span>
+            <h1 className="sm:text-[72px] text-[32px] text-[#000] font-staylista text-center">
+              Easy Online Booking of Wayanad Homestays & Cottages
+            </h1>
           </div>
         </div>
 
