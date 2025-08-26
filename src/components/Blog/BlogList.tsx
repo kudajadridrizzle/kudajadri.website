@@ -24,12 +24,14 @@ const BlogList: React.FC = () => {
             const content = await blogModules[path]();
             const slug = path.split('/').pop()?.replace('.md', '') || '';
             const post = parseBlogMarkdown(content as string, slug);
-            
+
             // Only include posts that are published and have required SEO fields
             if (post.published && post.metaTitle && post.metaDescription) {
               posts.push(post);
             } else {
-              console.warn(`Blog post ${slug} skipped: missing required fields or not published`);
+              console.warn(
+                `Blog post ${slug} skipped: missing required fields or not published`
+              );
             }
           } catch (error) {
             console.error(`Error parsing blog post ${path}:`, error);
@@ -62,7 +64,9 @@ const BlogList: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Wayanad Travel Blog: Latest News, Tourism Updates, & Insights</title>
+        <title>
+          Wayanad Travel Blog: Latest News, Tourism Updates, & Insights
+        </title>
         <meta
           name="description"
           content="Stay updated with the Wayanad Travel Blog. Get the latest news, tourism updates, local insights, travel tips, and experiences to help you plan your perfect trip."
@@ -104,12 +108,12 @@ const BlogList: React.FC = () => {
         <link rel="canonical" href={window.location.href} />
       </Helmet>
 
-      <Header />
+          <Header type="black" />
       <div className="min-h-screen bg-white">
         <div className="sm:px-[12%] sm:py-32 px-4 py-14 large:px-[18%]">
-          <h1 className="text-[32px] sm:text-[44px] font-ivy mb-8">Blog</h1>
-          <p className="text-secondary font-albertSans text-lg mb-12">
-            Discover stories, insights, and updates from Kudajadri
+          <h1 className="text-[32px] sm:text-[44px] font-ivy mb-8 text-center">Wayanad Travel Blog</h1>
+          <p className="text-secondary font-albertSans text-lg mb-12 text-center">
+          Explore Wayanad with our <strong>Wayanad Travel Blog</strong> , featuring travel tips, itineraries, and local insights. Discover the best accommodations, including homestays and heritage cottages, and learn about sightseeing, nature walks, and adventure activities. Perfect for families, couples, and solo travelers, the blog helps plan a memorable and enjoyable Wayanad trip.
           </p>
 
           {blogPosts.length === 0 ? (
@@ -120,7 +124,7 @@ const BlogList: React.FC = () => {
             </div>
           ) : (
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {blogPosts.map((post) => (
+              {blogPosts.map(post => (
                 <article
                   key={post.slug}
                   className="overflow-hidden transition-all duration-300 bg-white rounded-lg shadow-sm hover:shadow-md border border-gray-100"
