@@ -9,9 +9,9 @@ const Hero = () => {
       <div className="relative z-10">
         <Header />
         <div className="text-[#ffff] h-[100vh] px-1 flex flex-col items-center justify-end gap-2">
-          <div className="text-center font-staylista  mobile:text-[48px] sm:text-[72px]">
-            Feel at Home in Heritage
-          </div>
+          <h2 className="text-center font-staylista  mobile:text-[48px] sm:text-[72px]">
+            Facilities & Amenities at Kudajadri Drizzle Homestay
+          </h2>
           <div className="text-[#CACACA] text-xl mb-[120px] font-albertSans flex flex-col text-center">
             <span>
               Welcome to our 100-year-old Jain Tharavadu, where tradition meets

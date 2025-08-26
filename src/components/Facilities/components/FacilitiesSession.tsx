@@ -1,8 +1,8 @@
 const FacilitiesSession = () => {
   return (
-    <div className="flex flex-1 flex-col items-start sm:gap-4 grow basis-0 shrink-0 mobile:gap-4">
+    <div className="flex flex-1 flex-col items-start sm:gap-4 grow basis-0 shrink-0 gap-4 w-full px-4 sm:px-12 ">
       <h1 className="font-ivy sm:text-[44px] mobile:text-[32px]">
-        Facilities at Kudajadri Drizzle Homestay
+        Homestays in Wayanad with Swimming Pool{' '}
       </h1>
       <div className="flex flex-col gap-4 font-albertSans sm:text-xl mobile:text-base text-[#6E6E6E]">
         <span>

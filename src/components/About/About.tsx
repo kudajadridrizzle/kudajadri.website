@@ -23,17 +23,15 @@ interface FaqFrontMatterAttributes {
 const About = () => {
   const parsedFaq = fm<FaqFrontMatterAttributes>(aboutFaqRaw);
 
-  // Sample content for the ContentSection
   const contentItems = [
     {
-      image: 'images/heritage.jpg',
-      // title: 'Experience Kudajadri Drizzle – Your Kalpetta Homestay Retreat',
+      image: 'images/1 (1).jpg',
+      title: 'Nature and heritage at Kalpetta homestays',
       paragraph:
         'Whether for a family vacation, honeymoon, or solo trip, Kudajadri Drizzle offers a perfect combination of heritage, comfort, and natural beauty. Guests can relax, enjoy authentic cuisine, and immerse themselves in Wayanad’s culture. Book your stay at one of the most loved Kalpetta homestays for an unforgettable retreat surrounded by the tranquility of the Western Ghats, rich heritage, and warm hospitality. Kudajadri Drizzle is where nature, comfort, and culture meet to create a truly exceptional stay.',
-      imageAlt: 'Heritage and culture at our homestay',
+      imageAlt: 'Description of the image',
     },
   ];
-
   return (
     <div className="relative">
       <Header type="white" />
@@ -93,7 +91,10 @@ const About = () => {
       <ReviewSession />
       <GuestTestimonials />
       <RecognitionSession />
-      <ContentSection title="Experience Kudajadri Drizzle – Your Kalpetta Homestay Retreat" items={contentItems} />
+      <ContentSection
+        title="Experience Kudajadri Drizzle – Your Kalpetta Homestay Retreat"
+        items={contentItems}
+      />
       <FaqList {...parsedFaq.attributes} />
       <Footer />
     </div>

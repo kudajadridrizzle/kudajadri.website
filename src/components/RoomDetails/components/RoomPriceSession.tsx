@@ -45,9 +45,9 @@ export const RoomPriceSession = () => {
       </div>
       <div className="sm:px-6 sm:py-11 flex flex-col gap-5 sm:w-[358px]">
         <div className="flex flex-col gap-1">
-          <h2 className="text-primary font-albertSans text-2xl font-medium">
+          <span className="text-primary font-albertSans text-2xl font-medium">
             ₹{roomData.pricePerNight} night
-          </h2>
+          </span>
           <span className="text-secondary font-albertSans text-base">
             {roomData.priceNote}
           </span>
@@ -61,17 +61,17 @@ export const RoomPriceSession = () => {
           </span>
         </div>
         <div className="flex flex-col gap-2">
-          <h2 className="text-primary font-albertSans text-lg">
+          <span className="text-primary font-albertSans text-lg">
             {roomData.cancellationPolicyTitle}
-          </h2>
+          </span>
           <ul className="list-disc pl-5 space-y-2 text-secondary font-albertSans">
             {roomData.cancellationPolicy.map((rule, i) => (
               <li key={`cancel-${i}`}>{rule}</li>
             ))}
           </ul>
-          <h1 className="text-primary font-albertSans">
+          <span className="text-primary font-albertSans">
             {roomData.extraPerson.note}
-          </h1>
+          </span>
           <ul className="list-disc pl-5 space-y-2 text-secondary font-albertSans">
             {roomData.extraPerson.rules.map((rule, i) => (
               <li key={`extra-${i}`}>{rule}</li>

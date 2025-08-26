@@ -29,21 +29,20 @@ export const ContentCard = ({
     : paragraph;
 
   return (
-    <div className={`flex sm:flex-row mobile:flex-col gap-8 items-center ${className}`}>
-      {/* Image Section */}
-      <div className="sm:w-1/2 mobile:w-full">
+    <div className={`flex flex-col sm:flex-row gap-8 items-center ${className}`}>
+      <div className="sm:flex-1 w-full">
         <img 
           src={image} 
-          alt={imageAlt}
-          className="w-full h-[300px] object-cover rounded-lg shadow-lg"
+          alt={imageAlt} 
+          className="w-full h-auto object-cover rounded-lg"
         />
       </div>
-      
-      {/* Content Section */}
-      <div className="sm:w-1/2 mobile:w-full flex flex-col gap-4">
-        <h3 className="text-2xl font-ivy text-primary font-semibold">
-          {title}
-        </h3>
+      <div className="sm:flex-1 w-full">
+        {title && (
+          <h2 className="text-2xl font-ivy text-primary mb-4">
+            {title}
+          </h2>
+        )}
         <p className="text-gray-700 font-albertSans leading-relaxed">
           {displayText}
         </p>
