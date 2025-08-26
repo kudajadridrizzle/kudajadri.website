@@ -1,21 +1,57 @@
+"use client";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
 export const HeroSession = () => {
+  const fullText =
+    "Explore the beauty of Kudajadri Drizzle Homestay through our photos and video gallery. Each image captures the serene surroundings, lush greenery, and charming architecture of our property. From cozy heritage rooms to relaxing common areas, the gallery showcases every corner of this Wayanad homestay. Watch our videos to get a real feel of the ambiance, activities, and experiences awaiting you. See guests enjoying the swimming pool, nature walks, and recreational games, giving you a glimpse of a memorable stay. Our gallery is designed to help you visualize your stay and plan your visit to one of the best Wayanad homestays.";
+
+  const words = fullText.split(" ");
+  const shortText = words.slice(0, 40).join(" ") + "...";
+
+  const [expanded, setExpanded] = useState(false);
+
   return (
-    <div className="flex justify-center">
-      <div className="flex flex-col gap-6 w-[1065px]">
-        <h1 className="uppercase text-center font-albertSans text-base text-[000]">
+    <section className="w-full h-[vh] flex justify-center items-center px-4 sm:px-12">
+      <div className="flex flex-col items-center text-center max-w-5xl gap-6">
+        {/* Small Label */}
+        <span className="uppercase font-albertSans text-base tracking-wider text-[#000]">
           Gallery
+        </span>
+
+        {/* Heading */}
+        <h1 className="font-staylista text-[32px] sm:text-[72px] leading-tight">
+          Photo & Video Gallery of Kudajadri Drizzle Homestay
         </h1>
-        <h1 className="sm:text-[72px] font-staylista text-center text-[32px]">
-          Experience the Charm of Kudajadri Drizzle
-        </h1>
-        <p className="text-[#808080] sm:text-xl text-center font-albertSans">
-          Step into the world of Kudajadri Drizzle through our gallery, where
-          every picture tells a story of serenity, comfort, and tradition.
-          Nestled amidst the lush greenery of Wayanad, our 100-year-old Jain
-          Tharavadu offers a unique homestay experience that blends heritage
-          with modern comfort.
-        </p>
+
+        {/* Animated Description */}
+        <motion.div
+          layout
+          className="overflow-hidden"
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+        >
+          <AnimatePresence mode="wait">
+            <motion.p
+              key={expanded ? "full" : "short"}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.4 }}
+              className="text-[#6E6E6E] font-albertSans text-base sm:text-xl leading-relaxed"
+            >
+              {expanded ? fullText : shortText}
+            </motion.p>
+          </AnimatePresence>
+        </motion.div>
+
+        {/* Toggle Button */}
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className="text-[#000] font-semibold underline underline-offset-4 hover:text-gray-700 transition"
+        >
+          {expanded ? "Read Less" : "Read More"}
+        </button>
       </div>
-    </div>
+    </section>
   );
 };
