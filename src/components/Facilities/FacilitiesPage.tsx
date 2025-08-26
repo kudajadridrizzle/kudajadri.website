@@ -9,7 +9,6 @@ import ImageSession from './components/ImageSession';
 import ListSession from './components/ListSession';
 import facilitiesFaqRaw from '../../File/facilitiesfaqs.md?raw';
 import FaqList from '../FaqComponent/FaqList';
-import { useContentSection } from '../../hooks/useContentSection';
 import FacilitiesAccordion from './components/FacilitiesAccordion';
 
 // Define the shape of FAQ frontmatter
@@ -23,7 +22,6 @@ interface FaqFrontMatterAttributes {
 
 const FacilitiesPage = () => {
   const parsedFaq = fm<FaqFrontMatterAttributes>(facilitiesFaqRaw);
-  const contentSection = useContentSection('facilities');
 
   return (
     <div>
