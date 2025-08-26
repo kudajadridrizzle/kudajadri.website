@@ -5,7 +5,6 @@ import Direction from '../Home/components/Direction';
 import Footer from '../Home/components/Footer';
 import FacilitiesSession from './components/FacilitiesSession';
 import Hero from './components/Hero';
-import ImageSession from './components/ImageSession';
 import ListSession from './components/ListSession';
 import facilitiesFaqRaw from '../../File/facilitiesfaqs.md?raw';
 import FaqList from '../FaqComponent/FaqList';
@@ -86,7 +85,6 @@ const FacilitiesPage = () => {
 
       <div className="flex flex-col items-center self-stretch gap-16 bg-white mobile:p-4 sm:p-14 sm:flex-row 2xl:px-[18%] lg:px-[12%]">
         <FacilitiesSession />
-        <ImageSession />
       </div>
 
       <ListSession />
