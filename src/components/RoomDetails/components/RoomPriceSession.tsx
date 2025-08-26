@@ -1,21 +1,32 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { roomDataMap } from '../constants';
-import { Wifi, Tv, Shield, Gamepad2, Fan, Home, Refrigerator, Droplets } from 'lucide-react';
+import {
+  Wifi,
+  Tv,
+  Shield,
+  Gamepad2,
+  Fan,
+  Home,
+  Refrigerator,
+  Droplets,
+} from 'lucide-react';
 
 export const RoomPriceSession = () => {
   const navigate = useNavigate();
   const { id } = useParams(); // 'classic-rooms' etc.
   const roomData = roomDataMap[id || 'classic-rooms'];
-  
-  const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } = {
-    'Fridge': Refrigerator,
-    'WIFI': Wifi,
-    'TV': Tv,
-    'Iron': Droplets, // Using Droplets as a placeholder for Iron
+
+  const iconMap: {
+    [key: string]: React.ComponentType<{ className?: string }>;
+  } = {
+    Fridge: Refrigerator,
+    WIFI: Wifi,
+    TV: Tv,
+    Iron: Droplets, // Using Droplets as a placeholder for Iron
     'Window guards': Shield,
     'Board games': Gamepad2,
     'Portable fans': Fan,
-    'Essentials': Home,
+    Essentials: Home,
   };
   return (
     <div className="sm:px-[12%] sm:pb-32 flex mobile:flex-col sm:flex-row px-4 large:px-[18%]">
@@ -24,7 +35,9 @@ export const RoomPriceSession = () => {
           <h1 className="text-primary font-ivy mobile:text-[32px] sm:text-[44px]">
             {roomData.roomType}
           </h1>
-          <p className="text-secondary sm:text-xl font-albertSans">{roomData.description}</p>
+          <p className="text-secondary sm:text-xl font-albertSans">
+            {roomData.description}
+          </p>
         </div>
         <div className="flex flex-col sm:gap-12 mobile:gap-5">
           <h2 className="text-primary font-ivy sm:text-[32px] mobile:text-2xl">

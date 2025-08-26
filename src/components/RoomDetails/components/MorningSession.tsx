@@ -11,7 +11,7 @@ const MorningSession = ({ roomData }: MorningSessionProps) => {
         <h2 className="text-[#000] font-ivy sm:text-[44px] mobile:text-[32px]">
           {roomData.session.titile}
         </h2>
-        <div 
+        <div
           className="text-secondary sm:text-xl font-albertSans whitespace-pre-line"
           dangerouslySetInnerHTML={{ __html: roomData.session.subTitlestr }}
         />

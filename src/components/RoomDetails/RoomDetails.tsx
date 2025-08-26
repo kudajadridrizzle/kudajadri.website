@@ -194,7 +194,7 @@ const RoomDetails = () => {
       <RoomPriceSession />
       <MorningSession roomData={roomDataItem} />
       <SEOData roomType={roomDataItem.roomType} />
-      <AnotherRoomSession />
+      <AnotherRoomSession roomType={roomDataItem.roomType} />
       <FaqList {...parsedFaq.attributes} />
       <Footer />
     </div>
