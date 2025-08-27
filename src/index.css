@@ -3,6 +3,32 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Global link styles */
+a {
+  @apply transition-all duration-300 ease-in-out;
+  position: relative;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  color: inherit;
+  text-decoration-color: rgba(0, 0, 0, 0.2);
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  text-decoration-color: currentColor;
+}
+
+/* For dark mode support */
+.dark a {
+  text-decoration-color: rgba(255, 255, 255, 0.3);
+}
+
+.dark a:hover {
+  text-decoration-color: currentColor;
+}
+
 :root {
   --color-primary-color: rgba(41, 38, 38, 1);
   --color-secondary: rgba(128, 128, 128, 1);
