@@ -11,7 +11,7 @@ const tourImages = [
 
 export const TourPackages = () => {
   return (
-    <section className="w-full px-4 sm:px-12 lg:px-[12%] 2xl:px-[18%] py-12 sm:py-20">
+    <section className="w-full px-4 sm:px-12 lg:px-[18%] 2xl:px-[12%] py-12 sm:py-20">
       <div className="flex flex-col lg:flex-row gap-16">
         {/* Left: Text */}
         <div className="flex-1 flex flex-col gap-6">

@@ -9,6 +9,8 @@ import FaqList from '../FaqComponent/FaqList';
 import { ContentSection } from '../shared';
 import { useContentSection } from '../../hooks/useContentSection';
 import HeroContent from './components/HeroContent';
+import TourCategories from './components/TourCategories';
+
 
 // Define the shape of FAQ frontmatter
 interface FaqFrontMatterAttributes {
@@ -79,6 +81,7 @@ export const TourPackages = () => {
       <Hero />
       <HeroContent />
       <Packages />
+      <TourCategories/>
       <Direction />
 
       {contentSection && (
