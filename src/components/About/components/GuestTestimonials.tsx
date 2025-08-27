@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { FaQuoteLeft } from "react-icons/fa";
 
 const googleMapsUrl =
-  "https://www.google.com/maps/place/Kudajadri+Drizzle+Homestay/@11.6107,76.0829,17z"; // Replace with exact link to your Google reviews
+  "https://www.google.com/maps/place/Kudajadri+Drizzle+-+Best+Wayanad+Homestays/@11.6944682,76.0899646,17z/data=!4m11!3m10!1s0x3ba6752bf8e8c185:0x5bf951fa893c48b4!5m2!4m1!1i2!8m2!3d11.6944682!4d76.0925395!9m1!1b1!16s%2Fg%2F1ptwp6yd6?entry=ttu&g_ep=EgoyMDI1MDgyNC4wIKXMDSoASAFQAw%3D%3D"; // Replace with exact link to your Google reviews
 
 const testimonials = [
   {
