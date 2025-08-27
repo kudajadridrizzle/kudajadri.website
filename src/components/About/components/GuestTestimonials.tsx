@@ -1,25 +1,29 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaQuoteLeft } from "react-icons/fa";
 
 const googleMapsUrl =
-  "https://www.google.com/maps/place/Kudajadri+Drizzle+-+Best+Wayanad+Homestays/@11.6944682,76.0899646,17z/data=!4m11!3m10!1s0x3ba6752bf8e8c185:0x5bf951fa893c48b4!5m2!4m1!1i2!8m2!3d11.6944682!4d76.0925395!9m1!1b1!16s%2Fg%2F1ptwp6yd6?entry=ttu&g_ep=EgoyMDI1MDgyNC4wIKXMDSoASAFQAw%3D%3D"; // Replace with exact link to your Google reviews
+  "https://www.google.com/maps/place/Kudajadri+Drizzle+-+Best+Wayanad+Homestays/@11.6944682,76.0899646,17z/data=!4m11!3m10!1s0x3ba6752bf8e8c185:0x5bf951fa893c48b4!5m2!4m1!1i2!8m2!3d11.6944682!4d76.0925395!9m1!1b1!16s%2Fg%2F1ptwp6yd6?entry=ttu&g_ep=EgoyMDI1MDgyNC4wIKXMDSoASAFQAw%3D%3D";
 
 const testimonials = [
   {
-    text: "Home Away Homestay in Wayanad, Kerala. Veg Only food, quick booking, spotless rooms, and helpful directions from Vinoop. Guidance on sightseeing made our trip memorable. Thank you Vinoop and family!",
-    guest: "Narayan, Bangalore, India",
+    title: "Rejuvenating Experience in #1 Home Stay in Wayanad!",
+    text: "Here's the real 'Home stay'. You feel like you are at home and people around are taking care...making you feel at home. Thanks Vinoop, Ganesh uncle and family for making our stay pleasant and very comfortable. The location of Kudajadri Drizzles is ideal - almost at the center of Waynad district and easily you can reach the major attractions/tourist spots. Make sure you get route/directions from Vinoop. That would be better than just following the google maps.",
+    guest: "Ashok Karinghat, Bangalore, India",
   },
   {
-    text: "Rejuvenating Experience in #1 Home Stay in Wayanad! Truly homely vibes, caring hosts, and comfortable stay. Central location, easy access to attractions. Thanks Vinoop, Ganesh uncle, and family for warm hospitality.",
-    guest: "Guest",
-  },
-  {
-    text: "Cool Homestays for Family :) Kudajadri is the best homestay I’ve experienced. Stayed twice and always loved it! Clean, hygienic rooms, great food, and warm hospitality. Felt like family with Vinoop’s care.",
+    title: "Cool Homestays for Family :)",
+    text: "Kudajadri is the best homestay which I have seen so far. I have stayed here for two times and it was an awesome experience. The accommodation, Food and Hospitality you show are excellent. Also, maintained the well hygiene. Overall, I am extremely happy with the stay and would definitely love to suggest this homestay for my friends to have the splendid experience. Thanks Vinoop, Ganesh Uncle and Family for making our visit a more memorable and a comforting one. Hats off to your hospitality. We feel more like family with you. Appreciate your patience and care.",
     guest: "Anantha Acharya, Bangalore, India",
   },
   {
-    text: "Best Homestay in Wayanad! Loved it! Clean, hygienic, and full of Kerala delicacies. Vinoop and family pampered us throughout the stay. Care, warmth, and hospitality truly stood out. Highly recommended stay experience.",
-    guest: "Suma Vijay, Bangalore, India",
+    title: "Best Homestay in Wayanad! Loved It!",
+    text: "This place... we have fallen in love with. Truly! This homestay is clean and well maintained. Hygiene is given importance. Food is awesome with all the Kerala delicacies served as Breakfast or Dinner. Even the family members have inherited the characteristics of care, warmth, hospitality from their forefathers I felt. From the moment we had booked the homestay till the time we checked out and reached back home, we were constantly pampered with care by Owner Vinoop and his family.",
+    guest: "Uma Vijay, Bangalore, India",
+  },
+  {
+    title: "Best Homestay in Wayanad! Loved It!",
+    text: "This place... we have fallen in love with. Truly! This homestay is clean and well maintained. Hygiene is given importance. Food is awesome with all the Kerala delicacies served as Breakfast or Dinner. Even the family members have inherited the characteristics of care, warmth, hospitality from their forefathers I felt. From the moment we had booked the homestay till the time we checked out and reached back home, we were constantly pampered with care by Owner Vinoop and his family.",
+    guest: "Uma Vijay, Bangalore, India",
   },
 ];
 
@@ -32,6 +36,8 @@ const truncateWords = (text: string, wordLimit: number) => {
 
 const GuestTestimonials: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const [isPaused, setIsPaused] = useState(false);
 
   // Auto-scroll effect
   useEffect(() => {
@@ -39,19 +45,23 @@ const GuestTestimonials: React.FC = () => {
     if (!scrollContainer) return;
 
     const scroll = () => {
-      if (
-        scrollContainer.scrollLeft >=
-        scrollContainer.scrollWidth - scrollContainer.clientWidth
-      ) {
-        scrollContainer.scrollLeft = 0;
-      } else {
-        scrollContainer.scrollLeft += 0.5;
+      if (!isPaused) {
+        if (
+          scrollContainer.scrollLeft >=
+          scrollContainer.scrollWidth - scrollContainer.clientWidth
+        ) {
+          scrollContainer.scrollLeft = 0;
+        } else {
+          scrollContainer.scrollLeft += 0.5;
+        }
       }
     };
 
-    const interval = setInterval(scroll, 20);
-    return () => clearInterval(interval);
-  }, []);
+    intervalRef.current = setInterval(scroll, 20);
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [isPaused]);
 
   return (
     <section className="sm:py-32 sm:px-[12%] mobile:px-4 mobile:py-14 large:px-[18%] bg-gray-50">
@@ -69,6 +79,8 @@ const GuestTestimonials: React.FC = () => {
       <div
         ref={scrollRef}
         className="mt-12 flex gap-6 overflow-x-hidden pb-8"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
       >
         {testimonials.map((item, idx) => (
           <div
@@ -76,6 +88,9 @@ const GuestTestimonials: React.FC = () => {
             className="flex-shrink-0 w-[95%] sm:w-[50%] lg:w-[38%] xl:w-[30%] bg-white p-6 rounded-2xl border border-gray-200 shadow-sm"
           >
             <div className="flex flex-col h-full">
+              <h3 className="text-lg font-semibold text-primary mb-3">
+                {item.title}
+              </h3>
               <div className="flex-1">
                 <FaQuoteLeft className="text-primary text-2xl mb-4 opacity-70" />
                 <p className="text-secondary text-base leading-relaxed font-albertSans mb-4">
