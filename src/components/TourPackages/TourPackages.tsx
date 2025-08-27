@@ -8,6 +8,7 @@ import tourPackagesFaqRaw from '../../File/tourpackagesfaqs.md?raw';
 import FaqList from '../FaqComponent/FaqList';
 import { ContentSection } from '../shared';
 import { useContentSection } from '../../hooks/useContentSection';
+import HeroContent from './components/HeroContent';
 
 // Define the shape of FAQ frontmatter
 interface FaqFrontMatterAttributes {
@@ -76,19 +77,18 @@ export const TourPackages = () => {
       </Helmet>
 
       <Hero />
+      <HeroContent />
       <Packages />
       <Direction />
 
-      {/* Shared Content Section (centralized JSON) */}
       {contentSection && (
         <ContentSection
           title={contentSection.title}
           items={contentSection.items}
         />
       )}
-      {/* FAQ Section from CMS */}
-      <FaqList {...parsedFaq.attributes} />
 
+      <FaqList {...parsedFaq.attributes} />
       <Footer />
     </div>
   );
