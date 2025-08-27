@@ -71,7 +71,7 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
       <div className="flex items-end justify-center gap-24 sm:py-6 mobile:hidden sm:flex">
         <NavLink
           to="/"
-          className={`px-4 py-2 ${
+          className={`px-4 py-2 no-underline ${
             headerColor === 'white' ? 'text-[#FFF]' : 'text-primary'
           } font-albertSans`}
         >
@@ -79,7 +79,7 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
         </NavLink>
         <NavLink
           to="/about"
-          className={`px-4 py-2 ${
+          className={`px-4 py-2 no-underline ${
             headerColor === 'white' ? 'text-[#FFF]' : 'text-primary'
           } font-albertSans`}
         >
@@ -87,7 +87,7 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
         </NavLink>
         <NavLink
           to="/rooms"
-          className={`px-4 py-2 ${
+          className={`px-4 py-2 no-underline ${
             headerColor === 'white' ? 'text-[#FFF]' : 'text-primary'
           } font-albertSans`}
         >
@@ -104,7 +104,7 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
         </NavLink>
         <NavLink
           to="/facilities"
-          className={`px-4 py-2 ${
+          className={`px-4 py-2 no-underline ${
             headerColor === 'white' ? 'text-[#FFF]' : 'text-primary'
           } font-albertSans`}
         >
@@ -112,7 +112,7 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
         </NavLink>
         <NavLink
           to="/gallery"
-          className={`px-4 py-2 ${
+          className={`px-4 py-2 no-underline ${
             headerColor === 'white' ? 'text-[#FFF]' : 'text-primary'
           } font-albertSans`}
         >
@@ -120,7 +120,7 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
         </NavLink>
         <NavLink
           to="/contact"
-          className={`px-4 py-2 ${
+          className={`px-4 py-2 no-underline ${
             headerColor === 'white' ? 'text-[#FFF]' : 'text-primary'
           } font-albertSans`}
         >

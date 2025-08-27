@@ -36,7 +36,7 @@ const truncateWords = (text: string, wordLimit: number) => {
 
 const GuestTestimonials: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const intervalRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [isPaused, setIsPaused] = useState(false);
 
   // Auto-scroll effect
