@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 
 // Example images from /public/images
 const tourImages = [
