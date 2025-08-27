@@ -8,7 +8,6 @@ import { Helmet } from 'react-helmet-async';
 import fm from 'front-matter';
 import aboutFaqRaw from '../../File/aboutfaqs.md?raw';
 import FaqList from '../FaqComponent/FaqList';
-import GuestTestimonials from './components/GuestTestimonials';
 import { Header } from '../Home/components/Header';
 import Direction from '../Home/components/Direction';
 
@@ -97,7 +96,6 @@ const About = () => {
       <Hero />
       <AboutSession />
       <ReviewSession />
-      <GuestTestimonials />
       <RecognitionSession />
       <ContentSection
         title="Experience Kudajadri Drizzle – Your Kalpetta Homestay Retreat"

@@ -16,6 +16,8 @@ import FaqList from '../FaqComponent/FaqList';
 import { ContentSection } from '../shared';
 import { useContentSection } from '../../hooks/useContentSection';
 import CardSection from './components/CardSection';
+import GuestTestimonials from './components/GuestTestimonials';
+
 // Removed CardsSection in favor of ContentSection
 
 // Define the shape of FAQ frontmatter
@@ -98,6 +100,7 @@ const Home = () => {
       <Amenities />
       <OurGallery />
       <ReviewSession />
+      <GuestTestimonials />
       <LocationImage />
       <Direction />
       {contentSection && (

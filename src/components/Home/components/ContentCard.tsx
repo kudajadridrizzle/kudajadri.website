@@ -39,9 +39,9 @@ export const ContentCard = ({
       </div>
       <div className="sm:flex-1 w-full">
         {title && (
-          <h2 className="text-2xl font-ivy text-primary mb-4">
+          <h3 className="text-2xl font-ivy text-primary mb-4">
             {title}
-          </h2>
+          </h3>
         )}
         <p className="text-gray-700 font-albertSans leading-relaxed">
           {displayText}
