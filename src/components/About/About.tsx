@@ -10,6 +10,7 @@ import aboutFaqRaw from '../../File/aboutfaqs.md?raw';
 import FaqList from '../FaqComponent/FaqList';
 import GuestTestimonials from './components/GuestTestimonials';
 import { Header } from '../Home/components/Header';
+import Direction from '../Home/components/Direction';
 
 // Define the shape of FAQ frontmatter
 interface FaqFrontMatterAttributes {
@@ -32,6 +33,7 @@ const About = () => {
       imageAlt: 'Description of the image',
     },
   ];
+
   return (
     <div className="relative">
       <Header type="white" />
@@ -49,6 +51,8 @@ const About = () => {
         />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Kudajadri Homestay" />
+
+        {/* Open Graph Tags */}
         <meta
           property="og:title"
           content="Kalpetta Homestays: #1 Homestays in Kalpetta with Airbnb reviews"
@@ -67,6 +71,8 @@ const About = () => {
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+
+        {/* Twitter Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
@@ -81,6 +87,8 @@ const About = () => {
           name="twitter:image"
           content={`${window.location.origin}/aboutHero.jpg`}
         />
+
+        {/* Misc */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="canonical" href={window.location.href} />
@@ -94,6 +102,12 @@ const About = () => {
       <ContentSection
         title="Experience Kudajadri Drizzle – Your Kalpetta Homestay Retreat"
         items={contentItems}
+      />
+      <Direction
+        title="Kalpetta Homestays with Pools – How to Reach"
+        description="Reaching our Kudajadri Drizzle Wayanad Homestay is simple and hassle-free. The property is well-connected by road from Kozhikode, Bengaluru, and Mysuru, making travel convenient by car, taxi, or bus. Along the way, you’ll pass through scenic hills and lush plantations, offering a beautiful glimpse of Wayanad’s charm even before you arrive. The journey is smooth, pleasant, and sets the tone for a relaxing stay."
+        buttonText="View on Map"
+        showMap={true}
       />
       <FaqList {...parsedFaq.attributes} />
       <Footer />

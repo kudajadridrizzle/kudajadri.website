@@ -1,6 +1,5 @@
 import { Helmet } from 'react-helmet-async';
 import fm from 'front-matter';
-
 import Direction from '../Home/components/Direction';
 import Footer from '../Home/components/Footer';
 import FacilitiesSession from './components/FacilitiesSession';
@@ -82,21 +81,17 @@ const FacilitiesPage = () => {
       </Helmet>
 
       <Hero />
-
       <div className="flex flex-col items-center self-stretch gap-16 bg-white mobile:p-4 sm:p-14 sm:flex-row 2xl:px-[18%] lg:px-[12%]">
         <FacilitiesSession />
       </div>
-
       <ListSession />
-
+      <FacilitiesAccordion />
       <Direction
         title="Wayanad Homestays with Pools – How to Reach"
         description="Reaching our Kudajadri Drizzle Wayanad Homestay is simple and hassle-free. The property is well-connected by road from Kozhikode, Bengaluru, and Mysuru, making travel convenient by car, taxi, or bus. Along the way, you’ll pass through scenic hills and lush plantations, offering a beautiful glimpse of Wayanad’s charm even before you arrive. The journey is smooth, pleasant, and sets the tone for a relaxing stay."
         buttonText="View on Map"
         showMap={true}
       />
-      <FacilitiesAccordion />
-
       <FaqList {...parsedFaq.attributes} />
       <Footer />
     </div>

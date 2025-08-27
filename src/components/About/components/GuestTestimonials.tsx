@@ -1,36 +1,34 @@
 import React, { useEffect, useRef } from "react";
 import { FaQuoteLeft } from "react-icons/fa";
 
+const googleMapsUrl =
+  "https://www.google.com/maps/place/Kudajadri+Drizzle+Homestay/@11.6107,76.0829,17z"; // Replace with exact link to your Google reviews
+
 const testimonials = [
   {
-    text: "Kudajadri Drizzle was the most peaceful stay I've ever had. The surroundings were calm and serene, and the hospitality was exceptional.",
-    guest: "Anjali R.",
+    text: "Home Away Homestay in Wayanad, Kerala. Veg Only food, quick booking, spotless rooms, and helpful directions from Vinoop. Guidance on sightseeing made our trip memorable. Thank you Vinoop and family!",
+    guest: "Narayan, Bangalore, India",
   },
   {
-    text: "The authentic cultural experiences and personal attention to detail made our stay truly special. The food was absolutely delicious!",
-    guest: "Rajesh K.",
+    text: "Rejuvenating Experience in #1 Home Stay in Wayanad! Truly homely vibes, caring hosts, and comfortable stay. Central location, easy access to attractions. Thanks Vinoop, Ganesh uncle, and family for warm hospitality.",
+    guest: "Guest",
   },
   {
-    text: "The homely feel, scenic views, and immersive Kerala experiences made our trip unforgettable. Can't wait to visit again!",
-    guest: "Meera S.",
+    text: "Cool Homestays for Family :) Kudajadri is the best homestay I’ve experienced. Stayed twice and always loved it! Clean, hygienic rooms, great food, and warm hospitality. Felt like family with Vinoop’s care.",
+    guest: "Anantha Acharya, Bangalore, India",
   },
   {
-    text: "The perfect blend of comfort and nature. Waking up to the misty mountains was a dream come true. Highly recommended!",
-    guest: "Vikram P.",
-  },
-  {
-    text: "The perfect blend of comfort and nature. Waking up to the misty mountains was a dream come true. Highly recommended!",
-    guest: "Vikram P.",
-  },
-  {
-    text: "The perfect blend of comfort and nature. Waking up to the misty mountains was a dream come true. Highly recommended!",
-    guest: "Vikram P.",
-  },
-  {
-    text: "The perfect blend of comfort and nature. Waking up to the misty mountains was a dream come true. Highly recommended!",
-    guest: "Vikram P.",
+    text: "Best Homestay in Wayanad! Loved it! Clean, hygienic, and full of Kerala delicacies. Vinoop and family pampered us throughout the stay. Care, warmth, and hospitality truly stood out. Highly recommended stay experience.",
+    guest: "Suma Vijay, Bangalore, India",
   },
 ];
+
+const truncateWords = (text: string, wordLimit: number) => {
+  const words = text.split(" ");
+  return words.length > wordLimit
+    ? words.slice(0, wordLimit).join(" ") + "..."
+    : text;
+};
 
 const GuestTestimonials: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -41,7 +39,10 @@ const GuestTestimonials: React.FC = () => {
     if (!scrollContainer) return;
 
     const scroll = () => {
-      if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
+      if (
+        scrollContainer.scrollLeft >=
+        scrollContainer.scrollWidth - scrollContainer.clientWidth
+      ) {
         scrollContainer.scrollLeft = 0;
       } else {
         scrollContainer.scrollLeft += 0.5;
@@ -56,28 +57,38 @@ const GuestTestimonials: React.FC = () => {
     <section className="sm:py-32 sm:px-[12%] mobile:px-4 mobile:py-14 large:px-[18%] bg-gray-50">
       <div className="flex flex-col gap-6 items-center">
         <h2 className="text-primary font-ivy sm:text-[44px] mobile:text-[32px] font-normal text-center">
-        Guest Testimonials – What Visitors Say
+          Guest Testimonials – What Visitors Say
         </h2>
         <p className="sm:text-xl text-secondary text-center font-albertSans max-w-4xl">
-        Many travelers consider Kudajadri Drizzle among the best Kalpetta homestays. Guests highlight the serene surroundings, authentic cultural experiences, and personal attention that makes each visit memorable. Our reviews often mention the homely feel, scenic views, and immersive Kerala experiences. Reading guest testimonials can help new visitors understand why Kudajadri Drizzle stands out among other homestays in Kalpetta.
+          Many travelers consider Kudajadri Drizzle among the best Kalpetta homestays. 
+          Guests highlight serene surroundings, authentic cultural experiences, and personal 
+          attention that makes each visit memorable.
         </p>
       </div>
 
-      <div 
+      <div
         ref={scrollRef}
-        className="mt-12 flex gap-6 overflow-x-hidden pb-8 -mx-4 px-4"
+        className="mt-12 flex gap-6 overflow-x-hidden pb-8"
       >
         {testimonials.map((item, idx) => (
           <div
             key={idx}
-            className="flex-shrink-0 w-[90%] sm:w-[45%] lg:w-[30%] xl:w-[23%] bg-white p-6 rounded-2xl border border-gray-200"
+            className="flex-shrink-0 w-[95%] sm:w-[50%] lg:w-[38%] xl:w-[30%] bg-white p-6 rounded-2xl border border-gray-200 shadow-sm"
           >
             <div className="flex flex-col h-full">
               <div className="flex-1">
                 <FaQuoteLeft className="text-primary text-2xl mb-4 opacity-70" />
-                <p className="text-secondary text-base leading-relaxed font-albertSans mb-6">
-                  {item.text}
+                <p className="text-secondary text-base leading-relaxed font-albertSans mb-4">
+                  {truncateWords(item.text, 30)}
                 </p>
+                <a
+                  href={googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary text-sm font-medium hover:underline"
+                >
+                  Read more →
+                </a>
               </div>
               <div className="mt-auto pt-4 border-t border-gray-100">
                 <p className="font-medium text-primary">{item.guest}</p>
