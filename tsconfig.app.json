@@ -23,7 +23,7 @@
     "noUncheckedSideEffectImports": true,
 
     /* Environment */
-    "types": [],
+    "types": ["node"],
     "resolveJsonModule": true,
     "esModuleInterop": true
   },
