@@ -1,5 +1,5 @@
 const ROOMS = [
-  'Specious Rooms',
+  'Spacious Rooms',
   'Shared Rooms',
   'Heritage Rooms',
   'Kitchen Access',
@@ -9,21 +9,21 @@ const AMENITIES = [
   'Hot Water',
   'Power Backup',
   'Free Wifi',
-  'Varadaahs',
+  'Verandahs',
   'Private Parking',
   'Indoor Games',
   'CCTV Security',
   'Rainwater Supply',
   'Common Pool',
-  'Campfire Setups',
-  'Kids Play Area',
+  'Campfire Setup',
+  'Kids’ Play Area',
   'Organic Garden',
   'Nature Walks',
-  'House Keeping',
+  'Housekeeping',
   'Laundry',
-  'Pick-up',
-  'Drop-off',
-  'Local Guidence',
+  'Pick-up Service',
+  'Drop-off Service',
+  'Local Guidance',
   'Tourist Access',
 ];
 
@@ -31,7 +31,7 @@ const DINING = ['Kerala Cuisine', 'Home Meals'];
 
 const EXPERIENCES = ['Nature Walks', 'Wildlife Spotting', 'Local Hosts'];
 
-const SERVICES = ['Housekeeping', 'Laundry', 'Pick-up', 'Drop-off'];
+const SERVICES = ['Housekeeping', 'Laundry', 'Pick-up Service', 'Drop-off Service'];
 
 const SUSTAINABILITY = ['Composting', 'Organic Garden'];
 
@@ -40,7 +40,7 @@ const ListSession = () => {
     <div className="flex mobile:p-4 mx-4 sm:p-20 flex-col sm:flex-row flex-wrap gap-4 justify-between items-start self-stretch bg-white">
       <div className="flex flex-col items-start gap-3">
         <h2 className="text-2xl font-ivy">Room Options</h2>
-        <ul className="list-disc pl-6" >
+        <ul className="list-disc pl-6">
           {ROOMS.map(room => (
             <li
               className="[&::marker]:text-xs text-2xl leading-[43.2px]"
