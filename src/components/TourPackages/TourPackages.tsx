@@ -6,8 +6,6 @@ import { Helmet } from 'react-helmet-async';
 import fm from 'front-matter';
 import tourPackagesFaqRaw from '../../File/tourpackagesfaqs.md?raw';
 import FaqList from '../FaqComponent/FaqList';
-import { ContentSection } from '../shared';
-import { useContentSection } from '../../hooks/useContentSection';
 import HeroContent from './components/HeroContent';
 import TourCategories from './components/TourCategories';
 
@@ -22,7 +20,6 @@ interface FaqFrontMatterAttributes {
 
 export const TourPackages = () => {
   const parsedFaq = fm<FaqFrontMatterAttributes>(tourPackagesFaqRaw);
-  const contentSection = useContentSection('tourpackages');
 
   return (
     <div>
