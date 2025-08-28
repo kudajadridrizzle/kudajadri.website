@@ -11,7 +11,7 @@ seo:
   ogImage: /aboutHero.jpg
 hero:
   backgroundImage: /images/5a8a9701-1-.jpg
-  title: Designed by nature,
+  title: Best Wayanad Accommodation Homestay Rooms
   subtitle: Sumptuously.
   overlayOpacity: 0.6
 roomsIntro:

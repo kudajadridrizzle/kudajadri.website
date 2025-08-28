@@ -78,14 +78,14 @@ const Footer = () => {
               Quick Links
             </span>
             <div className="text-secondary font-albertSans sm:text-xl flex flex-col gap-2">
-              <Link to="/about">About Us</Link>
-              <Link to="/rooms">Rooms</Link>
-              <Link to="/gallery">Gallery</Link>
-              <Link to="/wayanad">Wayanad</Link>
-              <Link to="/facilities">Facilities</Link>
-              <Link to="/contact">Contact Us</Link>
-              <Link to="/blog">Blog</Link>
-              <Link to="/tour-packages">Wayanad Tour Packages</Link>
+              <Link to="/about" className="no-underline hover:underline">About Us</Link>
+              <Link to="/rooms" className="no-underline hover:underline">Rooms</Link>
+              <Link to="/gallery" className="no-underline hover:underline">Gallery</Link>
+              <Link to="/wayanad" className="no-underline hover:underline">Wayanad</Link>
+              <Link to="/facilities" className="no-underline hover:underline">Facilities</Link>
+              <Link to="/contact" className="no-underline hover:underline">Contact Us</Link>
+              <Link to="/blog" className="no-underline hover:underline">Blog</Link>
+              <Link to="/tour-packages" className="no-underline hover:underline">Wayanad Tour Packages</Link>
             </div>
           </div>
 
@@ -95,16 +95,16 @@ const Footer = () => {
               Important Links
             </span>
             <div className="text-secondary font-albertSans sm:text-xl flex flex-col gap-2">
-              <Link to="/">Wayanad Homestays</Link>
-              <Link to="/about">Kalpetta Homestays</Link>
-              <Link to="/contact">Wayanad Homestay Bookings</Link>
-              <Link to="/facilities">Homestay with Swimming Pool</Link>
-              <Link to="/gallery">Homestay in Wayanad Photos</Link>
-              <Link to="/rooms">Wayanad Accommodations</Link>
-              <Link to="/rooms/premium-rooms">
+              <Link to="/" className="no-underline hover:underline">Wayanad Homestays</Link>
+              <Link to="/about" className="no-underline hover:underline">Kalpetta Homestays</Link>
+              <Link to="/contact" className="no-underline hover:underline">Wayanad Homestay Bookings</Link>
+              <Link to="/facilities" className="no-underline hover:underline">Homestay with Swimming Pool</Link>
+              <Link to="/gallery" className="no-underline hover:underline">Homestay in Wayanad Photos</Link>
+              <Link to="/rooms" className="no-underline hover:underline">Wayanad Accommodations</Link>
+              <Link to="/rooms/premium-rooms" className="no-underline hover:underline">
                 Premium Homestays in Wayanad
               </Link>
-              <Link to="/rooms/deluxe-heritage-rooms">
+              <Link to="/rooms/deluxe-heritage-rooms" className="no-underline hover:underline">
                 Heritage Homestays in Wayanad
               </Link>
             </div>
@@ -116,15 +116,15 @@ const Footer = () => {
               Room & Tariff
             </span>
             <div className="text-secondary font-albertSans sm:text-xl flex flex-col gap-2">
-              <Link to="/rooms/classic-rooms">Classic Rooms</Link>
-              <Link to="/rooms/deluxe-rooms">Deluxe Rooms</Link>
-              <Link to="/rooms/deluxe-heritage-rooms">
+              <Link to="/rooms/classic-rooms" className="no-underline hover:underline">Classic Rooms</Link>
+              <Link to="/rooms/deluxe-rooms" className="no-underline hover:underline">Deluxe Rooms</Link>
+              <Link to="/rooms/deluxe-heritage-rooms" className="no-underline hover:underline">
                 Deluxe Heritage Rooms
               </Link>
-              <Link to="/rooms/premium-rooms">Premium Rooms</Link>
-              <Link to="/contact">Book Rooms in Wayanad</Link>
-              <Link to="/rooms/deluxe-rooms">Wayanad Cottage</Link>
-              <Link to="/rooms/premium-rooms">Luxury Wayanad Homestays</Link>
+              <Link to="/rooms/premium-rooms" className="no-underline hover:underline">Premium Rooms</Link>
+              <Link to="/contact" className="no-underline hover:underline">Book Rooms in Wayanad</Link>
+              <Link to="/rooms/deluxe-rooms" className="no-underline hover:underline">Wayanad Cottage</Link>
+              <Link to="/rooms/premium-rooms" className="no-underline hover:underline">Luxury Wayanad Homestays</Link>
             </div>
           </div>
         </div>

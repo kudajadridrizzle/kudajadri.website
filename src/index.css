@@ -7,24 +7,18 @@
 a {
   @apply transition-all duration-300 ease-in-out;
   position: relative;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
+  text-decoration: none;
   color: inherit;
-  text-decoration-color: rgba(0, 0, 0, 0.2);
 }
 
 a:hover {
-  text-decoration-thickness: 2px;
+  text-decoration: underline;
   text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
   text-decoration-color: currentColor;
 }
 
-/* For dark mode support */
-.dark a {
-  text-decoration-color: rgba(255, 255, 255, 0.3);
-}
-
+/* For dark mode */
 .dark a:hover {
   text-decoration-color: currentColor;
 }

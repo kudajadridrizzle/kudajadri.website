@@ -11,7 +11,6 @@ import { useContentSection } from '../../hooks/useContentSection';
 import HeroContent from './components/HeroContent';
 import TourCategories from './components/TourCategories';
 
-
 // Define the shape of FAQ frontmatter
 interface FaqFrontMatterAttributes {
   title: string;
@@ -81,15 +80,8 @@ export const TourPackages = () => {
       <Hero />
       <HeroContent />
       <Packages />
-      <TourCategories/>
+      <TourCategories />
       <Direction />
-
-      {contentSection && (
-        <ContentSection
-          title={contentSection.title}
-          items={contentSection.items}
-        />
-      )}
 
       <FaqList {...parsedFaq.attributes} />
       <Footer />

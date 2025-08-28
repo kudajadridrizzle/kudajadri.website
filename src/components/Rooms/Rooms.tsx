@@ -48,8 +48,7 @@ const Rooms = () => {
       <CMSHero
         backgroundImage={hero.backgroundImage}
         title={hero.title}
-        subtitle={hero.subtitle}
-        overlayOpacity={hero.overlayOpacity}
+        overlayOpacity={0.6}
       />
 
       <CMSRoomSession

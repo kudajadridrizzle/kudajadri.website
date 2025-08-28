@@ -90,7 +90,7 @@ export const ContactPage = () => {
               CONTACT US{' '}
             </span>
             <h1 className="sm:text-[72px] text-[32px] text-[#000] font-staylista text-center">
-              Easy Online Booking of Wayanad Homestays & Cottages
+              Online Booking of Wayanad Homestays & Cottages
             </h1>
           </div>
         </div>
