@@ -22,7 +22,10 @@ const BlogList: React.FC = () => {
         for (const path in blogModules) {
           try {
             const content = await blogModules[path]();
-            const slug = path.split('/').pop()?.replace('.md', '') || '';
+            // Extract just the slug part (remove date prefix and .md extension)
+            const fullSlug = path.split('/').pop()?.replace('.md', '') || '';
+            // Remove date prefix (format: YYYY-MM-DD-)
+            const slug = fullSlug.replace(/^\d{4}-\d{2}-\d{2}-/, '');
             const post = parseBlogMarkdown(content as string, slug);
 
             // Only include posts that are published and have required SEO fields

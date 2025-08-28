@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { BlogPost, parseBlogMarkdown } from '../../helper/blogParser';
 import { Header } from '../Home/components/Header';
 import { Helmet } from 'react-helmet-async';
+import Footer from '../Home/components/Footer';
 
 const BlogDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -19,8 +20,29 @@ const BlogDetail: React.FC = () => {
       }
 
       try {
-        const content = await import(`../../blog/${slug}.md?raw`);
-        const post = parseBlogMarkdown(content.default, slug);
+        // Import all blog posts and find the one with matching slug
+        const blogModules = import.meta.glob('../../blog/*.md', {
+          query: '?raw',
+          import: 'default',
+        });
+
+        let foundPost: BlogPost | null = null;
+        
+        for (const path in blogModules) {
+          // Extract the slug part from the filename (remove date prefix and .md extension)
+          const pathSlug = path.split('/').pop()?.replace(/.md$/, '').replace(/^\d{4}-\d{2}-\d{2}-/, '');
+          if (pathSlug === slug) {
+            const content = await blogModules[path]();
+            foundPost = parseBlogMarkdown(content as string, slug);
+            break;
+          }
+        }
+
+        if (!foundPost) {
+          throw new Error('Blog post not found');
+        }
+
+        const post = foundPost;
 
         if (!post.published) {
           setError('Blog post not found or not published');
@@ -185,6 +207,7 @@ const BlogDetail: React.FC = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
