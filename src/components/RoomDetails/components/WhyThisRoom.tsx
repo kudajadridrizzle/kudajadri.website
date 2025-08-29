@@ -2,8 +2,24 @@
 import ReactMarkdown from "react-markdown";
 import { useLocation } from "react-router-dom";
 
+// Types
+type RoomData = {
+  title: string;
+  description: string;
+  images: string[];
+};
+
+type RoomContents = {
+  [key: string]: RoomData;
+} & {
+  "classic-rooms": RoomData;
+  "premium-rooms": RoomData;
+  "deluxe-heritage-rooms": RoomData;
+  "deluxe-rooms": RoomData;
+};
+
 // Room contents
-const roomContents = {
+const roomContents: RoomContents = {
   "classic-rooms": {
     title: "Classic Rooms",
     description: `
@@ -92,7 +108,7 @@ Staying in our **cottages in Wayanad** gives you more than just a room; it’s a
 const WhyThisRoom = () => {
   const location = useLocation();
   const path = location.pathname.split("/").pop() || "";
-  const room = roomContents[path];
+  const room = (roomContents as RoomContents)[path as keyof RoomContents];
 
   if (!room)
     return (

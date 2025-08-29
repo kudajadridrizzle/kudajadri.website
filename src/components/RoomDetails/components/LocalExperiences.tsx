@@ -148,7 +148,7 @@ const RoomExperiences = () => {
 
         {/* Right: Image Grid */}
         <div className="grid grid-cols-2 grid-rows-2 gap-4">
-          {room.images.map((img, idx) => (
+          {room.images.map((img: string, idx: number) => (
             <img
               key={idx}
               src={img}
