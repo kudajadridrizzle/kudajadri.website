@@ -15,6 +15,7 @@ import { WayanadPage } from './components/Wayanad/wayanadPage';
 import BlogList from './components/Blog/BlogList';
 import BlogDetail from './components/Blog/BlogDetail';
 import TourPackagesDetails from './components/TourPackages/TourPackagesDetails';
+import NotFound from './pages/NotFound';
 
 const App = () => {
   return (
@@ -36,6 +37,8 @@ const App = () => {
         <Route path="/wayanad" element={<WayanadPage />} />
         <Route path="/blog" element={<BlogList />} />
         <Route path="/blog/:slug" element={<BlogDetail />} />
+        {/* 404 - Catch all route */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );

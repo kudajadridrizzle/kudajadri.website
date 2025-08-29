@@ -1,12 +1,12 @@
-"use client";
-
+'use client';
+import { Link } from 'react-router-dom';
 
 // Example images from /public/images
 const tourImages = [
-  "/images/1 (1).jpg",
-  "/images/1 (2).jpg",
-  "/images/1 (3).jpg",
-  "/images/1 (4).jpg",
+  '/images/1 (1).jpg',
+  '/images/1 (2).jpg',
+  '/images/1 (3).jpg',
+  '/images/1 (4).jpg',
 ];
 
 export const TourPackages = () => {
@@ -29,22 +29,44 @@ export const TourPackages = () => {
           {/* Content */}
           <div className="flex flex-col gap-4 text-secondary font-albertSans text-base sm:text-lg leading-relaxed">
             <p>
-              Explore Wayanad like never before with our specially designed tour packages. Whether you are seeking adventure, relaxation, or cultural experiences, our packages cater to every traveler’s needs.
+              Explore{' '}
+              <Link to="/wayanad" className="text-primary underline">
+                Wayanad
+              </Link>{' '}
+              like never before with our specially designed tour packages.
+              Whether you are seeking adventure, relaxation, or cultural
+              experiences, our packages cater to every traveler’s needs.
             </p>
-
             <p>
-              Our tours include comfortable Wayanad accommodations and authentic Wayanad homestays, ensuring a cozy and memorable stay. Activities cover:
+              Our tours include comfortable{' '}
+              <Link to="/rooms">Wayanad accommodations</Link> and{' '}
+              <Link to="/">authentic Wayanad homestays</Link>, ensuring a cozy
+              and memorable stay. Activities cover:
             </p>
 
             <ul className="list-disc list-inside space-y-2">
-              <li><strong>Nature & Adventure Tours</strong> – Trekking, wildlife safaris, and plantation walks.</li>
-              <li><strong>Family-Friendly Tours</strong> – Scenic spots, kid-friendly activities, and comfortable stays.</li>
-              <li><strong>Heritage & Cultural Tours</strong> – Temples, historical sites, and local traditions.</li>
-              <li><strong>Romantic Getaways</strong> – Peaceful locations, cozy stays, and serene experiences for couples.</li>
+              <li>
+                <strong>Nature & Adventure Tours</strong> – Trekking, wildlife
+                safaris, and plantation walks.
+              </li>
+              <li>
+                <strong>Family-Friendly Tours</strong> – Scenic spots,
+                kid-friendly activities, and comfortable stays.
+              </li>
+              <li>
+                <strong>Heritage & Cultural Tours</strong> – Temples, historical
+                sites, and local traditions.
+              </li>
+              <li>
+                <strong>Romantic Getaways</strong> – Peaceful locations, cozy
+                stays, and serene experiences for couples.
+              </li>
             </ul>
 
             <p>
-              All tours include accommodation, local transportation, and guided experiences. Enjoy the best of waterfalls, wildlife, and lush landscapes without any hassle.
+              All tours include accommodation, local transportation, and guided
+              experiences. Enjoy the best of waterfalls, wildlife, and lush
+              landscapes without any hassle.
             </p>
 
             <p>
