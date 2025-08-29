@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
+
 const facilities = [
   {
     title: 'Relax and Refresh at the Swimming Pool',
