@@ -4,7 +4,7 @@ import leafTwo from '../../assets/ReviwLeaf2.svg';
 interface ReviewSectionProps {
   rating?: string;
   title: string;
-  description: string;
+  description: React.ReactNode;
   showButton?: boolean;
   className?: string;
   children?: React.ReactNode;
