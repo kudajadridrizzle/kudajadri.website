@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Footer from '../Home/components/Footer';
 import FaqList from '../FaqComponent/FaqList';
@@ -6,9 +7,26 @@ import CMSHero from './Components/CMSHero';
 import CMSRoomSession from './Components/CMSRoomSession';
 import CMSIndividualRooms from './Components/CMSIndividualRooms';
 import { Header } from '../Home/components/Header';
+import { Button } from '../ui/button';
 
 const Rooms = () => {
   const { seo, hero, roomsIntro, individualRooms, faq } = useRoomsCMS();
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedIntro, setEditedIntro] = useState(roomsIntro);
+
+  const handleIntroChange = (content: string) => {
+    setEditedIntro(prev => ({
+      ...prev,
+      content
+    }));
+  };
+
+  const handleSave = () => {
+    // Here you would typically save the content to your CMS/backend
+    console.log('Saving content:', editedIntro);
+    setIsEditing(false);
+    // Add API call to save the content
+  };
 
   return (
     <div className="relative">
@@ -51,10 +69,44 @@ const Rooms = () => {
         overlayOpacity={0.6}
       />
 
-      <CMSRoomSession
-        heading={roomsIntro.heading}
-        content={roomsIntro.content}
-      />
+      <div className="relative">
+        {isEditing && (
+          <div className="fixed top-4 right-4 z-50 flex gap-2">
+            <Button 
+              onClick={() => setIsEditing(false)}
+              variant="outline"
+              className="bg-white hover:bg-gray-100"
+            >
+              Cancel
+            </Button>
+            <Button 
+              onClick={handleSave}
+              className="bg-primary hover:bg-primary/90"
+            >
+              Save Changes
+            </Button>
+          </div>
+        )}
+        
+        <CMSRoomSession
+          heading={editedIntro.heading}
+          content={editedIntro.content}
+          isEditing={isEditing}
+          onContentChange={handleIntroChange}
+        />
+
+        {!isEditing && (
+          <div className="text-center my-8">
+            <Button 
+              onClick={() => setIsEditing(true)}
+              variant="outline"
+              className="border-primary text-primary hover:bg-primary/10"
+            >
+              Edit Content
+            </Button>
+          </div>
+        )}
+      </div>
 
       <CMSIndividualRooms rooms={individualRooms} />
 

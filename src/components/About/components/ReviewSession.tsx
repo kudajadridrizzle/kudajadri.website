@@ -5,7 +5,11 @@ const ReviewSession = () => {
     <ReviewSection 
       rating="4.8"
       title="Why Guests Love Our Homestay in Kalpetta"
-      description="Our guests consistently praise Kudajadri Drizzle for its warm hospitality, serene ambiance, and personalized attention. Highly rated among Kalpetta homestays, we are known for creating a welcoming and memorable environment. Visitors appreciate the heritage architecture, scenic surroundings, and calm atmosphere, making each stay unique and special. Staying at our home stays in Kalpetta leaves guests with unforgettable memories and a desire to return."
+      description={
+        <>
+          Our guests consistently praise Kudajadri Drizzle for its warm hospitality, serene ambiance, and personalized attention. Highly rated among Kalpetta homestays, we are known for creating a welcoming and memorable environment. Visitors appreciate the heritage architecture, scenic surroundings, and calm atmosphere, making each stay unique and special. Staying at our <strong>home stays in Kalpetta</strong> leaves guests with unforgettable memories and a desire to return.
+        </>
+      }
     >
       {/* <div className="grid md:grid-cols-3 gap-8 w-full">
         <div className="bg-white p-6 rounded-lg shadow-md">
