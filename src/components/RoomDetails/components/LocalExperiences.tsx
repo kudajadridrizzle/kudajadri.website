@@ -1,10 +1,20 @@
 'use client';
-import React from 'react';
 import { useLocation } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 
+// Define types for room experiences
+type RoomExperience = {
+  title: string;
+  description: string;
+  images: string[];
+};
+
+type RoomExperiences = {
+  [key: string]: RoomExperience;
+};
+
 // Room experiences content
-const roomExperiences = {
+const roomExperiences: RoomExperiences = {
   'classic-rooms': {
     title: 'Local Experiences Around Our Budget Friendly Homestays in Wayanad',
     description: `
@@ -104,7 +114,7 @@ Booking one of our **Wayanad cottages** places you close to all the major attrac
 const RoomExperiences = () => {
   const location = useLocation();
   const path = location.pathname.split('/').pop() || '';
-  const room = roomExperiences[path];
+  const room = path in roomExperiences ? roomExperiences[path] : null;
 
   if (!room)
     return (

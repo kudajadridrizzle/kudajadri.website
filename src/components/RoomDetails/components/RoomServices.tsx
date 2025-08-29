@@ -1,9 +1,18 @@
 'use client';
-import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { useLocation } from 'react-router-dom';
 
-const roomServicesContents = {
+// Define types for room services
+type RoomService = {
+  title: string;
+  description: string;
+};
+
+type RoomServices = {
+  [key: string]: RoomService;
+};
+
+const roomServicesContents: RoomServices = {
   "classic-rooms": {
     title: "Facilities at Our Affordable Homestay in Wayanad",
     description: `
@@ -80,7 +89,7 @@ Our Deluxe Rooms provide a perfect mix of modern comfort and rustic charm. The i
 const RoomServices: React.FC = () => {
   const location = useLocation();
   const path = location.pathname.split("/").pop() || "";
-  const room = roomServicesContents[path];
+  const room = path in roomServicesContents ? roomServicesContents[path] : null;
 
   if (!room) {
     return (
