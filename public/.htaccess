@@ -1,0 +1,15 @@
+# Enable Rewrite Engine
+RewriteEngine On
+
+# Redirect old .php pages to new clean URLs
+Redirect 301 /homestays-in-kalpetta.php /about
+Redirect 301 /room-tariff.php /rooms
+Redirect 301 /facilities.php /facilities
+Redirect 301 /wayanad-attractions.php /wayanad
+Redirect 301 /gallery.php /gallery
+Redirect 301 /contact.php /contact
+Redirect 301 /wayanad-tour-booking.php /contact
+Redirect 301 /wayanad-tour-packages.php /tour-packages
+Redirect 301 /blog/ /blog
+Redirect 301 /getting-here.php /contact
+Redirect 301 /homestay-awards.php /
