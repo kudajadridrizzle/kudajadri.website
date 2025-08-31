@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import packageDetails from './Data/packageDetails.json';
 import { Header } from '../Home/components/Header';
 import cloud from '/cloud.jpg';
@@ -38,21 +38,21 @@ interface PackageDetailsData {
 }
 
 const TourPackagesDetails = () => {
-  // This component will display the details of a specific tour package
   const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate(); // ✅ declare navigate here
   const decodedTitle = id ? decodeURIComponent(id) : '';
   const packageDetailsData = (packageDetails as PackageDetailsData).tour_package.find(
     pkg => pkg.title === decodedTitle
   );
 
-  // Default meta information
   const defaultMeta: PackageMeta = {
     title: "Tour Package Details | Kudajadri Homestay Wayanad",
-    description: "Explore our exclusive tour packages in Wayanad. Discover the best deals for families, couples, and groups with comfortable accommodation and exciting activities.",
-    keywords: "wayanad tour packages, kudajadri homestay, wayanad tourism, tour packages wayanad"
+    description:
+      "Explore our exclusive tour packages in Wayanad. Discover the best deals for families, couples, and groups with comfortable accommodation and exciting activities.",
+    keywords:
+      "wayanad tour packages, kudajadri homestay, wayanad tourism, tour packages wayanad",
   };
 
-  // Use package-specific meta if available, otherwise use default
   const metaInfo = packageDetailsData?.meta || defaultMeta;
 
   return (
@@ -69,14 +69,20 @@ const TourPackagesDetails = () => {
         <meta property="og:url" content={window.location.href} />
         <meta property="og:site_name" content="Kudajadri Homestay" />
         <meta property="og:locale" content="en_US" />
-        <meta property="og:image" content={`${window.location.origin}/wayanadImg.jpg`} />
+        <meta
+          property="og:image"
+          content={`${window.location.origin}/wayanadImg.jpg`}
+        />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={metaInfo.title} />
         <meta name="twitter:description" content={metaInfo.description} />
         <meta name="twitter:site" content="@kudajadrihomestay" />
-        <meta name="twitter:image" content={`${window.location.origin}/wayanadImg.jpg`} />
+        <meta
+          name="twitter:image"
+          content={`${window.location.origin}/wayanadImg.jpg`}
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="canonical" href={window.location.href} />
@@ -91,6 +97,7 @@ const TourPackagesDetails = () => {
             price={packageDetailsData.price}
             duration={packageDetailsData.duration}
             pickupDrop={packageDetailsData.pickup_drop}
+            navigate={navigate} // ✅ pass navigate down
           />
           <div className="flex flex-col gap-8 sm:gap-10 md:gap-12 mt-12 sm:mt-16 md:mt-20 lg:mt-24">
             {packageDetailsData.details &&
@@ -128,6 +135,7 @@ const PackageCard = ({
   price,
   duration,
   pickupDrop,
+  navigate, // ✅ receive navigate
 }: {
   title: string;
   description: string;
@@ -138,6 +146,7 @@ const PackageCard = ({
   };
   duration: string;
   pickupDrop: string;
+  navigate: (path: string) => void; // ✅ typing for navigate
 }): JSX.Element => {
   return (
     <div
@@ -174,13 +183,7 @@ const PackageCard = ({
         </div>
       </div>
       <div className="flex flex-col items-start w-full lg:w-auto mt-6 lg:mt-0 p-4 sm:p-6 lg:p-4 gap-4 z-10 bg-white/10 lg:bg-transparent rounded-lg lg:rounded-none">
-        <PriceCard
-          price={{
-            current_price: price.current_price,
-            original_price: price.original_price,
-            note: price.note,
-          }}
-        />
+        <PriceCard price={price} navigate={navigate} /> {/* ✅ pass navigate */}
       </div>
     </div>
   );
@@ -188,8 +191,10 @@ const PackageCard = ({
 
 const PriceCard = ({
   price,
+  navigate, // ✅ accept navigate
 }: {
   price: { current_price: string; original_price: string; note: string };
+  navigate: (path: string) => void;
 }): JSX.Element => {
   return (
     <div className="price-card flex flex-col w-full p-4 sm:p-6 gap-4 sm:gap-6 bg-white/90 backdrop-blur-sm shadow-md rounded-lg sm:rounded-xl">
@@ -209,7 +214,12 @@ const PriceCard = ({
           {price.note}
         </p>
       </div>
-      <button className="w-full bg-[#292626] text-white py-[12px] px-[24px] rounded-[99px] text-base font-medium leading-none tracking-normal text-center align-middle capitalize">
+
+      {/* ✅ FIXED BUTTON */}
+      <button
+        onClick={() => navigate('/contact')}
+        className="w-full bg-[#292626] text-white py-[12px] px-[24px] rounded-[99px] text-base font-medium leading-none tracking-normal text-center align-middle capitalize hover:bg-[#1a1a1a] transition-colors"
+      >
         Check Availability & Book
       </button>
     </div>
