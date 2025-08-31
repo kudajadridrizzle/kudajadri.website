@@ -100,11 +100,30 @@ export const AnimatedLink = ({ to, children, className = '', ...props }: { to: s
   
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    navigate(to);
+    if (typeof window !== 'undefined') {
+      // Add a small delay to ensure the animation is visible
+      requestAnimationFrame(() => {
+        navigate(to);
+      });
+    }
   };
 
   return (
-    <a href={to} onClick={handleClick} className={className} {...props}>
+    <a 
+      href={to} 
+      onClick={handleClick} 
+      className={`cursor-pointer ${className}`} 
+      {...props}
+      onKeyDown={(e) => {
+        // Add keyboard accessibility
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleClick(e as any);
+        }
+      }}
+      role="link"
+      tabIndex={0}
+    >
       {children}
     </a>
   );

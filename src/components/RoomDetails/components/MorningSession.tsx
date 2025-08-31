@@ -6,7 +6,7 @@ interface MorningSessionProps {
 
 const MorningSession = ({ roomData }: MorningSessionProps) => {
   return (
-    <div className="w-full sm:px-[12%] sm:py-32 flex gap-8 mobile:px-4 mobile:py-14 mobile:flex-col-reverse sm:flex-row sm:items-stretch large:px-[18%] h-auto min-h-screen">
+    <div className="w-full sm:px-[12%] sm:py-32 flex gap-8 mobile:px-4 mobile:py-8 mobile:flex-col-reverse sm:flex-row sm:items-stretch large:px-[18%] h-auto min-h-0">
       <div className="flex-1 flex flex-col justify-center gap-6 py-8">
         <h2 className="text-[#000] font-ivy sm:text-[44px] mobile:text-[32px]">
           {roomData.session.titile}
@@ -21,7 +21,7 @@ const MorningSession = ({ roomData }: MorningSessionProps) => {
           </button>
         </div>
       </div>
-      <div className="flex-1 relative h-[50vh] sm:h-auto">
+      <div className="flex-1 relative w-full aspect-[4/3] sm:aspect-auto sm:h-auto">
         <img
           src={roomData.session.image}
           alt={roomData.session.titile}

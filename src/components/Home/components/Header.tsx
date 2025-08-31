@@ -57,7 +57,7 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out ${
+      className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 ease-in-out ${
         scrolled || isMobile ? 'bg-white shadow-sm' : isMobile ? 'bg-white' : 'bg-transparent'
       } ${isVisible || isMobile ? 'translate-y-0' : '-translate-y-full'}`}
     >
@@ -122,7 +122,7 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
         </AnimatedLink>
       </div>
 
-      <PhoneHeader headerColor={headerColor} />
+      <PhoneHeader headerColor={scrolled ? 'black' : type} />
     </div>
   );
 };
@@ -197,12 +197,12 @@ const PhoneHeader = ({ headerColor }: { headerColor?: 'white' | 'black' }) => {
       {/* Ivy Style Mobile Menu */}
       {isSidebarOpen && (
         <div 
-          className=" fixed inset-0 z-[9999] bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out" 
+          className="fixed inset-0 z-50 bg-black bg-opacity-50 transition-opacity duration-300 ease-in-overlay"
           onClick={toggleSidebar}
-          style={{ height: '100dvh', width: '100vw' }}
+          style={{ height: '100dvh', width: '100vw', zIndex: 50 }}
         >
           <div 
-            className="fixed top-0 left-0 w-full h-[100dvh] bg-[#292626] overflow-y-auto pt-20 flex flex-col items-center z-[10000]"
+            className="fixed top-0 left-0 w-full h-[100dvh] bg-[#292626] overflow-y-auto pt-20 flex flex-col items-center z-50"
             onClick={(e) => e.stopPropagation()}
             style={{
               transition: 'transform 0.3s ease-in-out',

@@ -1,5 +1,4 @@
 import { roomData } from '../constants';
-import mabileRoomImage from '../../../assets/RoomMbileImage.jpeg';
 import { useParams } from 'react-router-dom';
 
 const Hero = () => {
@@ -43,7 +42,7 @@ const Hero = () => {
       {/* Mobile Layout */}
       <div className="md:hidden px-4 pb-8">
         <img
-          src={mabileRoomImage}
+          src={room.imageOne} // use the same main image as desktop
           alt="Room overview"
           className="w-full h-auto rounded-[14px]"
         />
