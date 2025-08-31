@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom';
-import { useAnimatedNavigate, AnimatedLink } from '../../../curtain-scroll';
+import { AnimatedLink } from '../../../curtain-scroll';
 import kudajadrilogo from '../../../assets/kudajadriLogo.svg';
 import kudajadriDarkLogo from '../../../assets/kudajadriDarkLogo.svg';
 import menuIcon from '/src/assets/menuIconHeader.svg';
