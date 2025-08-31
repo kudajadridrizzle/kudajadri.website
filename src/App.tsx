@@ -1,11 +1,11 @@
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/Home/Home';
 import About from './components/About/About';
 import Booking from './components/Booking/Booking';
 import RoomDetails from './components/RoomDetails/RoomDetails';
 import { ContactPage } from './components/Contact/ContactPage';
 import { Gallrey } from './components/gallery/Gallrey';
-import CurtainTransition, { useAnimatedNavigate } from './curtain-scroll';
+import CurtainTransition from './curtain-scroll';
 import ScrollToTop from './components/Home/components/ScrollTop';
 import Rooms from './components/Rooms/Rooms';
 import { FaqPage } from './components/FAQ/Faq';
@@ -17,21 +17,6 @@ import BlogDetail from './components/Blog/BlogDetail';
 import TourPackagesDetails from './components/TourPackages/TourPackagesDetails';
 import NotFound from './pages/NotFound';
 
-// Custom Link component that uses our animated navigation
-const AnimatedLink = ({ to, children, ...props }: { to: string; children: React.ReactNode; [key: string]: any }) => {
-  const navigate = useAnimatedNavigate();
-  
-  const handleClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    navigate(to);
-  };
-
-  return (
-    <a href={to} onClick={handleClick} {...props}>
-      {children}
-    </a>
-  );
-};
 
 const AppContent = () => {
   return (
