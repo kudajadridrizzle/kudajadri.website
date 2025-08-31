@@ -33,24 +33,19 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      const heroHeight = isHome ? 700 : 100; // Smaller threshold for non-home pages
+      const heroHeight = isHome ? 700 : 100; 
       
-      // Set scrolled state for transparency
       setScrolled(currentScrollY > heroHeight - 80);
       
-      // Handle header visibility
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Scrolling down and past threshold
         setIsVisible(false);
       } else if (currentScrollY < lastScrollY) {
-        // Scrolling up
         setIsVisible(true);
       }
       
       setLastScrollY(currentScrollY);
     };
 
-    // Set initial scrolled state based on current scroll position
     const heroHeight = isHome ? 700 : 100;
     setScrolled(window.scrollY > heroHeight - 80);
     
@@ -58,17 +53,15 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isHome, lastScrollY]);
 
-  // Check if mobile view
-  const isMobile = window.innerWidth < 640; // Tailwind's sm breakpoint
+  const isMobile = window.innerWidth < 640;
 
   return (
     <div
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out ${
         scrolled || isMobile ? 'bg-white shadow-sm' : isMobile ? 'bg-white' : 'bg-transparent'
-      } ${
-        isVisible || isMobile ? 'translate-y-0' : '-translate-y-full'
-      }`}
+      } ${isVisible || isMobile ? 'translate-y-0' : '-translate-y-full'}`}
     >
+      {/* Desktop Header */}
       <div className="flex items-end justify-center gap-24 sm:py-6 mobile:hidden sm:flex">
         <AnimatedLink
           to="/"
@@ -128,6 +121,7 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
           Contact Us
         </AnimatedLink>
       </div>
+
       <PhoneHeader headerColor={headerColor} />
     </div>
   );
@@ -142,12 +136,13 @@ const PhoneHeader = ({ headerColor }: { headerColor?: 'white' | 'black' }) => {
     { to: "/", text: "Wayanad Homestays" },
     { to: "/about", text: "About Us" },
     { to: "/rooms", text: "Rooms" },
-    { to: "/rooms/classic-rooms", text: "Classic Rooms", className: "text-[#808080] text-[24px]" },
-    { to: "/rooms/deluxe-rooms", text: "Deluxe Rooms", className: "text-[#808080] text-[24px]" },
-    { to: "/rooms/deluxe-heritage-rooms", text: "Deluxe Heritage", className: "text-[#808080] text-[24px]" },
-    { to: "/rooms/premium-rooms", text: "Premium Rooms", className: "text-[#808080] text-[24px]" },
+    { to: "/rooms/classic-rooms", text: "Classic Rooms" },
+    { to: "/rooms/deluxe-rooms", text: "Deluxe Rooms" },
+    { to: "/rooms/deluxe-heritage-rooms", text: "Deluxe Heritage" },
+    { to: "/rooms/premium-rooms", text: "Premium Rooms" },
     { to: "/facilities", text: "Facilities" },
     { to: "/gallery", text: "Gallery" },
+    { to: "/contact", text: "Contact Us" },
   ];
 
   const toggleSidebar = () => {
@@ -168,10 +163,10 @@ const PhoneHeader = ({ headerColor }: { headerColor?: 'white' | 'black' }) => {
 
   return (
     <>
-      {/* Header Bar */}
-      <div className={`fixed top-0 left-0 w-full z-50 flex justify-between p-4 sm:hidden transition-all duration-500 ease-in-out ${
+      {/* Mobile Header Bar */}
+      <div className={`fixed top-0 left-0 w-full z-50 flex justify-between items-center p-4 sm:hidden transition-all duration-500 ease-in-out ${
         isSidebarOpen ? 'bg-[#292626]' : headerColor === 'white' ? 'bg-transparent' : 'bg-white shadow-sm'
-      }`}>
+      }`} style={{ height: '70px', boxSizing: 'border-box' }}>
         <div>
           <img
             src={headerColor === 'black' && !isSidebarOpen ? MenuBlackIcon : menuIcon}
@@ -199,43 +194,56 @@ const PhoneHeader = ({ headerColor }: { headerColor?: 'white' | 'black' }) => {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Ivy Style Mobile Menu */}
       {isSidebarOpen && (
         <div 
-          className="fixed inset-0 z-40 bg-black bg-opacity-50 transition-opacity duration-300" 
+          className=" fixed inset-0 z-[9999] bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out" 
           onClick={toggleSidebar}
-          style={{ height: '100dvh' }}
+          style={{ height: '100dvh', width: '100vw' }}
         >
           <div 
-            className="fixed top-0 left-0 w-full h-[100dvh] bg-[#292626] overflow-y-auto p-6 pt-20 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+            className="fixed top-0 left-0 w-full h-[100dvh] bg-[#292626] overflow-y-auto pt-20 flex flex-col items-center z-[10000]"
             onClick={(e) => e.stopPropagation()}
+            style={{
+              transition: 'transform 0.3s ease-in-out',
+              transform: isSidebarOpen ? 'translateX(0)' : 'translateX(-100%)',
+            }}
           >
-            <div className="flex flex-col gap-8 pt-4">
-              <ul className="flex flex-col gap-3">
-                {menuItems.map((item) => (
+            <ul className="flex flex-col gap-1 text-center">
+              {menuItems.map((item) => {
+                const isRoom = item.to.startsWith("/rooms/");
+                return (
                   <li key={item.to}>
                     <AnimatedLink
                       to={item.to}
-                      className={`text-white text-3xl font-light leading-loose ${item.className} ${location.pathname === item.to ? 'text-primary' : ''}`}
+                      className={`
+                        block transition-colors duration-200 no-underline
+                        ${isRoom 
+                          ? "text-[#808080] text-[24px] font-normal font-ivy" 
+                          : "text-white text-[32px] font-medium font-ivy"
+                        }
+                        ${location.pathname === item.to ? "text-primary" : "hover:text-white"}
+                      `}
                       onClick={toggleSidebar}
                     >
                       {item.text}
                     </AnimatedLink>
                   </li>
-                ))}
-              </ul>
-              
-              <div className="flex justify-center">
-                <button
-                  onClick={toggleSidebar}
-                  className="w-11 h-11 flex items-center justify-center"
-                  aria-label="Close menu"
-                >
-                  <span className="material-icons text-4xl text-white">
-                    close
-                  </span>
-                </button>
-              </div>
+                );
+              })}
+            </ul>
+            
+            {/* Close Button */}
+            <div className="fixed bottom-8 left-0 w-full flex justify-center">
+              <button
+                onClick={toggleSidebar}
+                className="w-14 h-14 rounded-full bg-primary flex items-center justify-center shadow-lg hover:bg-opacity-90 transition-all duration-200"
+                aria-label="Close menu"
+              >
+                <span className="material-icons text-3xl text-white">
+                  close
+                </span>
+              </button>
             </div>
           </div>
         </div>
