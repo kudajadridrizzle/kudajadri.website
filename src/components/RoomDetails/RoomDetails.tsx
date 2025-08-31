@@ -6,10 +6,17 @@ import MorningSession from './components/MorningSession';
 import { RoomPriceSession } from './components/RoomPriceSession';
 import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
-import SEOData from './components/SEOData';
+// import SEOData from './components/SEOData';
 import WhyThisRoom from './components/WhyThisRoom';
 import RoomServices from './components/RoomServices';
 import LocalExperiences from './components/LocalExperiences';
+import RoomOverview from "./components/RoomOverview";
+import WhoShouldBook from "./components/WhoShouldBook";
+import RoomExperience from "./components/RoomExperience";
+import RoomTips from "./components/roomtips";
+import DeluxeRoomOverview from "./components/DeluxeRoomOverview";
+import RoomBookingCTA from "./components/RoomBookingCTA";
+
 import {
   roomData,
   classicRooms,
@@ -199,7 +206,13 @@ const RoomDetails = () => {
       <WhyThisRoom />
       <RoomServices />
       <LocalExperiences />
-      <SEOData roomType={roomDataItem.roomType} />
+      <RoomOverview />
+      <WhoShouldBook />
+      <RoomExperience />
+      <DeluxeRoomOverview />
+      <RoomTips />
+      {/* <SEOData roomType={roomDataItem.roomType} /> */}
+      <RoomBookingCTA />
       <AnotherRoomSession roomType={roomDataItem.roomType} />
       <FaqList {...parsedFaq.attributes} />
       <Footer />

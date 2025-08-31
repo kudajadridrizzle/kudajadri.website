@@ -1,70 +1,112 @@
-// import { useEffect, useState } from "react";
-// import { motion, AnimatePresence } from "framer-motion";
-// import { useLocation } from "react-router-dom";
+import React, { useEffect, useState, useCallback, useRef, createContext, useContext } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
-const CurtainTransition = () => {
-  // const location = useLocation();
-  // const [showCurtain, setShowCurtain] = useState(true);
-  // const [yPosition, setYPosition] = useState("100%");
-  // const [isMobile, setIsMobile] = useState(false); // State to detect if the screen is mobile
+// Create a context to share the navigation function
+export const NavigationContext = createContext<{ navigate: (to: string) => void }>({
+  navigate: () => {},
+});
 
-  // Mobile screen detection
-  // useEffect(() => {
-  //     const checkMobile = () => {
-  //         setIsMobile(window.innerWidth < 768); // Check if width is less than 768px (mobile)
-  //     };
+const CurtainTransition = ({ children }: { children: React.ReactNode }) => {
+  const navigate = useNavigate();
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [nextPath, setNextPath] = useState("");
+  const isInitialMount = useRef(true);
 
-  //     checkMobile(); // Initial check
-  //     window.addEventListener("resize", checkMobile); // Recheck on resize
+  // Check if mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
 
-  //     return () => {
-  //         window.removeEventListener("resize", checkMobile); // Cleanup on unmount
-  //     };
-  // }, []);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
-  // useEffect(() => {
-  //     if (isMobile) return; // Skip curtain animation on mobile
+  // Handle initial mount
+  useEffect(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
+    
+    if (nextPath && !isAnimating) {
+      // Navigate after animation completes
+      navigate(nextPath);
+      setNextPath("");
+    }
+  }, [isAnimating, nextPath, navigate]);
 
-  //     setShowCurtain(true);
-  //     setYPosition("0%"); // Step 1: Curtain rises to full screen
+  // Handle navigation with animation
+  const handleNavigation = useCallback((path: string) => {
+    if (isMobile) {
+      navigate(path);
+      return;
+    }
+    
+    setNextPath(path);
+    setIsAnimating(true);
+    
+    // Auto-hide the curtain after animation completes
+    setTimeout(() => {
+      setIsAnimating(false);
+    }, 500);
+  }, [isMobile, navigate]);
 
-  //     const holdTimer = setTimeout(() => {
-  //         setYPosition("-100%"); // Step 3: Continue going up (exit)
-  //     }, 1000); // Step 2: Hold at full screen for 1 second
-
-  //     const doneTimer = setTimeout(() => {
-  //         setShowCurtain(false); // Hide curtain after animation is done
-  //     }, 1600); // Total time = 1s hold + 0.6s exit
-
-  //     return () => {
-  //         clearTimeout(holdTimer);
-  //         clearTimeout(doneTimer);
-  //     };
-  // }, [location.pathname, isMobile]); // Run effect when the path or isMobile changes
+  if (isMobile) return <>{children}</>;
 
   return (
-    // <AnimatePresence>
-    //     {/* Only show the curtain animation if not on mobile */}
-    //     {showCurtain && !isMobile && (
-    //         <motion.div
-    //             key="curtain"
-    //             initial={{ y: "100%" }}
-    //             animate={{ y: yPosition }}
-    //             transition={{ duration: 0.6, ease: "easeInOut" }}
-    //             style={{
-    //                 position: "fixed",
-    //                 top: 0,
-    //                 left: 0,
-    //                 right: 0,
-    //                 bottom: 0,
-    //                 backgroundColor: "#fff", // Black curtain (adjust color if needed)
-    //                 zIndex: 9999,
-    //                 pointerEvents: "none",
-    //             }}
-    //         />
-    //     )}
-    // </AnimatePresence>
-    <div></div>
+    <NavigationContext.Provider value={{ navigate: handleNavigation }}>
+      <AnimatePresence mode="wait">
+        {isAnimating && (
+          <motion.div
+            key="curtain"
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            exit={{ y: "-100%" }}
+            transition={{
+              duration: 0.5,
+              ease: [0.65, 0, 0.35, 1],
+            }}
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              background: "#ffffff",
+              zIndex: 9999,
+              pointerEvents: "none",
+            }}
+          />
+        )}
+      </AnimatePresence>
+      {children}
+    </NavigationContext.Provider>
+  );
+};
+
+// Custom hook to use the navigation
+export const useAnimatedNavigate = () => {
+  const { navigate } = useContext(NavigationContext);
+  return navigate;
+};
+
+// Export the AnimatedLink component
+export const AnimatedLink = ({ to, children, className = '', ...props }: { to: string; children: React.ReactNode; className?: string; [key: string]: any }) => {
+  const navigate = useAnimatedNavigate();
+  
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    navigate(to);
+  };
+
+  return (
+    <a href={to} onClick={handleClick} className={className} {...props}>
+      {children}
+    </a>
   );
 };
 

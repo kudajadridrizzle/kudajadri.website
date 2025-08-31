@@ -1,8 +1,9 @@
-import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { useAnimatedNavigate, AnimatedLink } from '../../../curtain-scroll';
 import kudajadrilogo from '../../../assets/kudajadriLogo.svg';
 import kudajadriDarkLogo from '../../../assets/kudajadriDarkLogo.svg';
 import menuIcon from '/src/assets/menuIconHeader.svg';
-import logoIcon from '/src/assets/homeMobileHeader.svg';
+import homeIcon from '/src/assets/homeMobileHeader.svg';
 import whatAppIcon from '/src/assets/whatappHeader.svg';
 import whatAppBlackIcon from '/src/assets/KudajadriMobileWhatapp.svg';
 import HomeBlackIcon from '/src/assets/kudajadriHomeMobile.svg';
@@ -69,31 +70,31 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
       }`}
     >
       <div className="flex items-end justify-center gap-24 sm:py-6 mobile:hidden sm:flex">
-        <NavLink
+        <AnimatedLink
           to="/"
           className={`px-4 py-2 no-underline ${
             headerColor === 'white' ? 'text-[#FFF]' : 'text-primary'
           } font-albertSans`}
         >
           Wayanad Homestays
-        </NavLink>
-        <NavLink
+        </AnimatedLink>
+        <AnimatedLink
           to="/about"
           className={`px-4 py-2 no-underline ${
             headerColor === 'white' ? 'text-[#FFF]' : 'text-primary'
           } font-albertSans`}
         >
           About Us
-        </NavLink>
-        <NavLink
+        </AnimatedLink>
+        <AnimatedLink
           to="/rooms"
           className={`px-4 py-2 no-underline ${
             headerColor === 'white' ? 'text-[#FFF]' : 'text-primary'
           } font-albertSans`}
         >
           Rooms
-        </NavLink>
-        <NavLink to="/">
+        </AnimatedLink>
+        <AnimatedLink to="/">
           <div>
             {headerColor === 'white' ? (
               <img src={kudajadrilogo} alt="Logo" />
@@ -101,31 +102,31 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
               <img src={kudajadriDarkLogo} alt="Logo" />
             )}
           </div>
-        </NavLink>
-        <NavLink
+        </AnimatedLink>
+        <AnimatedLink
           to="/facilities"
           className={`px-4 py-2 no-underline ${
             headerColor === 'white' ? 'text-[#FFF]' : 'text-primary'
           } font-albertSans`}
         >
           Facilities
-        </NavLink>
-        <NavLink
+        </AnimatedLink>
+        <AnimatedLink
           to="/gallery"
           className={`px-4 py-2 no-underline ${
             headerColor === 'white' ? 'text-[#FFF]' : 'text-primary'
           } font-albertSans`}
         >
           Gallery
-        </NavLink>
-        <NavLink
+        </AnimatedLink>
+        <AnimatedLink
           to="/contact"
           className={`px-4 py-2 no-underline ${
             headerColor === 'white' ? 'text-[#FFF]' : 'text-primary'
           } font-albertSans`}
         >
           Contact Us
-        </NavLink>
+        </AnimatedLink>
       </div>
       <PhoneHeader headerColor={headerColor} />
     </div>
@@ -133,9 +134,21 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
 };
 
 const PhoneHeader = ({ headerColor }: { headerColor?: 'white' | 'black' }) => {
-  const navigate = useNavigate();
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [, setIsVisible] = useState(true);
+  const location = useLocation();
+  
+  const menuItems = [
+    { to: "/", text: "Wayanad Homestays" },
+    { to: "/about", text: "About Us" },
+    { to: "/rooms", text: "Rooms" },
+    { to: "/rooms/classic-rooms", text: "Classic Rooms", className: "text-[#808080] text-[24px]" },
+    { to: "/rooms/deluxe-rooms", text: "Deluxe Rooms", className: "text-[#808080] text-[24px]" },
+    { to: "/rooms/deluxe-heritage-rooms", text: "Deluxe Heritage", className: "text-[#808080] text-[24px]" },
+    { to: "/rooms/premium-rooms", text: "Premium Rooms", className: "text-[#808080] text-[24px]" },
+    { to: "/facilities", text: "Facilities" },
+    { to: "/gallery", text: "Gallery" },
+  ];
 
   const toggleSidebar = () => {
     setSidebarOpen(prevState => !prevState);
@@ -168,12 +181,13 @@ const PhoneHeader = ({ headerColor }: { headerColor?: 'white' | 'black' }) => {
           />
         </div>
         <div>
-          <img
-            src={headerColor === 'black' && !isSidebarOpen ? HomeBlackIcon : logoIcon}
-            alt="Home"
-            onClick={() => navigate('/')}
-            className="cursor-pointer h-6"
-          />
+          <AnimatedLink to="/">
+            <img
+              src={headerColor === 'black' && !isSidebarOpen ? HomeBlackIcon : homeIcon}
+              alt="Home"
+              className="cursor-pointer h-6"
+            />
+          </AnimatedLink>
         </div>
         <div>
           <img
@@ -198,30 +212,15 @@ const PhoneHeader = ({ headerColor }: { headerColor?: 'white' | 'black' }) => {
           >
             <div className="flex flex-col gap-8 pt-4">
               <ul className="flex flex-col gap-3">
-                {[/* eslint-disable @typescript-eslint/no-unused-vars */
-                  { to: "/", text: "Wayanad Homestays" },
-                  { to: "/about", text: "About Us" },
-                  { to: "/rooms", text: "Rooms" },{ to: "/rooms/classic-rooms", text: "Classic Rooms", className: "text-[#808080] text-[24px]" },
-                  { to: "/rooms/deluxe-rooms", text: "Deluxe Rooms", className: "text-[#808080] text-[24px]" },
-                  { to: "/rooms/deluxe-heritage-rooms", text: "Deluxe Heritage", className: "text-[#808080] text-[24px]" },
-                  { to: "/rooms/premium-rooms", text: "Premium Rooms", className: "text-[#808080] text-[24px]" },
-                  { to: "/facilities", text: "Facilities" },
-                  { to: "/gallery", text: "Gallery" },
-                  // { to: "/wayanad", text: "Wayanad" },
-                  // { to: "/attractions", text: "Attractions" },
-                  // { to: "/tour-packages", text: "Tour Packages" },
-                  { to: "/contact", text: "Contact Us" },
-                ].map((item) => (
-                  <li key={item.to} className="text-center">
-                    <Link
+                {menuItems.map((item) => (
+                  <li key={item.to}>
+                    <AnimatedLink
                       to={item.to}
-                      className={`text-3xl leading-8 font-normal tracking-wide font-ivy ${
-                        item.className || 'text-white'
-                      }`}
+                      className={`text-white text-3xl font-light leading-loose ${item.className} ${location.pathname === item.to ? 'text-primary' : ''}`}
                       onClick={toggleSidebar}
                     >
                       {item.text}
-                    </Link>
+                    </AnimatedLink>
                   </li>
                 ))}
               </ul>

@@ -35,9 +35,9 @@ After a day of sightseeing, you can return to your Classic Room and relax in com
     `,
     images: [
       '/images/wayanad/chembra_peak.jpg',
-      '/images/wayanad/chembra_peak.jpg',
-      '/images/wayanad/chembra_peak.jpg',
-      '/images/wayanad/chembra_peak.jpg',
+      '/images/wayanad/lakkidi.jpg',
+      '/images/wayanad/kurumbalakotta_hillock.jpg',
+      '/images/wayanad/glass_bridge.jpg',
     ],
   },
 
@@ -58,9 +58,9 @@ Staying in our **luxury homestays in Wayanad** places you close to some of the r
     `,
     images: [
       '/images/wayanad/chembra_peak.jpg',
-      '/images/wayanad/chembra_peak.jpg',
-      '/images/wayanad/chembra_peak.jpg',
-      '/images/wayanad/chembra_peak.jpg',
+      '/images/wayanad/lakkidi.jpg',
+      '/images/wayanad/kurumbalakotta_hillock.jpg',
+      '/images/wayanad/glass_bridge.jpg',
     ],
   },
 
@@ -81,9 +81,9 @@ Staying at our **heritage homestay in Wayanad** puts you close to nature and cul
     `,
     images: [
       '/images/wayanad/chembra_peak.jpg',
-      '/images/wayanad/chembra_peak.jpg',
-      '/images/wayanad/chembra_peak.jpg',
-      '/images/wayanad/chembra_peak.jpg',
+      '/images/wayanad/lakkidi.jpg',
+      '/images/wayanad/kurumbalakotta_hillock.jpg',
+      '/images/wayanad/glass_bridge.jpg',
     ],
   },
 
@@ -104,9 +104,9 @@ Booking one of our **Wayanad cottages** places you close to all the major attrac
     `,
     images: [
       '/images/wayanad/chembra_peak.jpg',
-      '/images/wayanad/chembra_peak.jpg',
-      '/images/wayanad/chembra_peak.jpg',
-      '/images/wayanad/chembra_peak.jpg',
+      '/images/wayanad/lakkidi.jpg',
+      '/images/wayanad/kurumbalakotta_hillock.jpg',
+      '/images/wayanad/glass_bridge.jpg',
     ],
   },
 };

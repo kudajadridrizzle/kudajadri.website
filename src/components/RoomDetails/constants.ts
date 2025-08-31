@@ -407,7 +407,7 @@ export const classicRooms: RoomContent = {
       description: 'Finding the right place to stay can make or break your trip. If you\'re looking for an affordable homestay in Wayanad that feels like home, Kudajadri Drizzle\'s Classic Rooms are the perfect choice. With budget-friendly pricing, cozy interiors, and a location close to major attractions, your stay will be both relaxing and memorable.'
     }
   },
-  offersTitle: 'What this place offers',
+  offersTitle: 'Classic Room Facilties',
   offers: [
     'Fridge',
     'WIFI',
@@ -443,7 +443,7 @@ export const deluxeHeritageRooms: RoomContent = {
   roomType: 'Heritage Homestay in Wayanad – Deluxe Heritage Rooms at Kudajadri Drizzle',
   description:
     'Step into the charm of Wayanad with our heritage homestay in Wayanad. Our Deluxe Heritage Rooms combine traditional architecture with modern comforts, offering travelers an authentic yet luxurious experience. Every detail is designed to give you a sense of history and culture while keeping your stay cozy and relaxing.',
-  offersTitle: 'What this place offers',
+  offersTitle: 'Deluxe Heritage Room Facilties',
   offers: [
     'Fridge',
     'WIFI',
@@ -480,7 +480,7 @@ export const deluxeRooms: RoomContent = {
   roomType: ' Deluxe Rooms – Wayanad Cottages for a Comfortable Stay',
   description:
     'Experience the perfect blend of comfort and nature with our Deluxe Rooms, designed to give you a premium stay in a serene environment. As one of the finest cottages in Wayanad, these rooms provide spacious interiors, modern amenities, and the charm of Wayanad’s natural beauty. Whether you are traveling with family, friends, or as a couple, our Wayanad Homestay Deluxe Rooms make your stay memorable.',
-  offersTitle: 'What this place offers',
+  offersTitle: 'Deluxe Room Facilties',
   offers: [
     'Fridge',
     'WIFI',
@@ -517,7 +517,7 @@ export const premiumRooms: RoomContent = {
   roomType: 'Luxury and Premium Homestays in Wayanad – Premium Rooms at Kudajadri Drizzle',
   description:
     'Experience the ultimate comfort with our premium homestays in Wayanad. Our Premium Rooms are designed for travelers who want elegance, style, and tranquility while exploring the beauty of Wayanad. Every room combines modern amenities with a warm homely feel, creating the perfect retreat for families, couples, and solo travelers.',
-  offersTitle: 'What this place offers',
+  offersTitle: 'Premium Room Facilties',
   offers: [
     'Fridge',
     'WIFI',
