@@ -22,8 +22,8 @@ export const Packages = () => {
             {...pkg}
             image={index === 0 ? img1 : index === 1 ? img2 : img3}
             onClick={() => {
-              const encodedTitle = encodeURIComponent(pkg.title);
-              navigate(`/tour-packages/${encodedTitle}`, {
+              const urlFriendlyTitle = pkg.title.toLowerCase().replace(/\s+/g, '-');
+              navigate(`/tour-packages/${urlFriendlyTitle}`, {
                 state: { fromDashboard: true },
               });
             }}
