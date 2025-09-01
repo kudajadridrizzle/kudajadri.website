@@ -1,15 +1,17 @@
-# Enable Rewrite Engine
 RewriteEngine On
 
-# Redirect old .php pages to new clean URLs
-Redirect 301 /homestays-in-kalpetta.php /about
-Redirect 301 /room-tariff.php /rooms
-Redirect 301 /facilities.php /facilities
-Redirect 301 /wayanad-attractions.php /wayanad
-Redirect 301 /gallery.php /gallery
-Redirect 301 /contact.php /contact
-Redirect 301 /wayanad-tour-booking.php /contact
-Redirect 301 /wayanad-tour-packages.php /tour-packages
-Redirect 301 /blog/ /blog
-Redirect 301 /getting-here.php /contact
-Redirect 301 /homestay-awards.php /
+Redirect 301 /blog/ https://kudajadridrizzle.com/blog
+Redirect 301 /contact.php https://kudajadridrizzle.com/contact
+Redirect 301 /credit-debit-cards.php https://kudajadridrizzle.com/contact
+Redirect 301 /dream-wayanad.php https://kudajadridrizzle.com/tour-packages
+Redirect 301 /facilities.php https://kudajadridrizzle.com/facilities
+Redirect 301 /gallery.php https://kudajadridrizzle.com/gallery
+Redirect 301 /getting-here.php https://kudajadridrizzle.com/contact
+Redirect 301 /green-wayanad.php https://kudajadridrizzle.com/tour-packages
+Redirect 301 /homestay-awards.php https://kudajadridrizzle.com
+Redirect 301 /homestays-in-kalpetta.php https://kudajadridrizzle.com/about
+Redirect 301 /room-tariff.php https://kudajadridrizzle.com/rooms
+Redirect 301 /vibrant-wayanad.php https://kudajadridrizzle.com/tour-packages
+Redirect 301 /wayanad-attractions.php https://kudajadridrizzle.com/wayanad
+Redirect 301 /wayanad-tour-booking.php https://kudajadridrizzle.com/contact
+Redirect 301 /wayanad-tour-packages.php https://kudajadridrizzle.com/tour-packages
