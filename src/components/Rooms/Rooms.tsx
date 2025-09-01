@@ -57,6 +57,7 @@ const Rooms = () => {
           heading={roomsIntro.heading}
           content={roomsIntro.content}
           isEditing={false}
+          onContentChange={() => {}}
         />
       </div>
 

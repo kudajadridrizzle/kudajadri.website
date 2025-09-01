@@ -1,4 +1,80 @@
 [[redirects]]
+from = "/blog/"
+to = "/blog"
+status = 301
+
+[[redirects]]
+from = "/contact.php"
+to = "/contact"
+status = 301
+
+[[redirects]]
+from = "/credit-debit-cards.php"
+to = "/contact"
+status = 301
+
+[[redirects]]
+from = "/dream-wayanad.php"
+to = "/tour-packages"
+status = 301
+
+[[redirects]]
+from = "/facilities.php"
+to = "/facilities"
+status = 301
+
+[[redirects]]
+from = "/gallery.php"
+to = "/gallery"
+status = 301
+
+[[redirects]]
+from = "/getting-here.php"
+to = "/contact"
+status = 301
+
+[[redirects]]
+from = "/green-wayanad.php"
+to = "/tour-packages"
+status = 301
+
+[[redirects]]
+from = "/homestay-awards.php"
+to = "/"
+status = 301
+
+[[redirects]]
+from = "/homestays-in-kalpetta.php"
+to = "/about"
+status = 301
+
+[[redirects]]
+from = "/room-tariff.php"
+to = "/rooms"
+status = 301
+
+[[redirects]]
+from = "/vibrant-wayanad.php"
+to = "/tour-packages"
+status = 301
+
+[[redirects]]
+from = "/wayanad-attractions.php"
+to = "/wayanad"
+status = 301
+
+[[redirects]]
+from = "/wayanad-tour-booking.php"
+to = "/contact"
+status = 301
+
+[[redirects]]
+from = "/wayanad-tour-packages.php"
+to = "/tour-packages"
+status = 301
+
+# React SPA fallback (must be last)
+[[redirects]]
 from = "/*"
 to = "/index.html"
 status = 200
