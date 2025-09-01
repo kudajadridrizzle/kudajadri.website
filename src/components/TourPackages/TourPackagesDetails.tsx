@@ -39,11 +39,20 @@ interface PackageDetailsData {
 
 const TourPackagesDetails = () => {
   const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate(); // ✅ declare navigate here
-  const decodedTitle = id ? decodeURIComponent(id) : '';
+  const navigate = useNavigate();
+  
+  // Convert URL parameter back to original title format (replace hyphens with spaces and capitalize words)
+  const getOriginalTitle = (urlTitle: string) => {
+    return urlTitle
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  };
+
+  const originalTitle = id ? getOriginalTitle(id) : '';
   const packageDetailsData = (packageDetails as PackageDetailsData).tour_package.find(
-    pkg => pkg.title === decodedTitle
-  );
+    pkg => pkg.title.toLowerCase() === originalTitle.toLowerCase()
+  ) as TourPackage | undefined;
 
   const defaultMeta: PackageMeta = {
     title: "Tour Package Details | Kudajadri Homestay Wayanad",
@@ -112,9 +121,11 @@ const TourPackagesDetails = () => {
         </div>
       ) : (
         <div className="package-details mt-[60px] px-4 py-12 sm:px-6 md:px-8 lg:px-12 xl:px-20 text-center">
-          <h1 className="text-2xl font-bold mb-4">Package Not Found</h1>
+          <h1 className="text-3xl font-bold text-center text-white">
+            {originalTitle}
+          </h1>
           <p className="text-gray-600 mb-8">
-            The tour package "{decodedTitle}" could not be found.
+            The tour package "{originalTitle}" could not be found.
           </p>
           <button
             onClick={() => window.history.back()}
