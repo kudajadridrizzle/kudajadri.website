@@ -1,1 +1,17 @@
 /*    /index.html   200
+/blog/                  /blog                     301
+/contact.php            /contact                  301
+/credit-debit-cards.php /contact                  301
+/dream-wayanad.php      /tour-packages            301
+/facilities.php         /facilities               301
+/gallery.php            /gallery                  301
+/getting-here.php       /contact                  301
+/green-wayanad.php      /tour-packages            301
+/homestay-awards.php    /                         301
+/homestays-in-kalpetta.php /about                 301
+/room-tariff.php        /rooms                    301
+/vibrant-wayanad.php    /tour-packages            301
+/wayanad-attractions.php /wayanad                 301
+/wayanad-tour-booking.php /contact                301
+/wayanad-tour-packages.php /tour-packages         301
+
