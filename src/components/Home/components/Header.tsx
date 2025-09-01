@@ -28,7 +28,9 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
     location.pathname === '/wayanad' ||
     location.pathname === '/facilities' ||
     location.pathname === '/tour-packages';
-  const headerColor = scrolled ? 'black' : type;
+    
+  const isDetailPage = location.pathname.startsWith('/tour-packages/');
+  const headerColor = scrolled || isDetailPage ? 'black' : type;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,9 +39,16 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
       
       setScrolled(currentScrollY > heroHeight - 80);
       
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      // Always show header when at the top of the page
+      if (currentScrollY <= 0) {
+        setIsVisible(true);
+      } 
+      // Hide header when scrolling down
+      else if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setIsVisible(false);
-      } else if (currentScrollY < lastScrollY) {
+      } 
+      // Show header when scrolling up
+      else if (currentScrollY < lastScrollY) {
         setIsVisible(true);
       }
       
@@ -58,8 +67,8 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
   return (
     <div
       className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 ease-in-out ${
-        scrolled || isMobile ? 'bg-white shadow-sm' : isMobile ? 'bg-white' : 'bg-transparent'
-      } ${isVisible || isMobile ? 'translate-y-0' : '-translate-y-full'}`}
+        scrolled || isMobile || isDetailPage ? 'bg-white shadow-sm' : isMobile ? 'bg-white' : 'bg-transparent'
+      } ${isVisible || isMobile || isDetailPage ? 'translate-y-0' : '-translate-y-full'}`}
     >
       {/* Desktop Header */}
       <div className="flex items-end justify-center gap-24 sm:py-6 mobile:hidden sm:flex">

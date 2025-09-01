@@ -52,6 +52,7 @@ const Rooms = () => {
       />
 
       <div className="relative">
+        
         <CMSRoomSession
           heading={roomsIntro.heading}
           content={roomsIntro.content}
