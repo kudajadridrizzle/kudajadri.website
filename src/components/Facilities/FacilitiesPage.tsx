@@ -18,6 +18,10 @@ interface FaqFrontMatterAttributes {
   }>;
 }
 
+const SITE_URL = import.meta.env.VITE_SITE_URL || "https://www.kudajadridrizzle.com";
+const CANONICAL_URL = `${SITE_URL}/facilities`;
+const OG_IMAGE = `${SITE_URL}/aboutHero.jpg`;
+
 const FacilitiesPage = () => {
   const parsedFaq = fm<FaqFrontMatterAttributes>(facilitiesFaqRaw);
 
@@ -48,13 +52,10 @@ const FacilitiesPage = () => {
           content="Homestays in Wayanad with swimming pools offer the best facilities, comfort, and scenic views for a perfect relaxing getaway with family and friends."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={window.location.href} />
+        <meta property="og:url" content={CANONICAL_URL} />
         <meta property="og:site_name" content="Kudajadri Homestay" />
         <meta property="og:locale" content="en_US" />
-        <meta
-          property="og:image"
-          content={`${window.location.origin}/aboutHero.jpg`}
-        />
+        <meta property="og:image" content={OG_IMAGE} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
 
@@ -69,15 +70,12 @@ const FacilitiesPage = () => {
           content="Homestays in Wayanad with swimming pools offer the best facilities, comfort, and scenic views for a perfect relaxing getaway with family and friends."
         />
         <meta name="twitter:site" content="@kudajadrihomestay" />
-        <meta
-          name="twitter:image"
-          content={`${window.location.origin}/aboutHero.jpg`}
-        />
+        <meta name="twitter:image" content={OG_IMAGE} />
 
         {/* Misc */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="canonical" href={window.location.href} />
+        <link rel="canonical" href={CANONICAL_URL} />
       </Helmet>
 
       <Hero />

@@ -22,13 +22,10 @@ const BlogList: React.FC = () => {
         for (const path in blogModules) {
           try {
             const content = await blogModules[path]();
-            // Extract just the slug part (remove date prefix and .md extension)
             const fullSlug = path.split('/').pop()?.replace('.md', '') || '';
-            // Remove date prefix (format: YYYY-MM-DD-)
             const slug = fullSlug.replace(/^\d{4}-\d{2}-\d{2}-/, '');
             const post = parseBlogMarkdown(content as string, slug);
 
-            // Only include posts that are published and have required SEO fields
             if (post.published && post.metaTitle && post.metaDescription) {
               posts.push(post);
             } else {
@@ -38,7 +35,6 @@ const BlogList: React.FC = () => {
             }
           } catch (error) {
             console.error(`Error parsing blog post ${path}:`, error);
-            // Continue loading other posts even if one fails
           }
         }
 
@@ -55,6 +51,35 @@ const BlogList: React.FC = () => {
 
     loadBlogPosts();
   }, []);
+
+  // ✅ SSR-safe defaults
+  const currentUrl =
+    typeof window !== 'undefined'
+      ? window.location.href
+      : 'https://www.kudajadridrizzle.com/blog';
+
+  const blogHeroImage =
+    typeof window !== 'undefined'
+      ? `${window.location.origin}/blogHero.jpg`
+      : 'https://www.kudajadridrizzle.com/blogHero.jpg';
+
+  // ✅ Structured Data for Blog
+  const blogStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "url": "https://www.kudajadridrizzle.com/blog",
+    "name": "Wayanad Travel Blog",
+    "description":
+      "Stay updated with the Wayanad Travel Blog. Get the latest news, tourism updates, travel tips, and insights to plan your perfect trip to Wayanad.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Kudajadri Drizzle Homestay",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.kudajadridrizzle.com/logo.png"
+      }
+    }
+  };
 
   if (loading) {
     return (
@@ -74,12 +99,10 @@ const BlogList: React.FC = () => {
           name="description"
           content="Stay updated with the Wayanad Travel Blog. Get the latest news, tourism updates, local insights, travel tips, and experiences to help you plan your perfect trip."
         />
-        <meta
-          name="keywords"
-          content="wayanad blog, wayanad travel blog, kudajadri blog, wayanad tourism updates, travel tips, local insights"
-        />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Kudajadri Homestay" />
+
+        {/* Open Graph */}
         <meta
           property="og:title"
           content="Wayanad Travel Blog: Latest News, Tourism Updates, & Insights"
@@ -89,12 +112,13 @@ const BlogList: React.FC = () => {
           content="Stay updated with the Wayanad Travel Blog. Get the latest news, tourism updates, local insights, travel tips, and experiences to help you plan your perfect trip."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={window.location.href} />
+        <meta property="og:url" content={currentUrl} />
         <meta property="og:site_name" content="Kudajadri Homestay" />
-        <meta
-          property="og:image"
-          content={`${window.location.origin}/aboutHero.jpg`}
-        />
+        <meta property="og:image" content={blogHeroImage} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
@@ -104,19 +128,25 @@ const BlogList: React.FC = () => {
           name="twitter:description"
           content="Stay updated with the Wayanad Travel Blog. Get the latest news, tourism updates, local insights, travel tips, and experiences to help you plan your perfect trip."
         />
-        <meta
-          name="twitter:image"
-          content={`${window.location.origin}/aboutHero.jpg`}
-        />
-        <link rel="canonical" href={window.location.href} />
+        <meta name="twitter:image" content={blogHeroImage} />
+
+        {/* Canonical */}
+        <link rel="canonical" href={currentUrl} />
+
+        {/* ✅ Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify(blogStructuredData)}
+        </script>
       </Helmet>
 
-          <Header type="black" />
+      <Header type="black" />
       <div className="min-h-screen bg-white">
         <div className="sm:px-[12%] sm:py-32 px-4 py-14 large:px-[18%]">
-          <h1 className="text-[32px] sm:text-[44px] font-ivy mb-8 text-center">Wayanad Travel Blog</h1>
+          <h1 className="text-[32px] sm:text-[44px] font-ivy mb-8 text-center">
+            Wayanad Travel Blog
+          </h1>
           <p className="text-secondary font-albertSans text-lg mb-12 text-center">
-          Explore Wayanad with our <strong>Wayanad Travel Blog</strong> , featuring travel tips, itineraries, and local insights. Discover the best accommodations, including homestays and heritage cottages, and learn about sightseeing, nature walks, and adventure activities. Perfect for families, couples, and solo travelers, the blog helps plan a memorable and enjoyable Wayanad trip.
+            Explore Wayanad with our <strong>Wayanad Travel Blog</strong>, featuring travel tips, itineraries, and local insights. Discover the best accommodations, including homestays and heritage cottages, and learn about sightseeing, nature walks, and adventure activities. Perfect for families, couples, and solo travelers, the blog helps plan a memorable and enjoyable Wayanad trip.
           </p>
 
           {blogPosts.length === 0 ? (
@@ -127,7 +157,7 @@ const BlogList: React.FC = () => {
             </div>
           ) : (
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {blogPosts.map(post => (
+              {blogPosts.map((post) => (
                 <article
                   key={post.slug}
                   className="overflow-hidden transition-all duration-300 bg-white rounded-lg shadow-sm hover:shadow-md border border-gray-100"
@@ -138,6 +168,7 @@ const BlogList: React.FC = () => {
                         src={post.featuredImage}
                         alt={post.title}
                         className="object-cover w-full h-48"
+                        loading="lazy"
                       />
                     </div>
                   )}

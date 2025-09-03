@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { useState, useEffect } from 'react';
 import Footer from '../Home/components/Footer';
 import { EnhancedAttractionCard } from './components/EnhancedAttractionCard';
 import { EnhancedHero } from './components/EnhancedHero';
@@ -10,6 +11,13 @@ import { useContentSection } from '../../hooks/useContentSection';
 export const WayanadPage = () => {
   const { pageMetadata, heroSection, attractions, faqs } = wayanadData;
   const contentSection = useContentSection('wayanad');
+  const [currentUrl, setCurrentUrl] = useState('https://www.kudajadridrizzle.com/wayanad');
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setCurrentUrl(window.location.href);
+    }
+  }, []);
 
   return (
     <div>
@@ -19,19 +27,25 @@ export const WayanadPage = () => {
         <meta name="keywords" content={pageMetadata.keywords} />
         <meta name="robots" content={pageMetadata.robots} />
         <meta name="author" content={pageMetadata.author} />
+
+        {/* Open Graph */}
         <meta property="og:title" content={pageMetadata.title} />
         <meta property="og:description" content={pageMetadata.description} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={window.location.href} />
+        <meta property="og:url" content={currentUrl} />
         <meta property="og:site_name" content="Kudajadri Homestay" />
         <meta property="og:locale" content="en_US" />
+
+        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageMetadata.title} />
         <meta name="twitter:description" content={pageMetadata.description} />
         <meta name="twitter:site" content="@kudajadrihomestay" />
+
+        {/* Misc */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="canonical" href={window.location.href} />
+        <link rel="canonical" href={currentUrl} />
       </Helmet>
 
       <EnhancedHero 
@@ -76,7 +90,7 @@ export const WayanadPage = () => {
         </div>
       </div>
 
-      {/* Shared Content Section (centralized JSON) */}
+      {/* Shared Content Section */}
       {contentSection && (
         <ContentSection
           title={contentSection.title}

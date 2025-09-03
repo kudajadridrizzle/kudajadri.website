@@ -36,6 +36,7 @@ const Home = () => {
   const contentSection = useContentSection('home');
 
   const siteUrl = "https://www.kudajadridrizzle.com";
+  const canonicalUrl = siteUrl + "/";
   const title =
     "Wayanad Homestays | Best Heritage Homestay in Wayanad for Family & Groups";
   const description =
@@ -51,12 +52,24 @@ const Home = () => {
     image,
     address: {
       "@type": "PostalAddress",
+      streetAddress: "Kayakkandy House, MR School Road, Kaniyambetta",
       addressLocality: "Kalpetta",
       addressRegion: "Wayanad",
+      postalCode: "673122",
       addressCountry: "India",
     },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 11.6854,
+      longitude: 76.1320,
+    },
     priceRange: "₹₹",
-    telephone: "+91-XXXXXXXXXX", // replace with real number
+    telephone: "+91 9946 354 511", // ✅ use real number
+    sameAs: [
+      "https://www.facebook.com/kudajadrihomestay",
+      "https://www.instagram.com/kudajadrihomestay/",
+      "https://twitter.com/kudajadrihomestay"
+    ],
   };
 
   return (
@@ -71,18 +84,19 @@ const Home = () => {
         />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Kudajadri Drizzle Homestay" />
-        <link rel="canonical" href={siteUrl} />
+        <link rel="canonical" href={canonicalUrl} />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:url" content={siteUrl} />
+        <meta property="og:url" content={canonicalUrl} />
         <meta property="og:site_name" content="Kudajadri Drizzle Homestay" />
         <meta property="og:image" content={image} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:locale" content="en_US" />
+        <meta property="og:updated_time" content={new Date().toISOString()} />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
