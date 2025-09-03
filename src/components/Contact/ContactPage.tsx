@@ -34,8 +34,16 @@ export const ContactPage = () => {
 
     const phone = whatsappNumber.replace(/[^0-9]/g, '');
     const url = `https://wa.me/${phone}?text=${encodedMessage}`;
-    window.open(url, '_blank');
+    if (typeof window !== 'undefined') {
+      window.open(url, '_blank');
+    }
   };
+
+  // SSR-safe current URL
+  const currentUrl =
+    typeof window !== 'undefined'
+      ? window.location.href
+      : 'https://kudajadri.com/contact';
 
   return (
     <div className="sm:mt-[90px] mobile:mt-[52px]">
@@ -63,7 +71,7 @@ export const ContactPage = () => {
           content="Book homestays, cottages, and rooms in Wayanad online for families and groups. Enjoy comfortable stays, scenic views, and easy booking with great deals."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={window.location.href} />
+        <meta property="og:url" content={currentUrl} />
         <meta property="og:site_name" content="Kudajadri Homestay" />
         <meta property="og:locale" content="en_US" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -78,7 +86,7 @@ export const ContactPage = () => {
         <meta name="twitter:site" content="@kudajadrihomestay" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="canonical" href={window.location.href} />
+        <link rel="canonical" href={currentUrl} />
       </Helmet>
 
       <Header type="black" />
@@ -87,7 +95,7 @@ export const ContactPage = () => {
         <div className="flex flex-col sm:gap-[90px] gap-7">
           <div className="flex flex-col items-center gap-6">
             <span className="text-[#000] font-albertSans tracking-[1.6px] text-base">
-              CONTACT US{' '}
+              CONTACT US
             </span>
             <h1 className="sm:text-[72px] text-[32px] text-[#000] font-staylista text-center">
               Online Booking of Wayanad Homestays & Cottages
