@@ -34,15 +34,19 @@ export const ContactPage = () => {
 
     const phone = whatsappNumber.replace(/[^0-9]/g, '');
     const url = `https://wa.me/${phone}?text=${encodedMessage}`;
-    window.open(url, '_blank');
+    if (typeof window !== 'undefined') {
+      window.open(url, '_blank');
+    }
   };
+
+  // ✅ SSR-safe canonical URL (static fallback instead of window)
+  const canonicalUrl = 'https://kudajadri.com/contact';
 
   return (
     <div className="sm:mt-[90px] mobile:mt-[52px]">
       <Helmet>
         <title>
-          Online Booking of Homestay, Cottages, Rooms in Wayanad for Family &
-          Group
+          Online Booking of Homestay, Cottages, Rooms in Wayanad for Family & Group
         </title>
         <meta
           name="description"
@@ -63,9 +67,14 @@ export const ContactPage = () => {
           content="Book homestays, cottages, and rooms in Wayanad online for families and groups. Enjoy comfortable stays, scenic views, and easy booking with great deals."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={window.location.href} />
+        <meta property="og:url" content={canonicalUrl} />
         <meta property="og:site_name" content="Kudajadri Homestay" />
         <meta property="og:locale" content="en_US" />
+        {/* ✅ Added OG/Twitter preview image */}
+        <meta
+          property="og:image"
+          content="https://kudajadri.com/contact-preview.jpg"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
@@ -75,10 +84,32 @@ export const ContactPage = () => {
           name="twitter:description"
           content="Book homestays, cottages, and rooms in Wayanad online for families and groups. Enjoy comfortable stays, scenic views, and easy booking with great deals."
         />
+        <meta
+          name="twitter:image"
+          content="https://kudajadri.com/contact-preview.jpg"
+        />
         <meta name="twitter:site" content="@kudajadrihomestay" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="canonical" href={window.location.href} />
+        <link rel="canonical" href={canonicalUrl} />
+
+        {/* ✅ JSON-LD Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ContactPage',
+            name: 'Kudajadri Homestay Contact Page',
+            description:
+              'Book homestays, cottages, and rooms in Wayanad online for families and groups. Contact Kudajadri Homestay directly for reservations and inquiries.',
+            url: canonicalUrl,
+            contactPoint: {
+              '@type': 'ContactPoint',
+              telephone: whatsappNumber,
+              contactType: 'customer service',
+              email: email,
+              areaServed: 'IN',
+              availableLanguage: ['English', 'Malayalam'],
+            },
+          })}
+        </script>
       </Helmet>
 
       <Header type="black" />
@@ -86,9 +117,10 @@ export const ContactPage = () => {
       <div className="mobile:pt-[52px] mobile:pb-[24px] sm:pt-[50px] sm:min-w-[1174px] flex flex-col items-center px-4 sm:px-0">
         <div className="flex flex-col sm:gap-[90px] gap-7">
           <div className="flex flex-col items-center gap-6">
-            <span className="text-[#000] font-albertSans tracking-[1.6px] text-base">
-              CONTACT US{' '}
-            </span>
+            {/* ✅ Changed CONTACT US to h2 for semantic SEO */}
+            <h2 className="text-[#000] font-albertSans tracking-[1.6px] text-base uppercase">
+              Contact Us
+            </h2>
             <h1 className="sm:text-[72px] text-[32px] text-[#000] font-staylista text-center">
               Online Booking of Wayanad Homestays & Cottages
             </h1>
@@ -100,16 +132,12 @@ export const ContactPage = () => {
             {/* Address */}
             <div className="flex flex-col flex-1 gap-8">
               <div className="flex flex-col gap-2.5">
-                <span className="text-[#000] font-albertSans tracking-[1.6px] uppercase mobile:text-sm sm:text-base">
-                  ADDRESS
-                </span>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-ivy sm:text-[44px] text-[32px] text-[#000]"
-                >
+                <h3 className="text-[#000] font-albertSans tracking-[1.6px] uppercase mobile:text-sm sm:text-base">
+                  Address
+                </h3>
+                <span className="font-ivy sm:text-[44px] text-[32px] text-[#000]">
                   Come
-                </a>
+                </span>
                 <a
                   href={import.meta.env.VITE_GOOGLE_MAPS_URL}
                   target="_blank"
@@ -123,9 +151,9 @@ export const ContactPage = () => {
 
               {/* Email */}
               <div className="flex flex-col gap-2.5">
-                <span className="text-[#000] text-base font-albertSans tracking-[1.6px] uppercase">
-                  EMAIL
-                </span>
+                <h3 className="text-[#000] text-base font-albertSans tracking-[1.6px] uppercase">
+                  Email
+                </h3>
                 <a
                   href={`mailto:${email}`}
                   className="text-xl text-secondary font-albertSans hover:underline"
@@ -136,31 +164,35 @@ export const ContactPage = () => {
 
               {/* Social */}
               <div className="flex flex-col gap-2.5">
-                <span className="text-[#000] text-base font-albertSans tracking-[1.6px] uppercase">
-                  FOLLOW
-                </span>
+                <h3 className="text-[#000] text-base font-albertSans tracking-[1.6px] uppercase">
+                  Follow
+                </h3>
                 <div className="flex items-center gap-6">
                   <a
                     href="https://www.facebook.com/kudajadrihomestay"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <img src={facebookLogo} alt="Facebook" />
                   </a>
                   <a
                     href="https://www.instagram.com/kudajadrihomestay/"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <img src={instaLogo} alt="Instagram" />
                   </a>
                   <a
                     href="https://twitter.com/kudajadrihomestay"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <img src={twitterLogo} alt="Twitter" />
                   </a>
                   <a
                     href="https://www.threadless.com/stores/kudajadrihomestay"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <img src={threadLogo} alt="Thread" />
                   </a>
@@ -170,9 +202,9 @@ export const ContactPage = () => {
 
             {/* Phone */}
             <div className="w-full flex flex-col gap-2.5 flex-1">
-              <span className="text-[#000] mobile:text-sm sm:text-base font-albertSans tracking-[1.6px] uppercase">
+              <h3 className="text-[#000] mobile:text-sm sm:text-base font-albertSans tracking-[1.6px] uppercase">
                 Phone
-              </span>
+              </h3>
               <span className="font-ivy sm:text-[44px] text-[32px] text-[#000]">
                 Call
               </span>
@@ -183,24 +215,27 @@ export const ContactPage = () => {
 
             {/* Message Form */}
             <div className="w-full flex flex-col gap-2.5 flex-1">
-              <span className="text-[#000] mobile:text-sm sm:text-base font-albertSans tracking-[1.6px] uppercase">
+              <h3 className="text-[#000] mobile:text-sm sm:text-base font-albertSans tracking-[1.6px] uppercase">
                 Message
-              </span>
+              </h3>
               <span className="font-ivy text-[44px] text-[#000]">Write</span>
               <div className="flex flex-col gap-3.5">
                 <TextField
+                  id="name"
                   label="Name"
                   value={form.name}
                   onChange={handleChange('name')}
                   placeholder="Your Name"
                 />
                 <TextField
+                  id="email"
                   label="Email"
                   value={form.email}
                   onChange={handleChange('email')}
                   placeholder="Your Email"
                 />
                 <TextField
+                  id="message"
                   label="Message"
                   value={form.message}
                   onChange={handleChange('message')}
@@ -225,6 +260,7 @@ export const ContactPage = () => {
 };
 
 interface TextFieldProps {
+  id: string;
   label: string;
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -232,6 +268,7 @@ interface TextFieldProps {
 }
 
 export const TextField: React.FC<TextFieldProps> = ({
+  id,
   label,
   value,
   onChange,
@@ -239,8 +276,12 @@ export const TextField: React.FC<TextFieldProps> = ({
 }) => {
   return (
     <div className="flex flex-col gap-1">
-      <span className="text-[#666] font-albertSans font-medium">{label}</span>
+      {/* ✅ Proper <label> for accessibility */}
+      <label htmlFor={id} className="text-[#666] font-albertSans font-medium">
+        {label}
+      </label>
       <input
+        id={id}
         type="text"
         value={value}
         onChange={onChange}

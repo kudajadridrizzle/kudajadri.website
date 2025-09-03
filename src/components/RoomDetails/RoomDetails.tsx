@@ -6,7 +6,6 @@ import MorningSession from './components/MorningSession';
 import { RoomPriceSession } from './components/RoomPriceSession';
 import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
-// import SEOData from './components/SEOData';
 import WhyThisRoom from './components/WhyThisRoom';
 import RoomServices from './components/RoomServices';
 import LocalExperiences from './components/LocalExperiences';
@@ -31,6 +30,8 @@ import classicRoomFaqRaw from '../../File/classicroomfaqs.md?raw';
 import deluxeHeritageRoomFaqRaw from '../../File/deluxeheritageroomfaqs.md?raw';
 import deluxeRoomFaqRaw from '../../File/deluxeroomfaqs.md?raw';
 import premiumRoomFaqRaw from '../../File/premiumroomfaqs.md?raw';
+
+import { useState, useEffect } from 'react';
 
 // Define the shape of FAQ frontmatter
 interface FaqFrontMatterAttributes {
@@ -59,6 +60,14 @@ const getRoomFaqMarkdown = (roomId: string | undefined): string => {
 
 const RoomDetails = () => {
   const { id } = useParams();
+  const [currentUrl, setCurrentUrl] = useState('https://www.kudajadridrizzle.com');
+
+  // Update current URL on client-side
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setCurrentUrl(window.location.href);
+    }
+  }, []);
 
   // Get the room data with the correct type
   const roomDataItem = roomData[id as keyof typeof roomData] || roomData['classic-rooms'];
@@ -171,7 +180,7 @@ const RoomDetails = () => {
           content={metaContent.ogDescription || metaContent.description}
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={window.location.href} />
+        <meta property="og:url" content={currentUrl} />
         <meta property="og:site_name" content="Kudajadri Homestay" />
         <meta property="og:locale" content="en_US" />
         <meta
@@ -196,7 +205,7 @@ const RoomDetails = () => {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="canonical" href={window.location.href} />
+        <link rel="canonical" href={currentUrl} />
       </Helmet>
 
       <Header type="black" />
@@ -211,7 +220,6 @@ const RoomDetails = () => {
       <RoomExperience />
       <DeluxeRoomOverview />
       <RoomTips />
-      {/* <SEOData roomType={roomDataItem.roomType} /> */}
       <RoomBookingCTA />
       <AnotherRoomSession roomType={roomDataItem.roomType} />
       <FaqList {...parsedFaq.attributes} />

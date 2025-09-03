@@ -5,6 +5,10 @@ import { ImageSession } from './components/ImageSession';
 import { ResponsiveImageSession } from './components/ResponsiveImageSession';
 import { Helmet } from 'react-helmet-async';
 
+const SITE_URL = import.meta.env.VITE_SITE_URL || "https://www.kudajadridrizzle.com";
+const CANONICAL_URL = `${SITE_URL}/gallery`;
+const OG_IMAGE = `${SITE_URL}/aboutHero.jpg`;
+
 export const Gallrey = () => {
   return (
     <div>
@@ -36,13 +40,10 @@ export const Gallrey = () => {
           content="Browse stunning photos and videos of Kudajadri Drizzle Homestay in Wayanad. Get a visual glimpse of the cozy rooms, scenic surroundings, and peaceful ambiance."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={window.location.href} />
+        <meta property="og:url" content={CANONICAL_URL} />
         <meta property="og:site_name" content="Kudajadri Homestay" />
         <meta property="og:locale" content="en_US" />
-        <meta
-          property="og:image"
-          content={`${window.location.origin}/aboutHero.jpg`}
-        />
+        <meta property="og:image" content={OG_IMAGE} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
 
@@ -57,15 +58,12 @@ export const Gallrey = () => {
           content="Browse stunning photos and videos of Kudajadri Drizzle Homestay in Wayanad. Get a visual glimpse of the cozy rooms, scenic surroundings, and peaceful ambiance."
         />
         <meta name="twitter:site" content="@kudajadrihomestay" />
-        <meta
-          name="twitter:image"
-          content={`${window.location.origin}/aboutHero.jpg`}
-        />
+        <meta name="twitter:image" content={OG_IMAGE} />
 
         {/* Additional Meta Tags */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="canonical" href={window.location.href} />
+        <link rel="canonical" href={CANONICAL_URL} />
       </Helmet>
 
       <Header type="black" />
