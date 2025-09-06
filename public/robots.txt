@@ -1,6 +1,2 @@
 User-agent: *
-Disallow:
-
-Allow: /
-
-Sitemap: https://www.kudajadridrizzle.com/sitemap.xml
+Disallow: /
