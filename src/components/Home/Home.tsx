@@ -39,7 +39,7 @@ const Home = () => {
   const canonicalUrl = siteUrl + "/";
   const title = "Wayanad homestays: Best homestay in Wayanad for family, groups";
   const description =
-    "Kudajadri Drizzle Homestay in Wayanad: 100+ years old heritage stay. Book nature-friendly homestays in Wayanad, perfect for families, couples, and groups with modern amenities.";
+    "Kudajadri Drizzle home stay in Wayanad: 100+ years old #1 heritage Wayanad Homestay: Book top rated nature friendly Homestays in Wayanad for Family & Group.";
   const image = `${siteUrl}/aboutHero.jpg`;
 
   const jsonLd = {
