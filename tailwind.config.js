@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        staylista: ["Staylista", "sans-serif"], // Add Staylista font
+        staylista: ["Staylista", "sans-serif"],
         albertSans: "var(--fonts-tertiary-font)",
         ivy: ["Ivy", "sans-serif"],
       },
@@ -13,9 +13,18 @@ export default {
         secondary: "var(--color-secondary)",
       },
       screens: {
-        mobile:'250px',
-        large:'2000px'
-      }
+        mobile: '250px',
+        large: '2000px'
+      },
+      keyframes: {
+        'ping-slow': {
+          '0%': { transform: 'scale(1)', opacity: '0.5' },
+          '75%, 100%': { transform: 'scale(1.5)', opacity: '0' },
+        },
+      },
+      animation: {
+        'ping-slow': 'ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite',
+      },
     },
   },
   plugins: [],
