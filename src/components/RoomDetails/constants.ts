@@ -417,7 +417,7 @@ export const classicRooms: RoomContent = {
     'Board games',    
   ],
   pricePerNight: 2500,
-  priceNote: 'Price for 2 adults. Extra person charges may apply.',
+  priceNote: 'Price for 2 adults (Non-AC & EP Plan). Extra person charges may apply.',
   checkIn: '12:00 PM',
   checkOut: '10:00 AM',
   cancellationPolicyTitle: 'Cancellation policy',
@@ -428,6 +428,8 @@ export const classicRooms: RoomContent = {
   extraPerson: {
     note: '₹1,000 per night after 2 guests',
     rules: [
+      'All rooms are on a twin-sharing basis',
+      'Applicable for adults aged 10 years and above',
       'No charge for children under 5 years',
       'Extra bed available on request',
       'Guests are required to present a printout of the booking confirmation email along with a photocopy of a valid photo ID at the time of check-in',
@@ -456,7 +458,7 @@ export const deluxeHeritageRooms: RoomContent = {
     'Essentials',
   ],
   pricePerNight: 4000,
-  priceNote: 'Rates are twin share basis.',
+  priceNote: 'Rates are twin share basis (Non-AC & EP Plan)',
   checkIn: '12:00 PM',
   checkOut: '10:00 AM',
   cancellationPolicyTitle: 'Cancellation policy',
@@ -467,6 +469,8 @@ export const deluxeHeritageRooms: RoomContent = {
   extraPerson: {
     note: 'For Extra Person: ₹1250/-',
     rules: [
+      'All rooms are on a twin-sharing basis',
+      'Applicable for adults aged 10 years and above',
       'Children aged 10 years and above: Considered as adults.',
       'Children aged 5–10 years: Chargeable as per the applicable rates.',
       'Guests are required to present a printout of the booking confirmation email along with a photocopy of a valid photo ID at the time of check-in',
@@ -495,7 +499,7 @@ export const deluxeRooms: RoomContent = {
     'Essentials',
   ],
   pricePerNight: 3500,
-  priceNote: 'Rates are twin share basis.',
+  priceNote: 'Rates are twin share basis (Non-AC & EP Plan)',
   checkIn: '12:00 PM',
   checkOut: '10:00 AM',
   cancellationPolicyTitle: 'Cancellation policy',
@@ -506,6 +510,8 @@ export const deluxeRooms: RoomContent = {
   extraPerson: {
     note: 'For Extra Person: ₹1250/-',
     rules: [
+      'All rooms are on a twin-sharing basis',
+      'Applicable for adults aged 10 years and above',
       'Children aged 10 years and above: Considered as adults.',
       'Children aged 5–10 years: Chargeable as per the applicable rates.',
       'Guests are required to present a printout of the booking confirmation email along with a photocopy of a valid photo ID at the time of check-in',
@@ -533,8 +539,8 @@ export const premiumRooms: RoomContent = {
     'Portable fans',
     'Essentials',
   ],
-  pricePerNight: 5000,
-  priceNote: 'Rates are twin share basis.',
+  pricePerNight: 4500,
+  priceNote: 'Rates are twin share basis (Non-AC & EP Plan)',
   checkIn: '12:00 PM',
   checkOut: '10:00 AM',
   cancellationPolicyTitle: 'Cancellation policy',
@@ -545,6 +551,8 @@ export const premiumRooms: RoomContent = {
   extraPerson: {
     note: 'For Extra Person: ₹1500/-',
     rules: [
+      'All rooms are on a twin-sharing basis',
+      'Applicable for adults aged 10 years and above',
       'Children aged 10 years and above: Considered as adults.',
       'Children aged 5–10 years: Chargeable as per the applicable rates.',
       'Guests are required to present a printout of the booking confirmation email along with a photocopy of a valid photo ID at the time of check-in',
