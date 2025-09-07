@@ -4,11 +4,11 @@ import {
   Wifi,
   Tv,
   Shield,
-  Gamepad2,
-  Fan,
   Home,
-  Refrigerator,
-  Droplets,
+  BedDouble,
+  Snowflake,
+  Droplet,
+  Zap,
 } from 'lucide-react';
 
 export const RoomPriceSession = () => {
@@ -19,15 +19,24 @@ export const RoomPriceSession = () => {
   const iconMap: {
     [key: string]: React.ComponentType<{ className?: string }>;
   } = {
-    Fridge: Refrigerator,
-    WIFI: Wifi,
-    TV: Tv,
-    Iron: Droplets, // Using Droplets as a placeholder for Iron
-    'Window guards': Shield,
-    'Board games': Gamepad2,
-    'Portable fans': Fan,
-    Essentials: Home,
+    'Bunker Beds': BedDouble,
+    'Air Conditioning (on request)': Snowflake,
+    'Wi-Fi': Wifi,
+    'TV': Tv,
+    'Hot Water': Droplet,
+    'Electric Kettle': Zap,
+    'Window Guards': Shield,
+    'Essentials': Home,
   };
+
+  // Function to get the display text for the offer
+  const getDisplayText = (offer: string) => {
+    if ((id === 'premium-rooms' || id === 'deluxe-rooms') && offer === 'Air Conditioning (on request)') {
+      return 'Bunker Beds';
+    }
+    return offer;
+  };
+
   return (
     <div className="sm:px-[12%] sm:pb-32 flex mobile:flex-col sm:flex-row px-4 large:px-[18%]">
       <div className="flex flex-col sm:gap-10 flex-1 mobile:gap-6 mobile:pb-8 sm:pb-0">
@@ -45,11 +54,12 @@ export const RoomPriceSession = () => {
           </h2>
           <div className="grid grid-cols-2 gap-x-12 gap-y-4 text-primary font-albertSans">
             {roomData.offers.map((offer, i) => {
-              const Icon = iconMap[offer] || Home;
+              const displayText = getDisplayText(offer);
+              const Icon = iconMap[displayText] || Home;
               return (
                 <div key={`offer-${i}`} className="flex items-center gap-2">
                   <Icon className="w-5 h-5 text-primary" />
-                  <span>{offer}</span>
+                  <span>{displayText}</span>
                 </div>
               );
             })}
@@ -64,6 +74,13 @@ export const RoomPriceSession = () => {
           <span className="text-secondary font-albertSans text-base">
             {roomData.priceNote}
           </span>
+          <div className="mt-2">
+            <ul className="list-disc pl-5 space-y-1 text-secondary font-albertSans text-sm">
+              {roomData.extraPerson.rules.map((rule, i) => (
+                <li key={`extra-${i}`}>{rule}</li>
+              ))}
+            </ul>
+          </div>
         </div>
         <div className="flex flex-col px-2 border-l border-primary">
           <span className="text-primary font-albertSans font-semibold">
@@ -80,14 +97,6 @@ export const RoomPriceSession = () => {
           <ul className="list-disc pl-5 space-y-2 text-secondary font-albertSans">
             {roomData.cancellationPolicy.map((rule, i) => (
               <li key={`cancel-${i}`}>{rule}</li>
-            ))}
-          </ul>
-          <span className="text-primary font-albertSans">
-            {roomData.extraPerson.note}
-          </span>
-          <ul className="list-disc pl-5 space-y-2 text-secondary font-albertSans">
-            {roomData.extraPerson.rules.map((rule, i) => (
-              <li key={`extra-${i}`}>{rule}</li>
             ))}
           </ul>
           <div>
