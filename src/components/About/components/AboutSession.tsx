@@ -6,7 +6,7 @@ import imageFive from '../../../assets/drone1.jpg';
 import imageSix from '../../../assets/wide.jpg';
 import imageSeven from '../../../assets/awards.jpg';
 import imageEight from '../../../assets/openspace.jpg';
-import imageNine from '../../../assets/pool_wide.jpg';
+import imageNine from '../../../assets/pool_wide.JPG';
 import remarkGfm from 'remark-gfm';
 import ReactMarkdown from 'react-markdown';
 import { useState } from 'react';
