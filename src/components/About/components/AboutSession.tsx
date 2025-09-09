@@ -1,5 +1,12 @@
 import imageOne from '../../../assets/imageOne.jpg';
-import aboutLegacyImage from '../../../assets/aboutLegacyImage.jpg';
+import imageTwo from '../../../assets/corner.jpg';
+import imageThree from '../../../assets/imageThree.jpg';
+import imageFour from '../../../assets/kalavandi.jpg';
+import imageFive from '../../../assets/drone1.jpg';
+import imageSix from '../../../assets/wide.jpg';
+import imageSeven from '../../../assets/awards.jpg';
+import imageEight from '../../../assets/openspace.jpg';
+import imageNine from '../../../assets/pool_wide.jpg';
 import remarkGfm from 'remark-gfm';
 import ReactMarkdown from 'react-markdown';
 import { useState } from 'react';
@@ -101,7 +108,7 @@ const AboutSession = () => {
           </div>
           <div className="h-[415px]">
             <img
-              src={aboutLegacyImage}
+              src={imageTwo}
               alt=""
               className="size-full object-cover rounded-[32px]"
             />
@@ -128,7 +135,7 @@ const AboutSession = () => {
           </div>
           <div className="h-[415px]">
             <img
-              src={imageOne}
+              src={imageThree}
               alt="Ideal for all travelers at Kudajadri"
               className="size-full object-cover rounded-[32px]"
             />
@@ -148,7 +155,7 @@ const AboutSession = () => {
           </div>
           <div className="h-[415px]">
             <img
-              src={aboutLegacyImage}
+              src={imageFour}
               alt="Experience nature at Kudajadri"
               className="size-full object-cover rounded-[32px]"
             />
@@ -168,7 +175,7 @@ const AboutSession = () => {
           </div>
           <div className="h-[415px]">
             <img
-              src={imageOne}
+              src={imageFive}
               alt="Authentic cuisine at Kudajadri"
               className="size-full object-cover rounded-[32px]"
             />
@@ -189,7 +196,7 @@ const AboutSession = () => {
           </div>
           <div className="h-[415px]">
             <img
-              src={imageOne}
+              src={imageSix}
               alt="Immersive nature experiences at Kudajadri"
               className="size-full object-cover rounded-[32px]"
             />
@@ -205,7 +212,7 @@ const AboutSession = () => {
         <div className="flex flex-col gap-8 flex-1">
           <div className="h-[415px]">
             <img
-              src={aboutLegacyImage}
+              src={imageSeven}
               alt="Cultural immersion experiences at Kudajadri"
               className="size-full object-cover rounded-[32px]"
             />
@@ -231,7 +238,7 @@ const AboutSession = () => {
           </div>
           <div className="h-[415px]">
             <img
-              src={imageOne}
+              src={imageEight}
               alt="Modern amenities at Kudajadri"
               className="size-full object-cover rounded-[32px]"
             />
@@ -247,7 +254,7 @@ const AboutSession = () => {
         <div className="flex flex-col gap-8 flex-1">
           <div className="h-[415px]">
             <img
-              src={aboutLegacyImage}
+              src={imageNine}
               alt="Sustainable tourism at Kudajadri"
               className="size-full object-cover rounded-[32px]"
             />

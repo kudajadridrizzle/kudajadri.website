@@ -163,7 +163,7 @@ const RoomDetails = () => {
   const parsedFaq = fm<FaqFrontMatterAttributes>(roomFaqMarkdown);
 
   return (
-    <div className="min-h-screen pt-[12opx] md:pt-[50px]">
+    <div className="min-h-screen pt-[40px] md:pt-[70px] pb-8">
       <Header type="white" />
       <Helmet>
         <title>{metaContent.title}</title>
