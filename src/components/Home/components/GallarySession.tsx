@@ -1,7 +1,7 @@
 import ImageCarousel from '../../RoomDetails/components/ImageCarousel';
 import img1 from '/src/assets/drone1.jpg';
 import img2 from '/src/assets/frontimage.jpg';
-import img3 from '/src/assets/pool_wide.jpg';
+import img3 from '/src/assets/pool_wide.JPG';
 import img4 from '/src/assets/heritage.jpg';
 
 const images = [img1, img2, img3, img4];
