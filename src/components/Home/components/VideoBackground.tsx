@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import video from '../../../assets/videoBackGround.mp4';
-import mobileVideo from '../../../assets/0907.mp4';
+// import mobileVideo from '../../../assets/0907.mp4';
 import { Header } from './Header';
+import mobileimg from '../../../assets/mobileheroimg.jpg';
 import { useNavigate } from 'react-router-dom';
 import Preloader from './Preloader';
 
@@ -31,17 +32,12 @@ const VideoBackground = () => {
         Your browser does not support the video tag.
       </video>
 
-      {/* Mobile Video Background */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
+      {/* Mobile Background (Image instead of video) */}
+      <img
+        src={mobileimg}
+        alt="Mobile background"
         className="md:hidden absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-full object-cover z-0"
-      >
-        <source src={mobileVideo} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      />
 
       {/* Shade Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
