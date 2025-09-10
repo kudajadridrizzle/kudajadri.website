@@ -1,16 +1,14 @@
 import {
   Baby,
-  Trees,
   MapPin,
-  Eye,
-  Sprout,
+  Tv,
   ChefHat,
   Home,
   Mountain,
   Wifi,
   Shield,
   Car,
-  Heart,
+  Droplets,
 } from 'lucide-react';
 
 const Amenities = () => {
@@ -39,20 +37,21 @@ const Amenities = () => {
 
         <div className="flex flex-wrap sm:gap-14 mobile:gap-5 justify-center">
           <AmenityIcon Icon={Home} title="Heritage Stay" />
-          <AmenityIcon Icon={Mountain} title="Paddy Field View" />
-          <AmenityIcon Icon={Wifi} title="Fast WiFi" />
-          <AmenityIcon Icon={Shield} title="Enhanced Safety" />
-          <AmenityIcon Icon={Car} title="Ample Parking" />
-          <AmenityIcon Icon={Heart} title="Peaceful Environment" />
+          <AmenityIcon Icon={Droplets} title="Swimming Pool" />
+          <AmenityIcon Icon={ChefHat} title="Kerala Cuisine" />
+          <AmenityIcon Icon={Baby} title="Kids Play Area" />
+          <AmenityIcon Icon={Tv} title="TV" />
+
+
+
         </div>
 
         <div className="flex flex-wrap sm:gap-14 mobile:gap-5 justify-center">
-          <AmenityIcon Icon={Baby} title="Kids Play Area" />
-          <AmenityIcon Icon={Trees} title="Nature Walks" />
+        <AmenityIcon Icon={Car} title="Ample Parking" />
+          <AmenityIcon Icon={Wifi} title="Fast WiFi" />
           <AmenityIcon Icon={MapPin} title="Tourist Access" />
-          <AmenityIcon Icon={Eye} title="Wildlife Spotting" />
-          <AmenityIcon Icon={Sprout} title="Organic Garden" />
-          <AmenityIcon Icon={ChefHat} title="Kerala Cuisine" />
+          <AmenityIcon Icon={Mountain} title="Paddy Field View" />
+          <AmenityIcon Icon={Shield} title="Enhanced Safety" />
         </div>
       </div>
     </div>

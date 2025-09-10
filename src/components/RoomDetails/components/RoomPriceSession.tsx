@@ -69,7 +69,7 @@ export const RoomPriceSession = () => {
       <div className="sm:px-6 sm:py-11 flex flex-col gap-5 sm:w-[358px]">
         <div className="flex flex-col gap-1">
           <span className="text-primary font-albertSans text-2xl font-medium">
-            ₹{roomData.pricePerNight} night
+            ₹{roomData.pricePerNight} /night
           </span>
           <span className="text-secondary font-albertSans text-base">
             {roomData.priceNote}

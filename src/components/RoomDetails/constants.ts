@@ -21,7 +21,7 @@ import {
   premiumRoomsImage15,
 } from './assets';
 
-import sessionImage from '../../assets/imageFour.jpg';
+import sessionImage from '../../assets/poolwide.jpg';
 
 interface SessionMorning {
   titile: string;
@@ -428,8 +428,8 @@ export const classicRooms: RoomContent = {
     rules: [
       'Rates are twin share basis (Non-AC & EP Plan)',
       'Applicable for adults aged 10 years and above',
-      'No charge for children under 5 years',
-      'Extra bed available on request',
+      'Children aged 5–9 years: ₹500 per night',
+      'Children aged 10 years and above: Considered as adults.',
       'Guests are required to present a printout of the booking confirmation email along with a photocopy of a valid photo ID at the time of check-in',
       'For group bookings, the minimum payable amount at check-in will be as quoted at the time of reservation',
       'Pets are not allowed on the property',
@@ -467,7 +467,7 @@ export const deluxeHeritageRooms: RoomContent = {
       'Rates are twin share basis (Non-AC & EP Plan)',
       'Applicable for adults aged 10 years and above',
       'Children aged 10 years and above: Considered as adults.',
-      'Children aged 5–10 years: Chargeable as per the applicable rates.',
+      'Children aged 5–9 years: ₹500 per night',
       'Guests are required to present a printout of the booking confirmation email along with a photocopy of a valid photo ID at the time of check-in',
       'For group bookings, the minimum payable amount at check-in will be as quoted at the time of reservation',
       'Pets are not allowed on the property',
@@ -505,7 +505,7 @@ export const deluxeRooms: RoomContent = {
       'Rates are twin share basis (Non-AC & EP Plan)',
       'Applicable for adults aged 10 years and above',
       'Children aged 10 years and above: Considered as adults.',
-      'Children aged 5–10 years: Chargeable as per the applicable rates.',
+      'Children aged 5–9 years: ₹500 per night',
       'Guests are required to present a printout of the booking confirmation email along with a photocopy of a valid photo ID at the time of check-in',
       'For group bookings, the minimum payable amount at check-in will be as quoted at the time of reservation',
       'Pets are not allowed on the property',
@@ -543,7 +543,7 @@ export const premiumRooms: RoomContent = {
       'Rates are twin share basis (Non-AC & EP Plan)',
       'Applicable for adults aged 10 years and above',
       'Children aged 10 years and above: Considered as adults.',
-      'Children aged 5–10 years: Chargeable as per the applicable rates.',
+      'Children aged 5–9 years: ₹500 per night',
       'Guests are required to present a printout of the booking confirmation email along with a photocopy of a valid photo ID at the time of check-in',
       'For group bookings, the minimum payable amount at check-in will be as quoted at the time of reservation',
       'Pets are not allowed on the property',
