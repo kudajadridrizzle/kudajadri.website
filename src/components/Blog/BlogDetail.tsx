@@ -27,10 +27,14 @@ const BlogDetail: React.FC = () => {
         });
 
         let foundPost: BlogPost | null = null;
-        
+
         for (const path in blogModules) {
           // Extract the slug part from the filename (remove date prefix and .md extension)
-          const pathSlug = path.split('/').pop()?.replace(/.md$/, '').replace(/^\d{4}-\d{2}-\d{2}-/, '');
+          const pathSlug = path
+            .split('/')
+            .pop()
+            ?.replace(/.md$/, '')
+            .replace(/^\d{4}-\d{2}-\d{2}-/, '');
           if (pathSlug === slug) {
             const content = await blogModules[path]();
             foundPost = parseBlogMarkdown(content as string, slug);
@@ -53,8 +57,13 @@ const BlogDetail: React.FC = () => {
         }
       } catch (error) {
         console.error('Error loading blog post:', error);
-        if (error instanceof Error && error.message.includes('required SEO fields')) {
-          setError('Blog post is missing required SEO fields. Please contact the administrator.');
+        if (
+          error instanceof Error &&
+          error.message.includes('required SEO fields')
+        ) {
+          setError(
+            'Blog post is missing required SEO fields. Please contact the administrator.'
+          );
         } else {
           setError('Blog post not found');
         }
@@ -96,25 +105,44 @@ const BlogDetail: React.FC = () => {
     <>
       <Helmet>
         <title>{blogPost.metaTitle || blogPost.title}</title>
-        <meta name="description" content={blogPost.metaDescription || blogPost.description} />
+        <meta
+          name="description"
+          content={blogPost.metaDescription || blogPost.description}
+        />
         <meta name="author" content={blogPost.author} />
         <meta name="robots" content="index, follow" />
 
         {/* Open Graph */}
-        <meta property="og:title" content={blogPost.metaTitle || blogPost.title} />
-        <meta property="og:description" content={blogPost.metaDescription || blogPost.description} />
+        <meta
+          property="og:title"
+          content={blogPost.metaTitle || blogPost.title}
+        />
+        <meta
+          property="og:description"
+          content={blogPost.metaDescription || blogPost.description}
+        />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={window.location.href} />
         <meta property="og:site_name" content="Kudajadri Homestay" />
-        {blogPost.featuredImage && <meta property="og:image" content={blogPost.featuredImage} />}
+        {blogPost.featuredImage && (
+          <meta property="og:image" content={blogPost.featuredImage} />
+        )}
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={blogPost.metaTitle || blogPost.title} />
-        <meta name="twitter:description" content={blogPost.metaDescription || blogPost.description} />
-        {blogPost.featuredImage && <meta name="twitter:image" content={blogPost.featuredImage} />}
+        <meta
+          name="twitter:title"
+          content={blogPost.metaTitle || blogPost.title}
+        />
+        <meta
+          name="twitter:description"
+          content={blogPost.metaDescription || blogPost.description}
+        />
+        {blogPost.featuredImage && (
+          <meta name="twitter:image" content={blogPost.featuredImage} />
+        )}
 
-        <link rel="canonical" href={window.location.href} />
+        <link rel="canonical" href="https://www.kudajadridrizzle.com/blog" />
       </Helmet>
 
       {/* Header with z-index to ensure it stays on top */}
@@ -143,8 +171,18 @@ const BlogDetail: React.FC = () => {
               to="/blog"
               className="inline-flex items-center font-medium text-primary hover:text-primary-dark font-albertSans"
             >
-              <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              <svg
+                className="w-4 h-4 mr-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
               </svg>
               Back to Blog
             </Link>
@@ -190,7 +228,10 @@ const BlogDetail: React.FC = () => {
 
           {/* Article Content */}
           <article className="prose prose-lg max-w-none font-albertSans text-secondary">
-            <div className="markdown-content" dangerouslySetInnerHTML={{ __html: blogPost.content }} />
+            <div
+              className="markdown-content"
+              dangerouslySetInnerHTML={{ __html: blogPost.content }}
+            />
           </article>
 
           {/* Back to Blog */}
@@ -199,8 +240,18 @@ const BlogDetail: React.FC = () => {
               to="/blog"
               className="inline-flex items-center font-medium text-primary hover:text-primary-dark font-albertSans"
             >
-              <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              <svg
+                className="w-4 h-4 mr-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
               </svg>
               Back to Blog
             </Link>
