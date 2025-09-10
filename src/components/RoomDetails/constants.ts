@@ -21,7 +21,7 @@ import {
   premiumRoomsImage15,
 } from './assets';
 
-import sessionImage from '../../assets/imageFour.jpg';
+import sessionImage from '../../assets/poolwide.jpg';
 
 interface SessionMorning {
   titile: string;
