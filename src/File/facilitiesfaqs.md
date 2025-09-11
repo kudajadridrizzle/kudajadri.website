@@ -1,5 +1,5 @@
 ---
-title: Wayanad Homestays with Swimming Pool - FAQs
+title: Swimming Pool Homestays in Wayanad – FAQs
 faqs:
   - question: "**Are there homestays with swimming pools in Wayanad?**"
     answer: Yes, several[ homestays in Wayanad](https://www.kudajadridrizzle.com)

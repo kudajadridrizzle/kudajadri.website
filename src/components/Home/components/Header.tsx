@@ -26,7 +26,7 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
     location.pathname === '/rooms' ||
     location.pathname === '/attractions' ||
     location.pathname === '/wayanad' ||
-    location.pathname === '/facilities' ||
+    location.pathname === '/facilities-amenities' ||
     location.pathname === '/tour-packages';
     
   const isDetailPage = location.pathname.startsWith('/tour-packages/');
@@ -106,7 +106,7 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
           </div>
         </AnimatedLink>
         <AnimatedLink
-          to="/facilities"
+          to="/facilities-amenities"
           className={`px-4 py-2 no-underline ${
             headerColor === 'white' ? 'text-[#FFF]' : 'text-primary'
           } font-albertSans`}
@@ -149,7 +149,7 @@ const PhoneHeader = ({ headerColor }: { headerColor?: 'white' | 'black' }) => {
     { to: "/rooms/deluxe-rooms", text: "Deluxe Rooms" },
     { to: "/rooms/deluxe-heritage-rooms", text: "Deluxe Heritage" },
     { to: "/rooms/premium-rooms", text: "Premium Rooms" },
-    { to: "/facilities", text: "Facilities" },
+    { to: "/facilities-amenities", text: "Facilities" },
     { to: "/gallery", text: "Gallery" },
     { to: "/contact", text: "Contact Us" },
   ];

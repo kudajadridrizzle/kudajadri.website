@@ -19,7 +19,7 @@ interface FaqFrontMatterAttributes {
 }
 
 const SITE_URL = import.meta.env.VITE_SITE_URL || "https://www.kudajadridrizzle.com";
-const CANONICAL_URL = `${SITE_URL}/facilities`;
+const CANONICAL_URL = `${SITE_URL}/facilities-amenities`;
 const OG_IMAGE = `${SITE_URL}/aboutHero.jpg`;
 
 const FacilitiesPage = () => {
@@ -82,7 +82,7 @@ const FacilitiesPage = () => {
       <ListSession />
       <FacilitiesAccordion />
       <Direction
-        title="Wayanad Homestays with Pools – How to Reach"
+        title="Swimming Pool Homestays in Wayanad – How to Reach"
         description="Reaching our Kudajadri Drizzle Wayanad Homestay is simple and hassle-free. The property is well-connected by road from Kozhikode, Bengaluru, and Mysuru, making travel convenient by car, taxi, or bus. Along the way, you’ll pass through scenic hills and lush plantations, offering a beautiful glimpse of Wayanad’s charm even before you arrive. The journey is smooth, pleasant, and sets the tone for a relaxing stay."
         buttonText="View on Map"
         showMap={true}

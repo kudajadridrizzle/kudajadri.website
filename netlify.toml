@@ -16,7 +16,7 @@ status = 301
 
 [[redirects]]
 from = "/facilities.php"
-to = "/facilities"
+to = "/facilities-amenities"
 status = 301
 
 [[redirects]]
