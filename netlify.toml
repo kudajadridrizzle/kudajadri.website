@@ -69,6 +69,11 @@ from = "/wayanad-tour-packages.php"
 to = "/tour-packages"
 status = 301
 
+[[redirects]]
+from = "/index.php"
+to = "/"
+status = 301
+
 # React SPA fallback (must be last)
 [[redirects]]
 from = "/*"

@@ -90,7 +90,7 @@ const About = () => {
       <Header type="white" />
       <Helmet>
         <title>
-          Kalpetta Homestays: #1 Homestays in Kalpetta with Airbnb Reviews
+          Best Homestays in Kalpetta for families, Kalpetta Homestays
         </title>
         <meta
           name="description"
