@@ -52,10 +52,7 @@ Message: ${message}
           name="description"
           content="Book your stay at Kudajadri Homestay in Wayanad with instant confirmation. Easy online booking for families and couples. Get the best rates and secure your perfect accommodation."
         />
-        <meta
-          name="keywords"
-          content="book kudajadri homestay, wayanad accommodation booking, online reservation, instant confirmation"
-        />
+        <meta name="keywords" content="" />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Kudajadri Homestay" />
 

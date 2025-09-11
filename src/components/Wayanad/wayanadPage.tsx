@@ -24,7 +24,7 @@ export const WayanadPage = () => {
       <Helmet>
         <title>{pageMetadata.title}</title>
         <meta name="description" content={pageMetadata.description} />
-        <meta name="keywords" content={pageMetadata.keywords} />
+        <meta name="keywords" content="" />
         <meta name="robots" content={pageMetadata.robots} />
         <meta name="author" content={pageMetadata.author} />
 

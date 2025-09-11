@@ -69,7 +69,7 @@ const TourPackagesDetails = () => {
       <Helmet>
         <title>{metaInfo.title}</title>
         <meta name="description" content={metaInfo.description} />
-        <meta name="keywords" content={metaInfo.keywords} />
+        <meta name="keywords" content="" />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Kudajadri Homestay" />
         <meta property="og:title" content={metaInfo.title} />
