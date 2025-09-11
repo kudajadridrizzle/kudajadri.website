@@ -41,10 +41,7 @@ export const TourPackages = () => {
           name="description"
           content="Discover the best Wayanad holiday tour packages with top deals for families, groups, and couples. Enjoy a perfect getaway with nature, adventure, and comfort."
         />
-        <meta
-          name="keywords"
-          content="wayanad tour packages, kudajadri activities, nature trails, wildlife tours, cultural experiences"
-        />
+        <meta name="keywords" content="" />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Kudajadri Homestay" />
 

@@ -94,8 +94,7 @@ const RoomDetails = () => {
           'Heritage Homestay in Wayanad: Traditional Stay with Modern Comfort',
         description:
           'Experience a heritage homestay in Wayanad with traditional charm and modern amenities. Enjoy a peaceful stay surrounded by nature and rich culture.',
-        keywords:
-          'heritage homestay wayanad, traditional stay wayanad, modern comfort, kudajadri homestay',
+        keywords: '',
         ogTitle:
           'Heritage Homestay in Wayanad: Traditional Stay with Modern Comfort',
         ogDescription:
@@ -109,8 +108,7 @@ const RoomDetails = () => {
         title: 'Wayanad Cottages: Private Cottages in Wayanad for Family, Groups',
         description:
           'Stay at our Wayanad cottages designed for families. Our private cottages in Wayanad offer comfort, scenic views, and a peaceful holiday experience.',
-        keywords:
-          'wayanad cottages, private cottages wayanad, family stay wayanad, kudajadri homestay',
+        keywords: '',
         ogTitle: 'Wayanad Cottages: Private Cottages in Wayanad for Family',
         ogDescription:
           'Stay at our Wayanad cottages designed for families. Enjoy a peaceful holiday.',
@@ -123,8 +121,7 @@ const RoomDetails = () => {
         title: 'Affordable Homestay in Wayanad: Best Budget Wayanad Homestay',
         description:
           'Best Budget homestay in Wayanad with affordable rooms for families and travelers.',
-        keywords:
-          'budget stay wayanad, cheap homestay, family stay wayanad, kudajadri homestay',
+        keywords: '',
         ogTitle: 'Affordable Homestay in Wayanad: Best Budget Wayanad Homestay',
         ogDescription:
           'Budget rooms in Wayanad with comfort and great value for money.',
@@ -137,8 +134,7 @@ const RoomDetails = () => {
         title: 'Premium Homestay in Wayanad: Best Luxury Wayanad Homestays',
         description:
           'Best premium homestay in Wayanad offering luxury stays with top-tier amenities.',
-        keywords:
-          'luxury homestay wayanad, premium rooms, private balcony, kudajadri homestay',
+        keywords: '',
         ogTitle: 'Premium Homestay in Wayanad: Best Luxury Wayanad Homestays',
         ogDescription:
           'Luxury rooms with scenic views and modern elegance in Wayanad.',
@@ -149,7 +145,7 @@ const RoomDetails = () => {
     return {
       title: `${roomContent.roomType} - Homestay Wayanad`,
       description: `${roomContent.description} Book your stay at Kudajadri Homestay.`,
-      keywords: `${roomContent.roomType.toLowerCase()} wayanad, homestay wayanad, kudajadri`,
+      keywords: '',
       ogTitle: `${roomContent.roomType} - Homestay`,
       ogDescription: `Experience luxury with scenic views in Wayanad. Starting at ₹${roomContent.pricePerNight} per night.`,
       ogImage: roomImage,
