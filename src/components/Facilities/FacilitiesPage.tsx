@@ -37,7 +37,7 @@ const FacilitiesPage = () => {
         />
         <meta
           name="keywords"
-          content="wayanad swimming pool homestays, best homestay facilities, scenic views, family friendly homestay, kudajadri homestay"
+          content=""
         />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Kudajadri Homestay" />
