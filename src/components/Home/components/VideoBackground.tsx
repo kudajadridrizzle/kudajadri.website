@@ -1,14 +1,29 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import video from '../../../assets/videoBackGround.mp4';
-// import mobileVideo from '../../../assets/0907.mp4';
 import { Header } from './Header';
 import mobileimg from '../../../assets/mobileheroimg.jpg';
+import droneimg from '../../../assets/drone1.jpg';
 import { useNavigate } from 'react-router-dom';
 import Preloader from './Preloader';
 
 const VideoBackground = () => {
   const navigate = useNavigate();
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [shouldPlayVideo, setShouldPlayVideo] = useState(true);
+
+  useEffect(() => {
+    // Detect network conditions
+    const connection = (navigator as any).connection || (navigator as any).mozConnection || (navigator as any).webkitConnection;
+    if (connection) {
+      const effectiveType = connection.effectiveType || '';
+      const saveData = connection.saveData || false;
+
+      if (saveData || effectiveType.includes('2g')) {
+        setShouldPlayVideo(false);
+      }
+    }
+  }, []);
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
@@ -20,19 +35,41 @@ const VideoBackground = () => {
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
-      {/* Desktop Video Background */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="hidden md:block absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-full object-cover z-0"
-      >
-        <source src={video} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      {/* Desktop Background */}
+      <div className="hidden md:block absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-full z-0">
+        {!shouldPlayVideo ? (
+          <img
+            src={droneimg}
+            alt="Desktop fallback"
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <>
+            {!isVideoLoaded && (
+              <img
+                src={droneimg}
+                alt="Desktop fallback while loading"
+                className="w-full h-full object-cover"
+              />
+            )}
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700 ${
+                isVideoLoaded ? 'opacity-100' : 'opacity-0'
+              }`}
+              onLoadedData={() => setIsVideoLoaded(true)}
+            >
+              <source src={video} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </>
+        )}
+      </div>
 
-      {/* Mobile Background (Image instead of video) */}
+      {/* Mobile Background (Always Image) */}
       <img
         src={mobileimg}
         alt="Mobile background"
