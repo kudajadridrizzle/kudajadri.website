@@ -54,7 +54,7 @@ export const ContactPage = () => {
         />
         <meta
           name="keywords"
-          content="contact kudajadri homestay, wayanad homestay contact, kudajadri booking, wayanad accommodation contact"
+          content=""
         />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Kudajadri Homestay" />
