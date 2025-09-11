@@ -15,8 +15,8 @@ to = "/tour-packages"
 status = 301
 
 [[redirects]]
-from = "/facilities.php"
-to = "/facilities"
+from = "/facilities"
+to = "/facilities-amenities"
 status = 301
 
 [[redirects]]

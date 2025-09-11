@@ -17,8 +17,7 @@ const FacilitiesSession = () => {
         {/* Right - Text Content */}
         <div className="flex flex-col justify-center items-start w-full h-full">
           <h1 className="font-ivy sm:text-[44px] mobile:text-[32px] mb-6 text-primary">
-            Homestays in Wayanad with Swimming Pool
-          </h1>
+          Swimming Pool Homestays in Wayanad          </h1>
 
           <div className="flex flex-col gap-4 font-albertSans sm:text-xl mobile:text-base text-[#6E6E6E]">
             {/* Intro */}

@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown';
 
 // Markdown content with regular HTML links
 const heroText = `
-Explore the **Kudajadri Drizzle Homestay through our photos and video gallery**. Each image captures the serene surroundings, lush greenery, and charming architecture of our property. From cozy heritage rooms to relaxing common areas, the gallery showcases every corner of this Wayanad homestay. Watch our videos to get a real feel of the ambiance, activities, and experiences awaiting you. See guests enjoying the [swimming pool](/facilities), nature walks, and recreational games, giving you a glimpse of a memorable stay. Our gallery is designed to help you visualize your stay and plan your visit to one of the [best Wayanad homestays](/).
+Explore the **Kudajadri Drizzle Homestay through our photos and video gallery**. Each image captures the serene surroundings, lush greenery, and charming architecture of our property. From cozy heritage rooms to relaxing common areas, the gallery showcases every corner of this Wayanad homestay. Watch our videos to get a real feel of the ambiance, activities, and experiences awaiting you. See guests enjoying the [swimming pool](/facilities-amenities), nature walks, and recreational games, giving you a glimpse of a memorable stay. Our gallery is designed to help you visualize your stay and plan your visit to one of the [best Wayanad homestays](/).
 `;
 
 export const HeroSession = () => {
