@@ -35,10 +35,7 @@ const FacilitiesPage = () => {
           name="description"
           content="Homestays in Wayanad with swimming pools offer the best facilities, comfort, and scenic views for a perfect relaxing getaway with family and friends."
         />
-        <meta
-          name="keywords"
-          content="wayanad swimming pool homestays, best homestay facilities, scenic views, family friendly homestay, kudajadri homestay"
-        />
+        <meta name="keywords" content="" />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Kudajadri Homestay" />
 

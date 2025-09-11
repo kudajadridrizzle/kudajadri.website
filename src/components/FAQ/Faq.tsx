@@ -17,10 +17,7 @@ export const FaqPage = () => {
           name="description"
           content="Find answers to frequently asked questions about Kudajadri Homestay in Wayanad. Information about bookings, amenities, location, and more for your perfect stay."
         />
-        <meta
-          name="keywords"
-          content="kudajadri homestay faq, wayanad homestay questions, booking information, accommodation details"
-        />
+        <meta name="keywords" content="" />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Kudajadri Homestay" />
 

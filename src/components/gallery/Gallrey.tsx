@@ -23,10 +23,7 @@ export const Gallrey = () => {
           name="description"
           content="Browse stunning photos and videos of Kudajadri Drizzle Homestay in Wayanad. Get a visual glimpse of the cozy rooms, scenic surroundings, and peaceful ambiance."
         />
-        <meta
-          name="keywords"
-          content="wayanad homestay photos, accommodation gallery, scenic views, cozy stays, kudajadri gallery"
-        />
+        <meta name="keywords" content="" />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Kudajadri Homestay" />
 

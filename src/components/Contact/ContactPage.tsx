@@ -52,10 +52,7 @@ export const ContactPage = () => {
           name="description"
           content="Book homestays, cottages, and rooms in Wayanad online for families and groups. Enjoy comfortable stays, scenic views, and easy booking with great deals."
         />
-        <meta
-          name="keywords"
-          content="contact kudajadri homestay, wayanad homestay contact, kudajadri booking, wayanad accommodation contact"
-        />
+        <meta name="keywords" content="" />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Kudajadri Homestay" />
         <meta
