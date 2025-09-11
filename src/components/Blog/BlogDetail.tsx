@@ -5,6 +5,8 @@ import { Header } from '../Home/components/Header';
 import { Helmet } from 'react-helmet-async';
 import Footer from '../Home/components/Footer';
 
+const SITE_URL = "https://www.kudajadridrizzle.com";
+
 const BlogDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const [blogPost, setBlogPost] = useState<BlogPost | null>(null);
@@ -20,7 +22,6 @@ const BlogDetail: React.FC = () => {
       }
 
       try {
-        // Import all blog posts and find the one with matching slug
         const blogModules = import.meta.glob('../../blog/*.md', {
           query: '?raw',
           import: 'default',
@@ -29,7 +30,6 @@ const BlogDetail: React.FC = () => {
         let foundPost: BlogPost | null = null;
 
         for (const path in blogModules) {
-          // Extract the slug part from the filename (remove date prefix and .md extension)
           const pathSlug = path
             .split('/')
             .pop()
@@ -101,6 +101,8 @@ const BlogDetail: React.FC = () => {
     );
   }
 
+  const canonicalUrl = `${SITE_URL}/blog/${slug}`;
+
   return (
     <>
       <Helmet>
@@ -113,39 +115,42 @@ const BlogDetail: React.FC = () => {
         <meta name="robots" content="index, follow" />
 
         {/* Open Graph */}
-        <meta
-          property="og:title"
-          content={blogPost.metaTitle || blogPost.title}
-        />
+        <meta property="og:title" content={blogPost.metaTitle || blogPost.title} />
         <meta
           property="og:description"
           content={blogPost.metaDescription || blogPost.description}
         />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={window.location.href} />
+        <meta property="og:url" content={canonicalUrl} />
         <meta property="og:site_name" content="Kudajadri Homestay" />
+        <meta property="og:locale" content="en_US" />
         {blogPost.featuredImage && (
-          <meta property="og:image" content={blogPost.featuredImage} />
+          <>
+            <meta property="og:image" content={blogPost.featuredImage} />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
+          </>
         )}
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content={blogPost.metaTitle || blogPost.title}
-        />
+        <meta name="twitter:title" content={blogPost.metaTitle || blogPost.title} />
         <meta
           name="twitter:description"
           content={blogPost.metaDescription || blogPost.description}
         />
+        <meta name="twitter:site" content="@kudajadrihomestay" />
         {blogPost.featuredImage && (
           <meta name="twitter:image" content={blogPost.featuredImage} />
         )}
 
-        <link rel="canonical" href="https://www.kudajadridrizzle.com/blog" />
+        {/* Misc */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="canonical" href={canonicalUrl} />
       </Helmet>
 
-      {/* Header with z-index to ensure it stays on top */}
+      {/* Header */}
       <div className="min-h-screen bg-white pt-[90px] sm:pt-[120px] relative">
         <div className="fixed top-0 left-0 w-full z-50">
           <Header type="black" />
