@@ -8,26 +8,21 @@ import Preloader from './Preloader';
 
 const VideoBackground = () => {
   const navigate = useNavigate();
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [shouldPlayVideo, setShouldPlayVideo] = useState(true);
-
-  useEffect(() => {
-    // Detect network conditions
-    const connection = (navigator as any).connection || (navigator as any).mozConnection || (navigator as any).webkitConnection;
-    if (connection) {
-      const effectiveType = connection.effectiveType || '';
-      const saveData = connection.saveData || false;
-
-      if (saveData || effectiveType.includes('2g')) {
-        setShouldPlayVideo(false);
-      }
-    }
-  }, []);
+  const [showVideo, setShowVideo] = useState(false);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
   };
+
+  // Wait 10 seconds before switching to video
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowVideo(true);
+    }, 10000); // 10s
+    return () => clearTimeout(timer);
+  }, []);
 
   if (isLoading) {
     return <Preloader onComplete={handleLoadingComplete} />;
@@ -37,36 +32,29 @@ const VideoBackground = () => {
     <div className="relative w-full h-screen overflow-hidden">
       {/* Desktop Background */}
       <div className="hidden md:block absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-full z-0">
-        {!shouldPlayVideo ? (
-          <img
-            src={droneimg}
-            alt="Desktop fallback"
-            className="w-full h-full object-cover"
-          />
-        ) : (
-          <>
-            {!isVideoLoaded && (
-              <img
-                src={droneimg}
-                alt="Desktop fallback while loading"
-                className="w-full h-full object-cover"
-              />
-            )}
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700 ${
-                isVideoLoaded ? 'opacity-100' : 'opacity-0'
-              }`}
-              onLoadedData={() => setIsVideoLoaded(true)}
-            >
-              <source src={video} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </>
-        )}
+        {/* Always show the image first */}
+        <img
+          src={droneimg}
+          alt="Desktop fallback"
+          className={`w-full h-full object-cover transition-opacity duration-1000 ${
+            showVideo ? 'opacity-0' : 'opacity-100'
+          }`}
+        />
+
+        {/* Video loads in parallel, fades in after 10s */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
+            showVideo && isVideoLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
+          onLoadedData={() => setIsVideoLoaded(true)}
+        >
+          <source src={video} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
 
       {/* Mobile Background (Always Image) */}

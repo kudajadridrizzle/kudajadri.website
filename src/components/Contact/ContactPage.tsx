@@ -40,7 +40,7 @@ export const ContactPage = () => {
   };
 
   // ✅ SSR-safe canonical URL (static fallback instead of window)
-  const canonicalUrl = 'https://kudajadri.com/contact';
+  const canonicalUrl = 'https://www.kudajadridrizzle.com//contact';
 
   return (
     <div className="sm:mt-[90px] mobile:mt-[52px]">
