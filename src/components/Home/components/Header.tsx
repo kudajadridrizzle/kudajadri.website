@@ -180,25 +180,25 @@ const PhoneHeader = ({ headerColor }: { headerColor?: 'white' | 'black' }) => {
           style={{ height: '100dvh', width: '100vw', zIndex: 50 }}
         >
           <div 
-            className="fixed top-0 left-0 w-full h-[100dvh] bg-[#292626] overflow-y-auto pt-20 flex flex-col items-center z-50"
+            className="fixed top-0 left-0 w-full h-[100dvh] bg-[#292626] overflow-y-auto py-12 flex flex-col items-center z-50"
             onClick={(e) => e.stopPropagation()}
             style={{
               transition: 'transform 0.3s ease-in-out',
               transform: isSidebarOpen ? 'translateX(0)' : 'translateX(-100%)',
             }}
           >
-            <ul className="flex flex-col gap-1 text-center">
+            <ul className="flex flex-col text-center py-2">
               {menuItems.map((item) => {
                 const isRoom = item.to.startsWith("/rooms/");
                 return (
-                  <li key={item.to}>
+                  <li key={item.to} className="leading-none">
                     <NavLink
                       to={item.to}
                       className={`
                         ${isRoom 
-                          ? "text-[24px] font-normal" 
-                          : "text-[32px] font-medium"
-                        } font-ivy ${isRoom ? 'text-[#808080]' : 'text-white'} block py-2 px-4
+                          ? "text-[24px] font-normal text-white/50" 
+                          : "text-[32px] font-medium text-white"
+                        } font-ivy block
                       `}
                       onClick={toggleSidebar}
                     >
