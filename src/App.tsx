@@ -16,7 +16,7 @@ import BlogList from './components/Blog/BlogList';
 import BlogDetail from './components/Blog/BlogDetail';
 import TourPackagesDetails from './components/TourPackages/TourPackagesDetails';
 import NotFound from './pages/NotFound';
-
+import Terms from './components/Terms/Terms';
 
 const AppContent = () => {
   return (
@@ -37,6 +37,7 @@ const AppContent = () => {
         <Route path="/wayanad" element={<WayanadPage />} />
         <Route path="/blog" element={<BlogList />} />
         <Route path="/blog/:slug" element={<BlogDetail />} />
+        <Route path="/terms" element={<Terms />} />
         {/* 404 - Catch all route */}
         <Route path="*" element={<NotFound />} />
       </Routes>
