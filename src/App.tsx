@@ -29,7 +29,7 @@ const AppContent = () => {
         <Route path="/booking" element={<Booking />} /> {/* This slides up */}
         <Route path="/rooms" element={<Rooms />} />
         <Route path="/rooms/:id" element={<RoomDetails />} />
-        <Route path="/gallery" element={<Gallrey />} />
+        <Route path="/media-gallery" element={<Gallrey />} />
         <Route path="/faq" element={<FaqPage />} />
         <Route path="/tour-packages" element={<TourPackages />} />
         <Route path="/tour-packages/:id" element={<TourPackagesDetails />} />

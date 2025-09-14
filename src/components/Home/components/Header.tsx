@@ -93,7 +93,7 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
         <NavLink to="/facilities-amenities" headerColor={headerColor}>
           Facilities
         </NavLink>
-        <NavLink to="/gallery" headerColor={headerColor}>
+        <NavLink to="/media-gallery" headerColor={headerColor}>
           Gallery
         </NavLink>
         <NavLink to="/contact" headerColor={headerColor}>

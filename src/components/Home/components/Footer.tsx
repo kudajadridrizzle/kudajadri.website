@@ -94,7 +94,7 @@ const Footer = () => {
             <div className="text-secondary font-albertSans sm:text-xl flex flex-col gap-2">
               <Link to="/about" className="no-underline hover:underline">About Us</Link>
               <Link to="/rooms" className="no-underline hover:underline">Rooms</Link>
-              <Link to="/gallery" className="no-underline hover:underline">Gallery</Link>
+              <Link to="/media-gallery" className="no-underline hover:underline">Gallery</Link>
               <Link to="/wayanad" className="no-underline hover:underline">Wayanad</Link>
               <Link to="/facilities-amenities" className="no-underline hover:underline">Facilities</Link>
               <Link to="/contact" className="no-underline hover:underline">Contact Us</Link>
@@ -155,7 +155,7 @@ const Footer = () => {
 
           {/* Copyright & Policy (Right) */}
           <div className="text-secondary text-sm font-albertSans flex flex-row gap-6 text-right">
-            <span>© {new Date().getFullYear()} Kudajadri Drizzle Homestay. All Rights Reserved.</span>
+            <span> {new Date().getFullYear()} Kudajadri Drizzle Homestay. All Rights Reserved.</span>
             {/* <Link to="/privacy-policy" className="hover:underline">Privacy Policy</Link> */}
             <Link to="/terms" className="hover:underline">Terms & Conditions</Link>
           </div>
@@ -163,7 +163,7 @@ const Footer = () => {
 
         {/* Mobile Copyright */}
         <div className="sm:hidden text-secondary text-sm font-albertSans text-left py-6 mobile:px-4 border-t border-[#584343]">
-          <span>© {new Date().getFullYear()} Kudajadri Drizzle Homestay. All Rights Reserved.</span>
+          <span> {new Date().getFullYear()} Kudajadri Drizzle Homestay. All Rights Reserved.</span>
           <div className="flex gap-4 mt-2">
             {/* <Link to="/privacy-policy" className="hover:underline">Privacy Policy</Link> */}
             <Link to="/terms" className="hover:underline">Terms & Conditions</Link>
