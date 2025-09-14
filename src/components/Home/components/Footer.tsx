@@ -92,7 +92,7 @@ const Footer = () => {
               Quick Links
             </span>
             <div className="text-secondary font-albertSans sm:text-xl flex flex-col gap-2">
-              <Link to="/about" className="no-underline hover:underline">About Us</Link>
+              <Link to="/about-us" className="no-underline hover:underline">About Us</Link>
               <Link to="/rooms" className="no-underline hover:underline">Rooms</Link>
               <Link to="/media-gallery" className="no-underline hover:underline">Gallery</Link>
               <Link to="/wayanad" className="no-underline hover:underline">Wayanad</Link>

@@ -24,7 +24,7 @@ const AppContent = () => {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about-us" element={<About />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/booking" element={<Booking />} /> {/* This slides up */}
         <Route path="/rooms" element={<Rooms />} />

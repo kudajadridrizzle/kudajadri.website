@@ -24,7 +24,7 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
   
   const isHome =
     location.pathname === '/' ||
-    location.pathname === '/about' ||
+    location.pathname === '/about-us' ||
     location.pathname === '/rooms' ||
     location.pathname === '/attractions' ||
     location.pathname === '/wayanad' ||
@@ -77,7 +77,7 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
         <NavLink to="/" headerColor={headerColor}>
           Wayanad Homestays
         </NavLink>
-        <NavLink to="/about" headerColor={headerColor}>
+        <NavLink to="/about-us" headerColor={headerColor}>
           About Us
         </NavLink>
         <HeaderDropdown headerColor={headerColor} />

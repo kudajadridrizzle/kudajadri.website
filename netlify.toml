@@ -25,6 +25,12 @@ status = 301
 force = true
 
 [[redirects]]
+from = "/about"
+to = "/about-us"
+status = 301
+force = true
+
+[[redirects]]
 from = "/getting-here.php"
 to = "/contact"
 status = 301

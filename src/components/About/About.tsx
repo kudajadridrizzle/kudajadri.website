@@ -34,7 +34,7 @@ const About = () => {
   ];
 
   // Static URLs for SEO & SSR safety
-  const currentUrl = 'https://www.kudajadridrizzle.com/about';
+  const currentUrl = 'https://www.kudajadridrizzle.com/about-us';
   const heroImage = 'https://www.kudajadridrizzle.com/aboutHero.jpg';
 
   // FAQ Structured Data
