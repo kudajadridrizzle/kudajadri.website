@@ -1,6 +1,7 @@
 interface PackagesProps {
   image: string;
   title: string;
+  urlSlug: string;
   price: string;
   days: string;
   people?: string;

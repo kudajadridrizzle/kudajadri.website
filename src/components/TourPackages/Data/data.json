@@ -2,18 +2,21 @@
   "packages": [
     {
       "title": "Green Wayanad Tour Package",
+      "urlSlug": "green-wayanad-tour-package",
       "price": "₹18,500",
       "days": "4 Days 3 Nights",
       "people": "2 guests applicable"
     },
     {
-      "title": "Dream Wayanad Tour Package (Standard)",
+      "title": "Dream Wayanad Tour Package",
+      "urlSlug": "dream-wayanad-tour-package",
       "price": "₹13,500",
       "days": "3 Days 2 Nights",
       "people": "2 guests applicable"
     },
     {
-      "title": "Vibrant Wayanad Tour Package (Short Trip)",
+      "title": "Vibrant Wayanad Tour Package",
+      "urlSlug": "vibrant-wayanad-tour-package",
       "price": "₹8,500",
       "days": "2 Days 1 Night",
       "people": "2 guests applicable"
