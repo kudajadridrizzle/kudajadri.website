@@ -18,7 +18,6 @@ const ImageCarousel = ({ images }: { images: string[] }) => {
     setCurrentIndex(index);
   };
 
-  // Swipe handlers
   const handlers = useSwipeable({
     onSwipedLeft: () => goToNext(),
     onSwipedRight: () => goToPrevious(),
@@ -39,7 +38,7 @@ const ImageCarousel = ({ images }: { images: string[] }) => {
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {images.map((image, index) => (
-            <div key={index} className="w-full flex-shrink-0">
+            <div key={index} className="w-full flex-shrink-0 h-full">
               <img
                 src={image}
                 alt={`Room view ${index + 1}`}
@@ -126,13 +125,22 @@ const Hero = () => {
     room.imageFive,
   ].filter(Boolean) as string[];
 
+  // Calculate padding based on viewport width
+  const desktopPadding = window.innerWidth > 2000 ? '18vw' : '12vw';
+
   return (
     <div className="w-full">
       {/* Desktop Layout */}
-      <div className="hidden md:block w-full max-w-7xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-4 grid-rows-2 gap-2">
+      <div
+        className="hidden md:block w-full h-[80vh] py-12"
+        style={{
+          paddingLeft: desktopPadding,
+          paddingRight: desktopPadding,
+        }}
+      >
+        <div className="grid grid-cols-4 grid-rows-2 gap-2 w-full h-full">
           {/* Large image - spans 2 columns and 2 rows */}
-          <div className="col-span-2 row-span-2 overflow-hidden rounded-xl aspect-video">
+          <div className="col-span-2 row-span-2 overflow-hidden rounded-xl w-full h-full">
             <img
               src={room.imageOne}
               alt="Room overview"
@@ -143,7 +151,7 @@ const Hero = () => {
           {/* 2x2 grid of smaller images */}
           {[room.imageTwo, room.imageThree, room.imageFour, room.imageFive].map(
             (img, index) => (
-              <div key={index} className="overflow-hidden rounded-xl aspect-video">
+              <div key={index} className="overflow-hidden rounded-xl w-full h-full">
                 <img
                   src={img}
                   alt={`Room view ${index + 1}`}

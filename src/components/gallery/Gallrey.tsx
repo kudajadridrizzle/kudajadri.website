@@ -6,7 +6,7 @@ import { ResponsiveImageSession } from './components/ResponsiveImageSession';
 import { Helmet } from 'react-helmet-async';
 
 const SITE_URL = import.meta.env.VITE_SITE_URL || "https://www.kudajadridrizzle.com";
-const CANONICAL_URL = `${SITE_URL}/gallery`;
+const CANONICAL_URL = `${SITE_URL}/media-gallery`;
 const OG_IMAGE = `${SITE_URL}/aboutHero.jpg`;
 
 export const Gallrey = () => {

@@ -1,37 +1,30 @@
+// src/components/gallery/ImageSession.tsx
+
 export const ImageSession = () => {
-  // Add as many images as you want inside /public/images
-  const images = [
-    '/images/1 (1).jpg',
-    '/images/1 (2).jpg',
-    '/images/1 (3).jpg',
-    '/images/1 (4).jpg',
-    '/images/1 (5).jpg',
-    '/images/1 (6).jpg',
-    '/images/1 (7).jpg',
-    '/images/1 (8).jpg',
-    '/images/1 (9).jpg',
-    '/images/1 (10).jpg',
-    '/images/1 (11).jpg',
-    '/images/1 (12).jpg',
-    '/images/1 (13).jpg',
-    '/images/1 (14).jpg',
-    '/images/1 (15).jpg',
-    '/images/1 (16).jpg',
-    '/images/1 (17).jpg',
-    '/images/1 (18).jpg',
-    '/images/1 (19).jpg',
-    '/images/1 (20).jpg',
-    '/images/1 (48).jpg',
-    '/images/1 (49).jpg',
-    '/images/1 (50).jpg',
-    
-  ];
+  // Import all images from the parent assets directory
+  const images = import.meta.glob('../assets/*.{jpg,jpeg,png,webp}', { eager: true });
+
+  // Convert imported modules into URLs
+  const imagePaths = Object.values(images).map((mod: any) => mod.default);
+
+  // Sort by filename so 1, 2, 3... are in the right order
+  const sortedImages = imagePaths.sort((a, b) =>
+    a.localeCompare(b, undefined, { numeric: true })
+  );
+
+  if (sortedImages.length === 0) {
+    return (
+      <section className="w-full px-4 sm:px-8 lg:px-16 py-12">
+        <p className="text-center text-gray-500">No images found in gallery.</p>
+      </section>
+    );
+  }
 
   return (
     <section className="w-full px-4 sm:px-8 lg:px-16 py-12">
       {/* Responsive Masonry Layout */}
       <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 [column-fill:_balance]">
-        {images.map((src, idx) => (
+        {sortedImages.map((src, idx) => (
           <div
             key={idx}
             className="mb-4 break-inside-avoid relative overflow-hidden rounded-2xl group"

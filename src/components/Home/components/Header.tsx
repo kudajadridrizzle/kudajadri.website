@@ -3,12 +3,14 @@ import { AnimatedLink } from '../../../curtain-scroll';
 import kudajadrilogo from '../../../assets/kudajadriLogo.svg';
 import kudajadriDarkLogo from '../../../assets/kudajadriDarkLogo.svg';
 import menuIcon from '/src/assets/menuIconHeader.svg';
+import NavLink from '../../ui/NavLink';
 import homeIcon from '/src/assets/homeMobileHeader.svg';
 import whatAppIcon from '/src/assets/whatappHeader.svg';
 import whatAppBlackIcon from '/src/assets/KudajadriMobileWhatapp.svg';
 import HomeBlackIcon from '/src/assets/kudajadriHomeMobile.svg';
 import MenuBlackIcon from '/src/assets/KudajadriMobileMenu.svg';
 import { useEffect, useState } from 'react';
+import HeaderDropdown from './HeaderDropdown';
 
 interface HeaderProps {
   type?: 'white' | 'black';
@@ -22,7 +24,7 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
   
   const isHome =
     location.pathname === '/' ||
-    location.pathname === '/about' ||
+    location.pathname === '/about-us' ||
     location.pathname === '/rooms' ||
     location.pathname === '/attractions' ||
     location.pathname === '/wayanad' ||
@@ -72,30 +74,13 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
     >
       {/* Desktop Header */}
       <div className="flex items-end justify-center gap-24 sm:py-6 mobile:hidden sm:flex">
-        <AnimatedLink
-          to="/"
-          className={`px-4 py-2 no-underline ${
-            headerColor === 'white' ? 'text-[#FFF]' : 'text-primary'
-          } font-albertSans`}
-        >
+        <NavLink to="/" headerColor={headerColor}>
           Wayanad Homestays
-        </AnimatedLink>
-        <AnimatedLink
-          to="/about"
-          className={`px-4 py-2 no-underline ${
-            headerColor === 'white' ? 'text-[#FFF]' : 'text-primary'
-          } font-albertSans`}
-        >
+        </NavLink>
+        <NavLink to="/about-us" headerColor={headerColor}>
           About Us
-        </AnimatedLink>
-        <AnimatedLink
-          to="/rooms"
-          className={`px-4 py-2 no-underline ${
-            headerColor === 'white' ? 'text-[#FFF]' : 'text-primary'
-          } font-albertSans`}
-        >
-          Rooms
-        </AnimatedLink>
+        </NavLink>
+        <HeaderDropdown headerColor={headerColor} />
         <AnimatedLink to="/">
           <div>
             {headerColor === 'white' ? (
@@ -105,30 +90,15 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
             )}
           </div>
         </AnimatedLink>
-        <AnimatedLink
-          to="/facilities-amenities"
-          className={`px-4 py-2 no-underline ${
-            headerColor === 'white' ? 'text-[#FFF]' : 'text-primary'
-          } font-albertSans`}
-        >
+        <NavLink to="/facilities-amenities" headerColor={headerColor}>
           Facilities
-        </AnimatedLink>
-        <AnimatedLink
-          to="/gallery"
-          className={`px-4 py-2 no-underline ${
-            headerColor === 'white' ? 'text-[#FFF]' : 'text-primary'
-          } font-albertSans`}
-        >
+        </NavLink>
+        <NavLink to="/media-gallery" headerColor={headerColor}>
           Gallery
-        </AnimatedLink>
-        <AnimatedLink
-          to="/contact"
-          className={`px-4 py-2 no-underline ${
-            headerColor === 'white' ? 'text-[#FFF]' : 'text-primary'
-          } font-albertSans`}
-        >
+        </NavLink>
+        <NavLink to="/contact" headerColor={headerColor}>
           Contact Us
-        </AnimatedLink>
+        </NavLink>
       </div>
 
       <PhoneHeader headerColor={scrolled ? 'black' : type} />
@@ -139,7 +109,6 @@ export const Header = ({ type = 'white' }: HeaderProps) => {
 const PhoneHeader = ({ headerColor }: { headerColor?: 'white' | 'black' }) => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [, setIsVisible] = useState(true);
-  const location = useLocation();
   
   const menuItems = [
     { to: "/", text: "Wayanad Homestays" },
@@ -211,32 +180,30 @@ const PhoneHeader = ({ headerColor }: { headerColor?: 'white' | 'black' }) => {
           style={{ height: '100dvh', width: '100vw', zIndex: 50 }}
         >
           <div 
-            className="fixed top-0 left-0 w-full h-[100dvh] bg-[#292626] overflow-y-auto pt-20 flex flex-col items-center z-50"
+            className="fixed top-0 left-0 w-full h-[100dvh] bg-[#292626] overflow-y-auto py-12 flex flex-col items-center z-50"
             onClick={(e) => e.stopPropagation()}
             style={{
               transition: 'transform 0.3s ease-in-out',
               transform: isSidebarOpen ? 'translateX(0)' : 'translateX(-100%)',
             }}
           >
-            <ul className="flex flex-col gap-1 text-center">
+            <ul className="flex flex-col text-center py-2">
               {menuItems.map((item) => {
                 const isRoom = item.to.startsWith("/rooms/");
                 return (
-                  <li key={item.to}>
-                    <AnimatedLink
+                  <li key={item.to} className="leading-none">
+                    <NavLink
                       to={item.to}
                       className={`
-                        block transition-colors duration-200 no-underline
                         ${isRoom 
-                          ? "text-[#808080] text-[24px] font-normal font-ivy" 
-                          : "text-white text-[32px] font-medium font-ivy"
-                        }
-                        ${location.pathname === item.to ? "text-primary" : "hover:text-white"}
+                          ? "text-[24px] font-normal text-white/50" 
+                          : "text-[32px] font-medium text-white"
+                        } font-ivy block
                       `}
                       onClick={toggleSidebar}
                     >
                       {item.text}
-                    </AnimatedLink>
+                    </NavLink>
                   </li>
                 );
               })}

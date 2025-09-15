@@ -16,7 +16,7 @@ import BlogList from './components/Blog/BlogList';
 import BlogDetail from './components/Blog/BlogDetail';
 import TourPackagesDetails from './components/TourPackages/TourPackagesDetails';
 import NotFound from './pages/NotFound';
-
+import Terms from './components/Terms/Terms';
 
 const AppContent = () => {
   return (
@@ -24,12 +24,12 @@ const AppContent = () => {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about-us" element={<About />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/booking" element={<Booking />} /> {/* This slides up */}
         <Route path="/rooms" element={<Rooms />} />
         <Route path="/rooms/:id" element={<RoomDetails />} />
-        <Route path="/gallery" element={<Gallrey />} />
+        <Route path="/media-gallery" element={<Gallrey />} />
         <Route path="/faq" element={<FaqPage />} />
         <Route path="/tour-packages" element={<TourPackages />} />
         <Route path="/tour-packages/:id" element={<TourPackagesDetails />} />
@@ -37,6 +37,7 @@ const AppContent = () => {
         <Route path="/wayanad" element={<WayanadPage />} />
         <Route path="/blog" element={<BlogList />} />
         <Route path="/blog/:slug" element={<BlogDetail />} />
+        <Route path="/terms" element={<Terms />} />
         {/* 404 - Catch all route */}
         <Route path="*" element={<NotFound />} />
       </Routes>
