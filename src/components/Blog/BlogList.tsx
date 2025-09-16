@@ -6,7 +6,14 @@ import Footer from '../Home/components/Footer';
 import { Helmet } from 'react-helmet-async';
 
 const SITE_URL = import.meta.env.VITE_SITE_URL || "https://www.kudajadridrizzle.com";
-const CANONICAL_URL = `${SITE_URL}/blog`;
+
+// ✅ Canonical: strip query params & hash
+const cleanPath =
+  typeof window !== "undefined"
+    ? window.location.pathname
+    : "/blog";
+
+const CANONICAL_URL = `${SITE_URL}${cleanPath}`;
 const BLOG_HERO_IMAGE = `${SITE_URL}/blogHero.jpg`;
 
 const BlogList: React.FC = () => {
