@@ -5,6 +5,10 @@ import { Header } from '../Home/components/Header';
 import Footer from '../Home/components/Footer';
 import { Helmet } from 'react-helmet-async';
 
+const SITE_URL = import.meta.env.VITE_SITE_URL || "https://www.kudajadridrizzle.com";
+const CANONICAL_URL = `${SITE_URL}/blog`;
+const BLOG_HERO_IMAGE = `${SITE_URL}/blogHero.jpg`;
+
 const BlogList: React.FC = () => {
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
@@ -52,22 +56,11 @@ const BlogList: React.FC = () => {
     loadBlogPosts();
   }, []);
 
-  // ✅ SSR-safe defaults
-  const currentUrl =
-    typeof window !== 'undefined'
-      ? window.location.href
-      : 'https://www.kudajadridrizzle.com/blog';
-
-  const blogHeroImage =
-    typeof window !== 'undefined'
-      ? `${window.location.origin}/blogHero.jpg`
-      : 'https://www.kudajadridrizzle.com/blogHero.jpg';
-
   // ✅ Structured Data for Blog
   const blogStructuredData = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    "url": "https://www.kudajadridrizzle.com/blog",
+    "url": CANONICAL_URL,
     "name": "Wayanad Travel Blog",
     "description":
       "Stay updated with the Wayanad Travel Blog. Get the latest news, tourism updates, travel tips, and insights to plan your perfect trip to Wayanad.",
@@ -76,7 +69,7 @@ const BlogList: React.FC = () => {
       "name": "Kudajadri Drizzle Homestay",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.kudajadridrizzle.com/logo.png"
+        "url": `${SITE_URL}/logo.png`
       }
     }
   };
@@ -92,6 +85,7 @@ const BlogList: React.FC = () => {
   return (
     <>
       <Helmet>
+        {/* Title & Description */}
         <title>
           Wayanad Travel Blog: Latest News, Tourism Updates, & Insights
         </title>
@@ -112,9 +106,9 @@ const BlogList: React.FC = () => {
           content="Stay updated with the Wayanad Travel Blog. Get the latest news, tourism updates, local insights, travel tips, and experiences to help you plan your perfect trip."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={currentUrl} />
+        <meta property="og:url" content={CANONICAL_URL} />
         <meta property="og:site_name" content="Kudajadri Homestay" />
-        <meta property="og:image" content={blogHeroImage} />
+        <meta property="og:image" content={BLOG_HERO_IMAGE} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
 
@@ -128,12 +122,12 @@ const BlogList: React.FC = () => {
           name="twitter:description"
           content="Stay updated with the Wayanad Travel Blog. Get the latest news, tourism updates, local insights, travel tips, and experiences to help you plan your perfect trip."
         />
-        <meta name="twitter:image" content={blogHeroImage} />
+        <meta name="twitter:image" content={BLOG_HERO_IMAGE} />
 
         {/* Canonical */}
-        <link rel="canonical" href={currentUrl} />
+        <link rel="canonical" href={CANONICAL_URL} />
 
-        {/* ✅ Structured Data */}
+        {/* JSON-LD Schema */}
         <script type="application/ld+json">
           {JSON.stringify(blogStructuredData)}
         </script>
