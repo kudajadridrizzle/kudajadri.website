@@ -158,8 +158,8 @@ const HeaderDropdown = ({ headerColor = 'white' }: { headerColor?: 'white' | 'bl
           aria-hidden={!isOpen}
           tabIndex={-1}
         >
-          <div className="max-w-[100vw] mx-auto">
-            <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-6 w-full max-w-[94vw] mx-auto">
+          <div className="w-full max-w-[2000px] mx-auto px-2 sm:px-4">
+            <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-6 w-full">
               <div className="mb-6 px-2 sm:px-0">
                 <h3 className="text-xl sm:text-2xl font-ivy font-bold text-gray-900 mb-2">Our Rooms & Suites</h3>
                 <p className="text-gray-600 font-albertSans text-sm sm:text-base">Experience luxury and comfort in our carefully designed accommodations.</p>

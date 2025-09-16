@@ -41,12 +41,23 @@ const TourPackagesDetails = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   
-  // Convert URL parameter back to original title format (replace hyphens with spaces and capitalize words)
+  // Convert URL parameter back to original title format, handling special characters and capitalization
   const getOriginalTitle = (urlTitle: string) => {
-    return urlTitle
+    // First decode any URL-encoded characters
+    const decodedTitle = decodeURIComponent(urlTitle);
+    
+    // Replace hyphens with spaces and handle word capitalization
+    return decodedTitle
       .split('-')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
+      .map(word => {
+        // Preserve 'and' as it's a special case we handle in the URL generation
+        if (word === 'and') return '&';
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      })
+      .join(' ')
+      // Handle any special cases or formatting needed for the original title
+      .replace(/\s+/g, ' ') // Ensure single spaces between words
+      .trim();
   };
 
   const originalTitle = id ? getOriginalTitle(id) : '';

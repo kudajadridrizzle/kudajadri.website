@@ -46,6 +46,18 @@ to = "/"
 status = 301
 
 [[redirects]]
+from = "/tour-packages/dream-wayanad-tour-package-standard"
+to = "/tour-packages/dream-wayanad-tour-package"
+status = 301
+force = true
+
+[[redirects]]
+from = "/tour-packages/vibrant-wayanad-tour-package-short-trip"
+to = "/tour-packages/vibrant-wayanad-tour-package"
+status = 301
+force = true
+
+[[redirects]]
 from = "/homestays-in-kalpetta.php"
 to = "/about"
 status = 301

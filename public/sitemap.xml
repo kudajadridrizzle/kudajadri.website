@@ -35,4 +35,22 @@
   <url>
     <loc>https://www.kudajadridrizzle.com/tour-packages</loc>
   </url>
+  <url>
+    <loc>https://www.kudajadridrizzle.com/tour-packages/green-wayanad-tour-package</loc>
+    <lastmod>2025-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kudajadridrizzle.com/tour-packages/dream-wayanad-tour-package</loc>
+    <lastmod>2025-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kudajadridrizzle.com/tour-packages/vibrant-wayanad-tour-package</loc>
+    <lastmod>2025-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

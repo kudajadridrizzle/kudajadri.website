@@ -22,14 +22,7 @@ export const Packages = () => {
             {...pkg}
             image={index === 0 ? img1 : index === 1 ? img2 : img3}
             onClick={() => {
-              const urlFriendlyTitle = pkg.title
-                .toLowerCase()
-                .replace(/[()]/g, '-') // Replace parentheses with hyphens
-                .replace(/[^a-z0-9\s-]/g, '') // Remove all non-alphanumeric characters except spaces and hyphens
-                .replace(/\s+/g, '-') // Replace spaces with hyphens
-                .replace(/-+/g, '-') // Replace multiple hyphens with a single hyphen
-                .replace(/^-+|-+$/g, ''); // Remove leading/trailing hyphens
-              navigate(`/tour-packages/${urlFriendlyTitle}`, {
+              navigate(`/tour-packages/${pkg.urlSlug}`, {
                 state: { fromDashboard: true },
               });
             }}
