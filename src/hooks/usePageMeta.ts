@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-type PageType = 'home' | 'about' | 'gallery' | 'rooms' | 'wayanad';
+export type PageType = 'home' | 'about' | 'gallery' | 'rooms' | 'wayanad';
 
 interface PageMetaData {
   title: string;
