@@ -11,7 +11,7 @@ collections:
     editor:
       preview: false
     files:
-      - file: "src/File/meta/pagemeta.md"
+      - file: "meta/pagemeta.md"
         label: "Page Meta Data"
         name: "page_meta"
         fields:

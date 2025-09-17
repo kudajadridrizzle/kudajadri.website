@@ -1,6 +1,6 @@
 ---
 home:
-  title: "Kudajadri - Luxury Homestay in Wayanad"
+  title: " - Luxury Homestay in Wayanad"
   description: "Experience luxury and comfort at Kudajadri, your perfect homestay in the heart of Wayanad. Book your stay now for an unforgettable experience."
 
 about:
@@ -18,8 +18,4 @@ rooms:
 wayanad:
   title: "Explore Wayanad - Kudajadri Homestay"
   description: "Explore the breathtaking beauty of Wayanad with Kudajadri. Discover local attractions, wildlife, and natural wonders."
-
-blog:
-  title: "Wayanad Travel Blog - Latest News & Travel Tips"
-  description: "Stay updated with the latest travel tips, stories, and guides about Wayanad and Kudajadri Homestay. Get inspired for your next trip to God's Own Country."
 ---
