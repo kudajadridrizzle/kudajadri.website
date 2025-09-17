@@ -4,6 +4,7 @@ import { BlogPost, parseBlogMarkdown } from '../../helper/blogParser';
 import { Header } from '../Home/components/Header';
 import Footer from '../Home/components/Footer';
 import { Helmet } from 'react-helmet-async';
+import usePageMeta, { PageType } from '../../hooks/usePageMeta';
 
 const SITE_URL = import.meta.env.VITE_SITE_URL || "https://www.kudajadridrizzle.com";
 
@@ -19,6 +20,7 @@ const BLOG_HERO_IMAGE = `${SITE_URL}/blogHero.jpg`;
 const BlogList: React.FC = () => {
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
+  const { meta } = usePageMeta('blog' as PageType);
 
   useEffect(() => {
     const loadBlogPosts = async () => {
@@ -92,13 +94,10 @@ const BlogList: React.FC = () => {
   return (
     <>
       <Helmet>
-        {/* Title & Description */}
-        <title>
-          Wayanad Travel Blog: Latest News, Tourism Updates, & Insights
-        </title>
+        <title>{meta?.title || 'Kudajadri Blog - Latest Travel Tips & Stories'}</title>
         <meta
           name="description"
-          content="Stay updated with the Wayanad Travel Blog. Get the latest news, tourism updates, local insights, travel tips, and experiences to help you plan your perfect trip."
+          content={meta?.description || "Discover the latest travel tips, stories, and guides about Wayanad and Kudajadri Homestay. Get inspired for your next trip to God's Own Country."}
         />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Kudajadri Homestay" />

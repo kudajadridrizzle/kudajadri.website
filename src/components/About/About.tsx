@@ -10,6 +10,7 @@ import aboutFaqRaw from '../../File/aboutfaqs.md?raw';
 import FaqList from '../FaqComponent/FaqList';
 import { Header } from '../Home/components/Header';
 import Direction from '../Home/components/Direction';
+import usePageMeta, { PageType } from '../../hooks/usePageMeta';
 
 // Define the shape of FAQ frontmatter
 interface FaqFrontMatterAttributes {
@@ -22,6 +23,7 @@ interface FaqFrontMatterAttributes {
 
 const About = () => {
   const parsedFaq = fm<FaqFrontMatterAttributes>(aboutFaqRaw);
+  const { meta } = usePageMeta('about' as PageType);
 
   const contentItems = [
     {
@@ -86,15 +88,13 @@ const About = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="bg-white">
       <Header type="white" />
       <Helmet>
-        <title>
-          Best Homestays in Kalpetta for families, Kalpetta Homestays
-        </title>
+        <title>{meta?.title || 'About Kudajadri'}</title>
         <meta
           name="description"
-          content="Kudajadri Drizzle Homestay in Kalpetta, Wayanad: Heritage 100-year-old home stay with 5-star reviews on Airbnb & TripAdvisor. Perfect for families, couples, and groups."
+          content={meta?.description || 'Discover the beauty of Wayanad with Kudajadri'}
         />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Kudajadri Homestay" />

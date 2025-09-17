@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { useState, useEffect } from 'react';
 import Footer from '../Home/components/Footer';
+import usePageMeta, { PageType } from '../../hooks/usePageMeta';
 import { EnhancedAttractionCard } from './components/EnhancedAttractionCard';
 import { EnhancedHero } from './components/EnhancedHero';
 import { WayanadFaqs } from './components/WayanadFaqs';
@@ -10,6 +11,7 @@ import { useContentSection } from '../../hooks/useContentSection';
 
 export const WayanadPage = () => {
   const { pageMetadata, heroSection, attractions, faqs } = wayanadData;
+  const { meta } = usePageMeta('wayanad' as PageType);
   const contentSection = useContentSection('wayanad');
   const [currentUrl, setCurrentUrl] = useState('https://www.kudajadridrizzle.com/wayanad');
 
@@ -22,8 +24,8 @@ export const WayanadPage = () => {
   return (
     <div>
       <Helmet>
-        <title>{pageMetadata.title}</title>
-        <meta name="description" content={pageMetadata.description} />
+        <title>{meta?.title || pageMetadata.title}</title>
+        <meta name="description" content={meta?.description || pageMetadata.description} />
         <meta name="keywords" content="" />
         <meta name="robots" content={pageMetadata.robots} />
         <meta name="author" content={pageMetadata.author} />

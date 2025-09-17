@@ -7,9 +7,11 @@ import CMSRoomSession from './Components/CMSRoomSession';
 import CMSIndividualRooms from './Components/CMSIndividualRooms';
 import { Header } from '../Home/components/Header';
 import { useState, useEffect } from 'react';
+import usePageMeta, { PageType } from '../../hooks/usePageMeta';
 
 const Rooms = () => {
   const { seo, hero, roomsIntro, individualRooms, faq } = useRoomsCMS();
+  const { meta } = usePageMeta('rooms' as PageType);
   const [currentUrl, setCurrentUrl] = useState('https://www.kudajadridrizzle.com');
 
   // Update current URL on client side
@@ -24,8 +26,8 @@ const Rooms = () => {
       <Header type="white" />
 
       <Helmet>
-        <title>{seo.title}</title>
-        <meta name="description" content={seo.description} />
+        <title>{meta?.title || seo.title}</title>
+        <meta name="description" content={meta?.description || seo.description} />
         <meta name="keywords" content="" />
         <meta name="robots" content="index, follow" />
         <meta name="author" content={seo.author} />

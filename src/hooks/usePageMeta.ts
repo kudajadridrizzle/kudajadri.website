@@ -25,6 +25,7 @@ const usePageMeta = (pageType: PageType) => {
   useEffect(() => {
     const fetchMeta = async () => {
       try {
+        // Import the markdown file from the public directory
         const response = await fetch('/meta/pagemeta.md');
         if (!response.ok) {
           throw new Error('Failed to fetch page meta data');

@@ -4,19 +4,19 @@ import { HeroSession } from './components/HeroSession';
 import { ImageSession } from './components/ImageSession';
 import { ResponsiveImageSession } from './components/ResponsiveImageSession';
 import { Helmet } from 'react-helmet-async';
+import usePageMeta, { PageType } from '../../hooks/usePageMeta';
 
 const SITE_URL = import.meta.env.VITE_SITE_URL || "https://www.kudajadridrizzle.com";
 const CANONICAL_URL = `${SITE_URL}/media-gallery`;
 const OG_IMAGE = `${SITE_URL}/aboutHero.jpg`;
 
 export const Gallrey = () => {
+  const { meta } = usePageMeta('gallery' as PageType);
   return (
     <div>
       <Helmet>
         {/* Browser Tab Title */}
-        <title>
-          Photos & Videos Gallery - Kudajadri Drizzle Homestays in Wayanad
-        </title>
+        <title>{meta?.title || 'Gallery - Kudajadri Homestay'}</title>
 
         {/* SEO Meta Tags */}
         <meta
@@ -30,11 +30,11 @@ export const Gallrey = () => {
         {/* Open Graph Meta Tags */}
         <meta
           property="og:title"
-          content="Photos & Videos Gallery - Kudajadri Drizzle Homestays in Wayanad"
+          content={meta?.title || 'Gallery - Kudajadri Homestay'}
         />
         <meta
           property="og:description"
-          content="Browse stunning photos and videos of Kudajadri Drizzle Homestay in Wayanad. Get a visual glimpse of the cozy rooms, scenic surroundings, and peaceful ambiance."
+          content={meta?.description || 'Explore our gallery showcasing the beautiful Kudajadri Homestay in Wayanad'}
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={CANONICAL_URL} />
@@ -48,11 +48,11 @@ export const Gallrey = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Photos & Videos Gallery - Kudajadri Drizzle Homestays in Wayanad"
+          content={meta?.title || 'Gallery - Kudajadri Homestay'}
         />
         <meta
           name="twitter:description"
-          content="Browse stunning photos and videos of Kudajadri Drizzle Homestay in Wayanad. Get a visual glimpse of the cozy rooms, scenic surroundings, and peaceful ambiance."
+          content={meta?.description || 'Explore our gallery showcasing the beautiful Kudajadri Homestay in Wayanad'}
         />
         <meta name="twitter:site" content="@kudajadrihomestay" />
         <meta name="twitter:image" content={OG_IMAGE} />

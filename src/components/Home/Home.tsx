@@ -10,7 +10,6 @@ import ReviewSession from './components/ReviewSession';
 import RoomSession from './components/RoomSession';
 import VideoBackground from './components/VideoBackground';
 import { Helmet } from 'react-helmet-async';
-import { useHomeMeta } from "../../hooks/useHomeMeta";
 import fm from 'front-matter';
 import homeFaqRaw from '../../File/homefaqs.md?raw';
 import FaqList from '../FaqComponent/FaqList';
@@ -18,6 +17,7 @@ import { ContentSection } from '../shared';
 import { useContentSection } from '../../hooks/useContentSection';
 import CardSection from './components/CardSection';
 import GuestTestimonials from './components/GuestTestimonials';
+import usePageMeta, { PageType } from '../../hooks/usePageMeta';
 
 // Define the shape of FAQ frontmatter
 interface FaqFrontMatterAttributes {
@@ -35,10 +35,10 @@ const Home = () => {
     faqs: parsedFaq.attributes.faqs || [],
   };
   const contentSection = useContentSection('home');
+  const { meta: homeMeta } = usePageMeta('home' as PageType);
 
   const siteUrl = "https://www.kudajadridrizzle.com";
   const canonicalUrl = siteUrl + "/";
-  const homeMeta = useHomeMeta();
   const title = homeMeta?.title || "";
   const description = homeMeta?.description || "";
   const image = `${siteUrl}/aboutHero.jpg`;
