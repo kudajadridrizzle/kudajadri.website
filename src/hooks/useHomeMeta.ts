@@ -11,21 +11,20 @@ export const useHomeMeta = (): HomeMetaData | null => {
   useEffect(() => {
     const fetchMetaData = async () => {
       try {
-        const response = await fetch('/homemeta.md');
-        const text = await response.text();
-        
-        // Parse the frontmatter from the markdown file
-        const titleMatch = text.match(/title: "(.*?)"/);
-        const descMatch = text.match(/description: "(.*?)"/);
-        
-        if (titleMatch && descMatch) {
-          setMetaData({
-            title: titleMatch[1],
-            description: descMatch[1].replace(/\"/g, '"')
-          });
-        }
+        const response = await fetch('/data/home-meta.json');
+        if (!response.ok) throw new Error('Failed to fetch home meta data');
+        const data = await response.json();
+        setMetaData({
+          title: data.title || '',
+          description: data.description || ''
+        });
       } catch (error) {
         console.error('Error loading home meta data:', error);
+        // Fallback to default values if the fetch fails
+        setMetaData({
+          title: 'Wayanad homestays: Best homestay in Wayanad for family, groups',
+          description: 'Kudajadri Drizzle home stay in Wayanad: 100+ years old #1 heritage Wayanad Homestay: Book top rated nature friendly Homestays in Wayanad for Family & Group.'
+        });
       }
     };
 

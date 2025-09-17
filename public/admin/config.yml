@@ -9,7 +9,7 @@ collections:
   - name: "home_meta"
     label: "Home Page Meta"
     files:
-      - file: "src/File/homemeta.md"
+      - file: "public/data/home-meta.json"
         label: "Home Page Meta"
         name: "home_meta"
         fields:
