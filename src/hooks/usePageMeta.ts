@@ -28,20 +28,34 @@ const usePageMeta = (pageType: PageType) => {
       try {
         console.log('Fetching metadata from /meta/pagemeta.md');
         const response = await fetch('/meta/pagemeta.md');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
         const yamlText = await response.text();
-        const data = yaml.load(yamlText) as { page_meta: AllPageMetaData };
+        console.log('Raw YAML content:', yamlText);
         
-        console.log('Fetched YAML data:', data);
+        // Remove the YAML frontmatter delimiters if they exist
+        const cleanYaml = yamlText.replace(/^---\s*\n?|\n?---\s*\n?$/g, '').trim();
         
-        if (data && data.page_meta) {
-          setAllMeta(data.page_meta);
-          setMeta(data.page_meta[pageType] || { title: '', description: '' });
-        } else {
-          console.warn('No page_meta found in YAML data');
+        // Try to parse the YAML
+        try {
+          const data = yaml.load(cleanYaml) as AllPageMetaData;
+          console.log('Parsed YAML data:', data);
+          
+          if (data) {
+            setAllMeta(data);
+            setMeta(data[pageType] || { title: '', description: '' });
+          } else {
+            console.warn('No meta data found in YAML');
+          }
+        } catch (yamlError) {
+          console.error('YAML parsing error:', yamlError);
+          throw new Error(`Failed to parse YAML: ${yamlError.message}`);
         }
       } catch (err) {
-        console.error('Error loading metadata:', err);
-        setError(err instanceof Error ? err : new Error('Failed to load metadata'));
+        const error = err instanceof Error ? err : new Error('Failed to load metadata');
+        console.error('Error loading metadata:', error);
+        setError(error);
       } finally {
         setLoading(false);
       }

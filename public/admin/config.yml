@@ -5,15 +5,20 @@ backend:
 media_folder: "public/images"
 public_folder: "/images"
 
+# Make sure the publish mode is set to editorial_workflow
+publish_mode: editorial_workflow
+
 collections:
-  - name: "page_meta"
-    label: "Page Meta Data"
+  - name: "meta"
+    label: "Page Meta"
+    label_singular: "Page Meta"
+    delete: false
     editor:
       preview: false
     files:
-      - file: "meta/pagemeta.md"
-        label: "Page Meta Data"
-        name: "page_meta"
+      - label: "Page Meta Data"
+        name: "pagemeta"
+        file: "meta/pagemeta.md"
         fields:
           - label: "Home Page"
             name: "home"
