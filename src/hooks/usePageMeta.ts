@@ -50,7 +50,8 @@ const usePageMeta = (pageType: PageType) => {
           }
         } catch (yamlError) {
           console.error('YAML parsing error:', yamlError);
-          throw new Error(`Failed to parse YAML: ${yamlError.message}`);
+          const errorMessage = yamlError instanceof Error ? yamlError.message : 'Unknown YAML parsing error';
+          throw new Error(`Failed to parse YAML: ${errorMessage}`);
         }
       } catch (err) {
         const error = err instanceof Error ? err : new Error('Failed to load metadata');
