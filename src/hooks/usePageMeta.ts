@@ -26,8 +26,8 @@ const usePageMeta = (pageType: PageType) => {
   useEffect(() => {
     const fetchMeta = async () => {
       try {
-        console.log('Fetching metadata from /public/meta/pagemeta.md');
-        const response = await fetch('/meta/pagemeta.md');
+        console.log('Fetching metadata from /pagemeta.md');
+        const response = await fetch('/pagemeta.md');
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

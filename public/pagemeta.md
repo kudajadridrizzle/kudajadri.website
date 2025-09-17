@@ -1,6 +1,6 @@
 ---
 home:
-  title: "Wayanad Accommodations: Homestays, Cottages, and Family Rooms"
+  title: "d Accommodations: Homestays, Cottages, and Family Rooms"
   description: "Wayanad Accommodations: Homestays, Cottages, and Family Rooms"
 about:
   title: "Wayanad Accommodations: Homestays, Cottages, and Family Rooms"
