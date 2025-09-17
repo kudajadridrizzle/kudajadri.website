@@ -26,7 +26,7 @@ const usePageMeta = (pageType: PageType) => {
   useEffect(() => {
     const fetchMeta = async () => {
       try {
-        console.log('Fetching metadata from /meta/pagemeta.md');
+        console.log('Fetching metadata from /public/meta/pagemeta.md');
         const response = await fetch('/meta/pagemeta.md');
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -34,12 +34,27 @@ const usePageMeta = (pageType: PageType) => {
         const yamlText = await response.text();
         console.log('Raw YAML content:', yamlText);
         
-        // Remove the YAML frontmatter delimiters if they exist
+        // Remove the YAML frontmatter delimiters
         const cleanYaml = yamlText.replace(/^---\s*\n?|\n?---\s*\n?$/g, '').trim();
+        
+        // The YAML might be in a nested structure, so we'll parse it as is first
+        const yamlContent = cleanYaml || yamlText;
         
         // Try to parse the YAML
         try {
-          const data = yaml.load(cleanYaml) as AllPageMetaData;
+          // Parse the YAML and transform it to match our expected structure
+          const parsedData = yaml.load(yamlContent) as Record<string, any>;
+          
+          // Transform the parsed data to match AllPageMetaData structure
+          const data = Object.keys(parsedData).reduce((acc, key) => {
+            if (typeof parsedData[key] === 'object' && parsedData[key] !== null) {
+              acc[key] = {
+                title: parsedData[key].title || '',
+                description: parsedData[key].description || ''
+              };
+            }
+            return acc;
+          }, {} as AllPageMetaData);
           console.log('Parsed YAML data:', data);
           
           if (data) {
