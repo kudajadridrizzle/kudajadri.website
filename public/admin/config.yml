@@ -25,6 +25,16 @@ collections:
         fields:
           - { label: "Title", name: "title", widget: "string", required: true, hint: "About page title for SEO (appears in browser tab)" }
           - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines (150-160 characters recommended)" }
+
+  - name: "gallery_meta"
+    label: "Gallery Page Meta"
+    files:
+      - file: "src/File/gallerymeta.md"
+        label: "Gallery Page Meta"
+        name: "gallery_meta"
+        fields:
+          - { label: "Title", name: "title", widget: "string", required: true, hint: "Gallery page title for SEO (appears in browser tab)" }
+          - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines (150-160 characters recommended)" }
   - name: "pages"
     label: "Pages"
     folder: "src/File"

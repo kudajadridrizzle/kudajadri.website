@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-type PageType = 'home' | 'about' | 'rooms' | 'wayanad' | 'default';
+type PageType = 'home' | 'about' | 'gallery' | 'rooms' | 'wayanad' | 'default';
 
 interface SeoData {
   metaTitle: string;
@@ -31,6 +31,7 @@ const useSeoMetadata = (pageType: PageType = 'default', initialData: Partial<Seo
     const defaultTitle = {
       home: 'Kudajadri - Luxury Homestay in Wayanad',
       about: 'About Kudajadri - Experience the Best of Wayanad',
+      gallery: 'Gallery - Kudajadri Homestay in Wayanad',
       rooms: 'Luxury Rooms & Accommodation - Kudajadri',
       wayanad: 'Explore Wayanad - Kudajadri Homestay',
       default: 'Kudajadri - Your Perfect Getaway in Wayanad'
@@ -39,6 +40,7 @@ const useSeoMetadata = (pageType: PageType = 'default', initialData: Partial<Seo
     const defaultDescription = {
       home: 'Experience luxury and comfort at Kudajadri, your perfect homestay in the heart of Wayanad. Book your stay now for an unforgettable experience.',
       about: 'Discover the beauty of Wayanad with Kudajadri. Experience luxury amidst nature with our premium accommodations and exceptional hospitality.',
+      gallery: 'Explore our gallery showcasing the beautiful Kudajadri Homestay in Wayanad. Get a glimpse of our luxurious accommodations, stunning surroundings, and memorable guest experiences.',
       rooms: 'Discover our luxurious rooms and suites at Kudajadri, designed to provide the ultimate comfort during your stay in Wayanad.',
       wayanad: 'Explore the breathtaking beauty of Wayanad with Kudajadri. Discover local attractions, wildlife, and natural wonders.',
       default: 'Experience the best of Wayanad with Kudajadri Homestay. Luxury accommodations in the heart of nature.'
