@@ -6,35 +6,49 @@ media_folder: "public/images"
 public_folder: "/images"
 
 collections:
-  - name: "home_meta"
-    label: "Home Page Meta"
+  - name: "page_meta"
+    label: "Page Meta Data"
+    editor:
+      preview: false
     files:
-      - file: "public/data/home-meta.json"
-        label: "Home Page Meta"
-        name: "home_meta"
+      - file: "src/File/meta/pagemeta.md"
+        label: "Page Meta Data"
+        name: "page_meta"
         fields:
-          - { label: "Title", name: "title", widget: "string", required: true, hint: "Page title for SEO (appears in browser tab)" }
-          - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines (150-160 characters recommended)" }
-
-  - name: "about_meta"
-    label: "About Page Meta"
-    files:
-      - file: "src/File/aboutmeta.md"
-        label: "About Page Meta"
-        name: "about_meta"
-        fields:
-          - { label: "Title", name: "title", widget: "string", required: true, hint: "About page title for SEO (appears in browser tab)" }
-          - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines (150-160 characters recommended)" }
-
-  - name: "gallery_meta"
-    label: "Gallery Page Meta"
-    files:
-      - file: "src/File/gallerymeta.md"
-        label: "Gallery Page Meta"
-        name: "gallery_meta"
-        fields:
-          - { label: "Title", name: "title", widget: "string", required: true, hint: "Gallery page title for SEO (appears in browser tab)" }
-          - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines (150-160 characters recommended)" }
+          - label: "Home Page"
+            name: "home"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string", required: true, hint: "Home page title for SEO (appears in browser tab)" }
+              - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines (150-160 characters recommended)" }
+          
+          - label: "About Page"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string", required: true, hint: "About page title for SEO" }
+              - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
+          
+          - label: "Gallery Page"
+            name: "gallery"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string", required: true, hint: "Gallery page title for SEO" }
+              - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
+          
+          - label: "Rooms Page"
+            name: "rooms"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string", required: true, hint: "Rooms page title for SEO" }
+              - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
+          
+          - label: "Wayanad Page"
+            name: "wayanad"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string", required: true, hint: "Wayanad page title for SEO" }
+              - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
   - name: "pages"
     label: "Pages"
     folder: "src/File"
