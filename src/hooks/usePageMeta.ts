@@ -28,56 +28,20 @@ const usePageMeta = (pageType: PageType) => {
       try {
         console.log('Fetching metadata from /meta/pagemeta.md');
         const response = await fetch('/meta/pagemeta.md');
-        if (!response.ok) {
-          throw new Error(`Failed to fetch page meta data: ${response.status} ${response.statusText}`);
-        }
+        const yamlText = await response.text();
+        const data = yaml.load(yamlText) as { page_meta: AllPageMetaData };
         
-        const text = await response.text();
-        console.log('Raw metadata content:', text);
+        console.log('Fetched YAML data:', data);
         
-        // Handle both Windows (\r\n) and Unix (\n) line endings
-        const yamlMatch = text.match(/^---\r?\n([\s\S]*?)\r?\n---/);
-        if (!yamlMatch) {
-          throw new Error('No YAML frontmatter found in the file');
-        }
-        
-        const yamlContent = yamlMatch[1];
-        console.log('YAML content:', yamlContent);
-        
-        // Parse YAML
-        const parsedYaml = yaml.load(yamlContent) as Record<string, { title: string; description: string }>;
-        console.log('Parsed YAML:', parsedYaml);
-        
-        if (!parsedYaml) {
-          throw new Error('Failed to parse YAML content');
-        }
-        
-        // Transform to our format
-        const metaData: Record<string, PageMetaData> = {};
-        Object.entries(parsedYaml).forEach(([key, value]) => {
-          if (value && typeof value === 'object' && 'title' in value && 'description' in value) {
-            metaData[key] = {
-              title: String(value.title || '').trim(),
-              description: String(value.description || '').trim()
-            };
-          }
-        });
-        
-        console.log('Processed meta data:', metaData);
-        setAllMeta(metaData as AllPageMetaData);
-        
-        // Set current page meta
-        if (metaData[pageType]) {
-          console.log(`Setting meta for ${pageType}:`, metaData[pageType]);
-          setMeta(metaData[pageType]);
+        if (data && data.page_meta) {
+          setAllMeta(data.page_meta);
+          setMeta(data.page_meta[pageType] || { title: '', description: '' });
         } else {
-          console.warn(`No metadata found for page type: ${pageType}`);
-          setMeta({ title: '', description: '' });
+          console.warn('No page_meta found in YAML data');
         }
       } catch (err) {
-        console.error('Error in fetchMeta:', err);
-        setError(err as Error);
-        setMeta({ title: '', description: '' });
+        console.error('Error loading metadata:', err);
+        setError(err instanceof Error ? err : new Error('Failed to load metadata'));
       } finally {
         setLoading(false);
       }
@@ -86,18 +50,36 @@ const usePageMeta = (pageType: PageType) => {
     fetchMeta();
   }, [pageType]);
 
-  // Function to get meta for any page
-  const getMetaForPage = (type: PageType): PageMetaData => {
-    if (!allMeta) return { title: '', description: '' };
-    return allMeta[type] || { title: '', description: '' };
+  // Update meta when pageType changes
+  useEffect(() => {
+    if (allMeta && allMeta[pageType]) {
+      setMeta(allMeta[pageType]);
+    }
+  }, [pageType, allMeta]);
+
+  const updateMeta = (newMeta: Partial<PageMetaData>) => {
+    setMeta(prev => ({
+      ...prev,
+      ...newMeta
+    }));
+
+    if (allMeta) {
+      setAllMeta(prev => ({
+        ...prev!,
+        [pageType]: {
+          ...prev![pageType],
+          ...newMeta
+        }
+      }));
+    }
   };
 
   return {
     meta,
-    allMeta: allMeta as AllPageMetaData | null,
+    allMeta,
     loading,
     error,
-    getMetaForPage
+    updateMeta
   };
 };
 
