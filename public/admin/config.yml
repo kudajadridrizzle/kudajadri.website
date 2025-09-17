@@ -6,6 +6,15 @@ media_folder: "public/images"
 public_folder: "/images"
 
 collections:
+  - name: "home_meta"
+    label: "Home Page Meta"
+    files:
+      - file: "src/File/homemeta.md"
+        label: "Home Page Meta"
+        name: "home_meta"
+        fields:
+          - { label: "Title", name: "title", widget: "string", required: true, hint: "Page title for SEO (appears in browser tab)" }
+          - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines (150-160 characters recommended)" }
   - name: "pages"
     label: "Pages"
     folder: "src/File"

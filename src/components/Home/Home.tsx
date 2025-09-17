@@ -10,6 +10,7 @@ import ReviewSession from './components/ReviewSession';
 import RoomSession from './components/RoomSession';
 import VideoBackground from './components/VideoBackground';
 import { Helmet } from 'react-helmet-async';
+import { useHomeMeta } from "../../hooks/useHomeMeta";
 import fm from 'front-matter';
 import homeFaqRaw from '../../File/homefaqs.md?raw';
 import FaqList from '../FaqComponent/FaqList';
@@ -37,9 +38,9 @@ const Home = () => {
 
   const siteUrl = "https://www.kudajadridrizzle.com";
   const canonicalUrl = siteUrl + "/";
-  const title = "Wayanad homestays: Best homestay in Wayanad for family, groups";
-  const description =
-    "Kudajadri Drizzle home stay in Wayanad: 100+ years old #1 heritage Wayanad Homestay: Book top rated nature friendly Homestays in Wayanad for Family & Group.";
+  const homeMeta = useHomeMeta();
+  const title = homeMeta?.title || "";
+  const description = homeMeta?.description || "";
   const image = `${siteUrl}/aboutHero.jpg`;
 
   const jsonLd = {
