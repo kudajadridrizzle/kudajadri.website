@@ -26,7 +26,7 @@ wayanad:
   title: " Accommodations: Homestays, Cottages, and Family Rooms"
   description: "Wayanad Accommodations: Homestays, Cottages, and Family Rooms"
 facilities:
-  title: "Facilities at Kudajadri Drizzle - Premium Amenities in Wayanad"
+  title: " at Kudajadri Drizzle - Premium Amenities in Wayanad"
   description: "Experience premium facilities at Kudajadri Drizzle. Enjoy modern amenities, comfortable accommodations, and excellent services during your stay in Wayanad."
 contact:
   title: " Kudajadri Drizzle - Get in Touch for Your Stay in Wayanad"
