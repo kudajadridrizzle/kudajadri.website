@@ -102,6 +102,6 @@ const usePageMeta = (pageType: PageType) => {
   return { meta, allMeta, loading, error, updateMeta };
 };
 
-export { usePageMeta, type PageType };
+export { usePageMeta };
 
 export default usePageMeta;
