@@ -4,8 +4,9 @@ import instaLogo from '../../assets/contactInstaLogo.svg';
 import twitterLogo from '../../assets/contactTwitterLogo.svg';
 import Footer from '../Home/components/Footer';
 import { Header } from '../Home/components/Header';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
+import usePageMeta, { PageType } from '../../hooks/usePageMeta';
 
 export const ContactPage = () => {
   const [form, setForm] = useState({
@@ -13,8 +14,16 @@ export const ContactPage = () => {
     email: '',
     message: '',
   });
+  const { meta, loading, error } = usePageMeta('contact' as PageType);
   const email = 'kudajadri@ymail.com';
   const whatsappNumber = '+91 9946 354 511';
+  const [currentUrl, setCurrentUrl] = useState('https://www.kudajadridrizzle.com/contact');
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setCurrentUrl(window.location.href);
+    }
+  }, []);
 
   const handleChange =
     (field: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,75 +48,33 @@ export const ContactPage = () => {
     }
   };
 
-  // ✅ SSR-safe canonical URL (static fallback instead of window)
-  const canonicalUrl = 'https://www.kudajadridrizzle.com/contact';
+  if (loading) return <div>Loading...</div>;
+  if (error) console.error('Error loading page metadata:', error);
 
   return (
     <div className="sm:mt-[90px] mobile:mt-[52px]">
       <Helmet>
-        <title>
-          Online Booking of Homestay, Cottages, Rooms in Wayanad for Family & Group
-        </title>
-        <meta
-          name="description"
-          content="Book homestays, cottages, and rooms in Wayanad online for families and groups. Enjoy comfortable stays, scenic views, and easy booking with great deals."
-        />
-
-        <meta name="keywords" content="" />
+        <title>{meta?.title || 'Contact Kudajadri Drizzle - Get in Touch for Your Stay in Wayanad'}</title>
+        <meta name="description" content={meta?.description || 'Reach out to Kudajadri Drizzle for bookings and inquiries. Experience the best homestay in Wayanad with top-notch amenities and warm hospitality.'} />
+        <meta name="keywords" content="contact Kudajadri Drizzle, Wayanad homestay contact, book homestay Wayanad, Kudajadri Drizzle booking, Wayanad accommodation contact" />
         <meta name="robots" content="index, follow" />
-        <meta name="author" content="Kudajadri Homestay" />
-        <meta
-          property="og:title"
-          content="Online Booking of Homestay, Cottages, Rooms in Wayanad for Family & Group"
-        />
-        <meta
-          property="og:description"
-          content="Book homestays, cottages, and rooms in Wayanad online for families and groups. Enjoy comfortable stays, scenic views, and easy booking with great deals."
-        />
+        <meta name="author" content="Kudajadri Drizzle" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={meta?.title || 'Contact Kudajadri Drizzle - Get in Touch for Your Stay in Wayanad'} />
+        <meta property="og:description" content={meta?.description || 'Reach out to Kudajadri Drizzle for bookings and inquiries. Experience the best homestay in Wayanad with top-notch amenities and warm hospitality.'} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:url" content={currentUrl} />
         <meta property="og:site_name" content="Kudajadri Homestay" />
         <meta property="og:locale" content="en_US" />
-        {/* ✅ Added OG/Twitter preview image */}
-        <meta
-          property="og:image"
-          content="https://kudajadri.com/contact-preview.jpg"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Online Booking of Homestay, Cottages, Rooms in Wayanad for Family & Group"
-        />
-        <meta
-          name="twitter:description"
-          content="Book homestays, cottages, and rooms in Wayanad online for families and groups. Enjoy comfortable stays, scenic views, and easy booking with great deals."
-        />
-        <meta
-          name="twitter:image"
-          content="https://kudajadri.com/contact-preview.jpg"
-        />
-        <meta name="twitter:site" content="@kudajadrihomestay" />
-        <link rel="canonical" href={canonicalUrl} />
 
-        {/* ✅ JSON-LD Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'ContactPage',
-            name: 'Kudajadri Homestay Contact Page',
-            description:
-              'Book homestays, cottages, and rooms in Wayanad online for families and groups. Contact Kudajadri Homestay directly for reservations and inquiries.',
-            url: canonicalUrl,
-            contactPoint: {
-              '@type': 'ContactPoint',
-              telephone: whatsappNumber,
-              contactType: 'customer service',
-              email: email,
-              areaServed: 'IN',
-              availableLanguage: ['English', 'Malayalam'],
-            },
-          })}
-        </script>
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={meta?.title || 'Contact Kudajadri Drizzle - Get in Touch for Your Stay in Wayanad'} />
+        <meta name="twitter:description" content={meta?.description || 'Reach out to Kudajadri Drizzle for bookings and inquiries. Experience the best homestay in Wayanad with top-notch amenities and warm hospitality.'} />
+        <meta name="twitter:site" content="@kudajadrihomestay" />
+
+        <link rel="canonical" href={currentUrl} />
       </Helmet>
 
       <Header type="black" />

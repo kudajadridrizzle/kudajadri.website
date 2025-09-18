@@ -1,20 +1,27 @@
 import { useEffect, useState } from 'react';
 import * as yaml from 'js-yaml';
 
-export type PageType = 'home' | 'about' | 'gallery' | 'rooms' | 'wayanad';
+export type PageType = 'home' | 'about' | 'gallery' | 'rooms' | 'wayanad' | 'facilities' | 'contact' | 'tourpackages' | 'blog';
 
 interface PageMetaData {
   title: string;
   description: string;
+  [key: string]: any; // Allow additional properties for nested structures
 }
 
 interface AllPageMetaData {
-  [key: string]: PageMetaData;
+  [key: string]: any;
   home: PageMetaData;
   about: PageMetaData;
   gallery: PageMetaData;
   rooms: PageMetaData;
   wayanad: PageMetaData;
+  facilities: PageMetaData;
+  contact: PageMetaData;
+  tourpackages: PageMetaData & {
+    [key: string]: PageMetaData;
+  };
+  blog: PageMetaData;
 }
 
 const usePageMeta = (pageType: PageType) => {
@@ -27,7 +34,7 @@ const usePageMeta = (pageType: PageType) => {
     const fetchMeta = async () => {
       try {
         console.log('Fetching metadata from /pagemeta.md');
-        const response = await fetch('/pagemeta.md');
+        const response = await fetch('/pagemeta.md?t=' + new Date().getTime()); // Add cache buster
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -37,15 +44,19 @@ const usePageMeta = (pageType: PageType) => {
         // Remove the YAML frontmatter delimiters
         const cleanYaml = yamlText.replace(/^---\s*\n?|\n?---\s*\n?$/g, '').trim();
         
-        // The YAML might be in a nested structure, so we'll parse it as is first
-        const yamlContent = cleanYaml || yamlText;
+        // Parse the YAML
+        const parsedData = yaml.load(cleanYaml || yamlText) as Record<string, any>;
         
-        // Try to parse the YAML
-        try {
-          // Parse the YAML and transform it to match our expected structure
-          const parsedData = yaml.load(yamlContent) as Record<string, any>;
-          
-          // Transform the parsed data to match AllPageMetaData structure
+        // For tourpackages, we want to keep the nested structure
+        if (pageType === 'tourpackages' && parsedData.tourpackages) {
+          setAllMeta(parsedData as AllPageMetaData);
+          setMeta({
+            title: parsedData.tourpackages.title || '',
+            description: parsedData.tourpackages.description || '',
+            ...parsedData.tourpackages // Include all nested package data
+          });
+        } else {
+          // For other pages, use the existing behavior
           const data = Object.keys(parsedData).reduce((acc, key) => {
             if (typeof parsedData[key] === 'object' && parsedData[key] !== null) {
               acc[key] = {
@@ -55,18 +66,9 @@ const usePageMeta = (pageType: PageType) => {
             }
             return acc;
           }, {} as AllPageMetaData);
-          console.log('Parsed YAML data:', data);
           
-          if (data) {
-            setAllMeta(data);
-            setMeta(data[pageType] || { title: '', description: '' });
-          } else {
-            console.warn('No meta data found in YAML');
-          }
-        } catch (yamlError) {
-          console.error('YAML parsing error:', yamlError);
-          const errorMessage = yamlError instanceof Error ? yamlError.message : 'Unknown YAML parsing error';
-          throw new Error(`Failed to parse YAML: ${errorMessage}`);
+          setAllMeta(data);
+          setMeta(data[pageType] || { title: '', description: '' });
         }
       } catch (err) {
         const error = err instanceof Error ? err : new Error('Failed to load metadata');
@@ -79,13 +81,6 @@ const usePageMeta = (pageType: PageType) => {
 
     fetchMeta();
   }, [pageType]);
-
-  // Update meta when pageType changes
-  useEffect(() => {
-    if (allMeta && allMeta[pageType]) {
-      setMeta(allMeta[pageType]);
-    }
-  }, [pageType, allMeta]);
 
   const updateMeta = (newMeta: Partial<PageMetaData>) => {
     setMeta(prev => ({
@@ -104,13 +99,9 @@ const usePageMeta = (pageType: PageType) => {
     }
   };
 
-  return {
-    meta,
-    allMeta,
-    loading,
-    error,
-    updateMeta
-  };
+  return { meta, allMeta, loading, error, updateMeta };
 };
+
+export { usePageMeta, type PageType };
 
 export default usePageMeta;

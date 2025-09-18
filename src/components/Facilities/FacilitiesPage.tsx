@@ -8,6 +8,7 @@ import ListSession from './components/ListSession';
 import facilitiesFaqRaw from '../../File/facilitiesfaqs.md?raw';
 import FaqList from '../FaqComponent/FaqList';
 import FacilitiesAccordion from './components/FacilitiesAccordion';
+import usePageMeta from '../../hooks/usePageMeta';
 
 // Define the shape of FAQ frontmatter
 interface FaqFrontMatterAttributes {
@@ -24,25 +25,23 @@ const OG_IMAGE = `${SITE_URL}/aboutHero.jpg`;
 
 const FacilitiesPage = () => {
   const parsedFaq = fm<FaqFrontMatterAttributes>(facilitiesFaqRaw);
+  const { meta, loading, error } = usePageMeta('facilities');
+
+  if (loading) return <div>Loading...</div>;
+  if (error) console.error('Error loading page metadata:', error);
 
   return (
     <div>
       <Helmet>
-        {/* Title & Description */}
-        <title>
-          Swimming pool homestays in Wayanad: homestay with swimming pool
-        </title>
-        <meta
-          name="description"
-          content="Homestays in Wayanad with swimming pools offer the best facilities, comfort, and scenic views for a perfect relaxing getaway with family and friends."
-        />
+        <title>{meta?.title || 'Facilities at Kudajadri Drizzle'}</title>
+        <meta name="description" content={meta?.description || 'Experience premium facilities at Kudajadri Drizzle. Enjoy modern amenities and excellent services.'} />
         <meta name="keywords" content="" />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Kudajadri Homestay" />
 
         {/* Open Graph */}
-        <meta property="og:title" content="Swimming pool homestays in Wayanad: homestay with swimming pool" />
-        <meta property="og:description" content="Homestays in Wayanad with swimming pools offer the best facilities, comfort, and scenic views for a perfect relaxing getaway with family and friends." />
+        <meta property="og:title" content={meta?.title || 'Facilities at Kudajadri Drizzle'} />
+        <meta property="og:description" content={meta?.description || 'Experience premium facilities at Kudajadri Drizzle. Enjoy modern amenities and excellent services.'} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={CANONICAL_URL} />
         <meta property="og:site_name" content="Kudajadri Homestay" />
@@ -53,8 +52,8 @@ const FacilitiesPage = () => {
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Swimming pool homestays in Wayanad: homestay with swimming pool" />
-        <meta name="twitter:description" content="Homestays in Wayanad with swimming pools offer the best facilities, comfort, and scenic views for a perfect relaxing getaway with family and friends." />
+        <meta name="twitter:title" content={meta?.title || 'Facilities at Kudajadri Drizzle'} />
+        <meta name="twitter:description" content={meta?.description || 'Experience premium facilities at Kudajadri Drizzle. Enjoy modern amenities and excellent services.'} />
         <meta name="twitter:site" content="@kudajadrihomestay" />
         <meta name="twitter:image" content={OG_IMAGE} />
 
@@ -68,8 +67,8 @@ const FacilitiesPage = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "name": "Swimming pool homestays in Wayanad: homestay with swimming pool",
-            "description": "Homestays in Wayanad with swimming pools offer the best facilities, comfort, and scenic views for a perfect relaxing getaway with family and friends.",
+            "name": meta?.title || 'Facilities at Kudajadri Drizzle',
+            "description": meta?.description || 'Experience premium facilities at Kudajadri Drizzle. Enjoy modern amenities and excellent services.',
             "url": CANONICAL_URL,
             "publisher": {
               "@type": "Organization",

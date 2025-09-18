@@ -20,7 +20,7 @@ const BLOG_HERO_IMAGE = `${SITE_URL}/blogHero.jpg`;
 const BlogList: React.FC = () => {
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
-  const { meta } = usePageMeta('blog' as PageType);
+  const { meta, loading: metaLoading } = usePageMeta('blog' as PageType);
 
   useEffect(() => {
     const loadBlogPosts = async () => {
@@ -51,9 +51,8 @@ const BlogList: React.FC = () => {
           }
         }
 
-        posts.sort(
-          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-        );
+        // Sort posts by date (newest first)
+        posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
         setBlogPosts(posts);
       } catch (error) {
         console.error('Error loading blog posts:', error);
@@ -65,77 +64,61 @@ const BlogList: React.FC = () => {
     loadBlogPosts();
   }, []);
 
-  // ✅ Structured Data for Blog
-  const blogStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "Blog",
-    "url": CANONICAL_URL,
-    "name": "Wayanad Travel Blog",
-    "description":
-      "Stay updated with the Wayanad Travel Blog. Get the latest news, tourism updates, travel tips, and insights to plan your perfect trip to Wayanad.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Kudajadri Drizzle Homestay",
-      "logo": {
-        "@type": "ImageObject",
-        "url": `${SITE_URL}/logo.png`
-      }
-    }
-  };
+  // Fallback metadata
+  const pageTitle = meta?.title || 'Kudajadri Drizzle Blog - Latest Travel Tips & Stories from Wayanad';
+  const pageDescription = meta?.description || 'Explore our blog for the latest travel guides, local insights, and stories from Wayanad. Discover hidden gems, travel tips, and experiences from Kudajadri Drizzle.';
 
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="text-xl font-albertSans">Loading blog posts...</div>
-      </div>
-    );
+  if (loading || metaLoading) {
+    return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
   }
 
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>{meta?.title || 'Kudajadri Blog - Latest Travel Tips & Stories'}</title>
-        <meta
-          name="description"
-          content={meta?.description || "Discover the latest travel tips, stories, and guides about Wayanad and Kudajadri Homestay. Get inspired for your next trip to God's Own Country."}
-        />
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
         <meta name="robots" content="index, follow" />
-        <meta name="author" content="Kudajadri Homestay" />
-
-        {/* Open Graph */}
-        <meta
-          property="og:title"
-          content="Wayanad Travel Blog: Latest News, Tourism Updates, & Insights"
-        />
-        <meta
-          property="og:description"
-          content="Stay updated with the Wayanad Travel Blog. Get the latest news, tourism updates, local insights, travel tips, and experiences to help you plan your perfect trip."
-        />
+        
+        {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content={CANONICAL_URL} />
-        <meta property="og:site_name" content="Kudajadri Homestay" />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
         <meta property="og:image" content={BLOG_HERO_IMAGE} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-
+        <meta property="og:site_name" content="Kudajadri Drizzle" />
+        
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Wayanad Travel Blog: Latest News, Tourism Updates, & Insights"
-        />
-        <meta
-          name="twitter:description"
-          content="Stay updated with the Wayanad Travel Blog. Get the latest news, tourism updates, local insights, travel tips, and experiences to help you plan your perfect trip."
-        />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
         <meta name="twitter:image" content={BLOG_HERO_IMAGE} />
-
-        {/* Canonical */}
+        <meta name="twitter:site" content="@kudajadrihomestay" />
+        
         <link rel="canonical" href={CANONICAL_URL} />
-
-        {/* JSON-LD Schema */}
+        
+        {/* Schema.org markup for Google */}
         <script type="application/ld+json">
-          {JSON.stringify(blogStructuredData)}
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Blog',
+            'headline': pageTitle,
+            'description': pageDescription,
+            'url': CANONICAL_URL,
+            'image': BLOG_HERO_IMAGE,
+            'publisher': {
+              '@type': 'Organization',
+              'name': 'Kudajadri Drizzle',
+              'logo': {
+                '@type': 'ImageObject',
+                'url': 'https://kudajadridrizzle.com/logo.png'
+              }
+            },
+            'mainEntityOfPage': {
+              '@type': 'WebPage',
+              '@id': CANONICAL_URL
+            },
+            'inLanguage': 'en-US'
+          })}
         </script>
       </Helmet>
 
@@ -234,7 +217,7 @@ const BlogList: React.FC = () => {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 

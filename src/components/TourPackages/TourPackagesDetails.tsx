@@ -4,6 +4,7 @@ import { Header } from '../Home/components/Header';
 import cloud from '/cloud.jpg';
 import Footer from '../Home/components/Footer';
 import { Helmet } from 'react-helmet-async';
+import usePageMeta from '../../hooks/usePageMeta';
 
 // TypeScript interfaces for tour package structure
 interface PackageMeta {
@@ -41,111 +42,132 @@ const TourPackagesDetails = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   
+  // Get all metadata from pagemeta.md
+  const { meta: pageMeta, loading, error } = usePageMeta('tourpackages');
+  
   // Convert URL parameter back to original title format, handling special characters and capitalization
   const getOriginalTitle = (urlTitle: string) => {
-    // First decode any URL-encoded characters
     const decodedTitle = decodeURIComponent(urlTitle);
-    
-    // Replace hyphens with spaces and handle word capitalization
     return decodedTitle
       .split('-')
-      .map(word => {
-        // Preserve 'and' as it's a special case we handle in the URL generation
-        if (word === 'and') return '&';
-        return word.charAt(0).toUpperCase() + word.slice(1);
-      })
-      .join(' ')
-      // Handle any special cases or formatting needed for the original title
-      .replace(/\s+/g, ' ') // Ensure single spaces between words
-      .trim();
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
   };
 
   const originalTitle = id ? getOriginalTitle(id) : '';
-  const packageDetailsData = (packageDetails as PackageDetailsData).tour_package.find(
-    pkg => pkg.title.toLowerCase() === originalTitle.toLowerCase()
-  ) as TourPackage | undefined;
+  
+  const selectedPackage = (packageDetails as PackageDetailsData).tour_package.find(
+    (pkg) => pkg.title.toLowerCase() === originalTitle.toLowerCase()
+  );
 
-  const defaultMeta: PackageMeta = {
-    title: "Tour Package Details | Kudajadri Homestay Wayanad",
-    description:
-      "Explore our exclusive tour packages in Wayanad. Discover the best deals for families, couples, and groups with comfortable accommodation and exciting activities.",
-    keywords:
-      "wayanad tour packages, kudajadri homestay, wayanad tourism, tour packages wayanad",
+  // Get the package slug for metadata lookup
+  const getPackageSlug = (title: string): string => {
+    return title.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '');
   };
 
-  const metaInfo = packageDetailsData?.meta || defaultMeta;
+  const packageSlug = selectedPackage ? getPackageSlug(selectedPackage.title) : '';
+  
+  // Get package-specific metadata from pageMeta
+  const packageMeta = packageSlug && pageMeta ? (pageMeta as any)[packageSlug] : null;
+  
+  // Set metadata with fallbacks
+  const meta = {
+    title: packageMeta?.title || selectedPackage?.meta?.title || `${selectedPackage?.title || 'Tour Package'} | Kudajadri Drizzle`,
+    description: packageMeta?.description || selectedPackage?.meta?.description || selectedPackage?.description || 'Experience the best of Wayanad with our exclusive tour packages.',
+    keywords: selectedPackage?.meta?.keywords || 'wayanad tour, kudajadri drizzle, wayanad travel, kerala tourism'
+  };
+
+  if (loading) return <div>Loading...</div>;
+  if (error) console.error('Error loading page metadata:', error);
+  
+  if (!selectedPackage) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p>Package not found</p>
+      </div>
+    );
+  }
+
+  const currentUrl = `https://www.kudajadridrizzle.com/tour-packages/${id}`;
 
   return (
-    <div>
+    <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>{metaInfo.title}</title>
-        <meta name="description" content={metaInfo.description} />
-        <meta name="keywords" content="" />
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+        <meta name="keywords" content={meta.keywords} />
         <meta name="robots" content="index, follow" />
-        <meta name="author" content="Kudajadri Homestay" />
-        <meta property="og:title" content={metaInfo.title} />
-        <meta property="og:description" content={metaInfo.description} />
+        <meta name="author" content="Kudajadri Drizzle" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:description" content={meta.description} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={window.location.href} />
-        <meta property="og:site_name" content="Kudajadri Homestay" />
+        <meta property="og:url" content={currentUrl} />
+        <meta property="og:site_name" content="Kudajadri Drizzle" />
         <meta property="og:locale" content="en_US" />
-        <meta
-          property="og:image"
-          content={`${window.location.origin}/wayanadImg.jpg`}
-        />
+        <meta property="og:image" content="https://kudajadridrizzle.com/tour-packages-preview.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+
+        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={metaInfo.title} />
-        <meta name="twitter:description" content={metaInfo.description} />
+        <meta name="twitter:title" content={meta.title} />
+        <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:site" content="@kudajadrihomestay" />
-        <meta
-          name="twitter:image"
-          content={`${window.location.origin}/wayanadImg.jpg`}
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="canonical" href={window.location.href} />
+        <meta name="twitter:image" content="https://kudajadridrizzle.com/tour-packages-preview.jpg" />
+
+        <link rel="canonical" href={currentUrl} />
+
+        {/* Schema.org markup for Google */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'TouristAttraction',
+            'name': meta.title,
+            'description': meta.description,
+            'url': currentUrl,
+            'image': 'https://kudajadridrizzle.com/tour-packages-preview.jpg',
+            'address': {
+              '@type': 'PostalAddress',
+              'addressLocality': 'Wayanad',
+              'addressRegion': 'Kerala',
+              'addressCountry': 'IN'
+            },
+            'offers': {
+              '@type': 'Offer',
+              'url': currentUrl,
+              'priceCurrency': 'INR',
+              'price': selectedPackage.price?.current_price?.replace(/[^0-9]/g, '') || '',
+              'availability': 'https://schema.org/InStock',
+              'validFrom': new Date().toISOString()
+            },
+            'touristType': ['Family', 'Couples', 'Solo', 'Group']
+          })}
+        </script>
       </Helmet>
 
       <Header type="white" />
-      {packageDetailsData ? (
-        <div className="package-details mt-[60px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-8 sm:py-12 md:py-16">
-          <PackageCard
-            title={packageDetailsData.title}
-            description={packageDetailsData.description}
-            price={packageDetailsData.price}
-            duration={packageDetailsData.duration}
-            pickupDrop={packageDetailsData.pickup_drop}
-            navigate={navigate} // ✅ pass navigate down
-          />
-          <div className="flex flex-col gap-8 sm:gap-10 md:gap-12 mt-12 sm:mt-16 md:mt-20 lg:mt-24">
-            {packageDetailsData.details &&
-              packageDetailsData.details.map((detail, index) => (
-                <BodyCard
-                  key={index}
-                  title={detail.title}
-                  description={detail.body}
-                />
-              ))}
-          </div>
+      <div className="package-details mt-[60px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-8 sm:py-12 md:py-16">
+        <PackageCard
+          title={selectedPackage.title}
+          description={selectedPackage.description}
+          price={selectedPackage.price}
+          duration={selectedPackage.duration}
+          pickupDrop={selectedPackage.pickup_drop}
+          navigate={navigate} // ✅ pass navigate down
+        />
+        <div className="flex flex-col gap-8 sm:gap-10 md:gap-12 mt-12 sm:mt-16 md:mt-20 lg:mt-24">
+          {selectedPackage.details &&
+            selectedPackage.details.map((detail, index) => (
+              <BodyCard
+                key={index}
+                title={detail.title}
+                description={detail.body}
+              />
+            ))}
         </div>
-      ) : (
-        <div className="package-details mt-[60px] px-4 py-12 sm:px-6 md:px-8 lg:px-12 xl:px-20 text-center">
-          <h1 className="text-3xl font-bold text-center text-white">
-            {originalTitle}
-          </h1>
-          <p className="text-gray-600 mb-8">
-            The tour package "{originalTitle}" could not be found.
-          </p>
-          <button
-            onClick={() => window.history.back()}
-            className="bg-[#292626] text-white py-3 px-6 rounded-full hover:bg-[#1a1a1a] transition-colors"
-          >
-            Go Back
-          </button>
-        </div>
-      )}
+      </div>
       <Footer />
     </div>
   );

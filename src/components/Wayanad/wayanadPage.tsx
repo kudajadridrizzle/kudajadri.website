@@ -27,12 +27,12 @@ export const WayanadPage = () => {
         <title>{meta?.title || pageMetadata.title}</title>
         <meta name="description" content={meta?.description || pageMetadata.description} />
         <meta name="keywords" content="" />
-        <meta name="robots" content={pageMetadata.robots} />
-        <meta name="author" content={pageMetadata.author} />
+        <meta name="robots" content={meta?.robots || pageMetadata.robots} />
+        <meta name="author" content={meta?.author || pageMetadata.author} />
 
         {/* Open Graph */}
-        <meta property="og:title" content={pageMetadata.title} />
-        <meta property="og:description" content={pageMetadata.description} />
+        <meta property="og:title" content={meta?.title || pageMetadata.title} />
+        <meta property="og:description" content={meta?.description || pageMetadata.description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={currentUrl} />
         <meta property="og:site_name" content="Kudajadri Homestay" />
@@ -40,8 +40,8 @@ export const WayanadPage = () => {
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={pageMetadata.title} />
-        <meta name="twitter:description" content={pageMetadata.description} />
+        <meta name="twitter:title" content={meta?.title || pageMetadata.title} />
+        <meta name="twitter:description" content={meta?.description || pageMetadata.description} />
         <meta name="twitter:site" content="@kudajadrihomestay" />
 
         {/* Misc */}
