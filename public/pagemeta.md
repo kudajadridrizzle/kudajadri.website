@@ -50,10 +50,10 @@ gallery:
     Wayanad. Get a visual glimpse of the cozy rooms, scenic surroundings, and
     peaceful ambiance.
 rooms:
-  title: "Wayanad Accommodations: Homestays, Cottages, and Family Rooms"
+  title: "Wayanad accommodations: homestays, cottages, family rooms"
   description: Discover peaceful accommodations in Wayanad with cozy homestays,
-    spacious cottages with swimming pool, and family rooms designed for comfort
-    and relaxation
+    spacious cottages with swimming pool, and family rooms designed for
+    comfort and relaxation
   classic_rooms:
     title: Classic Rooms – Affordable Wayanad Accommodations
     description: An economic escape in a lush atmosphere. These classic
@@ -74,6 +74,8 @@ rooms:
       comforts, giving guests a culturally immersive stay. Perfect for those
       wanting a peaceful retreat with a touch of local heritage.
 wayanad:
-  title: " Accommodations: Homestays, Cottages, and Family Rooms"
-  description: "Wayanad Accommodations: Homestays, Cottages, and Family Rooms"
+  title: "Wayanad: Explore tourist attractions & destinations in Wayanad"
+  description: Discover top tourist attractions and must-visit destinations in
+    Wayanad. Plan your perfect trip to explore nature, wildlife, and cultural
+    sites.
 ---
