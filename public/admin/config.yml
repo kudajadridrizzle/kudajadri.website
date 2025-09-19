@@ -18,7 +18,7 @@ collections:
     files:
       - label: "Page Meta Data"
         name: "pagemeta"
-        file: "public/pagemeta.md"
+        file: "pagemeta.md"
         fields:
           - label: "Contact Page"
             name: "contact"
