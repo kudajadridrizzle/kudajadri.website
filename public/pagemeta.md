@@ -69,8 +69,11 @@ rooms:
       Wayanad feature elegant interiors, modern amenities, and personalized
       services. Ideal for travelers seeking sophistication and comfort, Premium
       Rooms offer a serene retreat amidst Wayanad's scenic beauty.
+  deluxe_rooms:
+    title: "Deluxe Rooms – Comfortable & Spacious Accommodations in Wayanad"
+    description: Experience the perfect blend of comfort and luxury in our Deluxe Rooms at Kudajadri Drizzle. These spacious accommodations feature modern amenities, elegant decor, and a serene ambiance, making them ideal for a relaxing stay in Wayanad.
   deluxe_heritage_rooms:
-    title: xe Heritage Rooms – Traditional Wayanad Accommodations
+    title: "Deluxe Heritage Rooms – Traditional Wayanad Accommodations"
     description: An authentic experience in a heritage setting. These traditional
       Wayanad accommodations combine Kerala-style interiors with modern
       comforts, giving guests a culturally immersive stay. Perfect for those
