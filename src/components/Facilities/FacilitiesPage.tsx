@@ -9,6 +9,7 @@ import facilitiesFaqRaw from '../../File/facilitiesfaqs.md?raw';
 import FaqList from '../FaqComponent/FaqList';
 import FacilitiesAccordion from './components/FacilitiesAccordion';
 import usePageMeta from '../../hooks/usePageMeta';
+import useFacilitiesCMS from '../../hooks/useFacilitiesCMS';
 
 // Define the shape of FAQ frontmatter
 interface FaqFrontMatterAttributes {
@@ -24,10 +25,15 @@ const CANONICAL_URL = `${SITE_URL}/facilities-amenities`;
 const OG_IMAGE = `${SITE_URL}/aboutHero.jpg`;
 
 const FacilitiesPage = () => {
-  const parsedFaq = fm<FaqFrontMatterAttributes>(facilitiesFaqRaw);
   const { meta, loading, error } = usePageMeta('facilities');
+  const { pageData, loading: facilitiesLoading } = useFacilitiesCMS();
+  
+  // Parse FAQ data
+  const parsedFaq = fm<FaqFrontMatterAttributes>(facilitiesFaqRaw);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading || facilitiesLoading) {
+    return <div>Loading...</div>;
+  }
   if (error) console.error('Error loading page metadata:', error);
 
   return (
@@ -82,19 +88,33 @@ const FacilitiesPage = () => {
         </script>
       </Helmet>
 
-      <Hero />
+      {pageData && (
+        <Hero 
+          title={pageData.title} 
+          description={pageData.description} 
+        />
+      )}
+      
       <main className="flex flex-col items-center self-stretch gap-16 bg-white mobile:p-4 sm:p-14 sm:flex-row 2xl:px-[18%] lg:px-[12%]">
         <FacilitiesSession />
       </main>
       <ListSession />
       <FacilitiesAccordion />
+      
+      {/* FAQ Section */}
+      <section className="py-16 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+          {parsedFaq.attributes.title}
+        </h2>
+        <FaqList faqs={parsedFaq.attributes.faqs} />
+      </section>
+      
       <Direction
         title="Swimming Pool Homestays in Wayanad – How to Reach"
         description="Reaching our Kudajadri Drizzle Wayanad Homestay is simple and hassle-free. The property is well-connected by road from Kozhikode, Bengaluru, and Mysuru, making travel convenient by car, taxi, or bus. Along the way, you’ll pass through scenic hills and lush plantations, offering a beautiful glimpse of Wayanad’s charm even before you arrive. The journey is smooth, pleasant, and sets the tone for a relaxing stay."
         buttonText="View on Map"
         showMap={true}
       />
-      <FaqList {...parsedFaq.attributes} />
       <Footer />
     </div>
   );

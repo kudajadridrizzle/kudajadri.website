@@ -47,19 +47,33 @@ collections:
             fields:
               - { label: "Title", name: "title", widget: "string", required: true, hint: "Rooms page title for SEO" }
               - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
+              
+              - label: "Classic Rooms"
+                name: "classic_rooms"
+                widget: "object"
+                fields:
+                  - { label: "Title", name: "title", widget: "string", required: true, hint: "Classic rooms page title for SEO" }
+                  - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
+                  
+              - label: "Premium Rooms"
+                name: "premium_rooms"
+                widget: "object"
+                fields:
+                  - { label: "Title", name: "title", widget: "string", required: true, hint: "Premium rooms page title for SEO" }
+                  - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
+                  
+              - label: "Deluxe Heritage Rooms"
+                name: "deluxe_heritage_rooms"
+                widget: "object"
+                fields:
+                  - { label: "Title", name: "title", widget: "string", required: true, hint: "Deluxe heritage rooms page title for SEO" }
+                  - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
           
           - label: "Wayanad Page"
             name: "wayanad"
             widget: "object"
             fields:
               - { label: "Title", name: "title", widget: "string", required: true, hint: "Wayanad page title for SEO" }
-              - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
-          
-          - label: "Contact Page"
-            name: "contact"
-            widget: "object"
-            fields:
-              - { label: "Title", name: "title", widget: "string", required: true, hint: "Contact page title for SEO" }
               - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
   - name: "pages"
     label: "Pages"
