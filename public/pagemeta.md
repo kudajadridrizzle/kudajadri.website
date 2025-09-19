@@ -15,27 +15,27 @@ blog:
     stories from Wayanad. Discover hidden gems, travel tips, and experiences
     from Kudajadri Drizzle.
 tourpackages:
-  title: "Holiday Tour Packages: Best Trip Deals for Families & Couples"
+  title: test
   description: Discover the best Wayanad holiday tour packages with top deals for
     families, groups, and couples. Enjoy a perfect getaway with nature,
     adventure, and comfort.
   green_wayanad:
-    title: "Green Wayanad Tour Package: Wild Life Sanctuaries & Nature Trails"
+    title: test
     description: Experience the lush greenery of Wayanad with our Green Tour
       Package. Explore wildlife sanctuaries, Edakkal Caves, and serene lakes in
       this 4-day adventure.
   vibrant_wayanad:
-    title: "Vibrant Wayanad Tour Package: Best of Nature & Adventure"
+    title: test
     description: Discover the vibrant beauty of Wayanad with our 2-day package.
       Perfect for short getaways with visits to waterfalls, viewpoints, and tea
       plantations.
   dream_wayanad:
-    title: "Dream Wayanad Tour Package: Best of Nature & Adventure"
+    title: test
     description: Experience your dream vacation in Wayanad with our specially
       curated 3-day package. Experience the best of nature, adventure, and local
       culture.
 home:
-  title: Kudajadri Drizzle - Luxur Homestay in Wayanad, Kerala
+  title: test
   description: Experience the best of Wayanad at Kudajadri Drizzle. Enjoy
     comfortable accommodations, modern amenities, and warm hospitality in the
     heart of nature.
