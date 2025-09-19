@@ -1,3 +1,4 @@
+---
 home:
   title: "Wayanad homestays: Best homestay in Wayanad for family, group"
   description: "Kudajadri Drizzle home stay in Wayanad: 100+ years old #1 heritage Wayanad Homestay: Book top rated nature friendly Homestays in Wayanad for Family & Group."
@@ -51,3 +52,4 @@ tourpackages:
   dream_wayanad:
     title: "Dream Wayanad Tour Package: Best of Nature & Adventure"
     description: "Experience your dream vacation in Wayanad with our specially curated 3-day package. Experience the best of nature, adventure, and local culture."
+---
