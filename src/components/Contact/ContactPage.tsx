@@ -48,21 +48,32 @@ export const ContactPage = () => {
     }
   };
 
-  if (loading) return <div>Loading...</div>;
-  if (error) console.error('Error loading page metadata:', error);
+  // Show loading state only if we don't have any meta data yet
+  if (loading && !meta?.title) {
+    return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
+  }
+  
+  // Log errors but don't block rendering
+  if (error) {
+    console.error('Error loading page metadata:', error);
+  }
+  
+  // Set default values if meta is not available
+  const pageTitle = meta?.title || 'Contact Kudajadri Drizzle - Get in Touch for Your Stay in Wayanad';
+  const pageDescription = meta?.description || 'Reach out to Kudajadri Drizzle for bookings and inquiries. Experience the best homestay in Wayanad with top-notch amenities and warm hospitality.';
 
   return (
     <div className="sm:mt-[90px] mobile:mt-[52px]">
       <Helmet>
-        <title>{meta?.title || 'Contact Kudajadri Drizzle - Get in Touch for Your Stay in Wayanad'}</title>
-        <meta name="description" content={meta?.description || 'Reach out to Kudajadri Drizzle for bookings and inquiries. Experience the best homestay in Wayanad with top-notch amenities and warm hospitality.'} />
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
         <meta name="keywords" content="contact Kudajadri Drizzle, Wayanad homestay contact, book homestay Wayanad, Kudajadri Drizzle booking, Wayanad accommodation contact" />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Kudajadri Drizzle" />
 
         {/* Open Graph */}
-        <meta property="og:title" content={meta?.title || 'Contact Kudajadri Drizzle - Get in Touch for Your Stay in Wayanad'} />
-        <meta property="og:description" content={meta?.description || 'Reach out to Kudajadri Drizzle for bookings and inquiries. Experience the best homestay in Wayanad with top-notch amenities and warm hospitality.'} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={currentUrl} />
         <meta property="og:site_name" content="Kudajadri Homestay" />
@@ -70,8 +81,8 @@ export const ContactPage = () => {
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={meta?.title || 'Contact Kudajadri Drizzle - Get in Touch for Your Stay in Wayanad'} />
-        <meta name="twitter:description" content={meta?.description || 'Reach out to Kudajadri Drizzle for bookings and inquiries. Experience the best homestay in Wayanad with top-notch amenities and warm hospitality.'} />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
         <meta name="twitter:site" content="@kudajadrihomestay" />
 
         <link rel="canonical" href={currentUrl} />

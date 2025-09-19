@@ -60,6 +60,7 @@ const usePageMeta = (pageType: PageType) => {
           const data = Object.keys(parsedData).reduce((acc, key) => {
             if (typeof parsedData[key] === 'object' && parsedData[key] !== null) {
               acc[key] = {
+                ...parsedData[key], // Include all properties from the original object
                 title: parsedData[key].title || '',
                 description: parsedData[key].description || ''
               };

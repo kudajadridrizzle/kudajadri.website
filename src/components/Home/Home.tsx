@@ -35,13 +35,18 @@ const Home = () => {
     faqs: parsedFaq.attributes.faqs || [],
   };
   const contentSection = useContentSection('home');
-  const { meta: homeMeta } = usePageMeta('home' as PageType);
-
+  const { meta: homeMeta, loading, error } = usePageMeta('home' as PageType);
+  
   const siteUrl = "https://www.kudajadridrizzle.com";
   const canonicalUrl = siteUrl + "/";
-  const title = homeMeta?.title || "";
-  const description = homeMeta?.description || "";
+  const title = homeMeta?.title || '';
+  const description = homeMeta?.description || '';
   const image = `${siteUrl}/aboutHero.jpg`;
+
+  // Log any errors for debugging
+  if (error) {
+    console.error('Error loading home page meta:', error);
+  }
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -71,6 +76,11 @@ const Home = () => {
       "https://twitter.com/kudajadrihomestay"
     ],
   };
+
+  // Show loading state while fetching meta data
+  if (loading) {
+    return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
+  }
 
   return (
     <div>

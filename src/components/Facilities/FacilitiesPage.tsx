@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import fm from 'front-matter';
 import Direction from '../Home/components/Direction';
 import Footer from '../Home/components/Footer';
+import { Header } from '../Home/components/Header';
 import FacilitiesSession from './components/FacilitiesSession';
 import Hero from './components/Hero';
 import ListSession from './components/ListSession';
@@ -37,17 +38,18 @@ const FacilitiesPage = () => {
   if (error) console.error('Error loading page metadata:', error);
 
   return (
-    <div>
+    <div className="pt-16 md:pt-20">
+      <Header type="black" />
       <Helmet>
-        <title>{meta?.title || 'Facilities at Kudajadri Drizzle'}</title>
-        <meta name="description" content={meta?.description || 'Experience premium facilities at Kudajadri Drizzle. Enjoy modern amenities and excellent services.'} />
+        <title>{meta?.title || 'Facilities & Amenities - Kudajadri Drizzle'}</title>
+        <meta name="description" content={meta?.description || 'Experience premium facilities at Kudajadri Drizzle. Enjoy modern amenities, comfortable accommodations, and excellent services during your stay in Wayanad.'} />
         <meta name="keywords" content="" />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Kudajadri Homestay" />
 
         {/* Open Graph */}
-        <meta property="og:title" content={meta?.title || 'Facilities at Kudajadri Drizzle'} />
-        <meta property="og:description" content={meta?.description || 'Experience premium facilities at Kudajadri Drizzle. Enjoy modern amenities and excellent services.'} />
+        <meta property="og:title" content={meta?.title || 'Facilities & Amenities - Kudajadri Drizzle'} />
+        <meta property="og:description" content={meta?.description || 'Experience premium facilities at Kudajadri Drizzle. Enjoy modern amenities, comfortable accommodations, and excellent services during your stay in Wayanad.'} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={CANONICAL_URL} />
         <meta property="og:site_name" content="Kudajadri Homestay" />
@@ -58,8 +60,8 @@ const FacilitiesPage = () => {
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={meta?.title || 'Facilities at Kudajadri Drizzle'} />
-        <meta name="twitter:description" content={meta?.description || 'Experience premium facilities at Kudajadri Drizzle. Enjoy modern amenities and excellent services.'} />
+        <meta name="twitter:title" content={meta?.title || 'Facilities & Amenities - Kudajadri Drizzle'} />
+        <meta name="twitter:description" content={meta?.description || 'Experience premium facilities at Kudajadri Drizzle. Enjoy modern amenities, comfortable accommodations, and excellent services during your stay in Wayanad.'} />
         <meta name="twitter:site" content="@kudajadrihomestay" />
         <meta name="twitter:image" content={OG_IMAGE} />
 
