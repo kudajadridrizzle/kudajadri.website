@@ -20,117 +20,117 @@ collections:
         name: "pagemeta"
         file: "public/pagemeta.md"
         fields:
-          - label: "Home Page"
-            name: "home"
-            widget: "object"
-            fields:
-              - { label: "Title", name: "title", widget: "string", required: true, hint: "Home page title for SEO (appears in browser tab)" }
-              - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines (150-160 characters recommended)" }
-          
-          - label: "About Page"
-            name: "about"
-            widget: "object"
-            fields:
-              - { label: "Title", name: "title", widget: "string", required: true, hint: "About page title for SEO" }
-              - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
-          
-          - label: "Gallery Page"
-            name: "gallery"
-            widget: "object"
-            fields:
-              - { label: "Title", name: "title", widget: "string", required: true, hint: "Gallery page title for SEO" }
-              - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
-              
-          - label: "Facilities Page"
-            name: "facilities"
-            widget: "object"
-            fields:
-              - { label: "Title", name: "title", widget: "string", required: true, hint: "Facilities page title for SEO" }
-              - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
-              
-          - label: "Blog Page"
-            name: "blog"
-            widget: "object"
-            fields:
-              - { label: "Title", name: "title", widget: "string", required: true, hint: "Blog page title for SEO" }
-              - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
-          
-          - label: "Rooms Page"
-            name: "rooms"
-            widget: "object"
-            fields:
-              - { label: "Title", name: "title", widget: "string", required: true, hint: "Rooms page title for SEO" }
-              - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
-              
-              - label: "Classic Rooms"
-                name: "classic_rooms"
-                widget: "object"
-                fields:
-                  - { label: "Title", name: "title", widget: "string", required: true, hint: "Classic rooms page title for SEO" }
-                  - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
-                  
-              - label: "Premium Rooms"
-                name: "premium_rooms"
-                widget: "object"
-                fields:
-                  - { label: "Title", name: "title", widget: "string", required: true, hint: "Premium rooms page title for SEO" }
-                  - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
-              
-              - label: "Deluxe Rooms"
-                name: "deluxe_rooms"
-                widget: "object"
-                fields:
-                  - { label: "Title", name: "title", widget: "string", required: true, hint: "Deluxe rooms page title for SEO" }
-                  - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
-                  
-              - label: "Deluxe Heritage Rooms"
-                name: "deluxe_heritage_rooms"
-                widget: "object"
-                fields:
-                  - { label: "Title", name: "title", widget: "string", required: true, hint: "Deluxe heritage rooms page title for SEO" }
-                  - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
-          
-          - label: "Wayanad Page"
-            name: "wayanad"
-            widget: "object"
-            fields:
-              - { label: "Title", name: "title", widget: "string", required: true, hint: "Wayanad page title for SEO" }
-              - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
-          
           - label: "Contact Page"
             name: "contact"
             widget: "object"
             fields:
               - { label: "Title", name: "title", widget: "string", required: true, hint: "Contact page title for SEO" }
-              - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
-              
+              - { label: "Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines (150-160 characters recommended)" }
+          
+          - label: "Facilities Page"
+            name: "facilities"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string", required: true, hint: "Facilities page title for SEO" }
+              - { label: "Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
+          
+          - label: "Blog Page"
+            name: "blog"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string", required: true, hint: "Blog page title for SEO" }
+              - { label: "Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
+          
           - label: "Tour Packages"
             name: "tourpackages"
             widget: "object"
             fields:
               - { label: "Title", name: "title", widget: "string", required: true, hint: "Main tour packages page title for SEO" }
-              - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
+              - { label: "Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
               
               - label: "Green Wayanad Package"
                 name: "green_wayanad"
                 widget: "object"
                 fields:
                   - { label: "Title", name: "title", widget: "string", required: true, hint: "Green Wayanad package title for SEO" }
-                  - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
+                  - { label: "Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
                   
               - label: "Vibrant Wayanad Package"
                 name: "vibrant_wayanad"
                 widget: "object"
                 fields:
                   - { label: "Title", name: "title", widget: "string", required: true, hint: "Vibrant Wayanad package title for SEO" }
-                  - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
+                  - { label: "Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
                   
               - label: "Dream Wayanad Package"
                 name: "dream_wayanad"
                 widget: "object"
                 fields:
                   - { label: "Title", name: "title", widget: "string", required: true, hint: "Dream Wayanad package title for SEO" }
-                  - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
+                  - { label: "Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
+          
+          - label: "Home Page"
+            name: "home"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string", required: true, hint: "Home page title for SEO" }
+              - { label: "Description", name: "description", widget: "text", required: true, pattern: ['.{120,500}', 'Description should be between 120-500 characters'] }
+          
+          - label: "About Page"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string", required: true, hint: "About page title for SEO" }
+              - { label: "Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
+          
+          - label: "Gallery Page"
+            name: "gallery"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string", required: true, hint: "Gallery page title for SEO" }
+              - { label: "Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
+          
+          - label: "Rooms"
+            name: "rooms"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string", required: true, hint: "Rooms page title for SEO" }
+              - { label: "Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
+              
+              - label: "Classic Rooms"
+                name: "classic_rooms"
+                widget: "object"
+                fields:
+                  - { label: "Title", name: "title", widget: "string", required: true, hint: "Classic rooms page title for SEO" }
+                  - { label: "Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
+                  
+              - label: "Premium Rooms"
+                name: "premium_rooms"
+                widget: "object"
+                fields:
+                  - { label: "Title", name: "title", widget: "string", required: true, hint: "Premium rooms page title for SEO" }
+                  - { label: "Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
+              
+              - label: "Deluxe Rooms"
+                name: "deluxe_rooms"
+                widget: "object"
+                fields:
+                  - { label: "Title", name: "title", widget: "string", required: true, hint: "Deluxe rooms page title for SEO" }
+                  - { label: "Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
+                  
+              - label: "Deluxe Heritage Rooms"
+                name: "deluxe_heritage_rooms"
+                widget: "object"
+                fields:
+                  - { label: "Title", name: "title", widget: "string", required: true, hint: "Deluxe heritage rooms page title for SEO" }
+                  - { label: "Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
+          
+          - label: "Wayanad Page"
+            name: "wayanad"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string", required: true, hint: "Wayanad page title for SEO" }
+              - { label: "Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
   - name: "pages"
     label: "Pages"
     folder: "src/File"
