@@ -1,12 +1,21 @@
 import { useEffect, useState } from 'react';
 import * as yaml from 'js-yaml';
 
-export type PageType = 'home' | 'about' | 'gallery' | 'rooms' | 'wayanad' | 'facilities' | 'contact' | 'tourpackages' | 'blog';
+export type PageType =
+  | 'home'
+  | 'about'
+  | 'gallery'
+  | 'rooms'
+  | 'wayanad'
+  | 'facilities'
+  | 'contact'
+  | 'tourpackages'
+  | 'blog';
 
 interface PageMetaData {
   title: string;
   description: string;
-  [key: string]: any; // Allow additional properties for nested structures
+  [key: string]: any; // allow nested structures
 }
 
 interface AllPageMetaData {
@@ -26,76 +35,77 @@ interface AllPageMetaData {
 
 const usePageMeta = (pageType: PageType) => {
   const [meta, setMeta] = useState<PageMetaData>({ title: '', description: '' });
+  const [allMeta, setAllMeta] = useState<AllPageMetaData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
-  const [allMeta, setAllMeta] = useState<AllPageMetaData | null>(null);
 
   useEffect(() => {
     const fetchMeta = async () => {
       try {
-        console.log('Fetching metadata from /pagemeta.md');
         const response = await fetch('/pagemeta.md?t=' + new Date().getTime());
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
         let yamlText = await response.text();
-        
-        // Remove the YAML frontmatter delimiters if they exist
+
+        // Remove frontmatter --- delimiters
         yamlText = yamlText.replace(/^---\s*\n?|\n?---\s*\n?$/g, '').trim();
-        
-        // Parse the YAML content
+
         const parsedData = yaml.load(yamlText) as Record<string, any>;
-        
-        // Normalize room keys to handle both kebab-case and snake_case
+        if (!parsedData) throw new Error('Failed to parse YAML content');
+
+        // Recursive function to clean and normalize strings
+        const preprocessDescriptions = (obj: any) => {
+          Object.keys(obj).forEach(key => {
+            const value = obj[key];
+            if (value && typeof value === 'object') {
+              preprocessDescriptions(value);
+            } else if (key === 'description' && Array.isArray(value)) {
+              obj[key] = value.join(' ').trim();
+            } else if (typeof value === 'string') {
+              obj[key] = value.replace(/\s+/g, ' ').trim(); // normalize whitespace
+            }
+          });
+        };
+        preprocessDescriptions(parsedData);
+
+        // Normalize room keys: underscore → kebab-case
         if (parsedData.rooms) {
           const normalizedRooms: Record<string, any> = {};
           Object.entries(parsedData.rooms).forEach(([key, value]) => {
-            // Convert keys to kebab-case for consistency
             const normalizedKey = key.replace(/_/g, '-');
             normalizedRooms[normalizedKey] = value;
           });
           parsedData.rooms = normalizedRooms;
         }
-        console.log('Parsed YAML data:', parsedData);
-        
-        if (!parsedData) {
-          throw new Error('Failed to parse YAML content');
-        }
-        
-        // Set all meta data
+
         setAllMeta(parsedData as AllPageMetaData);
-        
-        // Handle different page types and their meta data structure
+
+        // Handle page type meta
         let pageMeta = parsedData[pageType];
-        
-        // For tour packages, we might have nested meta data
+
+        // Special handling for tour packages
         if (pageType === 'tourpackages' && parsedData.tourpackages) {
-          // If there's a specific package ID in the URL, use that meta
           const packageId = window.location.pathname.split('/').pop();
           if (packageId && packageId in parsedData.tourpackages) {
             pageMeta = parsedData.tourpackages[packageId];
           }
         }
-        
+
         if (pageMeta) {
-          const metaData = {
+          setMeta({
             title: pageMeta.title || '',
             description: pageMeta.description || '',
-            ...pageMeta // Include all other properties
-          };
-          
-          console.log(`Setting meta for ${pageType}:`, metaData);
-          setMeta(metaData);
+            ...pageMeta
+          });
         } else {
-          console.warn(`No meta data found for page type: ${pageType}`);
-          setMeta({ 
+          setMeta({
             title: `Kudajadri Drizzle - ${pageType.charAt(0).toUpperCase() + pageType.slice(1)}`,
             description: `Welcome to Kudajadri Drizzle - ${pageType} page`
           });
         }
       } catch (err) {
         const error = err instanceof Error ? err : new Error('Failed to load metadata');
-        console.error('Error loading metadata:', error);
+        console.error(error);
         setError(error);
       } finally {
         setLoading(false);
@@ -106,10 +116,7 @@ const usePageMeta = (pageType: PageType) => {
   }, [pageType]);
 
   const updateMeta = (newMeta: Partial<PageMetaData>) => {
-    setMeta(prev => ({
-      ...prev,
-      ...newMeta
-    }));
+    setMeta(prev => ({ ...prev, ...newMeta }));
 
     if (allMeta) {
       setAllMeta(prev => ({
@@ -126,5 +133,4 @@ const usePageMeta = (pageType: PageType) => {
 };
 
 export { usePageMeta };
-
 export default usePageMeta;
