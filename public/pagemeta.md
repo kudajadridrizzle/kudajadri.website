@@ -1,6 +1,6 @@
 ---
 contact:
-  title: " Kudajadri Drizzle - Get in Touch for Your Stay in Wayanad"
+  title: "Drizzle - Get in Touch for Your Stay in Wayanad"
   description: Reach out to Kudajadri Drizzle for bookings and inquiries.
     Experience the best homestay in Wayanad with top-notch amenities and warm
     hospitality.

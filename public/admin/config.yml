@@ -54,6 +54,13 @@ collections:
             fields:
               - { label: "Title", name: "title", widget: "string", required: true, hint: "Wayanad page title for SEO" }
               - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
+          
+          - label: "Contact Page"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string", required: true, hint: "Contact page title for SEO" }
+              - { label: "Meta Description", name: "description", widget: "text", required: true, hint: "Brief description for search engines" }
   - name: "pages"
     label: "Pages"
     folder: "src/File"
