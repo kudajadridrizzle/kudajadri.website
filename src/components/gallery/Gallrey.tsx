@@ -16,31 +16,31 @@ export const Gallrey = () => {
     <div>
       <Helmet>
         {/* Browser Tab Title */}
-        <title>{meta?.title || 'Gallery - Kudajadri Homestay'}</title>
+        <title>{meta?.title || 'Gallery - Kudajadri Drizzle'}</title>
 
         {/* SEO Meta Tags */}
         <meta
           name="description"
-          content="Browse stunning photos and videos of Kudajadri Drizzle Homestay in Wayanad. Get a visual glimpse of the cozy rooms, scenic surroundings, and peaceful ambiance."
+          content={meta?.description || 'Browse stunning photos and videos of Kudajadri Drizzle Homestay in Wayanad'}
         />
-        <meta name="keywords" content="" />
+        <meta name="keywords" content={meta?.keywords || ''} />
         <meta name="robots" content="index, follow" />
-        <meta name="author" content="Kudajadri Homestay" />
+        <meta name="author" content="Kudajadri Drizzle" />
 
         {/* Open Graph Meta Tags */}
         <meta
           property="og:title"
-          content={meta?.title || 'Gallery - Kudajadri Homestay'}
+          content={meta?.ogTitle || meta?.title || 'Gallery - Kudajadri Drizzle'}
         />
         <meta
           property="og:description"
-          content={meta?.description || 'Explore our gallery showcasing the beautiful Kudajadri Homestay in Wayanad'}
+          content={meta?.ogDescription || meta?.description || 'Explore our gallery showcasing the beautiful Kudajadri Drizzle Homestay in Wayanad'}
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={CANONICAL_URL} />
-        <meta property="og:site_name" content="Kudajadri Homestay" />
+        <meta property="og:site_name" content="Kudajadri Drizzle" />
         <meta property="og:locale" content="en_US" />
-        <meta property="og:image" content={OG_IMAGE} />
+        <meta property="og:image" content={meta?.ogImage || OG_IMAGE} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
 
@@ -48,18 +48,15 @@ export const Gallrey = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content={meta?.title || 'Gallery - Kudajadri Homestay'}
+          content={meta?.twitterTitle || meta?.title || 'Gallery - Kudajadri Drizzle'}
         />
         <meta
           name="twitter:description"
-          content={meta?.description || 'Explore our gallery showcasing the beautiful Kudajadri Homestay in Wayanad'}
+          content={meta?.twitterDescription || meta?.description || 'Explore our gallery showcasing the beautiful Kudajadri Drizzle Homestay in Wayanad'}
         />
-        <meta name="twitter:site" content="@kudajadrihomestay" />
-        <meta name="twitter:image" content={OG_IMAGE} />
+        <meta name="twitter:image" content={meta?.ogImage || OG_IMAGE} />
 
-        {/* Additional Meta Tags */}
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+        {/* Canonical URL */}
         <link rel="canonical" href={CANONICAL_URL} />
       </Helmet>
 

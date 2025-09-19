@@ -31,7 +31,9 @@ import deluxeHeritageRoomFaqRaw from '../../File/deluxeheritageroomfaqs.md?raw';
 import deluxeRoomFaqRaw from '../../File/deluxeroomfaqs.md?raw';
 import premiumRoomFaqRaw from '../../File/premiumroomfaqs.md?raw';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
+import usePageMeta, { PageType } from '../../hooks/usePageMeta';
+import { useRoomsCMS } from '../../hooks/useRoomsCMS';
 
 // Define the shape of FAQ frontmatter
 interface FaqFrontMatterAttributes {
@@ -59,8 +61,34 @@ const getRoomFaqMarkdown = (roomId: string | undefined): string => {
 };
 
 const RoomDetails = () => {
-  const { id } = useParams();
+  const { id } = useParams<{ id: string }>();
+  const { meta: pageMeta } = usePageMeta('rooms' as PageType);
   const [currentUrl, setCurrentUrl] = useState('https://www.kudajadridrizzle.com');
+  
+  // Get room data with proper type safety
+  const roomId = id || 'classic-rooms';
+  const roomDataItem = roomData[roomId as keyof typeof roomData] || roomData['classic-rooms'];
+  
+  // Get room data from CMS and page meta
+  const { individualRooms } = useRoomsCMS();
+  const { allMeta } = usePageMeta('rooms' as PageType);
+  
+  // Get room meta from pagemeta.md
+  const roomMeta = useMemo(() => {
+    if (!allMeta?.rooms) return null;
+    // Try both kebab-case and snake_case room IDs for backward compatibility
+    return allMeta.rooms[roomId] || allMeta.rooms[roomId.replace(/-/g, '_')] || null;
+  }, [allMeta, roomId]);
+  
+  // Find the current room in CMS data
+  const cmsRoomData = useMemo(() => {
+    if (!individualRooms) return null;
+    return individualRooms.find(room => room.id === roomId);
+  }, [individualRooms, roomId]);
+  
+  // Determine title and description with fallbacks
+  const roomTitle = roomMeta?.title || cmsRoomData?.title || roomDataItem.roomType;
+  const roomDescription = roomMeta?.description || cmsRoomData?.description || '';
 
   // Update current URL on client-side
   useEffect(() => {
@@ -69,12 +97,9 @@ const RoomDetails = () => {
     }
   }, []);
 
-  // Get the room data with the correct type
-  const roomDataItem = roomData[id as keyof typeof roomData] || roomData['classic-rooms'];
-  
-  // Get the room content for other components
-  const roomContent =
-    id === 'classic-rooms'
+  // Get room content from CMS or fallback to constants
+  const getRoomContent = (id: string) => {
+    return id === 'classic-rooms'
       ? classicRooms
       : id === 'deluxe-heritage-rooms'
       ? deluxeHeritageRooms
@@ -83,80 +108,46 @@ const RoomDetails = () => {
       : id === 'premium-rooms'
       ? premiumRooms
       : classicRooms;
+  };
+  
+  const roomContent = getRoomContent(roomId);
 
-  const getMetaContent = () => {
+  const getSeoData = (id: string) => {
+    // Get room-specific meta data from pagemeta.md
+    const roomMeta = allMeta?.rooms?.[id] || allMeta?.rooms?.[id.replace(/-/g, '_')] || {};
+    
+    // Fallback values
+    const defaultTitle = roomTitle;
+    const defaultDescription = roomDescription || `Experience the comfort of our ${defaultTitle} at Kudajadri Drizzle.`;
+    
     const defaultImage = roomData['classic-rooms'].imageOne;
     const roomImage = roomData[id || 'classic-rooms']?.imageOne || defaultImage;
 
-    if (id === 'deluxe-heritage-rooms') {
-      return {
-        title:
-          'Heritage Homestay in Wayanad: Traditional Stay with Modern Comfort',
-        description:
-          'Experience a heritage homestay in Wayanad with traditional charm and modern amenities. Enjoy a peaceful stay surrounded by nature and rich culture.',
-        keywords: '',
-        ogTitle:
-          'Heritage Homestay in Wayanad: Traditional Stay with Modern Comfort',
-        ogDescription:
-          'Experience a heritage homestay in Wayanad with traditional charm and modern amenities.',
-        ogImage: roomImage,
-      };
-    }
-
-    if (id === 'deluxe-rooms') {
-      return {
-        title: 'Wayanad Cottages: Private Cottages in Wayanad for Family, Groups',
-        description:
-          'Stay at our Wayanad cottages designed for families. Our private cottages in Wayanad offer comfort, scenic views, and a peaceful holiday experience.',
-        keywords: '',
-        ogTitle: 'Wayanad Cottages: Private Cottages in Wayanad for Family',
-        ogDescription:
-          'Stay at our Wayanad cottages designed for families. Enjoy a peaceful holiday.',
-        ogImage: roomImage,
-      };
-    }
-
-    if (id === 'classic-rooms') {
-      return {
-        title: 'Affordable Homestay in Wayanad: Best Budget Wayanad Homestay',
-        description:
-          'Best Budget homestay in Wayanad with affordable rooms for families and travelers.',
-        keywords: '',
-        ogTitle: 'Affordable Homestay in Wayanad: Best Budget Wayanad Homestay',
-        ogDescription:
-          'Budget rooms in Wayanad with comfort and great value for money.',
-        ogImage: roomImage,
-      };
-    }
-
-    if (id === 'premium-rooms') {
-      return {
-        title: 'Premium Homestay in Wayanad: Best Luxury Wayanad Homestays',
-        description:
-          'Best premium homestay in Wayanad offering luxury stays with top-tier amenities.',
-        keywords: '',
-        ogTitle: 'Premium Homestay in Wayanad: Best Luxury Wayanad Homestays',
-        ogDescription:
-          'Luxury rooms with scenic views and modern elegance in Wayanad.',
-        ogImage: roomImage,
-      };
-    }
-
     return {
-      title: `${roomContent.roomType} - Homestay Wayanad`,
-      description: `${roomContent.description} Book your stay at Kudajadri Homestay.`,
-      keywords: '',
-      ogTitle: `${roomContent.roomType} - Homestay`,
-      ogDescription: `Experience luxury with scenic views in Wayanad. Starting at ₹${roomContent.pricePerNight} per night.`,
+      title: roomMeta?.title || defaultTitle,
+      description: roomMeta?.description || defaultDescription,
+      keywords: roomMeta?.keywords || '',
+      ogTitle: roomMeta?.ogTitle || roomMeta?.title || defaultTitle,
+      ogDescription: roomMeta?.ogDescription || roomMeta?.description || defaultDescription,
       ogImage: roomImage,
     };
   };
 
-  const metaContent = getMetaContent();
+  // Get the SEO data for the current room
+  const metaContent = getSeoData(roomId);
+
+  // Debug logging
+  useEffect(() => {
+    console.log('Room Meta for', roomId, ':', pageMeta?.rooms?.[roomId]);
+    console.log('Current meta content:', metaContent);
+  }, [roomId, pageMeta, metaContent]);
 
   // Get the appropriate FAQ markdown and parse it
-  const roomFaqMarkdown = getRoomFaqMarkdown(id);
+  const roomFaqMarkdown = getRoomFaqMarkdown(roomId);
   const parsedFaq = fm<FaqFrontMatterAttributes>(roomFaqMarkdown);
+  
+  // Ensure window is defined (for SSR)
+  const baseUrl = typeof window !== 'undefined' ? window.location.origin : '';
 
   return (
     <div className="min-h-screen pt-[40px] md:pt-[70px] pb-8">
@@ -169,11 +160,11 @@ const RoomDetails = () => {
         <meta name="author" content="Kudajadri Homestay" />
         <meta
           property="og:title"
-          content={metaContent.ogTitle || metaContent.title}
+          content={metaContent.ogTitle}
         />
         <meta
           property="og:description"
-          content={metaContent.ogDescription || metaContent.description}
+          content={metaContent.ogDescription}
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={currentUrl} />
@@ -181,23 +172,23 @@ const RoomDetails = () => {
         <meta property="og:locale" content="en_US" />
         <meta
           property="og:image"
-          content={`${window.location.origin}${metaContent.ogImage}`}
+          content={`${baseUrl}${metaContent.ogImage}`}
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content={metaContent.ogTitle || metaContent.title}
+          content={metaContent.ogTitle}
         />
         <meta
           name="twitter:description"
-          content={metaContent.ogDescription || metaContent.description}
+          content={metaContent.ogDescription}
         />
         <meta name="twitter:site" content="@kudajadrihomestay" />
         <meta
           name="twitter:image"
-          content={`${window.location.origin}${metaContent.ogImage}`}
+          content={`${baseUrl}${metaContent.ogImage}`}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />

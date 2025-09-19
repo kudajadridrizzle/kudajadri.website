@@ -1,6 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 import { IndividualRoomSession } from '../../Home/components/IndividualRoomSession';
 
+interface RoomMeta {
+  title: string;
+  description: string;
+}
+
 interface Room {
   id: string;
   title: string;
@@ -8,6 +13,7 @@ interface Room {
   image: string; // Already processed image URL
   type: 'normal' | 'reverse';
   path: string;
+  meta?: RoomMeta;
 }
 
 interface CMSIndividualRoomsProps {
@@ -26,8 +32,8 @@ const CMSIndividualRooms = ({ rooms }: CMSIndividualRoomsProps) => {
       {rooms.map(room => (
         <IndividualRoomSession
           key={room.id}
-          title={room.title}
-          discription={room.description}
+          title={room.meta?.title || room.title}
+          discription={room.meta?.description || room.description}
           image={room.image}
           type={room.type === 'reverse' ? 'reverse' : undefined}
           onClick={() => handleClick(room.path)}
