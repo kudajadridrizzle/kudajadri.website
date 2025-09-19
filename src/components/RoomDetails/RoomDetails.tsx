@@ -16,13 +16,7 @@ import RoomTips from "./components/roomtips";
 import DeluxeRoomOverview from "./components/DeluxeRoomOverview";
 import RoomBookingCTA from "./components/RoomBookingCTA";
 
-import {
-  roomData,
-  classicRooms,
-  deluxeRooms,
-  deluxeHeritageRooms,
-  premiumRooms,
-} from './constants';
+import { roomData } from './constants';
 import fm from 'front-matter';
 import FaqList from '../FaqComponent/FaqList';
 
@@ -97,20 +91,11 @@ const RoomDetails = () => {
     }
   }, []);
 
-  // Get room content from CMS or fallback to constants
-  const getRoomContent = (id: string) => {
-    return id === 'classic-rooms'
-      ? classicRooms
-      : id === 'deluxe-heritage-rooms'
-      ? deluxeHeritageRooms
-      : id === 'deluxe-rooms'
-      ? deluxeRooms
-      : id === 'premium-rooms'
-      ? premiumRooms
-      : classicRooms;
-  };
-  
-  const roomContent = getRoomContent(roomId);
+  // Room content constants are available for future use:
+  // - classicRooms
+  // - deluxeHeritageRooms
+  // - deluxeRooms
+  // - premiumRooms
 
   const getSeoData = (id: string) => {
     // Get room-specific meta data from pagemeta.md

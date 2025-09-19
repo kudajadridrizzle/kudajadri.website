@@ -65,23 +65,6 @@ const usePageMeta = (pageType: PageType) => {
         // Set all meta data
         setAllMeta(parsedData as AllPageMetaData);
         
-        // Helper function to get nested properties with fallback
-        const getNestedProp = (obj: any, path: string, defaultValue: any = '') => {
-          if (!obj) return defaultValue;
-          return path.split('.').reduce((o, p) => {
-            // Handle array indices in path (e.g., 'sections[0].title')
-            const arrayMatch = p.match(/(.*?)\[(\d+)\]/);
-            if (arrayMatch) {
-              const arrayName = arrayMatch[1];
-              const index = parseInt(arrayMatch[2], 10);
-              return o && o[arrayName] && o[arrayName][index] !== undefined 
-                ? o[arrayName][index] 
-                : defaultValue;
-            }
-            return o && o[p] !== undefined ? o[p] : defaultValue;
-          }, obj);
-        };
-        
         // Handle different page types and their meta data structure
         let pageMeta = parsedData[pageType];
         
