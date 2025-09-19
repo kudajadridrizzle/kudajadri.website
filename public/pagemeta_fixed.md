@@ -32,7 +32,7 @@ tourpackages:
       Experience your dream vacation in Wayanad with our specially curated 3-day package. Experience the best of nature, adventure, and local culture.
 
 home:
-  title: "Kudajadri Drizzle - Luxur Homestay in Wayanad, Kerala"
+  title: "Kudajadri Drizzle - Luxury Homestay in Wayanad, Kerala"
   description: >-
     Experience the best of Wayanad at Kudajadri Drizzle. Enjoy comfortable accommodations, modern amenities, and warm hospitality in the heart of nature.
 
@@ -47,7 +47,7 @@ gallery:
     Take a visual tour of Kudajadri Drizzle through our gallery. Explore the beautiful property, rooms, and surrounding nature of Wayanad.
 
 rooms:
-  title: "Luxury ms & Suites in Wayanad - Kudajadri Drizzle"
+  title: "Luxury Rooms & Suites in Wayanad - Kudajadri Drizzle"
   description: >-
     Choose from our selection of luxurious rooms and suites in Wayanad. Experience comfort and elegance with modern amenities and stunning views.
   classic_rooms:
@@ -63,7 +63,7 @@ rooms:
     description: >-
       Perfect for families, our spacious rooms provide comfort and convenience for everyone.
   premium_rooms:
-    title: " s - Ultimate Luxury in Wayanad"
+    title: "Premium Rooms - Ultimate Luxury in Wayanad"
     description: >-
       Indulge in our premium rooms featuring top-class amenities and breathtaking views.
 ---
