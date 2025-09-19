@@ -35,7 +35,7 @@ tourpackages:
       curated 3-day package. Experience the best of nature, adventure, and local
       culture.
 home:
-  title: "Wayanad homestays: Best homestay in Wayanad for family, group"
+  title: "homestays: Best homestay in Wayanad for family, group"
   description: "Kudajadri Drizzle home stay in Wayanad: 100+ years old #1 heritage
     Wayanad Homestay: Book top rated nature friendly Homestays in Wayanad for
     Family & Group."
