@@ -103,10 +103,7 @@ const FacilitiesPage = () => {
       
       {/* FAQ Section */}
       <section className="py-16 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
-          {parsedFaq.attributes.title}
-        </h2>
-        <FaqList faqs={parsedFaq.attributes.faqs} />
+        <FaqList title={parsedFaq.attributes.title} faqs={parsedFaq.attributes.faqs} />
       </section>
       
       <Direction
