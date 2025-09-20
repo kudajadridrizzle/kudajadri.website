@@ -9,14 +9,20 @@ facilities:
   description: "Wayanad homestays with swimming pool: Top swimming pool homestays
     in Wayanad offer comfort, luxury & nature, ideal for families & couples."
 blog:
-  title: Test
-  description: Test
+  title: "Wayanad travel blog: Latest news, tourism updates, & insights"
+  description: Stay updated with the Wayanad Travel Blog. Get the latest news,
+    tourism updates, local insights, travel tips, and experiences to help you
+    plan your perfect trip.
 tourpackages:
-  title: Test
-  description: Test
+  title: "Wayanad holiday tour packages: Best trip deals for families & couples"
+  description: Discover the best Wayanad holiday tour packages with top deals for
+    families, groups, and couples. Enjoy a perfect getaway with nature,
+    adventure, and comfort.
   green_wayanad_tour_package:
-    title: Test
-    description: Test
+    title: "Wayanad holiday tour packages: Best trip deals for families & couples"
+    description: Discover the best Wayanad holiday tour packages with top deals for
+      families, groups, and couples. Enjoy a perfect getaway with nature,
+      adventure, and comfort.
   vibrant_wayanad_tour_package:
     title: Test
     description: Test
@@ -26,10 +32,10 @@ tourpackages:
       in Wayanad. Experience warm hospitality and comfortable stays in the lap
       of nature.
 home:
-  title: Test
-  description: Discover the story behind Kudajadri Drizzle, your perfect homestay
-    in Wayanad. Experience warm hospitality and comfortable stays in the lap of
-    nature.
+  title: "Wayanad homestays: Best homestay in Wayanad for family, group"
+  description: "Kudajadri Drizzle home stay in Wayanad: 100+ years old #1 heritage
+    Wayanad Homestay: Book top rated nature friendly Homestays in Wayanad for
+    Family & Group."
 about:
   title: Test
   description: Discover the story behind Kudajadri Drizzle, your perfect homestay
