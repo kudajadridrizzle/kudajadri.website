@@ -1,9 +1,9 @@
 ---
 contact:
-  title: "Wayanad homestays: Best homestay in Wayanad for family, group"
-  description: "Kudajadri Drizzle home stay in Wayanad: 100+ years old #1 heritage
-    Wayanad Homestay: Book top rated nature friendly Homestays in Wayanad for
-    Family & Group"
+  title: Online booking of homestay, cottages, rooms in Wayanad for group
+  description: Book homestays, cottages, and rooms in Wayanad online for families
+    and groups. Enjoy comfortable stays, scenic views, and easy booking with
+    great deals.
 facilities:
   title: Test
   description: Test
