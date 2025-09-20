@@ -10,9 +10,10 @@ about:
     swimming pools & food. Find the best homestays in Kalpetta for a peaceful,
     relaxing stay.
 gallery:
-  title: Test
-  description: Take a visual tour of Kudajadri Drizzle through our gallery.
-    Explore the beautiful property, rooms, and surrounding nature of Wayanad.
+  title: Photos & videos gallery - Kudajadri Drizzle Homestays
+  description: Browse stunning photos and videos of Kudajadri Drizzle Homestay in
+    Wayanad. Get a visual glimpse of the cozy rooms, scenic surroundings, and
+    peaceful ambiance.
 facilities:
   title: Best Swimming pool homestays in Wayanad for family & couple
   description: "Wayanad homestays with swimming pool: Top swimming pool homestays
@@ -28,47 +29,60 @@ contact:
     and groups. Enjoy comfortable stays, scenic views, and easy booking with
     great deals.
 rooms:
-  title: Test
-  description: Choose from our selection of luxurious rooms and suites in Wayanad.
-    Experience comfort and elegance with modern amenities and stunning views.
+  title: "Wayanad accommodations: homestays, cottages, family rooms"
+  description: Discover peaceful accommodations in Wayanad with cozy homestays,
+    spacious cottages with swimming pool, and family rooms designed for
+    comfort and relaxation
   classic_rooms:
-    title: Test
-    description: Our classic rooms offer a perfect blend of comfort and style for
-      your stay in Wayanad.
+    title: "Affordable homestay in Wayanad: Best budget Wayanad homestay"
+    description: Best Budget homestay in Wayanad with affordable rooms for families
+      and travelers. Discover the best low-cost Wayanad homestays with comfort
+      and convenience.
   deluxe_rooms:
-    title: Test
-    description: Experience luxury and comfort in our deluxe rooms, designed for a
-      memorable stay.
+    title: "Wayanad Cottages: Private Cottages in Wayanad for Family, Group"
+    description: Stay at our Wayanad cottages designed for families. Our private
+      cottages in Wayanad offer comfort, scenic views, and a peaceful holiday
+      experience.
   family_rooms:
     title: Family Rooms - Spacious Accommodation in Wayanad
     description: Perfect for families, our spacious rooms provide comfort and
       convenience for everyone.
   premium_rooms:
-    title: Test
-    description: Indulge in our premium rooms featuring top-class amenities and
-      breathtaking views.
+    title: "Premium homestay in Wayanad: Best luxury Wayanad homestays"
+    description: Best Premium homestay in Wayanad offering deluxe and luxury stays
+      with top-tier amenities. Enjoy elegant rooms, scenic views, and a peaceful
+      retreat in Wayanad
   deluxe_heritage_rooms:
-    title: Test
-    description: t﻿est
+    title: "Heritage homestays in Wayanad: Traditional Wayanad homestays"
+    description: Experience a heritage homestay in Wayanad with traditional charm
+      and modern amenities. Enjoy a peaceful stay surrounded by nature and rich
+      culture.
 wayanad:
-  title: Test
-  description: t﻿est
+  title: "Wayanad: Explore tourist attractions & destinations in Wayanad"
+  description: Discover top tourist attractions and must-visit destinations in
+    Wayanad. Plan your perfect trip to explore nature, wildlife, and cultural
+    sites.
 tourpackages:
   title: "Wayanad holiday tour packages: Best trip deals for families & couples"
   description: Discover the best Wayanad holiday tour packages with top deals for
     families, groups, and couples. Enjoy a perfect getaway with nature,
     adventure, and comfort.
   green_wayanad_tour_package:
-    title: "Wayanad holiday tour packages: Best trip deals for families & couples"
-    description: Discover the best Wayanad holiday tour packages with top deals for
-      families, groups, and couples. Enjoy a perfect getaway with nature,
-      adventure, and comfort.
+    title: "Green Wayanad tour package: Wild Life Sanctuaries, Edakkal Cave, Kuruva
+      Island, Pookkode Lake"
+    description: "Green Wayanad Tour Package: Explore lush wildlife sanctuaries,
+      ancient Edakkal Cave, serene Kuruva Island, and scenic Pookkode Lake for a
+      perfect nature getaway."
   vibrant_wayanad_tour_package:
-    title: Test
-    description: Test
+    title: "Vibrant Wayanad Tour Package: Soochippara Water falls, Lakkidi View
+      Point, Karapauzha Dam"
+    description: "Vibrant Wayanad Tour Package: Explore thrilling Soochippara
+      Waterfalls, panoramic views from Lakkidi View Point, and the tranquil
+      charm of Karapuzha Dam."
   dream_wayanad_tour_package:
-    title: Test
-    description: Discover the story behind Kudajadri Drizzle, your perfect homestay
-      in Wayanad. Experience warm hospitality and comfortable stays in the lap
-      of nature.
+    title: "Dream Wayanad Tour Packages: Edakkal Caves, Kuruva Island, Chembra Peak,
+      Thirunelli Temple"
+    description: "Dream Wayanad Tour Package: Explore mystical Edakkal Caves, lush
+      Kuruva Island, breathtaking Chembra Peak, and the spiritual vibes of
+      Thirunelli Temple."
 ---
