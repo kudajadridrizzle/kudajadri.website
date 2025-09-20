@@ -48,25 +48,25 @@ collections:
               - { label: "Title", name: "title", widget: "string", required: true, hint: "Main tour packages page title for SEO" }
               - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
               
-              - label: "Green Wayanad Package"
-                name: "green_wayanad"
+              - label: "Green Wayanad Tour Package"
+                name: "green_wayanad_tour_package"
                 widget: "object"
                 fields:
-                  - { label: "Title", name: "title", widget: "string", required: true, hint: "Green Wayanad package title for SEO" }
+                  - { label: "Title", name: "title", widget: "string", required: true, hint: "Green Wayanad Tour Package title for SEO" }
                   - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
                   
-              - label: "Vibrant Wayanad Package"
-                name: "vibrant_wayanad"
+              - label: "Vibrant Wayanad Tour Package"
+                name: "vibrant_wayanad_tour_package"
                 widget: "object"
                 fields:
-                  - { label: "Title", name: "title", widget: "string", required: true, hint: "Vibrant Wayanad package title for SEO" }
+                  - { label: "Title", name: "title", widget: "string", required: true, hint: "Vibrant Wayanad Tour Package title for SEO" }
                   - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
                   
-              - label: "Dream Wayanad Package"
-                name: "dream_wayanad"
+              - label: "Dream Wayanad Tour Package"
+                name: "dream_wayanad_tour_package"
                 widget: "object"
                 fields:
-                  - { label: "Title", name: "title", widget: "string", required: true, hint: "Dream Wayanad package title for SEO" }
+                  - { label: "Title", name: "title", widget: "string", required: true, hint: "Dream Wayanad Tour Package title for SEO" }
                   - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
           
           - label: "Home Page"

@@ -9,34 +9,19 @@ blog:
   title: Test
   description: Test
 tourpackages:
-  title: Wayanad Tour Packages - Best Deals & Offers | Kudajadri Drizzle
+  title: Tour Packages - Best Deals & Offers | Kudajadri Drizzle
   description: Discover the best Wayanad holiday tour packages with top deals for
     families, groups, and couples. Enjoy a perfect getaway with nature,
     adventure, and comfort.
   green_wayanad_tour_package:
     title: " Wayanad Tour Package | 4 Days in Nature's Paradise"
-    description: Experience the lush greenery of Wayanad with our Green Tour
-      Package. Explore wildlife sanctuaries, Edakkal Caves, and serene lakes in
-      this 4-day adventure. Perfect for nature lovers and wildlife enthusiasts.
+    description: Experience the lush greenery of Wayanad with our Green Tour Package. Explore wildlife sanctuaries, Edakkal Caves, and serene lakes in this 4-day adventure. Perfect for nature lovers and wildlife enthusiasts.
   vibrant_wayanad_tour_package:
-    title: " Wayanad Tour Package | 2-Day Getaway"
-    description: Discover the vibrant beauty of Wayanad with our 2-day package.
-      Perfect for short getaways with visits to waterfalls, viewpoints, and tea
-      plantations. Ideal for couples and small groups.
+    title: "Vibrant Wayanad Tour Package | 2-Day Getaway"
+    description: Discover the vibrant beauty of Wayanad with our 2-day package. Perfect for short getaways with visits to waterfalls, viewpoints, and tea plantations. Ideal for couples and small groups.
   dream_wayanad_tour_package:
-    title: Dream Wayanad Retreat | 3-Day Luxury Package
-    description: Experience your dream vacation in Wayanad with our specially
-      curated 3-day package. Enjoy the best of nature, adventure, and local
-      culture with premium accommodations and personalized experiences.
-  green_wayanad:
-    title: Test
-    description: Test
-  vibrant_wayanad:
-    title: Test
-    description: Test
-  dream_wayanad:
-    title: Test
-    description: Test
+    title: "Dream Wayanad Tour Package | 3-Day Luxury Retreat"
+    description: Experience your dream vacation in Wayanad with our specially curated 3-day package. Enjoy the best of nature, adventure, and local culture with premium accommodations and personalized experiences.
 home:
   title: test
   description: Experience the best of Wayanad at Kudajadri Drizzle. Enjoy
