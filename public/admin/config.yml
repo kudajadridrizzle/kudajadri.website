@@ -23,6 +23,7 @@ collections:
           - label: "Home Page"
             name: "home"
             widget: "object"
+            collapsed: true
             fields:
               - { label: "Title", name: "title", widget: "string", required: true, hint: "Home page title for SEO" }
               - { label: "Description", name: "description", widget: "markdown", required: true, pattern: ['.{120,500}', 'Description should be between 120-500 characters'] }
@@ -30,6 +31,7 @@ collections:
           - label: "About Page"
             name: "about"
             widget: "object"
+            collapsed: true
             fields:
               - { label: "Title", name: "title", widget: "string", required: true, hint: "About page title for SEO" }
               - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
@@ -37,6 +39,7 @@ collections:
           - label: "Gallery Page"
             name: "gallery"
             widget: "object"
+            collapsed: true
             fields:
               - { label: "Title", name: "title", widget: "string", required: true, hint: "Gallery page title for SEO" }
               - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
@@ -44,6 +47,7 @@ collections:
           - label: "Facilities Page"
             name: "facilities"
             widget: "object"
+            collapsed: true
             fields:
               - { label: "Title", name: "title", widget: "string", required: true, hint: "Facilities page title for SEO" }
               - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
@@ -51,6 +55,7 @@ collections:
           - label: "Blog Page"
             name: "blog"
             widget: "object"
+            collapsed: true
             fields:
               - { label: "Title", name: "title", widget: "string", required: true, hint: "Blog page title for SEO" }
               - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
@@ -58,6 +63,7 @@ collections:
           - label: "Contact Page"
             name: "contact"
             widget: "object"
+            collapsed: true
             fields:
               - { label: "Title", name: "title", widget: "string", required: true, hint: "Contact page title for SEO" }
               - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines (150-160 characters recommended)" }
@@ -65,6 +71,7 @@ collections:
           - label: "Rooms"
             name: "rooms"
             widget: "object"
+            collapsed: true
             fields:
               - { label: "Title", name: "title", widget: "string", required: true, hint: "Rooms page title for SEO" }
               - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
@@ -72,6 +79,7 @@ collections:
               - label: "Classic Rooms"
                 name: "classic_rooms"
                 widget: "object"
+                collapsed: true
                 fields:
                   - { label: "Title", name: "title", widget: "string", required: true, hint: "Classic rooms page title for SEO" }
                   - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
@@ -79,6 +87,7 @@ collections:
               - label: "Premium Rooms"
                 name: "premium_rooms"
                 widget: "object"
+                collapsed: true
                 fields:
                   - { label: "Title", name: "title", widget: "string", required: true, hint: "Premium rooms page title for SEO" }
                   - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
@@ -86,6 +95,7 @@ collections:
               - label: "Deluxe Rooms"
                 name: "deluxe_rooms"
                 widget: "object"
+                collapsed: true
                 fields:
                   - { label: "Title", name: "title", widget: "string", required: true, hint: "Deluxe rooms page title for SEO" }
                   - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
@@ -93,6 +103,7 @@ collections:
               - label: "Deluxe Heritage Rooms"
                 name: "deluxe_heritage_rooms"
                 widget: "object"
+                collapsed: true
                 fields:
                   - { label: "Title", name: "title", widget: "string", required: true, hint: "Deluxe heritage rooms page title for SEO" }
                   - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
@@ -100,6 +111,7 @@ collections:
           - label: "Wayanad Page"
             name: "wayanad"
             widget: "object"
+            collapsed: true
             fields:
               - { label: "Title", name: "title", widget: "string", required: true, hint: "Wayanad page title for SEO" }
               - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
@@ -107,6 +119,7 @@ collections:
           - label: "Tour Packages"
             name: "tourpackages"
             widget: "object"
+            collapsed: true
             fields:
               - { label: "Title", name: "title", widget: "string", required: true, hint: "Main tour packages page title for SEO" }
               - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
@@ -114,6 +127,7 @@ collections:
               - label: "Green Wayanad Tour Package"
                 name: "green_wayanad_tour_package"
                 widget: "object"
+                collapsed: true
                 fields:
                   - { label: "Title", name: "title", widget: "string", required: true, hint: "Green Wayanad Tour Package title for SEO" }
                   - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
@@ -121,6 +135,7 @@ collections:
               - label: "Vibrant Wayanad Tour Package"
                 name: "vibrant_wayanad_tour_package"
                 widget: "object"
+                collapsed: true
                 fields:
                   - { label: "Title", name: "title", widget: "string", required: true, hint: "Vibrant Wayanad Tour Package title for SEO" }
                   - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
@@ -128,6 +143,7 @@ collections:
               - label: "Dream Wayanad Tour Package"
                 name: "dream_wayanad_tour_package"
                 widget: "object"
+                collapsed: true
                 fields:
                   - { label: "Title", name: "title", widget: "string", required: true, hint: "Dream Wayanad Tour Package title for SEO" }
                   - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
@@ -151,6 +167,7 @@ collections:
       - label: "SEO Settings"
         name: "seo"
         widget: "object"
+        collapsed: true
         required: true
         fields:
           - { label: "Meta Title", name: "metaTitle", widget: "string", required: true, hint: "SEO optimized title for search results (required)" }
@@ -158,7 +175,7 @@ collections:
       - { label: "Author", name: "author", widget: "string", required: true }
       - { label: "Date", name: "date", widget: "datetime", required: true }
       - { label: "Featured Image", name: "featuredImage", widget: "image", required: false }
-      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Tags", name: "tags", widget: "list", collapsed: true, summary: "{{name}}" }
       - { label: "Published", name: "published", widget: "boolean", default: true }
       - { label: "Body", name: "body", widget: "markdown", required: true }
 
@@ -173,6 +190,8 @@ collections:
           - label: "FAQs"
             name: "faqs"
             widget: "list"
+            collapsed: true
+            summary: "{{question}}"
             fields:
               - { label: "Question", name: "question", widget: "markdown" }
               - { label: "Answer", name: "answer", widget: "markdown" }
@@ -184,6 +203,8 @@ collections:
           - label: "FAQs"
             name: "faqs"
             widget: "list"
+            collapsed: true
+            summary: "{{question}}"
             fields:
               - { label: "Question", name: "question", widget: "markdown" }
               - { label: "Answer", name: "answer", widget: "markdown" }
@@ -195,6 +216,8 @@ collections:
           - label: "FAQs"
             name: "faqs"
             widget: "list"
+            collapsed: true
+            summary: "{{question}}"
             fields:
               - { label: "Question", name: "question", widget: "markdown" }
               - { label: "Answer", name: "answer", widget: "markdown" }
@@ -206,6 +229,8 @@ collections:
           - label: "FAQs"
             name: "faqs"
             widget: "list"
+            collapsed: true
+            summary: "{{question}}"
             fields:
               - { label: "Question", name: "question", widget: "markdown" }
               - { label: "Answer", name: "answer", widget: "markdown" }
@@ -217,6 +242,8 @@ collections:
           - label: "FAQs"
             name: "faqs"
             widget: "list"
+            collapsed: true
+            summary: "{{question}}"
             fields:
               - { label: "Question", name: "question", widget: "markdown" }
               - { label: "Answer", name: "answer", widget: "markdown" }
@@ -228,6 +255,8 @@ collections:
           - label: "FAQs"
             name: "faqs"
             widget: "list"
+            collapsed: true
+            summary: "{{question}}"
             fields:
               - { label: "Question", name: "question", widget: "markdown" }
               - { label: "Answer", name: "answer", widget: "markdown" }
@@ -239,6 +268,8 @@ collections:
           - label: "FAQs"
             name: "faqs"
             widget: "list"
+            collapsed: true
+            summary: "{{question}}"
             fields:
               - { label: "Question", name: "question", widget: "markdown" }
               - { label: "Answer", name: "answer", widget: "markdown" }
@@ -250,6 +281,8 @@ collections:
           - label: "FAQs"
             name: "faqs"
             widget: "list"
+            collapsed: true
+            summary: "{{question}}"
             fields:
               - { label: "Question", name: "question", widget: "markdown" }
               - { label: "Answer", name: "answer", widget: "markdown" }
@@ -261,6 +294,8 @@ collections:
           - label: "FAQs"
             name: "faqs"
             widget: "list"
+            collapsed: true
+            summary: "{{question}}"
             fields:
               - { label: "Question", name: "question", widget: "markdown" }
               - { label: "Answer", name: "answer", widget: "markdown" }
@@ -272,6 +307,8 @@ collections:
           - label: "FAQs"
             name: "faqs"
             widget: "list"
+            collapsed: true
+            summary: "{{question}}"
             fields:
               - { label: "Question", name: "question", widget: "markdown" }
               - { label: "Answer", name: "answer", widget: "markdown" }
@@ -283,6 +320,8 @@ collections:
           - label: "FAQs"
             name: "faqs"
             widget: "list"
+            collapsed: true
+            summary: "{{question}}"
             fields:
               - { label: "Question", name: "question", widget: "markdown" }
               - { label: "Answer", name: "answer", widget: "markdown" }
@@ -297,6 +336,7 @@ collections:
           - label: "SEO Settings"
             name: "seo"
             widget: "object"
+            collapsed: true
             fields:
               - { label: "Page Title", name: "title", widget: "string", required: true }
               - { label: "Meta Description", name: "description", widget: "text", required: true }
@@ -307,6 +347,7 @@ collections:
           - label: "Hero Section"
             name: "hero"
             widget: "object"
+            collapsed: true
             fields:
               - label: "Background Image"
                 name: "backgroundImage"
@@ -318,12 +359,15 @@ collections:
           - label: "Rooms Introduction"
             name: "roomsIntro"
             widget: "object"
+            collapsed: true
             fields:
               - { label: "Heading", name: "heading", widget: "string", required: true }
               - { label: "Content", name: "content", widget: "markdown", required: true }
           - label: "Individual Rooms"
             name: "individualRooms"
             widget: "list"
+            collapsed: true
+            summary: "{{title}}"
             fields:
               - { label: "Room ID", name: "id", widget: "string", required: true }
               - { label: "Room Title", name: "title", widget: "string", required: true }
@@ -358,6 +402,8 @@ collections:
           - label: "Attractions"
             name: "sections"
             widget: "list"
+            collapsed: true
+            summary: "{{title}}"
             fields:
               - { label: "Attraction Title", name: "title", widget: "string", required: true }
               - { label: "Description", name: "description", widget: "markdown", required: true }
