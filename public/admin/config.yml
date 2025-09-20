@@ -20,55 +20,6 @@ collections:
         name: "pagemeta"
         file: "public/pagemeta.md"
         fields:
-          - label: "Contact Page"
-            name: "contact"
-            widget: "object"
-            fields:
-              - { label: "Title", name: "title", widget: "string", required: true, hint: "Contact page title for SEO" }
-              - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines (150-160 characters recommended)" }
-          
-          - label: "Facilities Page"
-            name: "facilities"
-            widget: "object"
-            fields:
-              - { label: "Title", name: "title", widget: "string", required: true, hint: "Facilities page title for SEO" }
-              - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
-          
-          - label: "Blog Page"
-            name: "blog"
-            widget: "object"
-            fields:
-              - { label: "Title", name: "title", widget: "string", required: true, hint: "Blog page title for SEO" }
-              - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
-          
-          - label: "Tour Packages"
-            name: "tourpackages"
-            widget: "object"
-            fields:
-              - { label: "Title", name: "title", widget: "string", required: true, hint: "Main tour packages page title for SEO" }
-              - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
-              
-              - label: "Green Wayanad Tour Package"
-                name: "green_wayanad_tour_package"
-                widget: "object"
-                fields:
-                  - { label: "Title", name: "title", widget: "string", required: true, hint: "Green Wayanad Tour Package title for SEO" }
-                  - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
-                  
-              - label: "Vibrant Wayanad Tour Package"
-                name: "vibrant_wayanad_tour_package"
-                widget: "object"
-                fields:
-                  - { label: "Title", name: "title", widget: "string", required: true, hint: "Vibrant Wayanad Tour Package title for SEO" }
-                  - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
-                  
-              - label: "Dream Wayanad Tour Package"
-                name: "dream_wayanad_tour_package"
-                widget: "object"
-                fields:
-                  - { label: "Title", name: "title", widget: "string", required: true, hint: "Dream Wayanad Tour Package title for SEO" }
-                  - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
-          
           - label: "Home Page"
             name: "home"
             widget: "object"
@@ -89,6 +40,27 @@ collections:
             fields:
               - { label: "Title", name: "title", widget: "string", required: true, hint: "Gallery page title for SEO" }
               - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
+          
+          - label: "Facilities Page"
+            name: "facilities"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string", required: true, hint: "Facilities page title for SEO" }
+              - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
+          
+          - label: "Blog Page"
+            name: "blog"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string", required: true, hint: "Blog page title for SEO" }
+              - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
+          
+          - label: "Contact Page"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string", required: true, hint: "Contact page title for SEO" }
+              - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines (150-160 characters recommended)" }
           
           - label: "Rooms"
             name: "rooms"
@@ -131,6 +103,34 @@ collections:
             fields:
               - { label: "Title", name: "title", widget: "string", required: true, hint: "Wayanad page title for SEO" }
               - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
+          
+          - label: "Tour Packages"
+            name: "tourpackages"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string", required: true, hint: "Main tour packages page title for SEO" }
+              - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
+              
+              - label: "Green Wayanad Tour Package"
+                name: "green_wayanad_tour_package"
+                widget: "object"
+                fields:
+                  - { label: "Title", name: "title", widget: "string", required: true, hint: "Green Wayanad Tour Package title for SEO" }
+                  - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
+                  
+              - label: "Vibrant Wayanad Tour Package"
+                name: "vibrant_wayanad_tour_package"
+                widget: "object"
+                fields:
+                  - { label: "Title", name: "title", widget: "string", required: true, hint: "Vibrant Wayanad Tour Package title for SEO" }
+                  - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
+                  
+              - label: "Dream Wayanad Tour Package"
+                name: "dream_wayanad_tour_package"
+                widget: "object"
+                fields:
+                  - { label: "Title", name: "title", widget: "string", required: true, hint: "Dream Wayanad Tour Package title for SEO" }
+                  - { label: "Description", name: "description", widget: "markdown", required: true, hint: "Brief description for search engines" }
 
   - name: "pages"
     label: "Pages"
