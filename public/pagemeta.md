@@ -5,7 +5,7 @@ home:
     Wayanad Homestay: Book top rated nature friendly Homestays in Wayanad for
     Family & Group."
 about:
-  title: "Kalpetta homestays for families: Best rated homestays in Kalpetta"
+  title: "Kalpetta homestays for families: Best rated homestay in Kalpetta with pool"
   description: Top rated Kalpetta homestays for families with comfortable rooms,
     swimming pools & food. Find the best homestays in Kalpetta for a peaceful,
     relaxing stay.
