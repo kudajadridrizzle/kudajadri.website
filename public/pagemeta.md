@@ -15,7 +15,7 @@ gallery:
     Wayanad. Get a visual glimpse of the cozy rooms, scenic surroundings, and
     peaceful ambiance.
 facilities:
-  title: Best Swimming pool homestays in Wayanad for family & couple
+  title: Swimming pool homestays in Wayanad for family, group & couple
   description: "Wayanad homestays with swimming pool: Top swimming pool homestays
     in Wayanad offer comfort, luxury & nature, ideal for families & couples."
 blog:
