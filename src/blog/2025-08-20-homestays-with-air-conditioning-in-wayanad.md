@@ -19,7 +19,7 @@ Wayanad is one of Kerala’s most loved hill stations, known for its misty mount
 
 Not every traveler enjoys the humid afternoons or warm nights in Kerala. While mornings and evenings in Wayanad are usually cool, certain seasons can get a bit hot. That’s when an air-conditioned room feels like a blessing.
 
-Here’s why AC [homestays in Wayanad](https;//www.kudajadridrizzle.com) are worth considering:i
+Here’s why AC [homestays in Wayanad](https://www.kudajadridrizzle.com) are worth considering:i
 
 * **Better Sleep:** A cool room ensures you rest well after sightseeing.
 * **Comfort for Families:** Kids and elders feel more relaxed in AC rooms.
