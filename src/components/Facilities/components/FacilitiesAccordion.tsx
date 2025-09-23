@@ -34,7 +34,7 @@ Other activities include:
 - Interacting with friendly local hosts
 - Campfire evenings under the stars
 
-These experiences help you connect with nature, stay active, and unwind, making your [heritage homestay](rooms/delux-heritage-rooms) stay truly refreshing and enjoyable.
+These experiences help you connect with nature, stay active, and unwind, making your [heritage homestay](rooms/deluxe-heritage-rooms) stay truly refreshing and enjoyable.
     `,
   },
   {

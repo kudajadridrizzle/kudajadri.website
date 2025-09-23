@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Header } from './Header';
 import mobileimg from '../../../assets/mobileheroimg.jpg';
 import droneimg from '../../../assets/drone1.jpg';
@@ -8,13 +8,43 @@ import Preloader from './Preloader';
 const VideoBackground = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
+  const [assetsReady, setAssetsReady] = useState(false);
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
   };
 
+  // Preload hero images and mark ready when both are loaded
+  useEffect(() => {
+    let cancelled = false;
+    const fallbackT = window.setTimeout(() => {
+      if (!cancelled) setAssetsReady(true);
+    }, 6000); // fallback to prevent hanging
+
+    const loadImage = (src: string) =>
+      new Promise<void>((resolve) => {
+        const img = new Image();
+        img.src = src;
+        if (img.complete) {
+          resolve();
+        } else {
+          img.onload = () => resolve();
+          img.onerror = () => resolve(); // tolerate errors to avoid blocking UI forever
+        }
+      });
+
+    Promise.all([loadImage(droneimg), loadImage(mobileimg)]).then(() => {
+      if (!cancelled) setAssetsReady(true);
+    });
+
+    return () => {
+      cancelled = true;
+      clearTimeout(fallbackT);
+    };
+  }, []);
+
   if (isLoading) {
-    return <Preloader onComplete={handleLoadingComplete} />;
+    return <Preloader ready={assetsReady} onComplete={handleLoadingComplete} />;
   }
 
   return (

@@ -77,10 +77,7 @@ const Home = () => {
     ],
   };
 
-  // Show loading state while fetching meta data
-  if (loading) {
-    return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
-  }
+  // Render the page even while meta is loading to avoid showing a loading text
 
   return (
     <div>

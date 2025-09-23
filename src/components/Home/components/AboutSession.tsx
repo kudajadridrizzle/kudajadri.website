@@ -41,7 +41,7 @@ const AboutSession = () => {
           <div>
             <button
               className="px-6 py-3 rounded-full bg-primary text-[#FFF] font-albertSans"
-              onClick={() => navigate('/about')}
+              onClick={() => navigate('/about-us')}
             >
               Explore Our Story
             </button>
