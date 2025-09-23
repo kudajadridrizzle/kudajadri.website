@@ -35,7 +35,7 @@ const Home = () => {
     faqs: parsedFaq.attributes.faqs || [],
   };
   const contentSection = useContentSection('home');
-  const { meta: homeMeta, loading, error } = usePageMeta('home' as PageType);
+  const { meta: homeMeta, error } = usePageMeta('home' as PageType);
   
   const siteUrl = "https://www.kudajadridrizzle.com";
   const canonicalUrl = siteUrl + "/";
