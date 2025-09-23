@@ -17,6 +17,7 @@ import { ContentSection } from '../shared';
 import { useContentSection } from '../../hooks/useContentSection';
 import CardSection from './components/CardSection';
 import GuestTestimonials from './components/GuestTestimonials';
+import usePageMeta, { PageType } from '../../hooks/usePageMeta';
 
 // Define the shape of FAQ frontmatter
 interface FaqFrontMatterAttributes {
@@ -34,13 +35,18 @@ const Home = () => {
     faqs: parsedFaq.attributes.faqs || [],
   };
   const contentSection = useContentSection('home');
-
+  const { meta: homeMeta, error } = usePageMeta('home' as PageType);
+  
   const siteUrl = "https://www.kudajadridrizzle.com";
   const canonicalUrl = siteUrl + "/";
-  const title = "Wayanad homestays: Best homestay in Wayanad for family, groups";
-  const description =
-    "Kudajadri Drizzle home stay in Wayanad: 100+ years old #1 heritage Wayanad Homestay: Book top rated nature friendly Homestays in Wayanad for Family & Group.";
+  const title = homeMeta?.title || '';
+  const description = homeMeta?.description || '';
   const image = `${siteUrl}/aboutHero.jpg`;
+
+  // Log any errors for debugging
+  if (error) {
+    console.error('Error loading home page meta:', error);
+  }
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -70,6 +76,8 @@ const Home = () => {
       "https://twitter.com/kudajadrihomestay"
     ],
   };
+
+  // Render the page even while meta is loading to avoid showing a loading text
 
   return (
     <div>

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import video from '../../../assets/videoBackGround.mp4';
 import { Header } from './Header';
 import mobileimg from '../../../assets/mobileheroimg.jpg';
 import droneimg from '../../../assets/drone1.jpg';
@@ -9,52 +8,55 @@ import Preloader from './Preloader';
 const VideoBackground = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
-  const [showVideo, setShowVideo] = useState(false);
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [assetsReady, setAssetsReady] = useState(false);
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
   };
 
-  // Wait 10 seconds before switching to video
+  // Preload hero images and mark ready when both are loaded
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowVideo(true);
-    }, 10000); // 10s
-    return () => clearTimeout(timer);
+    let cancelled = false;
+    const fallbackT = window.setTimeout(() => {
+      if (!cancelled) setAssetsReady(true);
+    }, 6000); // fallback to prevent hanging
+
+    const loadImage = (src: string) =>
+      new Promise<void>((resolve) => {
+        const img = new Image();
+        img.src = src;
+        if (img.complete) {
+          resolve();
+        } else {
+          img.onload = () => resolve();
+          img.onerror = () => resolve(); // tolerate errors to avoid blocking UI forever
+        }
+      });
+
+    Promise.all([loadImage(droneimg), loadImage(mobileimg)]).then(() => {
+      if (!cancelled) setAssetsReady(true);
+    });
+
+    return () => {
+      cancelled = true;
+      clearTimeout(fallbackT);
+    };
   }, []);
 
   if (isLoading) {
-    return <Preloader onComplete={handleLoadingComplete} />;
+    return <Preloader ready={assetsReady} onComplete={handleLoadingComplete} />;
   }
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
       {/* Desktop Background */}
       <div className="hidden md:block absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-full z-0">
-        {/* Always show the image first */}
+        {/* Hero Image */}
         <img
           src={droneimg}
-          alt="Desktop fallback"
-          className={`w-full h-full object-cover transition-opacity duration-1000 ${
-            showVideo ? 'opacity-0' : 'opacity-100'
-          }`}
+          alt="Kudajadri Drizzle Homestay"
+          className="w-full h-full object-cover"
         />
-
-        {/* Video loads in parallel, fades in after 10s */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
-            showVideo && isVideoLoaded ? 'opacity-100' : 'opacity-0'
-          }`}
-          onLoadedData={() => setIsVideoLoaded(true)}
-        >
-          <source src={video} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
       </div>
 
       {/* Mobile Background (Always Image) */}

@@ -2,12 +2,15 @@ import { Helmet } from 'react-helmet-async';
 import fm from 'front-matter';
 import Direction from '../Home/components/Direction';
 import Footer from '../Home/components/Footer';
+import { Header } from '../Home/components/Header';
 import FacilitiesSession from './components/FacilitiesSession';
 import Hero from './components/Hero';
 import ListSession from './components/ListSession';
 import facilitiesFaqRaw from '../../File/facilitiesfaqs.md?raw';
 import FaqList from '../FaqComponent/FaqList';
 import FacilitiesAccordion from './components/FacilitiesAccordion';
+import usePageMeta from '../../hooks/usePageMeta';
+import useFacilitiesCMS from '../../hooks/useFacilitiesCMS';
 
 // Define the shape of FAQ frontmatter
 interface FaqFrontMatterAttributes {
@@ -23,26 +26,30 @@ const CANONICAL_URL = `${SITE_URL}/facilities-amenities`;
 const OG_IMAGE = `${SITE_URL}/aboutHero.jpg`;
 
 const FacilitiesPage = () => {
+  const { meta, loading, error } = usePageMeta('facilities');
+  const { pageData, loading: facilitiesLoading } = useFacilitiesCMS();
+  
+  // Parse FAQ data
   const parsedFaq = fm<FaqFrontMatterAttributes>(facilitiesFaqRaw);
 
+  if (loading || facilitiesLoading) {
+    return <div>Loading...</div>;
+  }
+  if (error) console.error('Error loading page metadata:', error);
+
   return (
-    <div>
+    <div className="pt-16 md:pt-20">
+      <Header type="black" />
       <Helmet>
-        {/* Title & Description */}
-        <title>
-          Swimming pool homestays in Wayanad: homestay with swimming pool
-        </title>
-        <meta
-          name="description"
-          content="Homestays in Wayanad with swimming pools offer the best facilities, comfort, and scenic views for a perfect relaxing getaway with family and friends."
-        />
+        <title>{meta?.title || 'Facilities & Amenities - Kudajadri Drizzle'}</title>
+        <meta name="description" content={meta?.description || 'Experience premium facilities at Kudajadri Drizzle. Enjoy modern amenities, comfortable accommodations, and excellent services during your stay in Wayanad.'} />
         <meta name="keywords" content="" />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Kudajadri Homestay" />
 
         {/* Open Graph */}
-        <meta property="og:title" content="Swimming pool homestays in Wayanad: homestay with swimming pool" />
-        <meta property="og:description" content="Homestays in Wayanad with swimming pools offer the best facilities, comfort, and scenic views for a perfect relaxing getaway with family and friends." />
+        <meta property="og:title" content={meta?.title || 'Facilities & Amenities - Kudajadri Drizzle'} />
+        <meta property="og:description" content={meta?.description || 'Experience premium facilities at Kudajadri Drizzle. Enjoy modern amenities, comfortable accommodations, and excellent services during your stay in Wayanad.'} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={CANONICAL_URL} />
         <meta property="og:site_name" content="Kudajadri Homestay" />
@@ -53,8 +60,8 @@ const FacilitiesPage = () => {
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Swimming pool homestays in Wayanad: homestay with swimming pool" />
-        <meta name="twitter:description" content="Homestays in Wayanad with swimming pools offer the best facilities, comfort, and scenic views for a perfect relaxing getaway with family and friends." />
+        <meta name="twitter:title" content={meta?.title || 'Facilities & Amenities - Kudajadri Drizzle'} />
+        <meta name="twitter:description" content={meta?.description || 'Experience premium facilities at Kudajadri Drizzle. Enjoy modern amenities, comfortable accommodations, and excellent services during your stay in Wayanad.'} />
         <meta name="twitter:site" content="@kudajadrihomestay" />
         <meta name="twitter:image" content={OG_IMAGE} />
 
@@ -68,8 +75,8 @@ const FacilitiesPage = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "name": "Swimming pool homestays in Wayanad: homestay with swimming pool",
-            "description": "Homestays in Wayanad with swimming pools offer the best facilities, comfort, and scenic views for a perfect relaxing getaway with family and friends.",
+            "name": meta?.title || 'Facilities at Kudajadri Drizzle',
+            "description": meta?.description || 'Experience premium facilities at Kudajadri Drizzle. Enjoy modern amenities and excellent services.',
             "url": CANONICAL_URL,
             "publisher": {
               "@type": "Organization",
@@ -83,19 +90,30 @@ const FacilitiesPage = () => {
         </script>
       </Helmet>
 
-      <Hero />
+      {pageData && (
+        <Hero 
+          title={pageData.title} 
+          description={pageData.description} 
+        />
+      )}
+      
       <main className="flex flex-col items-center self-stretch gap-16 bg-white mobile:p-4 sm:p-14 sm:flex-row 2xl:px-[18%] lg:px-[12%]">
         <FacilitiesSession />
       </main>
       <ListSession />
       <FacilitiesAccordion />
+      
+      {/* FAQ Section */}
+      <section className="py-16 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
+        <FaqList title={parsedFaq.attributes.title} faqs={parsedFaq.attributes.faqs} />
+      </section>
+      
       <Direction
         title="Swimming Pool Homestays in Wayanad – How to Reach"
         description="Reaching our Kudajadri Drizzle Wayanad Homestay is simple and hassle-free. The property is well-connected by road from Kozhikode, Bengaluru, and Mysuru, making travel convenient by car, taxi, or bus. Along the way, you’ll pass through scenic hills and lush plantations, offering a beautiful glimpse of Wayanad’s charm even before you arrive. The journey is smooth, pleasant, and sets the tone for a relaxing stay."
         buttonText="View on Map"
         showMap={true}
       />
-      <FaqList {...parsedFaq.attributes} />
       <Footer />
     </div>
   );

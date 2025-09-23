@@ -1,55 +1,77 @@
 import { useEffect, useState } from "react";
-import favicon from "../../../assets/Favicon000.svg"; // adjust path if needed
 
 interface PreloaderProps {
   onComplete: () => void;
+  ready?: boolean; // when true, complete to 100 and finish
 }
 
-const Preloader = ({ onComplete }: PreloaderProps) => {
-  const [isVisible, setIsVisible] = useState(true);
-  const [showLogo, setShowLogo] = useState(false);
-
-  const fadeDuration = 700; // ms
-  const totalDuration = 4000; // ms (entire preloader time)
+const Preloader = ({ onComplete, ready = false }: PreloaderProps) => {
+  const [progress, setProgress] = useState(0);
+  const [visible, setVisible] = useState(true);
+  const [fadeIn, setFadeIn] = useState(false);
+  const [finished, setFinished] = useState(false);
 
   useEffect(() => {
-    // Fade in logo
-    const fadeInTimer = setTimeout(() => {
-      setShowLogo(true);
-    }, 100);
+    // Fade in quickly (run once)
+    const fadeInT = setTimeout(() => setFadeIn(true), 50);
 
-    // Start fade out slightly before totalDuration
-    const fadeOutTimer = setTimeout(() => {
-      setShowLogo(false);
-    }, totalDuration - fadeDuration);
+    let interval: number | undefined = undefined as unknown as number;
+    const startInterval = () => {
+      interval = window.setInterval(() => {
+        setProgress((prev) => {
+          if (finished) return prev;
+          const cap = ready ? 100 : 95;
+          const next = Math.min(prev + 1, cap);
+          return next;
+        });
+      }, 30);
+    };
 
-    // Remove preloader exactly at totalDuration
-    const hideTimer = setTimeout(() => {
-      setIsVisible(false);
-      onComplete();
-    }, totalDuration);
+    startInterval();
 
     return () => {
-      clearTimeout(fadeInTimer);
-      clearTimeout(fadeOutTimer);
-      clearTimeout(hideTimer);
+      if (interval) clearInterval(interval);
+      clearTimeout(fadeInT);
     };
-  }, [onComplete]);
+  }, [ready, finished]);
 
-  if (!isVisible) return null;
+  // When ready flips true, finish to 100 and close (even if already at 100)
+  useEffect(() => {
+    if (!ready || finished) return;
+
+    // If not at 100 yet, set to 100 quickly
+    if (progress < 100) {
+      setProgress(100);
+    }
+
+    // Immediately complete without extra delays
+    setFinished(true);
+    setFadeIn(false);
+    setVisible(false);
+    onComplete();
+  }, [ready, progress, finished, onComplete]);
+
+  // Safety: if somehow progress hits 100 via interval and we're ready, complete
+  useEffect(() => {
+    if (ready && progress >= 100 && !finished) {
+      setFinished(true);
+      setFadeIn(false);
+      setVisible(false);
+      onComplete();
+    }
+  }, [ready, progress, finished, onComplete]);
+
+  if (!visible) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-white">
-      <img
-        src={favicon}
-        alt="App Logo"
-        className={`w-16 h-16 md:w-32 md:h-32 object-contain transform transition-all duration-700 ${
-          showLogo ? "opacity-100 scale-100" : "opacity-0 scale-90"
-        }`}
-        style={{
-          transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
-        }}
-      />
+    <div
+      className={`fixed inset-0 z-50 bg-white transition-opacity duration-300 ${
+        fadeIn ? 'opacity-100' : 'opacity-0'
+      } flex items-center justify-center md:items-end md:justify-start p-0 md:p-8`}
+    >
+      <div className="font-staylista text-[32px] md:text-[96px] text-gray-900 select-none">
+        {progress}%
+      </div>
     </div>
   );
 };

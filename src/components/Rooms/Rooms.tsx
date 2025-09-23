@@ -7,10 +7,49 @@ import CMSRoomSession from './Components/CMSRoomSession';
 import CMSIndividualRooms from './Components/CMSIndividualRooms';
 import { Header } from '../Home/components/Header';
 import { useState, useEffect } from 'react';
+import usePageMeta, { PageType } from '../../hooks/usePageMeta';
 
 const Rooms = () => {
-  const { seo, hero, roomsIntro, individualRooms, faq } = useRoomsCMS();
+  const { seo: defaultSeo, hero, roomsIntro, individualRooms, faq } = useRoomsCMS();
+  const { meta: pageMeta, allMeta } = usePageMeta('rooms' as PageType);
   const [currentUrl, setCurrentUrl] = useState('https://www.kudajadridrizzle.com');
+  
+  // Use meta from pagemeta.md or fallback to CMS data
+  const seo = {
+    ...defaultSeo,
+    title: pageMeta?.title || defaultSeo.title,
+    description: pageMeta?.description || defaultSeo.description,
+    // Add Open Graph and Twitter meta
+    ogTitle: pageMeta?.ogTitle || pageMeta?.title || defaultSeo.title,
+    ogDescription: pageMeta?.ogDescription || pageMeta?.description || defaultSeo.description,
+    twitterTitle: pageMeta?.twitterTitle || pageMeta?.title || defaultSeo.title,
+    twitterDescription: pageMeta?.twitterDescription || pageMeta?.description || defaultSeo.description
+  };
+
+  // Get room-specific meta data from pagemeta.md
+  const getRoomMeta = (roomId: string) => {
+    if (!allMeta?.rooms) return { title: '', description: '' };
+    // Handle both snake_case and kebab-case room IDs
+    const roomMeta = allMeta.rooms[roomId] || allMeta.rooms[roomId.replace(/-/g, '_')];
+    return roomMeta || { title: '', description: '' };
+  };
+
+  // Enhance individual rooms with their specific meta data from pagemeta.md
+  const enhancedRooms = individualRooms.map(room => {
+    // Get room meta from pagemeta.md
+    const roomMeta = getRoomMeta(room.id);
+    
+    // Fallback to CMS data if no meta found in pagemeta.md
+    return {
+      ...room,
+      title: roomMeta?.title || room.title,
+      description: roomMeta?.description || room.description,
+      meta: {
+        title: roomMeta?.title || room.title,
+        description: roomMeta?.description || room.description
+      }
+    };
+  });
 
   // Update current URL on client side
   useEffect(() => {
@@ -29,28 +68,22 @@ const Rooms = () => {
         <meta name="keywords" content="" />
         <meta name="robots" content="index, follow" />
         <meta name="author" content={seo.author} />
-
-        {/* Open Graph */}
-        <meta property="og:title" content={seo.title} />
-        <meta property="og:description" content={seo.description} />
+        
+        {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content={currentUrl} />
-        <meta property="og:site_name" content="Kudajadri Homestay" />
-        <meta property="og:locale" content="en_US" />
-        <meta property="og:image" content={`${window.location.origin}${seo.ogImage}`} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-
+        <meta property="og:title" content={seo.ogTitle} />
+        <meta property="og:description" content={seo.ogDescription} />
+        <meta property="og:image" content="https://www.kudajadridrizzle.com/images/og-image.jpg" />
+        
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={seo.title} />
-        <meta name="twitter:description" content={seo.description} />
-        <meta name="twitter:site" content={seo.twitterSite} />
-        <meta name="twitter:image" content={`${window.location.origin}${seo.ogImage}`} />
-
-        {/* Misc */}
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="twitter:url" content={currentUrl} />
+        <meta name="twitter:title" content={seo.twitterTitle} />
+        <meta name="twitter:description" content={seo.twitterDescription} />
+        <meta name="twitter:image" content="https://www.kudajadridrizzle.com/images/twitter-card.jpg" />
+        
+        {/* Canonical URL */}
         <link rel="canonical" href={currentUrl} />
       </Helmet>
 
@@ -69,7 +102,7 @@ const Rooms = () => {
         />
       </div>
 
-      <CMSIndividualRooms rooms={individualRooms} />
+      <CMSIndividualRooms rooms={enhancedRooms} />
 
       <FaqList {...faq} />
 
