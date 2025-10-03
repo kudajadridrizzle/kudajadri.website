@@ -117,7 +117,6 @@ const Home = () => {
           {JSON.stringify(jsonLd)}
         </script>
       </Helmet>
-
       <VideoBackground />
       <AboutSession />
       <GallarySession />
