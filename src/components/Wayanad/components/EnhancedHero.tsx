@@ -2,16 +2,17 @@ import React from "react";
 import { Header } from "../../Home/components/Header";
 
 interface EnhancedHeroProps {
+  heroImage?: string;
   heroTitle: string;
 }
 
-export const EnhancedHero: React.FC<EnhancedHeroProps> = ({ heroTitle }) => {
+export const EnhancedHero: React.FC<EnhancedHeroProps> = ({ heroTitle, heroImage }) => {
   return (
     <section className="relative h-screen w-full overflow-hidden">
       {/* Background Image with subtle zoom effect */}
       <div
         className="absolute inset-0 bg-cover bg-center transform scale-100 transition-transform duration-[20000ms] ease-linear hover:scale-105"
-        style={{ backgroundImage: `url('/Muthanga.jpg')` }}
+        style={{ backgroundImage: `url('${heroImage || "/Muthanga.jpg"}')` }}
       />
 
       {/* Dark Overlay */}
