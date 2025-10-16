@@ -2,7 +2,7 @@ import imageOne from '../../../assets/imageOne.jpg';
 import imageTwo from '../../../assets/corner.jpg';
 import imageThree from '../../../assets/imageThree.jpg';
 import imageFour from '../../../assets/kalavandi.jpg';
-import imageFive from '../../../assets/drone1.jpg';
+import imageFive from '../../../assets/drone1.webp';
 import imageSix from '../../../assets/wide.jpg';
 import imageSeven from '../../../assets/awards.jpg';
 import imageEight from '../../../assets/openspace.jpg';
