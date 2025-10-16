@@ -16,7 +16,7 @@ const ROOMS_CONTENT: RoomContent[] = [
     title: "Classic Wayanad Homestay Rooms",
     description:
       "Classic Rooms offer affordable **homestays in Wayanad**, combining comfort and convenience. Enjoy cozy interiors, essential amenities, and warm hospitality. Perfect for travelers seeking budget-friendly stays without compromising quality, these rooms provide a peaceful retreat while exploring Wayanad’s natural beauty and popular attractions.",
-    image: "/images/Rooms/classic/1 - Copy.jpg",
+    image: "/images/Rooms/classic/1 - Copy.webp",
     type: "reverse",
     path: "/rooms/classic-rooms",
   },
