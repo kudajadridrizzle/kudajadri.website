@@ -1,6 +1,6 @@
 import { Header } from './Header';
 import mobileimg from '../../../assets/mobileheroimg.jpg';
-import droneimg from '../../../assets/drone1.jpg';
+import droneimg from '../../../assets/locationImage.webp';
 import { useNavigate } from 'react-router-dom';
 
 const VideoBackground = () => {

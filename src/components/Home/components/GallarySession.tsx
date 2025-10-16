@@ -1,8 +1,8 @@
 import ImageCarousel from '../../RoomDetails/components/ImageCarousel';
-import img1 from '/src/assets/HomeAutoScroll/1.jpg';
-import img2 from '/src/assets/HomeAutoScroll/2.jpg';
-import img3 from '/src/assets/HomeAutoScroll/3.jpg';
-import img4 from '/src/assets/HomeAutoScroll/4.jpg';
+import img1 from '/src/assets/HomeAutoScroll/1.webp';
+import img2 from '/src/assets/HomeAutoScroll/2.webp';
+import img3 from '/src/assets/HomeAutoScroll/3.webp';
+import img4 from '/src/assets/HomeAutoScroll/4.webp';
 
 const images = [img1, img2, img3, img4];
 

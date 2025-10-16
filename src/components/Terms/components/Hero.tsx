@@ -1,5 +1,5 @@
 import React from 'react';
-import drone1 from '../../../assets/drone1.jpg';
+import drone1 from '../../../assets/drone1.webp';
 
 const Hero: React.FC = () => {
   return (
