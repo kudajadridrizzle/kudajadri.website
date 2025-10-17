@@ -10,18 +10,25 @@ const VideoBackground = () => {
     <div className="relative w-full h-screen overflow-hidden bg-black">
       {/* Desktop Background */}
       <div className="hidden md:block absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-full z-0">
-        {/* Hero Image */}
         <img
           src={droneimg}
           alt="Kudajadri Drizzle Homestay"
+          width={1920}       // Add actual image width
+          height={1080}      // Add actual image height
+          loading="eager"
+          fetchPriority="high"
           className="w-full h-full object-cover"
         />
       </div>
 
-      {/* Mobile Background (Always Image) */}
+      {/* Mobile Background */}
       <img
         src={mobileimg}
-        alt="Mobile background"
+        alt="Kudajadri Drizzle Homestay Mobile"
+        width={768}          // Add actual mobile image width
+        height={1024}        // Add actual mobile image height
+        loading="eager"
+        fetchPriority="high"
         className="md:hidden absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-full object-cover z-0"
       />
 
@@ -36,7 +43,7 @@ const VideoBackground = () => {
             <div className="flex flex-col gap-2.5">
               <div className="flex items-center gap-2.5">
                 <div className="border border-[#FFF] flex-1" />
-                <h2 className="sm:text-3xl uppercase text-[#FFF] font-ivy mobile:text-sm">
+                <h2 className="sm:text-3xl uppercase text-[#FFF] font-ivy mobile:text-sm text-center">
                   Kudajadri Drizzle Homestay in Wayanad
                 </h2>
                 <div className="border border-[#FFF] flex-1" />
@@ -49,9 +56,7 @@ const VideoBackground = () => {
           <div className="flex justify-center mb-[120px]">
             <button
               className="px-6 py-3 rounded-full border text-[#FFF] hover:bg-white hover:text-amber-700 transition-colors duration-300"
-              onClick={() => {
-                navigate('/contact');
-              }}
+              onClick={() => navigate('/contact')}
             >
               Book Now
             </button>
