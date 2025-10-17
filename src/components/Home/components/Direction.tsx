@@ -15,13 +15,13 @@ const Direction = ({
   iframeMapUrl = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.1912242549953!2d76.0876686!3d11.6944734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba6752bf8e8c185%3A0x5bf951fa893c48b4!2sKudajadri%20Drizzle%20-%20Best%20Wayanad%20Homestays!5e0!3m2!1sen!2sin!4v1717921840000!5m2!1sen!2sin',
   showMap = true
 }: DirectionProps) => {
-
   return (
     <div className="sm:px-[12%] sm:py-32 flex flex-col gap-24 mobile:px-4 mobile:py-14 large:px-[18%]">
       <div className="flex flex-col gap-6 items-center">
         <span className="uppercase text-primary tracking-[1.6px] font-albertSans">
           Direction
         </span>
+
         <div className="flex flex-col gap-4 items-center">
           <h2 className="block text-primary sm:text-[44px] mobile:text-[32px] font-ivy">
             {title}
@@ -31,17 +31,17 @@ const Direction = ({
             dangerouslySetInnerHTML={{ __html: description }}
           ></p>
         </div>
+
         <div>
           <button
-            onClick={() => {
-              window.open(mapUrl, '_blank');
-            }}
+            onClick={() => window.open(mapUrl, '_blank')}
             className="bg-primary px-6 py-3 rounded-full text-[#fff] font-albertSans"
           >
             {buttonText}
           </button>
         </div>
       </div>
+
       {showMap && (
         <div className="rounded-2xl overflow-hidden w-full">
           <iframe
@@ -50,6 +50,7 @@ const Direction = ({
             height="450"
             loading="lazy"
             className="w-full"
+            title={`Map showing directions to ${title}`}
           ></iframe>
         </div>
       )}
