@@ -1,4 +1,4 @@
-import locationImage from '../../../assets/locationImage.jpg';
+import locationImage from '../../../assets/locationImage.webp';
 
 const LocationImage = () => {
   return (
