@@ -1,23 +1,12 @@
-import AboutSession from './components/AboutSession';
-import Amenities from './components/Amenities';
-import Direction from './components/Direction';
 import Footer from './components/Footer';
-import GallarySession from './components/GallarySession';
-import { IndividualRooms } from './components/IndividualRooms';
-import LocationImage from './components/LocationImage';
-import OurGallery from './components/OurGallery';
-import ReviewSession from './components/ReviewSession';
-import RoomSession from './components/RoomSession';
 import VideoBackground from './components/VideoBackground';
 import { Helmet } from 'react-helmet-async';
 import fm from 'front-matter';
 import homeFaqRaw from '../../File/homefaqs.md?raw';
-import FaqList from '../FaqComponent/FaqList';
 import { ContentSection } from '../shared';
 import { useContentSection } from '../../hooks/useContentSection';
-import CardSection from './components/CardSection';
-import GuestTestimonials from './components/GuestTestimonials';
 import usePageMeta, { PageType } from '../../hooks/usePageMeta';
+import { Suspense, lazy } from 'react';
 
 // Define the shape of FAQ frontmatter
 interface FaqFrontMatterAttributes {
@@ -27,6 +16,19 @@ interface FaqFrontMatterAttributes {
     answer: string;
   }>;
 }
+
+const AboutSession = lazy(() => import('./components/AboutSession'));
+const Amenities = lazy(() => import('./components/Amenities'));
+const Direction = lazy(() => import('./components/Direction'));
+const GallarySession = lazy(() => import('./components/GallarySession'));
+const IndividualRooms = lazy(() => import('./components/IndividualRooms').then(m => ({ default: m.IndividualRooms })));
+const LocationImage = lazy(() => import('./components/LocationImage'));
+const OurGallery = lazy(() => import('./components/OurGallery'));
+const ReviewSession = lazy(() => import('./components/ReviewSession'));
+const RoomSession = lazy(() => import('./components/RoomSession'));
+const GuestTestimonials = lazy(() => import('./components/GuestTestimonials'));
+const CardSection = lazy(() => import('./components/CardSection'));
+const FaqList = lazy(() => import('../FaqComponent/FaqList'));
 
 const Home = () => {
   const parsedFaq = fm<FaqFrontMatterAttributes>(homeFaqRaw);
@@ -118,24 +120,48 @@ const Home = () => {
         </script>
       </Helmet>
       <VideoBackground />
-      <AboutSession />
-      <GallarySession />
-      <RoomSession />
-      <IndividualRooms />
-      <Amenities />
-      <OurGallery />
-      <ReviewSession />
-      <GuestTestimonials />
-      <LocationImage />
-      <Direction />
+      <Suspense fallback={<div />}> 
+        <AboutSession />
+      </Suspense>
+      <Suspense fallback={<div />}> 
+        <GallarySession />
+      </Suspense>
+      <Suspense fallback={<div />}> 
+        <RoomSession />
+      </Suspense>
+      <Suspense fallback={<div />}> 
+        <IndividualRooms />
+      </Suspense>
+      <Suspense fallback={<div />}> 
+        <Amenities />
+      </Suspense>
+      <Suspense fallback={<div />}> 
+        <OurGallery />
+      </Suspense>
+      <Suspense fallback={<div />}> 
+        <ReviewSession />
+      </Suspense>
+      <Suspense fallback={<div />}> 
+        <GuestTestimonials />
+      </Suspense>
+      <Suspense fallback={<div />}> 
+        <LocationImage />
+      </Suspense>
+      <Suspense fallback={<div />}> 
+        <Direction />
+      </Suspense>
       {contentSection && (
         <ContentSection
           title={contentSection.title}
           items={contentSection.items}
         />
       )}
-      <CardSection sectionKey="facilities" className="bg-gray-50" />
-      <FaqList {...content} />
+      <Suspense fallback={<div />}> 
+        <CardSection sectionKey="facilities" className="bg-gray-50" />
+      </Suspense>
+      <Suspense fallback={<div />}> 
+        <FaqList {...content} />
+      </Suspense>
       <Footer />
     </div>
   );
