@@ -4,7 +4,16 @@ const LocationImage = () => {
   return (
     <div className="sm:px-[12%] sm:py-24 flex flex-col sm:flex-row mobile:px-4 mobile:py-14 large:px-[18%]">
       <div className="sm:w-1/2">
-        <img src={locationImage} alt="" className="object-cover size-full" />
+        <img
+          src={locationImage}
+          alt=""
+          width={1920}
+          height={1080}
+          loading="lazy"
+          fetchPriority="low"
+          decoding="async"
+          className="object-cover size-full"
+        />
       </div>
       <div className="sm:w-1/2 bg-primary sm:px-24 flex sm:items-center mobile:px-4 mobile:py-12">
         <div className="flex flex-col gap-6">

@@ -7,6 +7,8 @@ import { ContentSection } from '../shared';
 import { useContentSection } from '../../hooks/useContentSection';
 import usePageMeta, { PageType } from '../../hooks/usePageMeta';
 import { Suspense, lazy } from 'react';
+import heroDesktop from '../../assets/locationImage.webp';
+import heroMobile from '../../assets/mobileheroimg.jpg';
 
 // Define the shape of FAQ frontmatter
 interface FaqFrontMatterAttributes {
@@ -94,6 +96,23 @@ const Home = () => {
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Kudajadri Drizzle Homestay" />
         <link rel="canonical" href={canonicalUrl} />
+
+        {/* Preload LCP images (desktop and mobile) */}
+        <link
+          rel="preload"
+          as="image"
+          href={heroDesktop}
+          fetchPriority="high"
+          imageSizes="100vw"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href={heroMobile}
+          fetchPriority="high"
+          imageSizes="100vw"
+          media="(max-width: 767px)"
+        />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
