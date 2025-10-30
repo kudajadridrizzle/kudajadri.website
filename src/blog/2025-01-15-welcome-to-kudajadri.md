@@ -1,6 +1,6 @@
 ---
 title: How to Book Airbnb Homestays in Wayanad
-description: How to Book Airbnb Homestays in Wayanad
+slug: book-airbnb
 seo:
   metaTitle: Book Airbnb Homestays in Wayanad - Complete Guide & Tips
   metaDescription: Learn how to book the best Airbnb homestays in Wayanad with our
@@ -10,6 +10,7 @@ author: Admin
 date: 2025-08-09T10:35:30.302Z
 featuredImage: null
 published: true
+description: How to Book Airbnb Homestays in Wayanad
 ---
 ## How to Book Airbnb Homestays in Wayanad
 
