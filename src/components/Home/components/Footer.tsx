@@ -110,10 +110,10 @@ const Footer = () => {
             </span>
             <div className="text-secondary font-albertSans sm:text-xl flex flex-col gap-2">
               <Link to="/" className="no-underline hover:underline">Wayanad Homestays</Link>
-              <Link to="/about" className="no-underline hover:underline">Kalpetta Homestays</Link>
+              <Link to="/about-us" className="no-underline hover:underline">Kalpetta Homestays</Link>
               <Link to="/contact" className="no-underline hover:underline">Wayanad Homestay Bookings</Link>
               <Link to="/facilities-amenities" className="no-underline hover:underline">Homestay with Swimming Pool</Link>
-              <Link to="/gallery" className="no-underline hover:underline">Homestay in Wayanad Photos</Link>
+              <Link to="/media-gallery" className="no-underline hover:underline">Homestay in Wayanad Photos</Link>
               <Link to="/rooms" className="no-underline hover:underline">Wayanad Accommodations</Link>
               <Link to="/rooms/premium-rooms" className="no-underline hover:underline">Premium Homestays in Wayanad</Link>
               <Link to="/rooms/deluxe-heritage-rooms" className="no-underline hover:underline">Heritage Homestays in Wayanad</Link>
