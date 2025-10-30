@@ -12,7 +12,7 @@ const VideoBackground = () => {
       <div className="hidden md:block absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-full z-0">
         <img
           src={droneimg}
-          alt="Kudajadri Drizzle Homestay"
+          alt="Aerial view of Kudajadri Drizzle Homestay in Wayanad"
           width={1920}       // Add actual image width
           height={1080}      // Add actual image height
           loading="eager"
@@ -24,7 +24,7 @@ const VideoBackground = () => {
       {/* Mobile Background */}
       <img
         src={mobileimg}
-        alt="Kudajadri Drizzle Homestay Mobile"
+        alt="Mobile view of Kudajadri Drizzle Homestay"
         width={768}          // Add actual mobile image width
         height={1024}        // Add actual mobile image height
         loading="eager"
