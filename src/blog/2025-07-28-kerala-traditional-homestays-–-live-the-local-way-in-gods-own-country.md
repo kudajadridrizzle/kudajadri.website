@@ -3,6 +3,7 @@ title: Kerala Traditional Homestays – Live the Local Way in God's Own Country
 description: Discover the charm of Kerala traditional homestays. Enjoy local
   food, culture, and warm hospitality while staying in heritage homes across
   scenic villages and backwaters.
+slug: kerala-traditional-homestays
 seo:
   metaTitle: Kerala Traditional Homestays - Experience Local Culture & Heritage
   metaDescription: Discover authentic Kerala traditional homestays in Wayanad,
