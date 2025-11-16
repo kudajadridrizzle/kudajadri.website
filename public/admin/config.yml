@@ -164,6 +164,14 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string", required: true }
+      - label: "Custom Slug"
+        name: "slug"
+        widget: "string"
+        required: false
+        hint: "Optional URL slug (lowercase, letters, numbers, and hyphens). If empty, it will use the title. Example: wayanad-travel-tips"
+        pattern:
+          - "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          - "Slug can only contain lowercase letters, numbers, and hyphens (no leading/trailing hyphens)."
       - label: "SEO Settings"
         name: "seo"
         widget: "object"

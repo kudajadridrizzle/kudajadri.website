@@ -30,14 +30,16 @@ const BlogDetail: React.FC = () => {
         let foundPost: BlogPost | null = null;
 
         for (const path in blogModules) {
-          const pathSlug = path
+          const content = await blogModules[path]();
+          // Base slug from filename (without date prefix), used as fallback in parser
+          const baseSlug = path
             .split('/')
             .pop()
-            ?.replace(/.md$/, '')
-            .replace(/^\d{4}-\d{2}-\d{2}-/, '');
-          if (pathSlug === slug) {
-            const content = await blogModules[path]();
-            foundPost = parseBlogMarkdown(content as string, slug);
+            ?.replace(/\.md$/, '')
+            .replace(/^\d{4}-\d{2}-\d{2}-/, '') || '';
+          const parsed = parseBlogMarkdown(content as string, baseSlug);
+          if (parsed.slug === slug) {
+            foundPost = parsed;
             break;
           }
         }
