@@ -5,7 +5,6 @@ import fm from 'front-matter';
 import homeFaqRaw from '../../File/homefaqs.md?raw';
 import { ContentSection } from '../shared';
 import { useContentSection } from '../../hooks/useContentSection';
-import usePageMeta, { PageType } from '../../hooks/usePageMeta';
 import { Suspense, lazy } from 'react';
 import heroDesktop from '../../assets/locationImage.webp';
 import heroMobile from '../../assets/mobileheroimg.jpg';
@@ -23,7 +22,9 @@ const AboutSession = lazy(() => import('./components/AboutSession'));
 const Amenities = lazy(() => import('./components/Amenities'));
 const Direction = lazy(() => import('./components/Direction'));
 const GallarySession = lazy(() => import('./components/GallarySession'));
-const IndividualRooms = lazy(() => import('./components/IndividualRooms').then(m => ({ default: m.IndividualRooms })));
+const IndividualRooms = lazy(() =>
+  import('./components/IndividualRooms').then(m => ({ default: m.IndividualRooms })),
+);
 const LocationImage = lazy(() => import('./components/LocationImage'));
 const OurGallery = lazy(() => import('./components/OurGallery'));
 const ReviewSession = lazy(() => import('./components/ReviewSession'));
@@ -39,49 +40,45 @@ const Home = () => {
     faqs: parsedFaq.attributes.faqs || [],
   };
   const contentSection = useContentSection('home');
-  const { meta: homeMeta, error } = usePageMeta('home' as PageType);
-  
-  const siteUrl = "https://www.kudajadridrizzle.com";
-  const canonicalUrl = siteUrl + "/";
-  const title = homeMeta?.title || '';
-  const description = homeMeta?.description || '';
+
+  const siteUrl = 'https://www.kudajadridrizzle.com';
+  const canonicalUrl = siteUrl + '/';
+
+  // Home page meta
+  const title = 'Wayanad homestays: Best homestay in Wayanad for family, group';
+  const description =
+    'Kudajadri Drizzle home stay in Wayanad: 100+ years old #1 heritage Wayanad Homestay: Book top rated nature friendly Homestays in Wayanad for Family & Group.';
   const image = `${siteUrl}/aboutHero.jpg`;
 
-  // Log any errors for debugging
-  if (error) {
-    console.error('Error loading home page meta:', error);
-  }
-
   const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "LodgingBusiness",
-    name: "Kudajadri Drizzle Homestay",
+    '@context': 'https://schema.org',
+    '@type': 'LodgingBusiness',
+    name: 'Kudajadri Drizzle Homestay',
     description,
     url: siteUrl,
     image,
     address: {
-      "@type": "PostalAddress",
-      streetAddress: "Kayakkandy House, MR School Road, Kaniyambetta",
-      addressLocality: "Kalpetta",
-      addressRegion: "Wayanad",
-      postalCode: "673122",
-      addressCountry: "India",
+      '@type': 'PostalAddress',
+      streetAddress: 'Kayakkandy House, MR School Road, Kaniyambetta',
+      addressLocality: 'Kalpetta',
+      addressRegion: 'Wayanad',
+      postalCode: '673122',
+      addressCountry: 'India',
     },
     geo: {
-      "@type": "GeoCoordinates",
+      '@type': 'GeoCoordinates',
       latitude: 11.6854,
-      longitude: 76.1320,
+      longitude: 76.132,
     },
-    priceRange: "₹₹",
-    telephone: "+91 9946 354 511", // ✅ use real number
+    priceRange: '₹₹',
+    telephone: '+91 9946 354 511',
     sameAs: [
-      "https://www.facebook.com/kudajadrihomestay",
-      "https://www.instagram.com/kudajadrihomestay/",
-      "https://twitter.com/kudajadrihomestay"
+      'https://www.facebook.com/kudajadrihomestay',
+      'https://www.instagram.com/kudajadrihomestay/',
+      // Remove this if you don’t actually have a Twitter/X profile:
+      'https://twitter.com/kudajadrihomestay',
     ],
   };
-
-  // Render the page even while meta is loading to avoid showing a loading text
 
   return (
     <div>
@@ -91,7 +88,7 @@ const Home = () => {
         <meta name="description" content={description} />
         <meta
           name="keywords"
-          content=""
+          content="Kudajadri Drizzle, Kudajadri Drizzle Homestay, Wayanad homestay, Kalpetta stay, homestay in Wayanad, budget homestay Wayanad, family homestay Wayanad"
         />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Kudajadri Drizzle Homestay" />
@@ -123,62 +120,58 @@ const Home = () => {
         <meta property="og:image" content={image} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:locale" content="en_US" />
-        <meta property="og:updated_time" content={new Date().toISOString()} />
+        <meta property="og:locale" content="en_IN" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
+        {/* Change/remove this if you don’t have this handle */}
         <meta name="twitter:site" content="@kudajadrihomestay" />
         <meta name="twitter:image" content={image} />
 
         {/* Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify(jsonLd)}
-        </script>
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
+
       <VideoBackground />
-      <Suspense fallback={<div />}> 
+      <Suspense fallback={<div />}>
         <AboutSession />
       </Suspense>
-      <Suspense fallback={<div />}> 
+      <Suspense fallback={<div />}>
         <GallarySession />
       </Suspense>
-      <Suspense fallback={<div />}> 
+      <Suspense fallback={<div />}>
         <RoomSession />
       </Suspense>
-      <Suspense fallback={<div />}> 
+      <Suspense fallback={<div />}>
         <IndividualRooms />
       </Suspense>
-      <Suspense fallback={<div />}> 
+      <Suspense fallback={<div />}>
         <Amenities />
       </Suspense>
-      <Suspense fallback={<div />}> 
+      <Suspense fallback={<div />}>
         <OurGallery />
       </Suspense>
-      <Suspense fallback={<div />}> 
+      <Suspense fallback={<div />}>
         <ReviewSession />
       </Suspense>
-      <Suspense fallback={<div />}> 
+      <Suspense fallback={<div />}>
         <GuestTestimonials />
       </Suspense>
-      <Suspense fallback={<div />}> 
+      <Suspense fallback={<div />}>
         <LocationImage />
       </Suspense>
-      <Suspense fallback={<div />}> 
+      <Suspense fallback={<div />}>
         <Direction />
       </Suspense>
       {contentSection && (
-        <ContentSection
-          title={contentSection.title}
-          items={contentSection.items}
-        />
+        <ContentSection title={contentSection.title} items={contentSection.items} />
       )}
-      <Suspense fallback={<div />}> 
+      <Suspense fallback={<div />}>
         <CardSection sectionKey="facilities" className="bg-gray-50" />
       </Suspense>
-      <Suspense fallback={<div />}> 
+      <Suspense fallback={<div />}>
         <FaqList {...content} />
       </Suspense>
       <Footer />
