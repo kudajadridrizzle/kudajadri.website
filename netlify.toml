@@ -3,105 +3,126 @@
   publish = "dist"
 
 [build.environment]
-  NPM_FLAGS = "--legacy-peer-deps"
+  NPM_FLAGS    = "--legacy-peer-deps"
   NODE_VERSION = "20"
 
-[[redirects]]
-from = "/contact.php"
-to = "/contact"
-status = 301
+# ----------------------------
+# Legacy PHP → New Routes
+# ----------------------------
 
 [[redirects]]
-from = "/credit-debit-cards.php"
-to = "/contact"
-status = 301
+  from   = "/index.php"
+  to     = "/"
+  status = 301
 
 [[redirects]]
-from = "/dream-wayanad.php"
-to = "/tour-packages"
-status = 301
+  from   = "/contact.php"
+  to     = "/contact"
+  status = 301
 
 [[redirects]]
-from = "/facilities"
-to = "/facilities-amenities"
-status = 301
+  from   = "/credit-debit-cards.php"
+  to     = "/contact"
+  status = 301
 
 [[redirects]]
-from = "/gallery"
-to = "/media-gallery"
-status = 301
-force = true
+  from   = "/dream-wayanad.php"
+  to     = "/tour-packages"
+  status = 301
 
 [[redirects]]
-from = "/about"
-to = "/about-us"
-status = 301
-force = true
+  from   = "/green-wayanad.php"
+  to     = "/tour-packages"
+  status = 301
 
 [[redirects]]
-from = "/getting-here.php"
-to = "/contact"
-status = 301
+  from   = "/homestay-awards.php"
+  to     = "/"
+  status = 301
 
 [[redirects]]
-from = "/green-wayanad.php"
-to = "/tour-packages"
-status = 301
+  from   = "/homestays-in-kalpetta.php"
+  to     = "/about"
+  status = 301
 
 [[redirects]]
-from = "/homestay-awards.php"
-to = "/"
-status = 301
+  from   = "/room-tariff.php"
+  to     = "/rooms"
+  status = 301
 
 [[redirects]]
-from = "/tour-packages/dream-wayanad-tour-package-standard"
-to = "/tour-packages/dream-wayanad-tour-package"
-status = 301
-force = true
+  from   = "/wayanad-attractions.php"
+  to     = "/wayanad"
+  status = 301
 
 [[redirects]]
-from = "/tour-packages/vibrant-wayanad-tour-package-short-trip"
-to = "/tour-packages/vibrant-wayanad-tour-package"
-status = 301
-force = true
+  from   = "/wayanad-tour-booking.php"
+  to     = "/contact"
+  status = 301
 
 [[redirects]]
-from = "/homestays-in-kalpetta.php"
-to = "/about"
-status = 301
+  from   = "/wayanad-tour-packages.php"
+  to     = "/tour-packages"
+  status = 301
 
 [[redirects]]
-from = "/room-tariff.php"
-to = "/rooms"
-status = 301
+  from   = "/gallery.php"
+  to     = "/media-gallery"
+  status = 301
+  force  = true
 
 [[redirects]]
-from = "/vibrant-wayanad.php"
-to = "/tour-packages"
-status = 301
+  from   = "/getting-here.php"
+  to     = "/contact"
+  status = 301
+
+# ----------------------------
+# Clean URL Remaps
+# ----------------------------
 
 [[redirects]]
-from = "/wayanad-attractions.php"
-to = "/wayanad"
-status = 301
+  from   = "/facilities"
+  to     = "/facilities-amenities"
+  status = 301
 
 [[redirects]]
-from = "/wayanad-tour-booking.php"
-to = "/contact"
-status = 301
+  from   = "/gallery"
+  to     = "/media-gallery"
+  status = 301
+  force  = true
 
 [[redirects]]
-from = "/wayanad-tour-packages.php"
-to = "/tour-packages"
-status = 301
+  from   = "/about"
+  to     = "/about-us"
+  status = 301
+  force  = true
 
 [[redirects]]
-from = "/index.php"
-to = "/"
-status = 301
+  from   = "/vibrant-wayanad.php"
+  to     = "/tour-packages"
+  status = 301
 
-# React SPA fallback (must be last)
+# ----------------------------
+# Tour Package Slug Changes
+# ----------------------------
+
 [[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
+  from   = "/tour-packages/dream-wayanad-tour-package-standard"
+  to     = "/tour-packages/dream-wayanad-tour-package"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/tour-packages/vibrant-wayanad-tour-package-short-trip"
+  to     = "/tour-packages/vibrant-wayanad-tour-package"
+  status = 301
+  force  = true
+
+# ----------------------------
+# React SPA Fallback (must be last)
+# ----------------------------
+
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
