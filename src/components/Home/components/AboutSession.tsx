@@ -1,3 +1,4 @@
+// src/components/Home/components/AboutSession.tsx
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { contentfulClient } from "../../../lib/contentfulClient";
@@ -5,9 +6,9 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import type { Document } from "@contentful/rich-text-types";
 
 interface AboutSectionFields {
-  preTitle?: string;   // Short text
-  title?: Document;    // Rich text
-  content?: Document;  // Rich text
+  preTitle?: string; // Short text
+  title?: Document; // Rich text
+  content?: Document; // Rich text
 }
 
 const AboutSession: React.FC = () => {
@@ -17,8 +18,6 @@ const AboutSession: React.FC = () => {
   const [title, setTitle] = useState<Document | null>(null);
   const [content, setContent] = useState<Document | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-
-  // simple read-more state
   const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
@@ -29,23 +28,27 @@ const AboutSession: React.FC = () => {
           return;
         }
 
-        const entries = await contentfulClient.getEntries<AboutSectionFields>({
+        // Treat the response as unknown/any to avoid the EntrySkeletonType generic constraint.
+        const response: unknown = await contentfulClient.getEntries({
           content_type: "aboutSection",
           limit: 1,
         });
 
-        if (!entries.items.length) {
+        // Narrow safely:
+        const items = (response as any)?.items;
+        if (!Array.isArray(items) || items.length === 0) {
           setIsLoading(false);
           return;
         }
 
-        const fields = entries.items[0].fields;
+        // Grab fields with a local cast — only this small piece is typed as AboutSectionFields.
+        const fields = (items[0]?.fields ?? {}) as AboutSectionFields;
 
         setPreTitle(fields.preTitle ?? null);
         setTitle(fields.title ?? null);
         setContent(fields.content ?? null);
-      } catch (e) {
-        console.error("[AboutSession] Contentful error:", e);
+      } catch (err) {
+        console.error("[AboutSession] Contentful error:", err);
       } finally {
         setIsLoading(false);
       }
@@ -75,7 +78,6 @@ const AboutSession: React.FC = () => {
   return (
     <section className="sm:py-32 sm:px-[12%] px-4 py-14 large:px-[18%]">
       <div className="flex flex-col sm:flex-row gap-10">
-        {/* LEFT – sticky pre-title & title */}
         <div className="flex-1 sm:sticky sm:top-24 h-fit">
           {preTitle && (
             <p className="text-primary font-albertSans sm:text-base tracking-[1.6px] uppercase mobile:text-sm">
@@ -90,11 +92,9 @@ const AboutSession: React.FC = () => {
           )}
         </div>
 
-        {/* RIGHT – main content */}
         <div className="flex flex-col gap-6 flex-1 text-secondary font-albertSans sm:text-xl space-y-4 relative">
           {content && (
             <div className="leading-relaxed px-2 sm:px-0 py-2">
-              {/* Collapsible area */}
               <div
                 className={`overflow-hidden transition-all duration-300 ${
                   showMore ? "max-h-[9999px]" : "max-h-[360px]"
@@ -103,11 +103,10 @@ const AboutSession: React.FC = () => {
                 {documentToReactComponents(content)}
               </div>
 
-              {/* Always show Read More / Read Less when content exists */}
               <button
                 type="button"
                 className="mt-4 underline text-primary font-albertSans"
-                onClick={() => setShowMore((prev) => !prev)}
+                onClick={() => setShowMore((p) => !p)}
               >
                 {showMore ? "Read Less" : "Read More"}
               </button>
