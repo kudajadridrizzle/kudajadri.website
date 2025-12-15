@@ -6,7 +6,7 @@ import Footer from '../Home/components/Footer';
 import { Header } from '../Home/components/Header';
 import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import usePageMeta, { PageType } from '../../hooks/usePageMeta';
+ 
 
 export const ContactPage = () => {
   const [form, setForm] = useState({
@@ -14,7 +14,6 @@ export const ContactPage = () => {
     email: '',
     message: '',
   });
-  const { meta, loading, error } = usePageMeta('contact' as PageType);
   const email = 'kudajadri@ymail.com';
   const whatsappNumber = '+91 9946 354 511';
   const [currentUrl, setCurrentUrl] = useState('https://www.kudajadridrizzle.com/contact');
@@ -48,19 +47,9 @@ export const ContactPage = () => {
     }
   };
 
-  // Show loading state only if we don't have any meta data yet
-  if (loading && !meta?.title) {
-    return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
-  }
-  
-  // Log errors but don't block rendering
-  if (error) {
-    console.error('Error loading page metadata:', error);
-  }
-  
-  // Set default values if meta is not available
-  const pageTitle = meta?.title || 'Contact Kudajadri Drizzle - Get in Touch for Your Stay in Wayanad';
-  const pageDescription = meta?.description || 'Reach out to Kudajadri Drizzle for bookings and inquiries. Experience the best homestay in Wayanad with top-notch amenities and warm hospitality.';
+  // Hardcoded metadata (from public/pagemeta.md)
+  const pageTitle = 'Online booking of homestay, cottages, rooms in Wayanad for group';
+  const pageDescription = 'Book homestays, cottages, and rooms in Wayanad online for families and groups. Enjoy comfortable stays, scenic views, and easy booking with great deals.';
 
   return (
     <div className="sm:mt-[90px] mobile:mt-[52px]">

@@ -5,7 +5,6 @@ import fm from 'front-matter';
 import homeFaqRaw from '../../File/homefaqs.md?raw';
 import { ContentSection } from '../shared';
 import { useContentSection } from '../../hooks/useContentSection';
-import usePageMeta, { PageType } from '../../hooks/usePageMeta';
 import { Suspense, lazy } from 'react';
 import heroDesktop from '../../assets/locationImage.webp';
 import heroMobile from '../../assets/mobileheroimg.jpg';
@@ -39,18 +38,12 @@ const Home = () => {
     faqs: parsedFaq.attributes.faqs || [],
   };
   const contentSection = useContentSection('home');
-  const { meta: homeMeta, error } = usePageMeta('home' as PageType);
-  
+  // Hardcoded SEO metadata (migrated from src/File/homemeta.md)
   const siteUrl = "https://www.kudajadridrizzle.com";
   const canonicalUrl = siteUrl + "/";
-  const title = homeMeta?.title || '';
-  const description = homeMeta?.description || '';
+  const title = "Wayanad homestays: Best homestay in Wayanad for family, groups";
+  const description = "Kudajadri Drizzle home stay in Wayanad: 100+ years old #1 heritage Wayanad Homestay: Book top rated nature friendly Homestays in Wayanad for Family & Group.";
   const image = `${siteUrl}/aboutHero.jpg`;
-
-  // Log any errors for debugging
-  if (error) {
-    console.error('Error loading home page meta:', error);
-  }
 
   const jsonLd = {
     "@context": "https://schema.org",
