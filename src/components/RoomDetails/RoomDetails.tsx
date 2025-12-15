@@ -26,7 +26,6 @@ import deluxeRoomFaqRaw from '../../File/deluxeroomfaqs.md?raw';
 import premiumRoomFaqRaw from '../../File/premiumroomfaqs.md?raw';
 
 import { useState, useEffect, useMemo } from 'react';
-import usePageMeta, { PageType } from '../../hooks/usePageMeta';
 import { useRoomsCMS } from '../../hooks/useRoomsCMS';
 
 // Define the shape of FAQ frontmatter
@@ -56,7 +55,6 @@ const getRoomFaqMarkdown = (roomId: string | undefined): string => {
 
 const RoomDetails = () => {
   const { id } = useParams<{ id: string }>();
-  const { meta: pageMeta } = usePageMeta('rooms' as PageType);
   const [currentUrl, setCurrentUrl] = useState('https://www.kudajadridrizzle.com');
   
   // Get room data with proper type safety
@@ -65,14 +63,26 @@ const RoomDetails = () => {
   
   // Get room data from CMS and page meta
   const { individualRooms } = useRoomsCMS();
-  const { allMeta } = usePageMeta('rooms' as PageType);
   
-  // Get room meta from pagemeta.md
-  const roomMeta = useMemo(() => {
-    if (!allMeta?.rooms) return null;
-    // Try both kebab-case and snake_case room IDs for backward compatibility
-    return allMeta.rooms[roomId] || allMeta.rooms[roomId.replace(/-/g, '_')] || null;
-  }, [allMeta, roomId]);
+  // Hardcoded per-room meta mapping (from public/pagemeta.md)
+  const roomMetaMap: Record<string, { title: string; description: string }> = {
+    'classic-rooms': {
+      title: 'Affordable homestay in Wayanad: Best budget Wayanad homestay',
+      description: 'Best Budget homestay in Wayanad with affordable rooms for families and travelers. Discover the best low-cost Wayanad homestays with comfort and convenience.'
+    },
+    'deluxe-heritage-rooms': {
+      title: 'Heritage homestays in Wayanad: Traditional Wayanad homestays',
+      description: 'Experience a heritage homestay in Wayanad with traditional charm and modern amenities. Enjoy a peaceful stay surrounded by nature and rich culture.'
+    },
+    'deluxe-rooms': {
+      title: 'Wayanad Cottages: Private Cottages in Wayanad for Family, Group',
+      description: 'Stay at our Wayanad cottages designed for families. Our private cottages in Wayanad offer comfort, scenic views, and a peaceful holiday experience.'
+    },
+    'premium-rooms': {
+      title: 'Premium homestay in Wayanad: Best luxury Wayanad homestays',
+      description: 'Best Premium homestay in Wayanad offering deluxe and luxury stays with top-tier amenities. Enjoy elegant rooms, scenic views, and a peaceful retreat in Wayanad'
+    }
+  };
   
   // Find the current room in CMS data
   const cmsRoomData = useMemo(() => {
@@ -81,8 +91,9 @@ const RoomDetails = () => {
   }, [individualRooms, roomId]);
   
   // Determine title and description with fallbacks
-  const roomTitle = roomMeta?.title || cmsRoomData?.title || roomDataItem.roomType;
-  const roomDescription = roomMeta?.description || cmsRoomData?.description || '';
+  const mappedMeta = roomMetaMap[roomId] || roomMetaMap[roomId.replace(/_/g, '-')];
+  const roomTitle = mappedMeta?.title || cmsRoomData?.title || roomDataItem.roomType;
+  const roomDescription = mappedMeta?.description || cmsRoomData?.description || '';
 
   // Update current URL on client-side
   useEffect(() => {
@@ -98,8 +109,8 @@ const RoomDetails = () => {
   // - premiumRooms
 
   const getSeoData = (id: string) => {
-    // Get room-specific meta data from pagemeta.md
-    const roomMeta = allMeta?.rooms?.[id] || allMeta?.rooms?.[id.replace(/-/g, '_')] || {};
+    // Get room-specific meta data from hardcoded map
+    const roomMeta = roomMetaMap[id] || roomMetaMap[id.replace(/-/g, '_')] || {};
     
     // Fallback values
     const defaultTitle = roomTitle;
@@ -109,11 +120,11 @@ const RoomDetails = () => {
     const roomImage = roomData[id || 'classic-rooms']?.imageOne || defaultImage;
 
     return {
-      title: roomMeta?.title || defaultTitle,
-      description: roomMeta?.description || defaultDescription,
-      keywords: roomMeta?.keywords || '',
-      ogTitle: roomMeta?.ogTitle || roomMeta?.title || defaultTitle,
-      ogDescription: roomMeta?.ogDescription || roomMeta?.description || defaultDescription,
+      title: (roomMeta as any)?.title || defaultTitle,
+      description: (roomMeta as any)?.description || defaultDescription,
+      keywords: '',
+      ogTitle: (roomMeta as any)?.title || defaultTitle,
+      ogDescription: (roomMeta as any)?.description || defaultDescription,
       ogImage: roomImage,
     };
   };
@@ -123,9 +134,8 @@ const RoomDetails = () => {
 
   // Debug logging
   useEffect(() => {
-    console.log('Room Meta for', roomId, ':', pageMeta?.rooms?.[roomId]);
     console.log('Current meta content:', metaContent);
-  }, [roomId, pageMeta, metaContent]);
+  }, [roomId, metaContent]);
 
   // Get the appropriate FAQ markdown and parse it
   const roomFaqMarkdown = getRoomFaqMarkdown(roomId);

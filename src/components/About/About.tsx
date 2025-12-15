@@ -10,7 +10,7 @@ import aboutFaqRaw from '../../File/aboutfaqs.md?raw';
 import FaqList from '../FaqComponent/FaqList';
 import { Header } from '../Home/components/Header';
 import Direction from '../Home/components/Direction';
-import usePageMeta, { PageType } from '../../hooks/usePageMeta';
+ 
 
 // Define the shape of FAQ frontmatter
 interface FaqFrontMatterAttributes {
@@ -23,7 +23,8 @@ interface FaqFrontMatterAttributes {
 
 const About = () => {
   const parsedFaq = fm<FaqFrontMatterAttributes>(aboutFaqRaw);
-  const { meta } = usePageMeta('about' as PageType);
+  const title = 'Kalpetta homestays for families: Best rated homestays in Kalpetta';
+  const description = "Top rated Kalpetta homestays for families with comfortable rooms, swimming pools & food. Find the best homestays in Kalpetta for a peaceful, relaxing stay.";
 
   const contentItems = [
     {
@@ -91,17 +92,14 @@ const About = () => {
     <div className="bg-white">
       <Header type="white" />
       <Helmet>
-        <title>{meta?.title || 'About Kudajadri'}</title>
-        <meta
-          name="description"
-          content={meta?.description || 'Discover the beauty of Wayanad with Kudajadri'}
-        />
+        <title>{title}</title>
+        <meta name="description" content={description} />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Kudajadri Homestay" />
 
         {/* Open Graph */}
-        <meta property="og:title" content="Kalpetta Homestays: #1 Homestays in Kalpetta with Airbnb Reviews" />
-        <meta property="og:description" content="Kudajadri Drizzle Homestay in Kalpetta, Wayanad: Heritage 100-year-old home stay with 5-star reviews on Airbnb & TripAdvisor. Perfect for families, couples, and groups." />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={currentUrl} />
         <meta property="og:site_name" content="Kudajadri Drizzle Homestay" />
@@ -112,8 +110,8 @@ const About = () => {
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Kalpetta Homestays: #1 Homestays in Kalpetta with Airbnb Reviews" />
-        <meta name="twitter:description" content="Kudajadri Drizzle Homestay in Kalpetta, Wayanad: Heritage 100-year-old home stay with 5-star reviews on Airbnb & TripAdvisor. Perfect for families, couples, and groups." />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
         <meta name="twitter:site" content="@kudajadrihomestay" />
         <meta name="twitter:image" content={heroImage} />
 

@@ -4,7 +4,7 @@ import { Header } from '../Home/components/Header';
 import cloud from '/cloud.jpg';
 import Footer from '../Home/components/Footer';
 import { Helmet } from 'react-helmet-async';
-import usePageMeta from '../../hooks/usePageMeta';
+ 
 
 // TypeScript interfaces for tour package structure
 interface PackageMeta {
@@ -42,8 +42,21 @@ const TourPackagesDetails = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   
-  // Get all metadata from pagemeta.md
-  const { meta: pageMeta, loading, error } = usePageMeta('tourpackages');
+  // Hardcoded per-package metadata (from public/pagemeta.md)
+  const packageMetaMap: Record<string, { title: string; description: string }> = {
+    'green-wayanad-tour-package': {
+      title: 'Green Wayanad tour package: Wild Life Sanctuaries, Edakkal Cave, Kuruva Island, Pookkode Lake',
+      description: 'Green Wayanad Tour Package: Explore lush wildlife sanctuaries, ancient Edakkal Cave, serene Kuruva Island, and scenic Pookkode Lake for a perfect nature getaway.'
+    },
+    'vibrant-wayanad-tour-package': {
+      title: 'Vibrant Wayanad Tour Package: Soochippara Water falls, Lakkidi View Point, Karapauzha Dam',
+      description: 'Vibrant Wayanad Tour Package: Explore thrilling Soochippara Waterfalls, panoramic views from Lakkidi View Point, and the tranquil charm of Karapuzha Dam.'
+    },
+    'dream-wayanad-tour-packages': {
+      title: 'Dream Wayanad Tour Packages: Edakkal Caves, Kuruva Island, Chembra Peak, Thirunelli Temple',
+      description: 'Dream Wayanad Tour Package: Explore mystical Edakkal Caves, lush Kuruva Island, breathtaking Chembra Peak, and the spiritual vibes of Thirunelli Temple.'
+    }
+  };
   
   // Convert URL parameter back to original title format, handling special characters and capitalization
   const getOriginalTitle = (urlTitle: string) => {
@@ -66,9 +79,9 @@ const TourPackagesDetails = () => {
   };
 
   const packageSlug = selectedPackage ? getPackageSlug(selectedPackage.title) : '';
-  
-  // Get package-specific metadata from pageMeta
-  const packageMeta = packageSlug && pageMeta ? (pageMeta as any)[packageSlug] : null;
+  // Map to our hardcoded keys (convert underscores to dashes)
+  const normalizedSlug = packageSlug.replace(/_/g, '-');
+  const packageMeta = normalizedSlug ? packageMetaMap[normalizedSlug] : null;
   
   // Set metadata with fallbacks
   const meta = {
@@ -77,9 +90,6 @@ const TourPackagesDetails = () => {
     keywords: selectedPackage?.meta?.keywords || 'wayanad tour, kudajadri drizzle, wayanad travel, kerala tourism'
   };
 
-  if (loading) return <div>Loading...</div>;
-  if (error) console.error('Error loading page metadata:', error);
-  
   if (!selectedPackage) {
     return (
       <div className="min-h-screen flex items-center justify-center">

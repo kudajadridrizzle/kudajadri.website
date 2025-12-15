@@ -4,7 +4,7 @@ import { BlogPost, parseBlogMarkdown } from '../../helper/blogParser';
 import { Header } from '../Home/components/Header';
 import Footer from '../Home/components/Footer';
 import { Helmet } from 'react-helmet-async';
-import usePageMeta, { PageType } from '../../hooks/usePageMeta';
+ 
 
 const SITE_URL = import.meta.env.VITE_SITE_URL || "https://www.kudajadridrizzle.com";
 
@@ -20,7 +20,8 @@ const BLOG_HERO_IMAGE = `${SITE_URL}/blogHero.jpg`;
 const BlogList: React.FC = () => {
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
-  const { meta, loading: metaLoading } = usePageMeta('blog' as PageType);
+  // Hardcoded metadata (from public/pagemeta.md)
+  const metaLoading = false;
 
   useEffect(() => {
     const loadBlogPosts = async () => {
@@ -65,8 +66,8 @@ const BlogList: React.FC = () => {
   }, []);
 
   // Fallback metadata
-  const pageTitle = meta?.title || 'Kudajadri Drizzle Blog - Latest Travel Tips & Stories from Wayanad';
-  const pageDescription = meta?.description || 'Explore our blog for the latest travel guides, local insights, and stories from Wayanad. Discover hidden gems, travel tips, and experiences from Kudajadri Drizzle.';
+  const pageTitle = 'Wayanad travel blog: Latest news, tourism updates, & insights';
+  const pageDescription = 'Stay updated with the Wayanad Travel Blog. Get the latest news, tourism updates, local insights, travel tips, and experiences to help you plan your perfect trip.';
 
   if (loading || metaLoading) {
     return <div className="min-h-screen flex items-center justify-center">Loading...</div>;

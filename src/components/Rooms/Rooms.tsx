@@ -7,37 +7,50 @@ import CMSRoomSession from './Components/CMSRoomSession';
 import CMSIndividualRooms from './Components/CMSIndividualRooms';
 import { Header } from '../Home/components/Header';
 import { useState, useEffect } from 'react';
-import usePageMeta, { PageType } from '../../hooks/usePageMeta';
+ 
 
 const Rooms = () => {
   const { seo: defaultSeo, hero, roomsIntro, individualRooms, faq } = useRoomsCMS();
-  const { meta: pageMeta, allMeta } = usePageMeta('rooms' as PageType);
   const [currentUrl, setCurrentUrl] = useState('https://www.kudajadridrizzle.com');
   
-  // Use meta from pagemeta.md or fallback to CMS data
+  // Hardcoded Rooms listing metadata (from public/pagemeta.md)
   const seo = {
     ...defaultSeo,
-    title: pageMeta?.title || defaultSeo.title,
-    description: pageMeta?.description || defaultSeo.description,
-    // Add Open Graph and Twitter meta
-    ogTitle: pageMeta?.ogTitle || pageMeta?.title || defaultSeo.title,
-    ogDescription: pageMeta?.ogDescription || pageMeta?.description || defaultSeo.description,
-    twitterTitle: pageMeta?.twitterTitle || pageMeta?.title || defaultSeo.title,
-    twitterDescription: pageMeta?.twitterDescription || pageMeta?.description || defaultSeo.description
+    title: 'Wayanad accommodations: homestays, cottages, family rooms',
+    description: 'Discover peaceful accommodations in Wayanad with cozy homestays, spacious cottages with swimming pool, and family rooms designed for comfort and relaxation',
+    ogTitle: 'Wayanad accommodations: homestays, cottages, family rooms',
+    ogDescription: 'Discover peaceful accommodations in Wayanad with cozy homestays, spacious cottages with swimming pool, and family rooms designed for comfort and relaxation',
+    twitterTitle: 'Wayanad accommodations: homestays, cottages, family rooms',
+    twitterDescription: 'Discover peaceful accommodations in Wayanad with cozy homestays, spacious cottages with swimming pool, and family rooms designed for comfort and relaxation'
   };
 
-  // Get room-specific meta data from pagemeta.md
-  const getRoomMeta = (roomId: string) => {
-    if (!allMeta?.rooms) return { title: '', description: '' };
-    // Handle both snake_case and kebab-case room IDs
-    const roomMeta = allMeta.rooms[roomId] || allMeta.rooms[roomId.replace(/-/g, '_')];
-    return roomMeta || { title: '', description: '' };
+  // Hardcoded room-specific meta mapping (from public/pagemeta.md)
+  const roomMetaMap: Record<string, { title: string; description: string }> = {
+    'classic-rooms': {
+      title: 'Affordable homestay in Wayanad: Best budget Wayanad homestay',
+      description: 'Best Budget homestay in Wayanad with affordable rooms for families and travelers. Discover the best low-cost Wayanad homestays with comfort and convenience.'
+    },
+    'deluxe-rooms': {
+      title: 'Wayanad Cottages: Private Cottages in Wayanad for Family, Group',
+      description: 'Stay at our Wayanad cottages designed for families. Our private cottages in Wayanad offer comfort, scenic views, and a peaceful holiday experience.'
+    },
+    'family-rooms': {
+      title: 'Family Rooms - Spacious Accommodation in Wayanad',
+      description: 'Perfect for families, our spacious rooms provide comfort and convenience for everyone.'
+    },
+    'premium-rooms': {
+      title: 'Premium homestay in Wayanad: Best luxury Wayanad homestays',
+      description: 'Best Premium homestay in Wayanad offering deluxe and luxury stays with top-tier amenities. Enjoy elegant rooms, scenic views, and a peaceful retreat in Wayanad'
+    },
+    'deluxe-heritage-rooms': {
+      title: 'Heritage homestays in Wayanad: Traditional Wayanad homestays',
+      description: 'Experience a heritage homestay in Wayanad with traditional charm and modern amenities. Enjoy a peaceful stay surrounded by nature and rich culture.'
+    }
   };
 
   // Enhance individual rooms with their specific meta data from pagemeta.md
   const enhancedRooms = individualRooms.map(room => {
-    // Get room meta from pagemeta.md
-    const roomMeta = getRoomMeta(room.id);
+    const roomMeta = roomMetaMap[room.id] || roomMetaMap[room.id.replace(/_/g, '-')];
     
     // Fallback to CMS data if no meta found in pagemeta.md
     return {

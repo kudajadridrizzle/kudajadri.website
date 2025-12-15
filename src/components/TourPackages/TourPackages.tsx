@@ -9,7 +9,7 @@ import tourPackagesFaqRaw from '../../File/tourpackagesfaqs.md?raw';
 import FaqList from '../FaqComponent/FaqList';
 import HeroContent from './components/HeroContent';
 import TourCategories from './components/TourCategories';
-import usePageMeta, { PageType } from '../../hooks/usePageMeta';
+ 
 
 // Define FAQ frontmatter type
 interface FaqFrontMatterAttributes {
@@ -22,7 +22,6 @@ interface FaqFrontMatterAttributes {
 
 export const TourPackages = () => {
   const parsedFaq = fm<FaqFrontMatterAttributes>(tourPackagesFaqRaw);
-  const { meta, loading, error } = usePageMeta('tourpackages' as PageType);
   const [currentUrl, setCurrentUrl] = useState(
     'https://www.kudajadridrizzle.com/tour-packages'
   );
@@ -33,27 +32,24 @@ export const TourPackages = () => {
     }
   }, []);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) console.error('Error loading page metadata:', error);
-
-  const defaultTitle = 'Wayanad Holiday Tour Packages: Best Trip Deals for Families & Couples';
+  const defaultTitle = 'Wayanad holiday tour packages: Best trip deals for families & couples';
   const defaultDescription = 'Discover the best Wayanad holiday tour packages with top deals for families, groups, and couples. Enjoy a perfect getaway with nature, adventure, and comfort.';
 
   return (
     <div>
       <Helmet>
-        <title>{meta?.title || defaultTitle}</title>
+        <title>{defaultTitle}</title>
         <meta
           name="description"
-          content={meta?.description || defaultDescription}
+          content={defaultDescription}
         />
         <meta name="keywords" content="Wayanad tour packages, holiday packages Wayanad, family tour packages, couple packages Wayanad, weekend getaways Wayanad" />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Kudajadri Homestay" />
 
         {/* Open Graph */}
-        <meta property="og:title" content={meta?.title || defaultTitle} />
-        <meta property="og:description" content={meta?.description || defaultDescription} />
+        <meta property="og:title" content={defaultTitle} />
+        <meta property="og:description" content={defaultDescription} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={currentUrl} />
         <meta property="og:site_name" content="Kudajadri Homestay" />
@@ -64,8 +60,8 @@ export const TourPackages = () => {
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={meta?.title || defaultTitle} />
-        <meta name="twitter:description" content={meta?.description || defaultDescription} />
+        <meta name="twitter:title" content={defaultTitle} />
+        <meta name="twitter:description" content={defaultDescription} />
         <meta name="twitter:site" content="@kudajadrihomestay" />
         <meta name="twitter:image" content="https://kudajadridrizzle.com/tour-packages-preview.jpg" />
 
@@ -76,8 +72,8 @@ export const TourPackages = () => {
           {JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'TouristAttraction',
-            'name': meta?.title || defaultTitle,
-            'description': meta?.description || defaultDescription,
+            'name': defaultTitle,
+            'description': defaultDescription,
             'url': currentUrl,
             'image': 'https://kudajadridrizzle.com/tour-packages-preview.jpg',
             'address': {

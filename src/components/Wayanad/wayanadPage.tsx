@@ -3,11 +3,13 @@ import { useState, useEffect } from "react";
 import Footer from "../Home/components/Footer";
 import { EnhancedHero } from "./components/EnhancedHero";
 import { WayanadFaqs } from "./components/WayanadFaqs";
-import { usePageMeta, PageType } from "../../hooks/usePageMeta";
+ 
 import { ImageContentSectionGrid } from "./components/ImageContentSectionGrid";
 
 export const WayanadPage = () => {
-  const { meta } = usePageMeta("wayanad" as PageType);
+  // Hardcoded metadata (from public/pagemeta.md)
+  const title = 'Wayanad: Explore tourist attractions & destinations in Wayanad';
+  const description = 'Discover top tourist attractions and must-visit destinations in Wayanad. Plan your perfect trip to explore nature, wildlife, and cultural sites.';
 
   const [currentUrl, setCurrentUrl] = useState(
     "https://www.kudajadridrizzle.com/wayanad"
@@ -21,9 +23,8 @@ export const WayanadPage = () => {
 
   // Default SEO metadata
   const defaultMeta = {
-    title: "Wayanad: Explore Tourist Attractions and Destinations",
-    description:
-      "Discover top tourist attractions and must-visit destinations in Wayanad, from misty peaks to wildlife sanctuaries.",
+    title,
+    description,
     robots: "index, follow",
     author: "Kudajadri Drizzle Homestay",
   };
@@ -90,20 +91,14 @@ export const WayanadPage = () => {
   return (
     <div>
       <Helmet>
-        <title>{meta?.title || defaultMeta.title}</title>
-        <meta
-          name="description"
-          content={meta?.description || defaultMeta.description}
-        />
-        <meta name="robots" content={meta?.robots || defaultMeta.robots} />
-        <meta name="author" content={meta?.author || defaultMeta.author} />
+        <title>{defaultMeta.title}</title>
+        <meta name="description" content={defaultMeta.description} />
+        <meta name="robots" content={defaultMeta.robots} />
+        <meta name="author" content={defaultMeta.author} />
 
         {/* Open Graph */}
-        <meta property="og:title" content={meta?.title || defaultMeta.title} />
-        <meta
-          property="og:description"
-          content={meta?.description || defaultMeta.description}
-        />
+        <meta property="og:title" content={defaultMeta.title} />
+        <meta property="og:description" content={defaultMeta.description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={currentUrl} />
         <meta property="og:site_name" content="Kudajadri Homestay" />
@@ -111,14 +106,8 @@ export const WayanadPage = () => {
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content={meta?.title || defaultMeta.title}
-        />
-        <meta
-          name="twitter:description"
-          content={meta?.description || defaultMeta.description}
-        />
+        <meta name="twitter:title" content={defaultMeta.title} />
+        <meta name="twitter:description" content={defaultMeta.description} />
         <meta name="twitter:site" content="@kudajadrihomestay" />
 
         {/* Misc */}
