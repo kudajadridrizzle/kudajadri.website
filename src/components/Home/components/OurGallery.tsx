@@ -14,10 +14,7 @@ import nature3 from '../../../assets/nature3.jpg';
 import room1 from '../../../assets/room1.jpeg';
 import room2 from '../../../assets/room2.jpeg';
 import room3 from '../../../assets/room3.jpeg';
-import { parseMarkdown } from '../../../helper/mdPareser';
-import Gallery from '../../../File/Gallery.md?raw';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+ 
 
 const navItems = [
   { id: 1, label: 'All' },
@@ -36,7 +33,8 @@ const galleryImages: Record<number, string[]> = {
 const OurGallery = () => {
   const [navItem, setNavItem] = useState<number>(1);
   const [currentImages, setCurrentImages] = useState(galleryImages[1]);
-  const { heading, content } = parseMarkdown(Gallery);
+  const heading = 'Our Gallery - Wayanad Homestays Visual Tour';
+  const content = "Take a visual tour of our beautiful property through our gallery and video tour. Explore images of our well-appointed rooms, traditional architecture, and serene outdoor spaces surrounded by lush greenery. See the inviting dining area where guests enjoy authentic home-cooked meals and the cozy corners perfect for relaxation. Our video tour offers a complete walkthrough, showcasing every detail that makes our **homestay in Wayanad** truly unique. From landscaped gardens to charming interiors, each photo captures the comfort, warmth, and natural beauty you’ll find here. Let our property gallery inspire your next stay at one of the finest homestays in Wayanad.";
 
   const [expanded, setExpanded] = useState(false);
   const maxChars = 400;
@@ -55,9 +53,15 @@ const OurGallery = () => {
           {heading}
         </h2>
         <div className="flex-1 text-secondary sm:text-xl font-albertSans">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
-            {expanded || !isLong ? content : preview}
-          </ReactMarkdown>
+          <p>
+            {expanded || !isLong ? (
+              <>
+                Take a visual tour of our beautiful property through our gallery and video tour. Explore images of our well-appointed rooms, traditional architecture, and serene outdoor spaces surrounded by lush greenery. See the inviting dining area where guests enjoy authentic home-cooked meals and the cozy corners perfect for relaxation. Our video tour offers a complete walkthrough, showcasing every detail that makes our <strong>homestay in Wayanad</strong> truly unique. From landscaped gardens to charming interiors, each photo captures the comfort, warmth, and natural beauty you’ll find here. Let our property gallery inspire your next stay at one of the finest homestays in Wayanad.
+              </>
+            ) : (
+              preview
+            )}
+          </p>
           {isLong && (
             <button
               onClick={() => setExpanded(!expanded)}
