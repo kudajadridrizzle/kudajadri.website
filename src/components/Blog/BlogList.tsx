@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { BlogPost, parseBlogMarkdown } from '../../helper/blogParser';
+import { BlogPost, posts } from './postsData.tsx';
 import { Header } from '../Home/components/Header';
 import Footer from '../Home/components/Footer';
 import { Helmet } from 'react-helmet-async';
@@ -24,45 +24,11 @@ const BlogList: React.FC = () => {
   const metaLoading = false;
 
   useEffect(() => {
-    const loadBlogPosts = async () => {
-      try {
-        const blogModules = import.meta.glob('/src/blog/*.md', {
-          query: '?raw',
-          import: 'default',
-        });
-
-        const posts: BlogPost[] = [];
-
-        for (const path in blogModules) {
-          try {
-            const content = await blogModules[path]();
-            const fullSlug = path.split('/').pop()?.replace('.md', '') || '';
-            const slug = fullSlug.replace(/^\d{4}-\d{2}-\d{2}-/, '');
-            const post = parseBlogMarkdown(content as string, slug);
-
-            if (post.published && post.metaTitle && post.metaDescription) {
-              posts.push(post);
-            } else {
-              console.warn(
-                `Blog post ${slug} skipped: missing required fields or not published`
-              );
-            }
-          } catch (error) {
-            console.error(`Error parsing blog post ${path}:`, error);
-          }
-        }
-
-        // Sort posts by date (newest first)
-        posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-        setBlogPosts(posts);
-      } catch (error) {
-        console.error('Error loading blog posts:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadBlogPosts();
+    const sorted = posts
+      .filter((p: BlogPost) => p.published && p.metaTitle && p.metaDescription)
+      .sort((a: BlogPost, b: BlogPost) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    setBlogPosts(sorted);
+    setLoading(false);
   }, []);
 
   // Fallback metadata

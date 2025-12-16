@@ -1,13 +1,12 @@
 import * as Accordion from '@radix-ui/react-accordion';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
-import ReactMarkdown from 'react-markdown';
 
 // Define the shape of FAQ frontmatter
 interface FaqFrontMatterAttributes {
   title: string;
   faqs: Array<{
-    question: string;
-    answer: string;
+    question: React.ReactNode;
+    answer: React.ReactNode;
   }>;
 }
 
@@ -39,14 +38,14 @@ export default function Faq(content: FaqFrontMatterAttributes) {
               <Accordion.Header>
                 <Accordion.Trigger className="group flex w-full items-center font-albertSans justify-between px-6 py-4 text-left text-lg font-medium hover:bg-gray-50 transition-all duration-300 ease-in-out">
                   <div className="flex-1 pr-4">
-                    <ReactMarkdown>{faq.question}</ReactMarkdown>
+                    {faq.question}
                   </div>
                   <ChevronDownIcon className="h-5 w-5 transition-transform duration-300 ease-in-out text-primary group-data-[state=open]:rotate-180 flex-shrink-0" />
                 </Accordion.Trigger>
               </Accordion.Header>
               <Accordion.Content className="overflow-hidden">
                 <div className="px-6 pb-4 pt-2 text-gray-600 font-albertSans text-base leading-relaxed">
-                  <ReactMarkdown>{faq.answer}</ReactMarkdown>
+                  {faq.answer}
                 </div>
               </Accordion.Content>
             </Accordion.Item>
@@ -66,14 +65,14 @@ export default function Faq(content: FaqFrontMatterAttributes) {
               <Accordion.Header>
                 <Accordion.Trigger className="group flex w-full items-center font-albertSans justify-between px-6 py-4 text-left text-lg font-medium hover:bg-gray-50 transition-all duration-300 ease-in-out">
                   <div className="flex-1 pr-4">
-                    <ReactMarkdown>{faq.question}</ReactMarkdown>
+                    {faq.question}
                   </div>
                   <ChevronDownIcon className="h-5 w-5 transition-transform duration-300 ease-in-out text-primary group-data-[state=open]:rotate-180 flex-shrink-0" />
                 </Accordion.Trigger>
               </Accordion.Header>
               <Accordion.Content className="overflow-hidden">
                 <div className="px-6 pb-4 pt-2 text-gray-600 font-albertSans text-base leading-relaxed">
-                  <ReactMarkdown>{faq.answer}</ReactMarkdown>
+                  {faq.answer}
                 </div>
               </Accordion.Content>
             </Accordion.Item>

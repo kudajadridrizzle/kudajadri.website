@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { BlogPost, parseBlogMarkdown } from '../../helper/blogParser';
+import { BlogPost, posts } from './postsData.tsx';
 import { Header } from '../Home/components/Header';
 import { Helmet } from 'react-helmet-async';
 import Footer from '../Home/components/Footer';
@@ -14,67 +14,20 @@ const BlogDetail: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const loadBlogPost = async () => {
-      if (!slug) {
-        setError('No blog post specified');
-        setLoading(false);
-        return;
-      }
-
-      try {
-        const blogModules = import.meta.glob('../../blog/*.md', {
-          query: '?raw',
-          import: 'default',
-        });
-
-        let foundPost: BlogPost | null = null;
-
-        for (const path in blogModules) {
-          const content = await blogModules[path]();
-          // Base slug from filename (without date prefix), used as fallback in parser
-          const baseSlug = path
-            .split('/')
-            .pop()
-            ?.replace(/\.md$/, '')
-            .replace(/^\d{4}-\d{2}-\d{2}-/, '') || '';
-          const parsed = parseBlogMarkdown(content as string, baseSlug);
-          if (parsed.slug === slug) {
-            foundPost = parsed;
-            break;
-          }
-        }
-
-        if (!foundPost) {
-          throw new Error('Blog post not found');
-        }
-
-        const post = foundPost;
-
-        if (!post.published) {
-          setError('Blog post not found or not published');
-        } else if (!post.metaTitle || !post.metaDescription) {
-          setError('Blog post is missing required SEO fields');
-        } else {
-          setBlogPost(post);
-        }
-      } catch (error) {
-        console.error('Error loading blog post:', error);
-        if (
-          error instanceof Error &&
-          error.message.includes('required SEO fields')
-        ) {
-          setError(
-            'Blog post is missing required SEO fields. Please contact the administrator.'
-          );
-        } else {
-          setError('Blog post not found');
-        }
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadBlogPost();
+    if (!slug) {
+      setError('No blog post specified');
+      setLoading(false);
+      return;
+    }
+    const found = posts.find(p => p.slug === slug);
+    if (!found) {
+      setError('Blog post not found');
+    } else if (!found.published || !found.metaTitle || !found.metaDescription) {
+      setError('Blog post not found or missing SEO fields');
+    } else {
+      setBlogPost(found);
+    }
+    setLoading(false);
   }, [slug]);
 
   if (loading) {
@@ -235,10 +188,7 @@ const BlogDetail: React.FC = () => {
 
           {/* Article Content */}
           <article className="prose prose-lg max-w-none font-albertSans text-secondary">
-            <div
-              className="markdown-content"
-              dangerouslySetInnerHTML={{ __html: blogPost.content }}
-            />
+            {blogPost.content}
           </article>
 
           {/* Back to Blog */}
