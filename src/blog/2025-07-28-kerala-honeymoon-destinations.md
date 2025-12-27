@@ -1,5 +1,6 @@
 ---
 title: Kerala Honeymoon Destinations - Romantic Getaways in God's Own Country
+slug: kerala-honeymoon-destinations
 seo:
   metaTitle: Kerala Honeymoon Destinations - Top 10 Romantic Places for Couples
   metaDescription: Explore the best honeymoon destinations in Kerala including
