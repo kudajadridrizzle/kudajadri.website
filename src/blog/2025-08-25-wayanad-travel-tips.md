@@ -1,5 +1,6 @@
 ---
 title: Wayanad Travel Tips
+slug: wayanad-travel-tips
 seo:
   metaTitle: Wayanad Travel Tips – Activities, Accommodations & Homestays
   metaDescription: Discover Wayanad with our travel tips. Find the best
